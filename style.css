@@ -1,0 +1,67 @@
+:root {
+  --bg: #fffbea;
+  --card: #ffffff;
+  --text: #2b2340;
+  --muted: #6b6380;
+  --sun: #ffc93c;
+  --sun-deep: #f5a300;
+  --petal: #ffe58a;
+  --accent: #6c3fc5;
+  --line: #f3e3a6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1d1828;
+    --card: #2a2338;
+    --text: #f6f1ff;
+    --muted: #bfb5d6;
+    --petal: #4a3d1a;
+    --accent: #c9a8ff;
+    --line: #3d3350;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "Segoe UI", Roboto, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+main { max-width: 680px; margin: 0 auto; padding: 32px 16px 48px; }
+a { color: var(--accent); }
+.sun {
+  width: 96px; height: 96px; margin: 8px auto 16px;
+  display: grid; place-items: center;
+  font-size: 56px; border-radius: 50%;
+  background: radial-gradient(circle, var(--sun) 55%, var(--petal) 56%);
+  box-shadow: 0 0 0 10px var(--petal);
+}
+h1 { font-size: 2rem; line-height: 1.2; margin: 8px 0 4px; text-align: center; }
+h2 { font-size: 1.35rem; margin: 32px 0 8px; }
+h3 { font-size: 1.1rem; margin: 20px 0 4px; }
+.lead { text-align: center; color: var(--muted); margin: 0 0 24px; }
+.card {
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 24px;
+  padding: 20px;
+  margin: 16px 0;
+}
+.app { display: flex; gap: 16px; align-items: center; text-decoration: none; color: inherit; }
+.app .icon {
+  flex: none; width: 64px; height: 64px; border-radius: 16px;
+  display: grid; place-items: center; font-size: 36px;
+  background: linear-gradient(135deg, var(--sun), var(--sun-deep));
+}
+.app strong { font-size: 1.15rem; }
+.app p { margin: 2px 0 6px; color: var(--muted); }
+.links a { margin-right: 16px; white-space: nowrap; }
+.lang { display: inline-block; font-size: .85rem; font-weight: 600; padding: 2px 10px; border-radius: 99px; background: var(--petal); }
+ul { padding-left: 1.2em; }
+li { margin: 6px 0; }
+hr { border: none; border-top: 2px dashed var(--line); margin: 36px 0; }
+footer { text-align: center; color: var(--muted); font-size: .95rem; margin-top: 40px; }
+.back { display: inline-block; margin-bottom: 8px; text-decoration: none; }
