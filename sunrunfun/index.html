@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sun Run Fun</title>
+<meta name="description" content="Sun Run Fun — tek dokunuşla uçurtmayla Türkiye şehirlerinin üstünde uç. Reklamsız, ücretsiz iPhone oyunu.">
+<meta property="og:title" content="Sun Run Fun">
+<meta property="og:description" content="Tek dokunuşla uçurtmayla Türkiye şehirlerinin üstünde uç. Reklamsız, ücretsiz.">
+<link rel="stylesheet" href="/style.css">
+<style>
+  .big-btn {
+    display: block; text-align: center; text-decoration: none;
+    font-weight: 700; font-size: 1.15rem;
+    padding: 16px 20px; border-radius: 99px; margin: 12px 0 4px;
+    background: linear-gradient(135deg, var(--sun), var(--sun-deep)); color: #2b2340;
+  }
+  .soon { text-align: center; color: var(--muted); font-weight: 600; margin: 8px 0; }
+  ol li { margin: 8px 0; }
+  .cities { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; padding: 0; list-style: none; }
+  .cities li { margin: 0; padding: 4px 12px; border-radius: 99px; background: var(--petal); font-weight: 600; font-size: .95rem; }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="/">← Sun Flower Apps</a>
+  <div class="sun" aria-hidden="true">🪁</div>
+  <h1>Sun Run Fun</h1>
+  <p class="lead">Tek dokunuşla uçurtmana tutun, Türkiye şehirlerinin üstünde uç!</p>
+
+  <div class="card">
+    <p>Ayçiçeği şapkalı minik kahramanımız, uçurtmasıyla gün batımında şehirlerin üstünde süzülüyor. Ekrana dokun, yüksel; bırak, alçal. Binaların arasından geç, martıların taşıdığı simitleri kap, şehrinde birinci ol.</p>
+    <ul class="cities" aria-label="Açık şehirler">
+      <li>İstanbul</li><li>Ankara</li><li>İzmir</li><li>Antalya</li><li>Nevşehir (Kapadokya)</li><li>Trabzon</li>
+    </ul>
+    <p style="margin:12px 0 0">Her ay yeni şehirler geliyor. Reklam yok, satın alma yok, hesap yok.</p>
+  </div>
+
+  <h2>iPhone'una kur</h2>
+  <div class="card">
+    <p style="margin-top:0">Oyun şu an deneme sürümünde. Apple'ın <strong>TestFlight</strong> uygulamasıyla ücretsiz kurabilirsin:</p>
+    <ol>
+      <li>iPhone'unda App Store'dan <strong>TestFlight</strong> uygulamasını indir (Apple'ın kendi uygulaması, ücretsiz).</li>
+      <li>Aşağıdaki düğmeye dokun.</li>
+      <li>TestFlight açılınca <strong>Kabul Et</strong>, sonra <strong>Yükle</strong>'ye bas.</li>
+      <li>Sun Run Fun ana ekranına gelir. Hadi uç! 🌻</li>
+    </ol>
+    <a id="tf-btn" class="big-btn" href="#" hidden>🪁 Sun Run Fun'ı kur</a>
+    <p id="tf-soon" class="soon">Kurulum bağlantısı çok yakında burada! 🌻</p>
+    <p style="margin-bottom:0;color:var(--muted);font-size:.95rem">Deneme sürümü sınırlı sayıda kişiye açık; yer dolarsa App Store sürümünü bekle.</p>
+  </div>
+
+  <h2>Daha fazlası</h2>
+  <div class="card">
+    <div class="links">
+      <a href="/sunrunfun/destek/">Destek</a>
+      <a href="/sunrunfun/gizlilik/">Gizlilik</a>
+    </div>
+  </div>
+
+  <footer>© 2026 Yıldırım Öztürk · Sun Flower Apps 🌻</footer>
+</main>
+<script>
+  // TestFlight herkese açık bağlantısı buraya yazılır. Boşken "çok yakında" yazısı görünür.
+  var TESTFLIGHT_URL = "";
+  if (TESTFLIGHT_URL) {
+    var b = document.getElementById("tf-btn");
+    b.href = TESTFLIGHT_URL; b.hidden = false;
+    document.getElementById("tf-soon").hidden = true;
+  }
+</script>
+</body>
+</html>
