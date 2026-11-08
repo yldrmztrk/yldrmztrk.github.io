@@ -293,6 +293,10 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 .chip.used{visibility:hidden}
 .stars{color:var(--petal-deep);font-size:.9rem;letter-spacing:1px;white-space:nowrap}
 .gsent{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,6.5vw,2.1rem);line-height:1.15;text-wrap:balance}
+.lvlhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:22px 0 10px}
+.lvlhead>div{flex:1;min-width:0}
+.lvlhead h3{font-size:1.15rem}
+.lvlhead small{color:var(--muted);font-weight:700}
 .gramhome{border:2px solid var(--leaf)}
 .gramhome .num{background:var(--leaf);color:#fff;font-size:.95rem}
 .gramhome .tag{background:var(--leaf);color:#fff}
@@ -304,7 +308,7 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 <div id="app">
   <header class="top">
     <div class="brand"><i aria-hidden="true"></i>Sunflower English</div>
-    <span class="ver" id="ver">v2.0</span>
+    <span class="ver" id="ver">v2.1</span>
   </header>
   <main id="view" aria-live="polite"></main>
   <nav class="tabs" aria-label="Bölümler">
@@ -331,7 +335,7 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 <canvas id="confetti" hidden></canvas>
 
 <script>
-const VERSION = "2.0";
+const VERSION = "2.1";
 
 /* ---------- Content: 10 routes, 240 words & phrases ---------- */
 const RAW = [
@@ -597,192 +601,2167 @@ const UNITS = RAW.map((u, ui) => {
   return { i: ui, name: u[0], sub: u[1], items, ph: !!u[3] };
 });
 
-/* ---------- Grammar: 12 topics ---------- */
-/* line: correct sentence | Türkçesi | wrong version | gap word (in sentence) | wrong options */
+/* ---------- Grammar curriculum: A1 → B2, 57 topics ---------- */
+/* item: correct | Türkçesi | wrong version | gap word | wrong options */
 const GRAM_RAW = [
-{ name: "am / is / are", sub: "olmak: -ım, -sın, -dır",
-  intro: "İngilizcede \"olmak\" kişiye göre değişir. Türkçedeki -ım, -sın, -dır eklerinin İngilizcesi gibi düşün.",
-  rows: [["I", "am"], ["he / she / it", "is"], ["you / we / they", "are"]],
-  tip: "Olumsuz için arkasına not: I am not. Soru için başa al: Are you ready?",
-  items: `
-I am tired.|Yorgunum.|I is tired.|am|is,are
-She is a pilot.|O bir pilot.|She are a pilot.|is|am,are
-We are at the airport.|Havalimanındayız.|We is at the airport.|are|am,is
-You are very kind.|Çok naziksin.|You is very kind.|are|am,is
-It is cold today.|Bugün hava soğuk.|It are cold today.|is|am,are
-They are my friends.|Onlar benim arkadaşlarım.|They is my friends.|are|am,is
-My husband is at home.|Kocam evde.|My husband are at home.|is|am,are
-I am not hungry.|Aç değilim.|I not am hungry.|am|is,are
-Is the flight late?|Uçuş geç mi?|Are the flight late?|Is|Am,Are
-Are you ready?|Hazır mısın?|Is you ready?|Are|Am,Is` },
-{ name: "have / has", sub: "sahip olmak: \"var\"",
-  intro: "\"Benim bir kedim var\" demenin yolu: I have a cat. Sahip olmak = have.",
-  rows: [["I / you / we / they", "have"], ["he / she / it", "has"]],
-  tip: "has sadece he, she, it ve tek bir şey için: The hotel has a pool.",
-  items: `
-I have a cat.|Bir kedim var.|I has a cat.|have|has,am
-She has two children.|Onun iki çocuğu var.|She have two children.|has|have,is
-We have a big family.|Kalabalık bir ailemiz var.|We has a big family.|have|has,are
-He has a new car.|Onun yeni bir arabası var.|He have a new car.|has|have,is
-They have a nice house.|Onların güzel bir evi var.|They has a nice house.|have|has,are
-The hotel has a pool.|Otelin havuzu var.|The hotel have a pool.|has|have,is
-I have a question.|Bir sorum var.|I has a question.|have|has,am
-You have beautiful eyes.|Güzel gözlerin var.|You has beautiful eyes.|have|has,are
-My sister has a dog.|Kız kardeşimin köpeği var.|My sister have a dog.|has|have,is
-We have time.|Vaktimiz var.|We has time.|have|has,are` },
-{ name: "Geniş zaman", sub: "her gün, her zaman: -r",
-  intro: "Alışkanlıkla, her zaman yaptığın şeyler. Türkçedeki -r gibi: çalışırım, içer.",
-  rows: [["I / you / we / they", "work"], ["he / she / it", "works  (+s)"], ["olumsuz", "don't / doesn't"], ["soru", "Do …? / Does …?"]],
-  tip: "Sadece he, she, it'te fiile -s gelir. doesn't geldiyse -s kaybolur: She doesn't work.",
-  items: `
-I work every day.|Her gün çalışırım.|I works every day.|work|works,working
-She works on planes.|O uçaklarda çalışır.|She work on planes.|works|work,working
-He drinks coffee in the morning.|Sabahları kahve içer.|He drink coffee in the morning.|drinks|drink,drinking
-We live in Istanbul.|İstanbul'da yaşıyoruz.|We lives in Istanbul.|live|lives,living
-My daughter loves games.|Kızım oyunları sever.|My daughter love games.|loves|love,loving
-They play tennis on Sundays.|Pazar günleri tenis oynarlar.|They plays tennis on Sundays.|play|plays,playing
-I don't like coffee.|Kahveyi sevmem.|I doesn't like coffee.|don't|doesn't,am not
-She doesn't speak French.|O Fransızca konuşmaz.|She don't speak French.|doesn't|don't,isn't
-Do you speak English?|İngilizce konuşur musun?|Does you speak English?|Do|Does,Are
-Does he work here?|Burada mı çalışıyor?|Do he work here?|Does|Do,Is` },
-{ name: "Şimdiki zaman", sub: "şu an oluyor: -yor",
-  intro: "Tam şu an olan şeyler. Türkçedeki -yor: okuyorum, bekliyoruz.",
-  rows: [["yapı", "am / is / are + fiil-ing"], ["örnek", "I am reading."], ["olumsuz", "I am not working."]],
-  tip: "am / is / are'ı unutma! \"I reading\" yarım cümle olur, \"I am reading\" tam.",
-  items: `
-I am reading a book.|Kitap okuyorum.|I reading a book.|reading|read,reads
-She is cooking dinner.|Akşam yemeği pişiriyor.|She cooking dinner.|cooking|cook,cooks
-We are waiting for the bus.|Otobüsü bekliyoruz.|We waiting for the bus.|waiting|wait,waits
-It is raining now.|Şu an yağmur yağıyor.|It raining now.|raining|rains,rain
-They are watching TV.|Televizyon izliyorlar.|They watching TV.|watching|watch,watches
-He is talking on the phone.|Telefonda konuşuyor.|He talking on the phone.|talking|talk,talks
-You are doing great!|Harika gidiyorsun!|You doing great!|doing|do,does
-I am not working today.|Bugün çalışmıyorum.|I not working today.|working|work,works
-What are you doing?|Ne yapıyorsun?|What you doing?|doing|do,does
-Are you listening?|Dinliyor musun?|Are you listen?|listening|listen,listens` },
-{ name: "can", sub: "yapabilmek: -ebil",
-  intro: "Yapabildiğin şeyler: yüzebilirim, konuşabilir. Hepsi tek kelime: can.",
-  rows: [["yapı", "can + yalın fiil"], ["olumsuz", "can't"], ["soru", "Can you …?"]],
-  tip: "can hiç değişmez: \"she cans\" yok, \"can to\" yok. She can swim, bitti.",
-  items: `
-I can swim.|Yüzebilirim.|I can to swim.|can|am,do
-She can speak English.|İngilizce konuşabilir.|She cans speak English.|can|is,does
-Can you help me?|Bana yardım edebilir misin?|Do you can help me?|Can|Do,Are
-I can't find my keys.|Anahtarlarımı bulamıyorum.|I don't can find my keys.|can't|don't,am not
-We can meet tomorrow.|Yarın buluşabiliriz.|We can meeting tomorrow.|can|are,do
-He can't come today.|Bugün gelemez.|He can't comes today.|can't|doesn't,isn't
-Can I sit here?|Buraya oturabilir miyim?|Can I to sit here?|Can|Am,Do
-You can do it!|Sen yapabilirsin!|You can doing it!|can|are,do
-They can play the piano.|Piyano çalabilirler.|They can plays the piano.|can|are,do
-Can she drive?|O araba kullanabilir mi?|Can she drives?|Can|Is,Does` },
-{ name: "was / were", sub: "geçmişte: -dı, -di",
-  intro: "Geçmişteki \"idi\": dün yorgundum, geçen hafta Paris'teydik.",
-  rows: [["I / he / she / it", "was"], ["you / we / they", "were"], ["olumsuz", "wasn't / weren't"]],
-  tip: "Kolay hile: am ve is → was olur, are → were olur.",
-  items: `
-I was tired yesterday.|Dün yorgundum.|I were tired yesterday.|was|were,am
-They were at home.|Onlar evdeydi.|They was at home.|were|was,are
-The flight was long.|Uçuş uzundu.|The flight were long.|was|were,is
-We were in Paris last week.|Geçen hafta Paris'teydik.|We was in Paris last week.|were|was,are
-She was very happy.|Çok mutluydu.|She were very happy.|was|were,is
-You were right.|Haklıydın.|You was right.|were|was,are
-It was a great day.|Harika bir gündü.|It were a great day.|was|were,is
-Were you at work?|İşte miydin?|Was you at work?|Were|Was,Are
-I wasn't hungry.|Aç değildim.|I weren't hungry.|wasn't|weren't,isn't
-The rooms were clean.|Odalar temizdi.|The rooms was clean.|were|was,are` },
-{ name: "Geçmiş zaman", sub: "yaptım, gittim: -ed",
-  intro: "Geçmişte yaptığın şeyler. Çoğu fiile -ed eklenir, bazıları ise kafasına göre takılır.",
-  rows: [["çoğu fiil", "work → worked"], ["huysuzlar", "go → went, see → saw"], ["", "eat → ate, have → had, buy → bought"], ["olumsuz / soru", "didn't … / Did …?"]],
-  tip: "didn't ve Did'den sonra fiil yalın kalır: I didn't sleep (slept değil).",
-  items: `
-I worked yesterday.|Dün çalıştım.|I work yesterday.|worked|work,works
-We visited London last year.|Geçen yıl Londra'yı ziyaret ettik.|We visit London last year.|visited|visit,visits
-She went to Rome.|Roma'ya gitti.|She goed to Rome.|went|goed,goes
-I saw a great film.|Harika bir film izledim.|I seed a great film.|saw|seed,see
-They ate pizza.|Pizza yediler.|They eated pizza.|ate|eated,eat
-He had a good time.|İyi vakit geçirdi.|He haved a good time.|had|haved,has
-I didn't sleep well.|İyi uyumadım.|I didn't slept well.|didn't|don't,wasn't
-Did you call me?|Beni aradın mı?|Did you called me?|Did|Do,Was
-We landed late last night.|Dün gece geç indik.|We land late last night.|landed|land,lands
-She bought a new bag.|Yeni bir çanta aldı.|She buyed a new bag.|bought|buyed,buys` },
-{ name: "will / going to", sub: "gelecek: -ecek, -acak",
-  intro: "Gelecekten bahsetmenin iki yolu var. Anlık karar ve söz için will, önceden planladığın işler için going to.",
-  rows: [["anlık karar, söz", "will + fiil"], ["plan", "am / is / are going to + fiil"], ["olumsuz", "won't"]],
-  tip: "I'll = I will. \"Telefon çalıyor, ben bakarım!\" → I'll get it.",
-  items: `
-I will call you later.|Seni sonra ararım.|I will calling you later.|will|am,do
-It will be sunny tomorrow.|Yarın hava güneşli olacak.|It will is sunny tomorrow.|will|is,does
-We are going to travel next month.|Gelecek ay seyahat edeceğiz.|We going to travel next month.|going|go,goes
-She is going to learn English.|İngilizce öğrenecek.|She is going learn English.|going|go,goes
-I'll help you.|Sana yardım ederim.|I'll helping you.|help|helping,helps
-Will you come to the party?|Partiye gelecek misin?|Do you will come to the party?|Will|Do,Are
-They won't be late.|Geç kalmayacaklar.|They willn't be late.|won't|don't,aren't
-I am going to cook tonight.|Bu akşam yemek yapacağım.|I going to cook tonight.|going|go,goes
-He will be a great pilot.|Harika bir pilot olacak.|He wills be a great pilot.|will|is,does
-Are you going to stay?|Kalacak mısın?|You going to stay?|going|go,goes` },
-{ name: "there is / there are", sub: "\"var\" ve \"yok\"",
-  intro: "Bir yerde bir şey var mı yok mu? Tek şeyse there is, birden çoksa there are.",
-  rows: [["tek şey", "there is"], ["birden çok", "there are"], ["soru", "Is there …? / Are there …?"], ["olumsuz", "there isn't / there aren't"]],
-  tip: "Odada iki yatak var → there are two beds. Yakında bir banka var → there is a bank.",
-  items: `
-There is a bank near here.|Yakında bir banka var.|There are a bank near here.|is|are,am
-There are two beds in the room.|Odada iki yatak var.|There is two beds in the room.|are|is,am
-There is a problem.|Bir sorun var.|There are a problem.|is|are,has
-There are many tourists.|Çok turist var.|There is many tourists.|are|is,has
-Is there a pharmacy here?|Burada eczane var mı?|Are there a pharmacy here?|Is|Are,Has
-Are there any seats?|Hiç koltuk var mı?|Is there any seats?|Are|Is,Has
-There isn't any milk.|Hiç süt yok.|There aren't any milk.|isn't|aren't,don't
-There are three flights today.|Bugün üç uçuş var.|There is three flights today.|are|is,has
-There is a cat in the garden.|Bahçede bir kedi var.|There are a cat in the garden.|is|are,has
-There aren't any taxis.|Hiç taksi yok.|There isn't any taxis.|aren't|isn't,don't` },
-{ name: "Soru kurma", sub: "ne, nerede, ne zaman?",
-  intro: "Soru kelimesi hep cümlenin başına gelir, sonra is / are / do, sonra kişi.",
-  rows: [["What", "ne"], ["Where", "nerede"], ["When", "ne zaman"], ["Who", "kim"], ["Why", "neden"], ["How", "nasıl"]],
-  tip: "Sıra: soru kelimesi + is / are / do + kişi → Where is the gate? (Where the gate is? değil)",
-  items: `
-Where is the gate?|Kapı nerede?|Where the gate is?|Where|What,Who
-What is your name?|Adın ne?|What your name is?|What|Where,Who
-When does the flight leave?|Uçuş ne zaman kalkıyor?|When the flight leaves?|When|Who,What
-Who is that man?|O adam kim?|Who that man is?|Who|Where,When
-How are you?|Nasılsın?|How you are?|How|Who,Where
-Where do you live?|Nerede yaşıyorsun?|Where you live?|Where|What,Who
-What time is it?|Saat kaç?|What time it is?|What|Where,Who
-Why are you late?|Neden geç kaldın?|Why you are late?|Why|Who,Where
-How much is this?|Bu ne kadar?|How much this is?|How|What,Who
-What do you want?|Ne istiyorsun?|What you want?|What|Where,Who` },
-{ name: "Karşılaştırma", sub: "daha … , en …",
-  intro: "\"Daha büyük\", \"en güzel\" demek için. -den kısmı İngilizcede than olur.",
-  rows: [["kısa sıfat", "big → bigger → the biggest"], ["uzun sıfat", "more beautiful → the most beautiful"], ["-den", "than"], ["huysuz", "good → better → the best"]],
-  tip: "Kısa kelimeye -er eklenir, uzun kelimenin önüne more gelir. İkisi birden asla: \"more bigger\" yok.",
-  items: `
-Istanbul is bigger than Ankara.|İstanbul Ankara'dan büyük.|Istanbul is more big than Ankara.|bigger|more big,biggest
-This hotel is cheaper.|Bu otel daha ucuz.|This hotel is more cheap.|cheaper|more cheap,cheapest
-English is easier than you think.|İngilizce sandığından kolay.|English is more easy than you think.|easier|more easy,easiest
-This dress is more beautiful.|Bu elbise daha güzel.|This dress is beautifuler.|more|most,much
-Today is hotter than yesterday.|Bugün dünden sıcak.|Today is more hot than yesterday.|hotter|more hot,hottest
-She is taller than me.|O benden uzun.|She is more tall than me.|taller|more tall,tallest
-This is the best day!|Bu en güzel gün!|This is the goodest day!|best|goodest,better
-It is the biggest airport.|Bu en büyük havalimanı.|It is the most big airport.|biggest|most big,bigger
-My job is more interesting now.|İşim artık daha ilginç.|My job is interestinger now.|more|most,much
-Your English is better now!|İngilizcen artık daha iyi!|Your English is gooder now!|better|gooder,best` },
-{ name: "in / on / at", sub: "zaman ve yer edatları",
-  intro: "Ne zaman ve nerede? Üç küçük kelime, kolay bir hileyle çözülüyor.",
-  rows: [["at", "saat, nokta: at 7, at the gate"], ["on", "gün, yüzey: on Monday, on the table"], ["in", "ay, yıl, şehir, içi: in May, in Istanbul"]],
-  tip: "Hile: at küçük bir nokta, on bir yüzey, in büyük bir kutu.",
-  items: `
-I wake up at seven.|Yedide uyanırım.|I wake up in seven.|at|in,on
-My birthday is in April.|Doğum günüm nisanda.|My birthday is on April.|in|on,at
-We fly on Monday.|Pazartesi uçuyoruz.|We fly in Monday.|on|in,at
-She lives in Istanbul.|İstanbul'da yaşıyor.|She lives at Istanbul.|in|on,at
-The keys are on the table.|Anahtarlar masanın üstünde.|The keys are in the table.|on|in,at
-Meet me at the gate.|Kapıda buluşalım.|Meet me on the gate.|at|in,on
-I was born in 1985.|1985'te doğdum.|I was born on 1985.|in|on,at
-The meeting is at noon.|Toplantı öğlen.|The meeting is in noon.|at|in,on
-Your bag is in the overhead bin.|Çantan üst dolapta.|Your bag is at the overhead bin.|in|on,at
-See you on Friday!|Cuma görüşürüz!|See you in Friday!|on|in,at` }
+{
+"name": "am / is / are",
+"sub": "olmak: -ım, -sın, -dır",
+"intro": "İngilizcede \"olmak\" kişiye göre değişir. Türkçedeki -ım, -sın, -dır eklerinin İngilizcesi gibi düşün.",
+"rows": [
+[
+"I",
+"am"
+],
+[
+"he / she / it",
+"is"
+],
+[
+"you / we / they",
+"are"
+]
+],
+"tip": "Olumsuz için arkasına not: I am not. Soru için başa al: Are you ready?",
+"items": [
+"I am tired.|Yorgunum.|I is tired.|am|is,are",
+"She is a pilot.|O bir pilot.|She are a pilot.|is|am,are",
+"We are at the airport.|Havalimanındayız.|We is at the airport.|are|am,is",
+"You are very kind.|Çok naziksin.|You is very kind.|are|am,is",
+"It is cold today.|Bugün hava soğuk.|It are cold today.|is|am,are",
+"They are my friends.|Onlar benim arkadaşlarım.|They is my friends.|are|am,is",
+"My husband is at home.|Kocam evde.|My husband are at home.|is|am,are",
+"I am not hungry.|Aç değilim.|I not am hungry.|am|is,are",
+"Is the flight late?|Uçuş geç mi?|Are the flight late?|Is|Am,Are",
+"Are you ready?|Hazır mısın?|Is you ready?|Are|Am,Is"
+],
+"lvl": 0
+},
+{
+"name": "have / has",
+"sub": "sahip olmak: \"var\"",
+"intro": "\"Benim bir kedim var\" demenin yolu: I have a cat. Sahip olmak = have.",
+"rows": [
+[
+"I / you / we / they",
+"have"
+],
+[
+"he / she / it",
+"has"
+]
+],
+"tip": "has sadece he, she, it ve tek bir şey için: The hotel has a pool.",
+"items": [
+"I have a cat.|Bir kedim var.|I has a cat.|have|has,am",
+"She has two children.|Onun iki çocuğu var.|She have two children.|has|have,is",
+"We have a big family.|Kalabalık bir ailemiz var.|We has a big family.|have|has,are",
+"He has a new car.|Onun yeni bir arabası var.|He have a new car.|has|have,is",
+"They have a nice house.|Onların güzel bir evi var.|They has a nice house.|have|has,are",
+"The hotel has a pool.|Otelin havuzu var.|The hotel have a pool.|has|have,is",
+"I have a question.|Bir sorum var.|I has a question.|have|has,am",
+"You have beautiful eyes.|Güzel gözlerin var.|You has beautiful eyes.|have|has,are",
+"My sister has a dog.|Kız kardeşimin köpeği var.|My sister have a dog.|has|have,is",
+"We have time.|Vaktimiz var.|We has time.|have|has,are"
+],
+"lvl": 0
+},
+{
+"name": "a / an / the",
+"sub": "bir mi, belli olan mı?",
+"intro": "Tek bir şeyden ilk kez bahsederken a gelir (sesli sesle başlıyorsa an). Hangisinden bahsettiğin belliyse the. Türkçedeki \"bir\" ile \"o\" gibi düşün.",
+"rows": [
+[
+"a",
+"sessiz ses önü: a hotel, a bag"
+],
+[
+"an",
+"sesli ses önü: an apple, an hour"
+],
+[
+"the",
+"belli olan: the sun, the airport"
+],
+[
+"hiç yok",
+"genel, çoğul: I like cats."
+]
+],
+"tip": "an için harfe değil sese bak: an hour (h okunmaz), a university (yu sesi). Dünyada tek olanlar hep the: the sun, the moon.",
+"items": [
+"I have a headache.|Başım ağrıyor.|I have headache.|a|an,the",
+"She has a brother.|Onun bir erkek kardeşi var.|She has brother.|a|an,the",
+"The flight is an hour late.|Uçuş bir saat rötarlı.|The flight is a hour late.|an|a,the",
+"He is an engineer.|O bir mühendis.|He is a engineer.|an|a,any",
+"The sun is very hot today.|Bugün güneş çok sıcak.|Sun is very hot today.|The|A,An",
+"The weather is nice today.|Bugün hava güzel.|Weather is nice today.|The|A,An",
+"Have a nice flight!|İyi uçuşlar!|Have the nice flight!|a|an,the",
+"I eat an egg every morning.|Her sabah bir yumurta yerim.|I eat a egg every morning.|an|a,any",
+"Look at the moon!|Aya bak!|Look at moon!|the|a,an",
+"What a beautiful view!|Ne güzel bir manzara!|What beautiful view!|a|an,the"
+],
+"lvl": 0
+},
+{
+"name": "Çoğullar",
+"sub": "birden çok: -s, -es, -ies",
+"intro": "Türkçedeki -ler, -lar. Çoğu kelimeye -s gelir, bazıları biraz nazlı. Birkaç huysuz da kuralı hiç takmaz: child → children.",
+"rows": [
+[
+"çoğu kelime",
+"bag → bags, cat → cats"
+],
+[
+"-s, -sh, -ch, -x",
+"bus → buses, watch → watches"
+],
+[
+"sessiz + y",
+"city → cities, baby → babies"
+],
+[
+"huysuzlar",
+"child → children, man → men"
+],
+[
+"",
+"woman → women, person → people, foot → feet"
+]
+],
+"tip": "Sayı varsa -s şart: two bag değil, two bags. Ama children zaten çoğul, \"childrens\" olmaz!",
+"items": [
+"I have two bags.|İki çantam var.|I have two bag.|bags|bag,bages",
+"The children are sleeping.|Çocuklar uyuyor.|The childrens are sleeping.|children|childs,childrens",
+"There are many people here.|Burada çok insan var.|There are many peoples here.|people|peoples,person",
+"Are the shops open?|Dükkanlar açık mı?|Are the shop open?|shops|shop,shopes",
+"We visited two cities.|İki şehir gezdik.|We visited two citys.|cities|citys,cityes",
+"My feet hurt.|Ayaklarım ağrıyor.|My foots hurt.|feet|foots,feets",
+"The buses are late.|Otobüsler geç kaldı.|The buss are late.|buses|bus,buss",
+"Two men are waiting outside.|Dışarıda iki adam bekliyor.|Two mans are waiting outside.|men|mans,mens",
+"Three women work here.|Burada üç kadın çalışıyor.|Three womans work here.|women|womans,womens",
+"I bought two sandwiches.|İki sandviç aldım.|I bought two sandwichs.|sandwiches|sandwichs,sandwich"
+],
+"lvl": 0
+},
+{
+"name": "this / that / these / those",
+"sub": "bu, şu, bunlar, şunlar",
+"intro": "Yakındaki için this (bu), uzaktaki için that (şu, o). Birden çoksa this → these, that → those olur.",
+"rows": [
+[
+"yakın, tek",
+"this → bu"
+],
+[
+"uzak, tek",
+"that → şu, o"
+],
+[
+"yakın, çok",
+"these → bunlar"
+],
+[
+"uzak, çok",
+"those → şunlar, onlar"
+]
+],
+"tip": "Elindeki için this, karşıdaki için that. Çoğulda isim de çoğul olur: these bags, those seats.",
+"items": [
+"This is my seat.|Bu benim koltuğum.|These is my seat.|This|These,Those",
+"That man is the pilot.|Şu adam pilot.|Those man is the pilot.|That|Those,These",
+"These shoes are too small.|Bu ayakkabılar çok küçük.|This shoes are too small.|These|This,That",
+"Those seats are free.|Şu koltuklar boş.|That seats are free.|Those|That,This",
+"I love this song.|Bu şarkıyı seviyorum.|I love these song.|this|these,those",
+"Is this your bag?|Bu senin çantan mı?|Is these your bag?|this|these,those",
+"Who are those people?|Şu insanlar kim?|Who are that people?|those|that,this",
+"These are my friends.|Bunlar benim arkadaşlarım.|This are my friends.|These|This,That",
+"How much is that jacket?|Şu ceket ne kadar?|How much is those jacket?|that|those,these",
+"That is a good idea.|Bu iyi bir fikir.|Those is a good idea.|That|Those,These"
+],
+"lvl": 0
+},
+{
+"name": "Kişi zamirleri: I / me / my",
+"sub": "ben, beni, benim",
+"intro": "Yapan: I (ben). İşi yapılan: me (beni, bana). Sahibi: my (benim). Her kişinin bu üç hali var.",
+"rows": [
+[
+"ben",
+"I → me → my"
+],
+[
+"sen",
+"you → you → your"
+],
+[
+"o (erkek)",
+"he → him → his"
+],
+[
+"o (kadın)",
+"she → her → her"
+],
+[
+"o (şey)",
+"it → it → its"
+],
+[
+"biz / onlar",
+"we → us → our, they → them → their"
+]
+],
+"tip": "Fiilden önce I, fiilden sonra me: I love you ama Call me. Arkasında isim varsa my: my bag.",
+"items": [
+"I love my job.|İşimi seviyorum.|I love me job.|my|me,I",
+"Please call me tonight.|Beni bu akşam ara.|Please call I tonight.|me|I,my",
+"She is waiting for us.|Bizi bekliyor.|She is waiting for we.|us|we,our",
+"They like their new house.|Yeni evlerini seviyorlar.|They like they new house.|their|they,them",
+"I know him very well.|Onu çok iyi tanıyorum.|I know he very well.|him|he,his",
+"We love our cat.|Kedimizi seviyoruz.|We love us cat.|our|us,we",
+"Your coffee is ready.|Kahven hazır.|You coffee is ready.|Your|You,Yours",
+"Do you know them?|Onları tanıyor musun?|Do you know they?|them|they,their",
+"She loves her new shoes.|Yeni ayakkabılarına bayılıyor.|She loves she new shoes.|her|she,hers",
+"He gave it to me.|Onu bana verdi.|Him gave it to me.|He|Him,His"
+],
+"lvl": 0
+},
+{
+"name": "İyelik: 's, mine, yours",
+"sub": "kimin? annemin, benimki",
+"intro": "Kiminse onun adına 's eklenir: my friend's bag (arkadaşımın çantası). \"Benimki\" demek için de tek kelime yeter: mine.",
+"rows": [
+[
+"'s",
+"my friend's bag → arkadaşımın çantası"
+],
+[
+"kimin?",
+"Whose bag is this?"
+],
+[
+"benimki, seninki",
+"mine, yours"
+],
+[
+"onunki",
+"his, hers"
+],
+[
+"bizimki, onlarınki",
+"ours, theirs"
+]
+],
+"tip": "mine, yours'tan sonra isim gelmez: This bag is mine. (mine bag değil!) İsim varsa my: my bag.",
+"items": [
+"This is my friend's car.|Bu arkadaşımın arabası.|This is my friend car.|friend's|friend,friends",
+"Whose bag is this?|Bu çanta kimin?|Who's bag is this?|Whose|Who's,Who",
+"That bag is mine.|O çanta benim.|That bag is my.|mine|my,me",
+"Is this seat yours?|Bu koltuk senin mi?|Is this seat your?|yours|your,you",
+"The pilot's name is on the list.|Pilotun adı listede.|The pilots name is on the list.|pilot's|pilots,pilot",
+"These keys are hers.|Bu anahtarlar onun.|These keys are her.|hers|her,she",
+"The red car is ours.|Kırmızı araba bizim.|The red car is our.|ours|our,us",
+"My sister's house is big.|Kız kardeşimin evi büyük.|My sister house is big.|sister's|sister,sisters",
+"The blue suitcase is theirs.|Mavi valiz onların.|The blue suitcase is their.|theirs|their,them",
+"The jacket is his.|Ceket onun.|The jacket is him.|his|him,he"
+],
+"lvl": 0
+},
+{
+"name": "Geniş zaman",
+"sub": "her gün, her zaman: -r",
+"intro": "Alışkanlıkla, her zaman yaptığın şeyler. Türkçedeki -r gibi: çalışırım, içer.",
+"rows": [
+[
+"I / you / we / they",
+"work"
+],
+[
+"he / she / it",
+"works  (+s)"
+],
+[
+"olumsuz",
+"don't / doesn't"
+],
+[
+"soru",
+"Do …? / Does …?"
+]
+],
+"tip": "Sadece he, she, it'te fiile -s gelir. doesn't geldiyse -s kaybolur: She doesn't work.",
+"items": [
+"I work every day.|Her gün çalışırım.|I works every day.|work|works,working",
+"She works on planes.|O uçaklarda çalışır.|She work on planes.|works|work,working",
+"He drinks coffee in the morning.|Sabahları kahve içer.|He drink coffee in the morning.|drinks|drink,drinking",
+"We live in Istanbul.|İstanbul'da yaşıyoruz.|We lives in Istanbul.|live|lives,living",
+"My daughter loves games.|Kızım oyunları sever.|My daughter love games.|loves|love,loving",
+"They play tennis on Sundays.|Pazar günleri tenis oynarlar.|They plays tennis on Sundays.|play|plays,playing",
+"I don't like coffee.|Kahveyi sevmem.|I doesn't like coffee.|don't|doesn't,am not",
+"She doesn't speak French.|O Fransızca konuşmaz.|She don't speak French.|doesn't|don't,isn't",
+"Do you speak English?|İngilizce konuşur musun?|Does you speak English?|Do|Does,Are",
+"Does he work here?|Burada mı çalışıyor?|Do he work here?|Does|Do,Is"
+],
+"lvl": 0
+},
+{
+"name": "Sıklık zarfları",
+"sub": "her zaman, bazen, asla",
+"intro": "Ne kadar sık? always (her zaman) → usually (genellikle) → often (sık sık) → sometimes (bazen) → never (asla). Yeri: fiilden önce, am / is / are'dan sonra.",
+"rows": [
+[
+"always",
+"her zaman, %100"
+],
+[
+"usually / often",
+"genellikle / sık sık"
+],
+[
+"sometimes",
+"bazen"
+],
+[
+"never",
+"asla, %0"
+],
+[
+"yeri",
+"I always … / I am always …"
+]
+],
+"tip": "never zaten olumsuz, don't ekleme: I never eat fish. (I don't never eat değil!)",
+"items": [
+"I always drink tea in the morning.|Sabahları her zaman çay içerim.|I drink always tea in the morning.|always|am,not",
+"She is never late.|O asla geç kalmaz.|She never is late.|never|no,don't",
+"We usually fly on Mondays.|Genellikle pazartesileri uçarız.|We fly usually on Mondays.|usually|are,usual",
+"I often forget my keys.|Sık sık anahtarlarımı unuturum.|I forget often my keys.|often|am,not",
+"They are always happy.|Onlar her zaman mutlu.|They always are happy.|always|every,no",
+"I never eat fish.|Asla balık yemem.|I don't never eat fish.|never|not,no",
+"She sometimes cooks dinner.|Bazen akşam yemeği yapar.|She cooks sometimes dinner.|sometimes|is,sometime",
+"Do you usually take the bus?|Genellikle otobüse mi binersin?|Do you take usually the bus?|usually|are,usual",
+"He is often tired after work.|İşten sonra sık sık yorgun olur.|He often is tired after work.|often|don't,every",
+"My flights are never boring.|Uçuşlarım asla sıkıcı olmaz.|My flights never are boring.|never|don't,no"
+],
+"lvl": 0
+},
+{
+"name": "Şimdiki zaman",
+"sub": "şu an oluyor: -yor",
+"intro": "Tam şu an olan şeyler. Türkçedeki -yor: okuyorum, bekliyoruz.",
+"rows": [
+[
+"yapı",
+"am / is / are + fiil-ing"
+],
+[
+"örnek",
+"I am reading."
+],
+[
+"olumsuz",
+"I am not working."
+]
+],
+"tip": "am / is / are'ı unutma! \"I reading\" yarım cümle olur, \"I am reading\" tam.",
+"items": [
+"I am reading a book.|Kitap okuyorum.|I reading a book.|reading|read,reads",
+"She is cooking dinner.|Akşam yemeği pişiriyor.|She cooking dinner.|cooking|cook,cooks",
+"We are waiting for the bus.|Otobüsü bekliyoruz.|We waiting for the bus.|waiting|wait,waits",
+"It is raining now.|Şu an yağmur yağıyor.|It raining now.|raining|rains,rain",
+"They are watching TV.|Televizyon izliyorlar.|They watching TV.|watching|watch,watches",
+"He is talking on the phone.|Telefonda konuşuyor.|He talking on the phone.|talking|talk,talks",
+"You are doing great!|Harika gidiyorsun!|You doing great!|doing|do,does",
+"I am not working today.|Bugün çalışmıyorum.|I not working today.|working|work,works",
+"What are you doing?|Ne yapıyorsun?|What you doing?|doing|do,does",
+"Are you listening?|Dinliyor musun?|Are you listen?|listening|listen,listens"
+],
+"lvl": 0
+},
+{
+"name": "Geniş zaman mı, şimdiki mi?",
+"sub": "every day → -r, now → -yor",
+"intro": "Her zaman yaptığın şeyler geniş zaman (I work), tam şu an olan şeyler şimdiki zaman (I am working). İpucu kelimeye bak: every day mi, now mu?",
+"rows": [
+[
+"her gün, hep",
+"I drink coffee every day."
+],
+[
+"şu an",
+"I am drinking coffee now."
+],
+[
+"ipucu: geniş",
+"every day, always, on Mondays"
+],
+[
+"ipucu: şimdiki",
+"now, right now, look!, listen!"
+]
+],
+"tip": "now varsa -ing, every day varsa -r. Ama want, like, know hiç -ing almaz: I want tea, I like it.",
+"items": [
+"I drink coffee every morning.|Her sabah kahve içerim.|I am drink coffee every morning.|drink|drinking,drinks",
+"Look! It is raining.|Bak! Yağmur yağıyor.|Look! It rains.|raining|rains,rain",
+"She is sleeping now.|O şu an uyuyor.|She sleeps now.|sleeping|sleeps,sleep",
+"He works at the airport every day.|Her gün havalimanında çalışır.|He is work at the airport every day.|works|working,work",
+"I want a cup of tea.|Bir fincan çay istiyorum.|I am wanting a cup of tea.|want|am wanting,wanting",
+"We are waiting at the gate now.|Şu an kapıda bekliyoruz.|We wait at the gate now.|waiting|wait,waits",
+"My husband cooks on Sundays.|Kocam pazar günleri yemek yapar.|My husband is cook on Sundays.|cooks|cooking,cook",
+"Listen! The baby is crying.|Dinle! Bebek ağlıyor.|Listen! The baby cries.|crying|cries,cry",
+"I know the answer.|Cevabı biliyorum.|I am knowing the answer.|know|knowing,knows",
+"Do you understand me now?|Şimdi beni anlıyor musun?|Are you understanding me now?|understand|understanding,understands"
+],
+"lvl": 0
+},
+{
+"name": "can",
+"sub": "yapabilmek: -ebil",
+"intro": "Yapabildiğin şeyler: yüzebilirim, konuşabilir. Hepsi tek kelime: can.",
+"rows": [
+[
+"yapı",
+"can + yalın fiil"
+],
+[
+"olumsuz",
+"can't"
+],
+[
+"soru",
+"Can you …?"
+]
+],
+"tip": "can hiç değişmez: \"she cans\" yok, \"can to\" yok. She can swim, bitti.",
+"items": [
+"I can swim.|Yüzebilirim.|I can to swim.|can|am,do",
+"She can speak English.|İngilizce konuşabilir.|She cans speak English.|can|is,does",
+"Can you help me?|Bana yardım edebilir misin?|Do you can help me?|Can|Do,Are",
+"I can't find my keys.|Anahtarlarımı bulamıyorum.|I don't can find my keys.|can't|don't,am not",
+"We can meet tomorrow.|Yarın buluşabiliriz.|We can meeting tomorrow.|can|are,do",
+"He can't come today.|Bugün gelemez.|He can't comes today.|can't|doesn't,isn't",
+"Can I sit here?|Buraya oturabilir miyim?|Can I to sit here?|Can|Am,Do",
+"You can do it!|Sen yapabilirsin!|You can doing it!|can|are,do",
+"They can play the piano.|Piyano çalabilirler.|They can plays the piano.|can|are,do",
+"Can she drive?|O araba kullanabilir mi?|Can she drives?|Can|Is,Does"
+],
+"lvl": 0
+},
+{
+"name": "there is / there are",
+"sub": "\"var\" ve \"yok\"",
+"intro": "Bir yerde bir şey var mı yok mu? Tek şeyse there is, birden çoksa there are.",
+"rows": [
+[
+"tek şey",
+"there is"
+],
+[
+"birden çok",
+"there are"
+],
+[
+"soru",
+"Is there …? / Are there …?"
+],
+[
+"olumsuz",
+"there isn't / there aren't"
+]
+],
+"tip": "Odada iki yatak var → there are two beds. Yakında bir banka var → there is a bank.",
+"items": [
+"There is a bank near here.|Yakında bir banka var.|There are a bank near here.|is|are,am",
+"There are two beds in the room.|Odada iki yatak var.|There is two beds in the room.|are|is,am",
+"There is a problem.|Bir sorun var.|There are a problem.|is|are,has",
+"There are many tourists.|Çok turist var.|There is many tourists.|are|is,has",
+"Is there a pharmacy here?|Burada eczane var mı?|Are there a pharmacy here?|Is|Are,Has",
+"Are there any seats?|Hiç koltuk var mı?|Is there any seats?|Are|Is,Has",
+"There isn't any milk.|Hiç süt yok.|There aren't any milk.|isn't|aren't,don't",
+"There are three flights today.|Bugün üç uçuş var.|There is three flights today.|are|is,has",
+"There is a cat in the garden.|Bahçede bir kedi var.|There are a cat in the garden.|is|are,has",
+"There aren't any taxis.|Hiç taksi yok.|There isn't any taxis.|aren't|isn't,don't"
+],
+"lvl": 0
+},
+{
+"name": "Soru kurma",
+"sub": "ne, nerede, ne zaman?",
+"intro": "Soru kelimesi hep cümlenin başına gelir, sonra is / are / do, sonra kişi.",
+"rows": [
+[
+"What",
+"ne"
+],
+[
+"Where",
+"nerede"
+],
+[
+"When",
+"ne zaman"
+],
+[
+"Who",
+"kim"
+],
+[
+"Why",
+"neden"
+],
+[
+"How",
+"nasıl"
+]
+],
+"tip": "Sıra: soru kelimesi + is / are / do + kişi → Where is the gate? (Where the gate is? değil)",
+"items": [
+"Where is the gate?|Kapı nerede?|Where the gate is?|Where|What,Who",
+"What is your name?|Adın ne?|What your name is?|What|Where,Who",
+"When does the flight leave?|Uçuş ne zaman kalkıyor?|When the flight leaves?|When|Who,What",
+"Who is that man?|O adam kim?|Who that man is?|Who|Where,When",
+"How are you?|Nasılsın?|How you are?|How|Who,Where",
+"Where do you live?|Nerede yaşıyorsun?|Where you live?|Where|What,Who",
+"What time is it?|Saat kaç?|What time it is?|What|Where,Who",
+"Why are you late?|Neden geç kaldın?|Why you are late?|Why|Who,Where",
+"How much is this?|Bu ne kadar?|How much this is?|How|What,Who",
+"What do you want?|Ne istiyorsun?|What you want?|What|Where,Who"
+],
+"lvl": 0
+},
+{
+"name": "in / on / at",
+"sub": "zaman ve yer edatları",
+"intro": "Ne zaman ve nerede? Üç küçük kelime, kolay bir hileyle çözülüyor.",
+"rows": [
+[
+"at",
+"saat, nokta: at 7, at the gate"
+],
+[
+"on",
+"gün, yüzey: on Monday, on the table"
+],
+[
+"in",
+"ay, yıl, şehir, içi: in May, in Istanbul"
+]
+],
+"tip": "Hile: at küçük bir nokta, on bir yüzey, in büyük bir kutu.",
+"items": [
+"I wake up at seven.|Yedide uyanırım.|I wake up in seven.|at|in,on",
+"My birthday is in April.|Doğum günüm nisanda.|My birthday is on April.|in|on,at",
+"We fly on Monday.|Pazartesi uçuyoruz.|We fly in Monday.|on|in,at",
+"She lives in Istanbul.|İstanbul'da yaşıyor.|She lives at Istanbul.|in|on,at",
+"The keys are on the table.|Anahtarlar masanın üstünde.|The keys are in the table.|on|in,at",
+"Meet me at the gate.|Kapıda buluşalım.|Meet me on the gate.|at|in,on",
+"I was born in 1985.|1985'te doğdum.|I was born on 1985.|in|on,at",
+"The meeting is at noon.|Toplantı öğlen.|The meeting is in noon.|at|in,on",
+"Your bag is in the overhead bin.|Çantan üst dolapta.|Your bag is at the overhead bin.|in|on,at",
+"See you on Friday!|Cuma görüşürüz!|See you in Friday!|on|in,at"
+],
+"lvl": 0
+},
+{
+"name": "Emir cümleleri",
+"sub": "yap! yapma! hadi yapalım!",
+"intro": "Birine \"yap\" derken özne yok, fiil yalın: Open the door. \"Yapma\" için Don't, \"hadi yapalım\" için Let's. Please ekle, kibar olsun.",
+"rows": [
+[
+"yap",
+"Open the door."
+],
+[
+"yapma",
+"Don't touch it."
+],
+[
+"hadi yapalım",
+"Let's go!"
+],
+[
+"kibar",
+"Please sit down. / Sit down, please."
+]
+],
+"tip": "Fiil hep yalın: \"Opens\", \"Opening\", \"To open\" yok. Don't'tan sonra da yalın: Don't be late.",
+"items": [
+"Please open the window.|Lütfen pencereyi aç.|Please opens the window.|open|opens,opening",
+"Don't touch that!|Ona dokunma!|Don't touching that!|Don't|Not,No",
+"Let's go to the beach.|Hadi plaja gidelim.|Let's going to the beach.|Let's|Let,Lets",
+"Sit down, please.|Otur lütfen.|Sits down, please.|Sit|Sits,Sitting",
+"Don't be late tomorrow.|Yarın geç kalma.|Don't late tomorrow.|be|is,are",
+"Let's have a coffee.|Hadi bir kahve içelim.|Let's to have a coffee.|have|having,to have",
+"Turn left at the corner.|Köşeden sola dön.|Turning left at the corner.|Turn|Turning,Turns",
+"Don't forget your passport.|Pasaportunu unutma.|Don't forgot your passport.|forget|forgot,forgets",
+"Please fasten your seat belt.|Lütfen emniyet kemerinizi bağlayın.|Please fastening your seat belt.|fasten|fastening,fastens",
+"Call me when you land.|İndiğinde beni ara.|Calls me when you land.|Call|Calls,Calling"
+],
+"lvl": 0
+},
+{
+"name": "was / were",
+"sub": "geçmişte: -dı, -di",
+"intro": "Geçmişteki \"idi\": dün yorgundum, geçen hafta Paris'teydik.",
+"rows": [
+[
+"I / he / she / it",
+"was"
+],
+[
+"you / we / they",
+"were"
+],
+[
+"olumsuz",
+"wasn't / weren't"
+]
+],
+"tip": "Kolay hile: am ve is → was olur, are → were olur.",
+"items": [
+"I was tired yesterday.|Dün yorgundum.|I were tired yesterday.|was|were,am",
+"They were at home.|Onlar evdeydi.|They was at home.|were|was,are",
+"The flight was long.|Uçuş uzundu.|The flight were long.|was|were,is",
+"We were in Paris last week.|Geçen hafta Paris'teydik.|We was in Paris last week.|were|was,are",
+"She was very happy.|Çok mutluydu.|She were very happy.|was|were,is",
+"You were right.|Haklıydın.|You was right.|were|was,are",
+"It was a great day.|Harika bir gündü.|It were a great day.|was|were,is",
+"Were you at work?|İşte miydin?|Was you at work?|Were|Was,Are",
+"I wasn't hungry.|Aç değildim.|I weren't hungry.|wasn't|weren't,isn't",
+"The rooms were clean.|Odalar temizdi.|The rooms was clean.|were|was,are"
+],
+"lvl": 1
+},
+{
+"name": "Geçmiş zaman",
+"sub": "yaptım, gittim: -ed",
+"intro": "Geçmişte yaptığın şeyler. Çoğu fiile -ed eklenir, bazıları ise kafasına göre takılır.",
+"rows": [
+[
+"çoğu fiil",
+"work → worked"
+],
+[
+"huysuzlar",
+"go → went, see → saw"
+],
+[
+"",
+"eat → ate, have → had, buy → bought"
+],
+[
+"olumsuz / soru",
+"didn't … / Did …?"
+]
+],
+"tip": "didn't ve Did'den sonra fiil yalın kalır: I didn't sleep (slept değil).",
+"items": [
+"I worked yesterday.|Dün çalıştım.|I work yesterday.|worked|work,works",
+"We visited London last year.|Geçen yıl Londra'yı ziyaret ettik.|We visit London last year.|visited|visit,visits",
+"She went to Rome.|Roma'ya gitti.|She goed to Rome.|went|goed,goes",
+"I saw a great film.|Harika bir film izledim.|I seed a great film.|saw|seed,see",
+"They ate pizza.|Pizza yediler.|They eated pizza.|ate|eated,eat",
+"He had a good time.|İyi vakit geçirdi.|He haved a good time.|had|haved,has",
+"I didn't sleep well.|İyi uyumadım.|I didn't slept well.|didn't|don't,wasn't",
+"Did you call me?|Beni aradın mı?|Did you called me?|Did|Do,Was",
+"We landed late last night.|Dün gece geç indik.|We land late last night.|landed|land,lands",
+"She bought a new bag.|Yeni bir çanta aldı.|She buyed a new bag.|bought|buyed,buys"
+],
+"lvl": 1
+},
+{
+"name": "will / going to",
+"sub": "gelecek: -ecek, -acak",
+"intro": "Gelecekten bahsetmenin iki yolu var. Anlık karar ve söz için will, önceden planladığın işler için going to.",
+"rows": [
+[
+"anlık karar, söz",
+"will + fiil"
+],
+[
+"plan",
+"am / is / are going to + fiil"
+],
+[
+"olumsuz",
+"won't"
+]
+],
+"tip": "I'll = I will. \"Telefon çalıyor, ben bakarım!\" → I'll get it.",
+"items": [
+"I will call you later.|Seni sonra ararım.|I will calling you later.|will|am,do",
+"It will be sunny tomorrow.|Yarın hava güneşli olacak.|It will is sunny tomorrow.|will|is,does",
+"We are going to travel next month.|Gelecek ay seyahat edeceğiz.|We going to travel next month.|going|go,goes",
+"She is going to learn English.|İngilizce öğrenecek.|She is going learn English.|going|go,goes",
+"I'll help you.|Sana yardım ederim.|I'll helping you.|help|helping,helps",
+"Will you come to the party?|Partiye gelecek misin?|Do you will come to the party?|Will|Do,Are",
+"They won't be late.|Geç kalmayacaklar.|They willn't be late.|won't|don't,aren't",
+"I am going to cook tonight.|Bu akşam yemek yapacağım.|I going to cook tonight.|going|go,goes",
+"He will be a great pilot.|Harika bir pilot olacak.|He wills be a great pilot.|will|is,does",
+"Are you going to stay?|Kalacak mısın?|You going to stay?|going|go,goes"
+],
+"lvl": 1
+},
+{
+"name": "Karşılaştırma",
+"sub": "daha … , en …",
+"intro": "\"Daha büyük\", \"en güzel\" demek için. -den kısmı İngilizcede than olur.",
+"rows": [
+[
+"kısa sıfat",
+"big → bigger → the biggest"
+],
+[
+"uzun sıfat",
+"more beautiful → the most beautiful"
+],
+[
+"-den",
+"than"
+],
+[
+"huysuz",
+"good → better → the best"
+]
+],
+"tip": "Kısa kelimeye -er eklenir, uzun kelimenin önüne more gelir. İkisi birden asla: \"more bigger\" yok.",
+"items": [
+"Istanbul is bigger than Ankara.|İstanbul Ankara'dan büyük.|Istanbul is more big than Ankara.|bigger|more big,biggest",
+"This hotel is cheaper.|Bu otel daha ucuz.|This hotel is more cheap.|cheaper|more cheap,cheapest",
+"English is easier than you think.|İngilizce sandığından kolay.|English is more easy than you think.|easier|more easy,easiest",
+"This dress is more beautiful.|Bu elbise daha güzel.|This dress is beautifuler.|more|most,much",
+"Today is hotter than yesterday.|Bugün dünden sıcak.|Today is more hot than yesterday.|hotter|more hot,hottest",
+"She is taller than me.|O benden uzun.|She is more tall than me.|taller|more tall,tallest",
+"This is the best day!|Bu en güzel gün!|This is the goodest day!|best|goodest,better",
+"It is the biggest airport.|Bu en büyük havalimanı.|It is the most big airport.|biggest|most big,bigger",
+"My job is more interesting now.|İşim artık daha ilginç.|My job is interestinger now.|more|most,much",
+"Your English is better now!|İngilizcen artık daha iyi!|Your English is gooder now!|better|gooder,best"
+],
+"lvl": 1
+},
+{
+"name": "some / any",
+"sub": "biraz, birkaç, hiç",
+"intro": "\"Biraz\" ve \"birkaç\" için some, olumsuz ve soruda any. Türkçedeki \"hiç\" gibi düşün: hiç param yok → I don't have any money.",
+"rows": [
+[
+"olumlu",
+"some: I have some money."
+],
+[
+"olumsuz",
+"any: I don't have any money."
+],
+[
+"soru",
+"any: Do you have any children?"
+],
+[
+"ikram / rica",
+"some: Would you like some tea?"
+]
+],
+"tip": "Kural: olumlu cümlede some, olumsuz ve soruda any. Tek istisna: bir şey ikram ederken ya da isterken soruda da some.",
+"items": [
+"I have some money.|Biraz param var.|I have any money.|some|any,a",
+"We need some bread.|Biraz ekmek lazım.|We need any bread.|some|any,an",
+"I don't have any cash.|Hiç nakdim yok.|I don't have some cash.|any|some,a",
+"There aren't any shops here.|Burada hiç dükkan yok.|There aren't some shops here.|any|some,a",
+"Do you have any children?|Hiç çocuğun var mı?|Do you have some children?|any|a,an",
+"Is there any milk left?|Hiç süt kaldı mı?|Is there some milk left?|any|a,an",
+"Would you like some tea?|Biraz çay ister misin?|Would you like any tea?|some|an,much",
+"She bought some apples.|Birkaç elma aldı.|She bought any apples.|some|any,an",
+"I didn't buy any souvenirs.|Hiç hediyelik almadım.|I didn't buy some souvenirs.|any|some,a",
+"Can I have some water, please?|Biraz su alabilir miyim?|Can I have any water, please?|some|an,many"
+],
+"lvl": 1
+},
+{
+"name": "much / many / a lot of",
+"sub": "çok: sayılır mı, sayılmaz mı?",
+"intro": "Türkçede hepsi \"çok\". İngilizcede sayabildiğin şeyler (3 çanta) many, sayamadıkların (su, para, zaman) much alır. a lot of ise her yerde işe yarar.",
+"rows": [
+[
+"sayılan (çanta, kişi)",
+"many: many bags"
+],
+[
+"sayılamayan (su, zaman)",
+"much: much time"
+],
+[
+"ikisi de",
+"a lot of: a lot of friends"
+],
+[
+"soru",
+"How many bags? / How much money?"
+]
+],
+"tip": "much daha çok olumsuzda ve soruda yaşar: I don't have much time. Olumlu cümlede a lot of de, rahat et.",
+"items": [
+"How many bags do you have?|Kaç çantan var?|How much bags do you have?|many|much,lot",
+"How much is the ticket?|Bilet ne kadar?|How many is the ticket?|much|many,lot",
+"I don't have much time.|Fazla zamanım yok.|I don't have many time.|much|many,lot",
+"There were many people at the gate.|Kapıda çok insan vardı.|There were much people at the gate.|many|much,lot",
+"We have a lot of friends.|Çok arkadaşımız var.|We have a lot friends.|lot|much,many",
+"How much water do you drink?|Ne kadar su içiyorsun?|How many water do you drink?|much|many,lot",
+"She doesn't eat much sugar.|Fazla şeker yemez.|She doesn't eat many sugar.|much|many,lot",
+"I ate a lot of cake.|Çok kek yedim.|I ate a lot cake.|lot|much,many",
+"How many hours is the flight?|Uçuş kaç saat?|How much hours is the flight?|many|much,lot",
+"There isn't much coffee left.|Fazla kahve kalmadı.|There isn't many coffee left.|much|many,lot"
+],
+"lvl": 1
+},
+{
+"name": "must / have to",
+"sub": "-malı, zorunda, gerek yok",
+"intro": "\"Yapmalısın, zorundasın\" için must ya da have to. Dikkat: don't have to \"yasak\" değil, \"gerek yok\" demek. Yasak için mustn't.",
+"rows": [
+[
+"zorunlu",
+"must / have to + yalın fiil"
+],
+[
+"he / she / it",
+"has to"
+],
+[
+"gerek yok",
+"don't have to / doesn't have to"
+],
+[
+"yasak",
+"mustn't"
+]
+],
+"tip": "Tuzak: You don't have to pay = ödemene gerek yok. You mustn't pay = ödeme, yasak! Bambaşka şeyler.",
+"items": [
+"I must call my mother.|Annemi aramalıyım.|I must to call my mother.|must|have,am",
+"You must wear a seatbelt.|Emniyet kemeri takmalısın.|You must to wear a seatbelt.|must|has,are",
+"I have to wake up early.|Erken kalkmak zorundayım.|I have wake up early.|have|has,must",
+"She has to wear a uniform.|Üniforma giymek zorunda.|She have to wear a uniform.|has|have,must",
+"We have to check in first.|Önce check-in yapmamız lazım.|We has to check in first.|have|has,must",
+"You don't have to pay.|Ödemene gerek yok.|You don't must pay.|don't|doesn't,mustn't",
+"He doesn't have to come.|Onun gelmesine gerek yok.|He don't have to come.|doesn't|don't,isn't",
+"You mustn't smoke here.|Burada sigara içmek yasak.|You mustn't to smoke here.|mustn't|doesn't,hasn't",
+"Do I have to book a seat?|Koltuk ayırtmak zorunda mıyım?|Do I must book a seat?|have|has,must",
+"We don't have to hurry.|Acele etmemize gerek yok.|We don't have hurry.|have|has,must"
+],
+"lvl": 1
+},
+{
+"name": "should / shouldn't",
+"sub": "tavsiye: -sen iyi olur",
+"intro": "Tavsiye verirken: \"Dinlensen iyi olur\", \"Bence erken yat\". Nazik bir -meli: should. must gibi sert değil, dostça.",
+"rows": [
+[
+"tavsiye",
+"should + yalın fiil"
+],
+[
+"olumsuz",
+"shouldn't"
+],
+[
+"soru",
+"Should I …?"
+],
+[
+"örnek",
+"You should sleep more."
+]
+],
+"tip": "should'dan sonra to yok, -s yok: She should rest (should to rest değil, should rests değil).",
+"items": [
+"You should drink more water.|Daha çok su içmelisin.|You should to drink more water.|should|are,have",
+"You shouldn't eat so late.|Bu kadar geç yememelisin.|You shouldn't eating so late.|shouldn't|aren't,haven't",
+"She should see a doctor.|Doktora görünmeli.|She should sees a doctor.|should|is,has",
+"Should I take an umbrella?|Şemsiye alsam mı?|Should I to take an umbrella?|Should|Am,Have",
+"We should book the hotel early.|Oteli erkenden ayırtmalıyız.|We should booking the hotel early.|should|are,have",
+"He shouldn't work so much.|Bu kadar çok çalışmamalı.|He shouldn't works so much.|shouldn't|isn't,hasn't",
+"You should try the fish.|Balığı denemelisin.|You should tries the fish.|should|are,have",
+"I should study more.|Daha çok çalışmalıyım.|I should to study more.|should|am,have",
+"Should we take a taxi?|Taksiye mi binsek?|Should we taking a taxi?|Should|Are,Have",
+"They shouldn't be late.|Geç kalmamalılar.|They shouldn't to be late.|shouldn't|aren't,haven't"
+],
+"lvl": 1
+},
+{
+"name": "was / were + -ing",
+"sub": "geçmişte sürerken: -yordu",
+"intro": "Geçmişte bir süre devam eden iş: \"Uyuyordum, telefon çaldı.\" Uzun süren iş -yordu ile, araya giren kısa olay -dı ile anlatılır.",
+"rows": [
+[
+"yapı",
+"was / were + fiil-ing"
+],
+[
+"I / he / she / it",
+"was sleeping"
+],
+[
+"you / we / they",
+"were sleeping"
+],
+[
+"kesen olay",
+"when + -dı: when the phone rang"
+],
+[
+"aynı anda",
+"while + -ing: while I was cooking"
+]
+],
+"tip": "Arka plandaki uzun film -yordu (was sleeping), araya giren kısa olay -dı (rang). İkisini karıştırma.",
+"items": [
+"I was sleeping at midnight.|Gece yarısı uyuyordum.|I were sleeping at midnight.|was|were,be",
+"She was cooking when I called.|Aradığımda yemek yapıyordu.|She were cooking when I called.|was|were,is",
+"They were waiting at the gate.|Kapıda bekliyorlardı.|They was waiting at the gate.|were|was,be",
+"We were flying over the sea.|Denizin üzerinde uçuyorduk.|We were fly over the sea.|flying|fly,flew",
+"It was raining when we landed.|İndiğimizde yağmur yağıyordu.|It was rain when we landed.|raining|rain,rained",
+"What were you doing at nine?|Dokuzda ne yapıyordun?|What was you doing at nine?|were|was,be",
+"I wasn't listening to you.|Seni dinlemiyordum.|I wasn't listen to you.|listening|listen,listened",
+"While I was cooking, the phone rang.|Ben yemek yaparken telefon çaldı.|While I was cook, the phone rang.|cooking|cook,cooked",
+"Were you working yesterday?|Dün çalışıyor muydun?|Was you working yesterday?|Were|Was,Are",
+"The passengers were sleeping.|Yolcular uyuyordu.|The passengers was sleeping.|were|was,be"
+],
+"lvl": 1
+},
+{
+"name": "Hiç … yaptın mı?",
+"sub": "have / has + fiilin 3. hali",
+"intro": "Hayatında bir şeyi hiç yaptın mı? Ne zaman olduğu önemli değil, deneyim önemli: \"Hiç Japonya'ya gittin mi?\" → Have you ever been to Japan?",
+"rows": [
+[
+"yapı",
+"have / has + fiilin 3. hali"
+],
+[
+"3. hal",
+"see → seen, eat → eaten, be → been"
+],
+[
+"hiç (soru)",
+"Have you ever …?"
+],
+[
+"hiç (olumsuz)",
+"I have never …"
+]
+],
+"tip": "Zaman verirsen (dün, 2019'da) have / has gider, geçmiş zaman gelir: I went to Rome in 2019. Zaman yoksa: I have been to Rome.",
+"items": [
+"Have you ever been to Japan?|Hiç Japonya'ya gittin mi?|Have you ever went to Japan?|been|was,go",
+"I have never seen snow.|Hiç kar görmedim.|I have never saw snow.|seen|saw,see",
+"She has eaten sushi before.|Daha önce suşi yedi.|She has ate sushi before.|eaten|ate,eat",
+"We have visited many countries.|Birçok ülke gezdik.|We have visit many countries.|visited|visit,visits",
+"Have you tried Turkish coffee?|Hiç Türk kahvesi denedin mi?|Have you try Turkish coffee?|tried|try,tries",
+"He has never flown before.|Daha önce hiç uçağa binmemiş.|He has never flew before.|flown|flew,fly",
+"I have been to London twice.|Londra'ya iki kez gittim.|I have went to London twice.|been|went,was",
+"They have never met the pilot.|Pilotla hiç tanışmadılar.|They have never meet the pilot.|met|meet,meets",
+"Has she ever lost her luggage?|Hiç bagajını kaybetmiş mi?|Has she ever lose her luggage?|lost|lose,loses",
+"I haven't spoken to the captain.|Kaptanla konuşmadım.|I haven't spoke to the captain.|spoken|spoke,speak"
+],
+"lvl": 1
+},
+{
+"name": "just / already / yet",
+"sub": "az önce, çoktan, henüz",
+"intro": "Present Perfect'in üç küçük yardımcısı: just = az önce, already = çoktan / zaten, yet = henüz (olumsuz ve soruda, hep cümlenin sonunda).",
+"rows": [
+[
+"just",
+"az önce: I have just landed."
+],
+[
+"already",
+"çoktan: She has already left."
+],
+[
+"yet (olumsuz)",
+"henüz: I haven't eaten yet."
+],
+[
+"yet (soru)",
+"Have you finished yet?"
+]
+],
+"tip": "just ve already have ile fiilin arasına girer, yet ise hep en sona: I have already paid. / I haven't paid yet.",
+"items": [
+"I have just landed.|Az önce indim.|I have landed just.|just|yet,ago",
+"She has already left.|O çoktan gitti.|She has left yet.|already|yet,ago",
+"I haven't eaten yet.|Henüz yemedim.|I haven't eaten already.|yet|already,just",
+"Have you finished yet?|Bitirdin mi?|Have yet you finished?|yet|just,ago",
+"We have just arrived at the hotel.|Otele daha yeni vardık.|Just we have arrived at the hotel.|just|yet,ago",
+"He has already paid the bill.|Hesabı çoktan ödedi.|He has paid already the bill.|already|yet,ago",
+"The plane hasn't landed yet.|Uçak henüz inmedi.|The plane hasn't landed already.|yet|already,just",
+"I have already seen this film.|Bu filmi zaten izledim.|I have yet seen this film.|already|yet,ago",
+"Have you packed your bag yet?|Çantanı topladın mı?|Have you packed yet your bag?|yet|just,ago",
+"She has just called me.|Az önce beni aradı.|She has yet called me.|just|yet,ago"
+],
+"lvl": 1
+},
+{
+"name": "for / since",
+"sub": "-dır, -den beri",
+"intro": "Ne kadar zamandır? Süre söylüyorsan (iki yıl, üç saat) for, başlangıç noktası söylüyorsan (2019, pazartesi, sabah) since.",
+"rows": [
+[
+"for + süre",
+"for two years, for an hour"
+],
+[
+"since + başlangıç",
+"since 2019, since Monday"
+],
+[
+"yapı",
+"have / has + 3. hal + for / since"
+],
+[
+"örnek",
+"I have lived here since 2020."
+]
+],
+"tip": "Hile: sayı ve süre (two days, ten minutes) → for. Takvimde işaretleyebildiğin bir an (Monday, 9 o'clock, 2015) → since.",
+"items": [
+"I have lived here for two years.|İki yıldır burada yaşıyorum.|I have lived here since two years.|for|since,from",
+"She has worked here since 2019.|2019'dan beri burada çalışıyor.|She has worked here for 2019.|since|for,from",
+"We have been friends for ten years.|On yıldır arkadaşız.|We have been friends since ten years.|for|since,from",
+"I haven't seen him since Monday.|Pazartesiden beri onu görmedim.|I haven't seen him for Monday.|since|for,from",
+"They have waited for an hour.|Bir saattir bekliyorlar.|They have waited since an hour.|for|since,from",
+"He has been a pilot since 2010.|2010'dan beri pilot.|He has been a pilot for 2010.|since|for,from",
+"I have known her for a long time.|Onu uzun zamandır tanıyorum.|I have known her since a long time.|for|since,from",
+"We have been here since noon.|Öğlenden beri buradayız.|We have been here for noon.|since|for,from",
+"I have had this bag for years.|Bu çanta yıllardır bende.|I have had this bag since years.|for|since,from",
+"She hasn't called since Friday.|Cumadan beri aramadı.|She hasn't called for Friday.|since|for,from"
+],
+"lvl": 1
+},
+{
+"name": "Sıfat mı, zarf mı?",
+"sub": "quick / quickly, good / well",
+"intro": "Sıfat ismi anlatır (a slow driver), zarf fiili anlatır (he drives slowly). Çoğu zarf = sıfat + -ly. Huysuz olan: good → well.",
+"rows": [
+[
+"isme",
+"sıfat: a quick answer"
+],
+[
+"fiile",
+"zarf: she answered quickly"
+],
+[
+"kural",
+"sıfat + -ly: slow → slowly"
+],
+[
+"huysuzlar",
+"good → well, fast → fast, hard → hard"
+]
+],
+"tip": "Kişiyi anlatıyorsan sıfat, nasıl yaptığını anlatıyorsan -ly: She is careful. / She drives carefully.",
+"items": [
+"She speaks English very well.|Çok iyi İngilizce konuşuyor.|She speaks English very good.|well|good,goodly",
+"He is a careful driver.|O dikkatli bir sürücü.|He is a carefully driver.|careful|carefully,care",
+"He drives carefully.|Dikkatli araba kullanır.|He drives careful.|carefully|careful,care",
+"The food was really good.|Yemek gerçekten güzeldi.|The food was really well.|good|well,goodly",
+"Please speak slowly.|Lütfen yavaş konuş.|Please speak slow.|slowly|slow,slowness",
+"She is a quick learner.|Çabuk öğrenen biri.|She is a quickly learner.|quick|quickly,quickness",
+"The pilot landed the plane smoothly.|Pilot uçağı yumuşacık indirdi.|The pilot landed the plane smooth.|smoothly|smooth,smoothness",
+"I am a bad cook.|Kötü bir aşçıyım.|I am a badly cook.|bad|badly,badness",
+"He sings beautifully.|Çok güzel şarkı söylüyor.|He sings beautiful.|beautifully|beautiful,beauty",
+"Did you sleep well?|İyi uyudun mu?|Did you sleep good?|well|good,goodly"
+],
+"lvl": 1
+},
+{
+"name": "-ing mi, to mu?",
+"sub": "swimming mi, to swim mi?",
+"intro": "Bir fiilden sonra ikinci fiil gelince ya -ing alır ya to. Hangisi olacağı ilk fiile bağlı; ezber ama kısa bir liste.",
+"rows": [
+[
+"+ -ing",
+"enjoy, finish, like, love, hate"
+],
+[
+"+ to",
+"want, need, decide, hope, plan"
+],
+[
+"örnek",
+"I enjoy swimming. / I want to swim."
+],
+[
+"ipucu",
+"like / love / hate ile to da olur"
+]
+],
+"tip": "Asla yalın fiil koyma: \"I want go\" ve \"I enjoy swim\" yok. Ya -ing ya to; want ve need her zaman to alır.",
+"items": [
+"I enjoy swimming in the sea.|Denizde yüzmeyi seviyorum.|I enjoy to swim in the sea.|swimming|swim,to swim",
+"I want to go home.|Eve gitmek istiyorum.|I want going home.|go|going,goes",
+"She needs to buy a ticket.|Bilet alması lazım.|She needs buying a ticket.|buy|buying,buys",
+"We decided to stay in Rome.|Roma'da kalmaya karar verdik.|We decided staying in Rome.|stay|staying,stayed",
+"He finished eating at ten.|Yemeğini onda bitirdi.|He finished to eat at ten.|eating|eat,to eat",
+"I love travelling with my friends.|Arkadaşlarımla seyahat etmeyi seviyorum.|I love to travelling with my friends.|travelling|travels,travelled",
+"She hates waiting in line.|Sırada beklemekten nefret eder.|She hates wait in line.|waiting|wait,waits",
+"Do you like cooking?|Yemek yapmayı sever misin?|Do you like cook?|cooking|cook,cooks",
+"They hope to visit Turkey soon.|Yakında Türkiye'yi ziyaret etmeyi umuyorlar.|They hope visiting Turkey soon.|visit|visiting,visited",
+"I need to sleep a little.|Biraz uyumam lazım.|I need sleeping a little.|sleep|sleeping,sleeps"
+],
+"lvl": 1
+},
+{
+"name": "too / enough",
+"sub": "fazla, yeterince",
+"intro": "too = fazla (olumsuz tat: too hot = fazla sıcak, kötü). enough = yeterince. too sıfatın önüne, enough sıfatın arkasına gelir.",
+"rows": [
+[
+"too + sıfat",
+"too hot, too expensive"
+],
+[
+"sıfat + enough",
+"big enough, warm enough"
+],
+[
+"enough + isim",
+"enough money, enough time"
+],
+[
+"olumsuz",
+"not big enough = yeterince büyük değil"
+]
+],
+"tip": "Sıra tuzağı: enough sıfattan SONRA gelir (good enough), isimden ÖNCE gelir (enough money). too \"çok\" değil, \"fazla\" demek.",
+"items": [
+"This coffee is too hot.|Bu kahve fazla sıcak.|This coffee is enough hot.|too|enough,much",
+"The bag is too heavy.|Çanta fazla ağır.|The bag is too much heavy.|too|enough,much",
+"The room isn't big enough.|Oda yeterince büyük değil.|The room isn't enough big.|enough|much,very",
+"I don't have enough money.|Yeterince param yok.|I don't have money enough.|enough|too,many",
+"It is too late to call.|Aramak için çok geç.|It is enough late to call.|too|enough,much",
+"Is the water warm enough?|Su yeterince sıcak mı?|Is the water enough warm?|enough|much,very",
+"We have enough time.|Yeterince vaktimiz var.|We have too time.|enough|too,very",
+"She is too tired to cook.|Yemek yapamayacak kadar yorgun.|She is tired too to cook.|too|enough,much",
+"He isn't old enough to drive.|Araba kullanacak yaşta değil.|He isn't enough old to drive.|enough|much,very",
+"These shoes are too small.|Bu ayakkabılar fazla küçük.|These shoes are enough small.|too|enough,much"
+],
+"lvl": 1
+},
+{
+"name": "Bağlaçlar",
+"sub": "and, but, or, because, so",
+"intro": "Cümleleri birbirine bağlayan küçük kelimeler: ve, ama, ya da, çünkü, bu yüzden. Bu beşini bilince uzun cümle kurmak çocuk oyuncağı.",
+"rows": [
+[
+"and",
+"ve"
+],
+[
+"but",
+"ama"
+],
+[
+"or",
+"ya da, yoksa"
+],
+[
+"because",
+"çünkü (sebep)"
+],
+[
+"so",
+"bu yüzden (sonuç)"
+]
+],
+"tip": "because sebebi, so sonucu getirir: I was tired, so I slept. / I slept because I was tired. İkisini aynı cümlede kullanma.",
+"items": [
+"I like tea and coffee.|Çay ve kahve severim.|I like tea so coffee.|and|because,so",
+"The hotel is small but clean.|Otel küçük ama temiz.|The hotel is small because clean.|but|because,so",
+"Do you want tea or coffee?|Çay mı kahve mi istersin?|Do you want tea so coffee?|or|so,because",
+"I stayed home because it was raining.|Yağmur yağdığı için evde kaldım.|I stayed home so it was raining.|because|so,why",
+"I was tired, so I went to bed.|Yorgundum, bu yüzden yattım.|I was tired, because I went to bed.|so|because,why",
+"She speaks English and French.|İngilizce ve Fransızca konuşuyor.|She speaks English so French.|and|so,because",
+"I wanted to sleep, but it was noisy.|Uyumak istedim ama ortam gürültülüydü.|I wanted to sleep, so it was noisy.|but|so,or",
+"We can walk or take a taxi.|Yürüyebiliriz ya da taksi tutabiliriz.|We can walk because take a taxi.|or|because,so",
+"The flight was late, so we missed the bus.|Uçuş gecikti, bu yüzden otobüsü kaçırdık.|The flight was late, because we missed the bus.|so|because,or",
+"I am happy because it is Friday.|Mutluyum çünkü bugün cuma.|I am happy so it is Friday.|because|so,why"
+],
+"lvl": 1
+},
+{
+"name": "Present Perfect mi, Past mı?",
+"sub": "have + 3. hal mi, -di mi?",
+"intro": "Ne zaman olduğu belli değilse ya da önemli değilse have + 3. hal: I have been to Rome. Belli bir zaman varsa (last year, yesterday) düz geçmiş: I went to Rome last year.",
+"rows": [
+[
+"zaman belli değil",
+"I have seen that film."
+],
+[
+"zaman belli",
+"I saw it last week."
+],
+[
+"have'in dostları",
+"ever, never, just, already, yet"
+],
+[
+"geçmişin dostları",
+"yesterday, last year, ago, in 2015"
+]
+],
+"tip": "Cümlede yesterday, last year, ago, in 2015 varsa have yasak: \"I have seen him yesterday\" olmaz, \"I saw him yesterday\" olur.",
+"items": [
+"I have been to Rome twice.|Roma'ya iki kez gittim.|I have went to Rome twice.|been|went,go",
+"We went to Rome last year.|Geçen yıl Roma'ya gittik.|We have gone to Rome last year.|went|have gone,go",
+"Have you ever eaten sushi?|Hiç suşi yedin mi?|Did you ever eaten sushi?|Have|Did,Do",
+"She has just left the office.|Ofisten az önce çıktı.|She has just leaved the office.|has|did,was",
+"I saw that film two weeks ago.|O filmi iki hafta önce izledim.|I have seen that film two weeks ago.|saw|have seen,see",
+"They haven't finished dinner yet.|Akşam yemeğini henüz bitirmediler.|They didn't finished dinner yet.|haven't|didn't,don't",
+"Did you sleep well last night?|Dün gece iyi uyudun mu?|Have you slept well last night?|Did|Have,Do",
+"He has never flown before.|Daha önce hiç uçmadı.|He has never flew before.|flown|flew,fly",
+"She didn't call me yesterday.|Dün beni aramadı.|She hasn't called me yesterday.|didn't|hasn't,doesn't",
+"I have already paid the bill.|Hesabı çoktan ödedim.|I have already pay the bill.|have|did,am"
+],
+"lvl": 2
+},
+{
+"name": "Present Perfect Continuous",
+"sub": "have been + -ing: ne zamandır",
+"intro": "Geçmişte başlayıp hâlâ süren bir iş: iki saattir bekliyorum, sabahtan beri çalışıyor. Yapı: have / has been + fiil-ing.",
+"rows": [
+[
+"I / you / we / they",
+"have been waiting"
+],
+[
+"he / she / it",
+"has been waiting"
+],
+[
+"ne zamandır?",
+"How long have you been …?"
+],
+[
+"for / since",
+"for two hours / since 9 o'clock"
+]
+],
+"tip": "for süreye gelir (for two hours), since başlangıç noktasına (since Monday). \"Since two hours\" diyen Türk çok, sen deme.",
+"items": [
+"I have been waiting for an hour.|Bir saattir bekliyorum.|I have been waiting since an hour.|for|since,ago",
+"How long have you been waiting?|Ne zamandır bekliyorsun?|How long are you been waiting?|been|be,being",
+"She has been working since morning.|Sabahtan beri çalışıyor.|She have been working since morning.|has|have,is",
+"It has been raining all day.|Bütün gün yağmur yağıyor.|It has been rain all day.|raining|rain,rains",
+"We have been living here for ten years.|On yıldır burada yaşıyoruz.|We are living here for ten years.|have|are,is",
+"He has been learning English for a year.|Bir yıldır İngilizce öğreniyor.|He has been learning English since a year.|for|since,from",
+"They have been talking for hours.|Saatlerdir konuşuyorlar.|They has been talking for hours.|have|has,are",
+"I haven't been sleeping well lately.|Son zamanlarda iyi uyuyamıyorum.|I haven't been sleep well lately.|sleeping|sleep,slept",
+"Has he been waiting long?|Uzun zamandır mı bekliyor?|Has he been wait long?|Has|Have,Is",
+"We have been flying since six o'clock.|Altıdan beri uçuyoruz.|We have been flying for six o'clock.|since|for,ago"
+],
+"lvl": 2
+},
+{
+"name": "Past Perfect",
+"sub": "had + 3. hal: -mıştı",
+"intro": "Geçmişte iki olay varsa, daha önce olanı had + fiilin 3. hali ile anlatırsın. Türkçedeki -mıştı: Ben vardığımda uçak kalkmıştı.",
+"rows": [
+[
+"yapı",
+"had + fiilin 3. hali"
+],
+[
+"örnek",
+"The plane had left."
+],
+[
+"olumsuz",
+"hadn't left"
+],
+[
+"soru",
+"Had you eaten?"
+]
+],
+"tip": "had herkes için aynı: I had, she had, they had. İki geçmiş olaydan önce olanı had'li yap, sonrakini düz geçmiş bırak.",
+"items": [
+"The plane had left when I arrived.|Ben vardığımda uçak kalkmıştı.|The plane has left when I arrived.|had|has,have",
+"She had never seen snow before that day.|O güne kadar hiç kar görmemişti.|She had never saw snow before that day.|seen|saw,see",
+"I had already eaten when they called.|Aradıklarında çoktan yemek yemiştim.|I had already ate when they called.|eaten|ate,eat",
+"We had booked the hotel before the trip.|Oteli yolculuktan önce ayırtmıştık.|We had book the hotel before the trip.|booked|book,booking",
+"He hadn't finished the report yet.|Raporu henüz bitirmemişti.|He hadn't finish the report yet.|hadn't|haven't,didn't",
+"Had you met him before the party?|Partiden önce onunla tanışmış mıydın?|Had you meet him before the party?|Had|Did,Was",
+"The shop had closed when we got there.|Biz oraya vardığımızda dükkân kapanmıştı.|The shop had close when we got there.|closed|close,closing",
+"She was tired because she hadn't slept.|Uyumadığı için yorgundu.|She was tired because she didn't slept.|hadn't|didn't,doesn't",
+"They had lived in Izmir before they moved.|Taşınmadan önce İzmir'de yaşamışlardı.|They had live in Izmir before they moved.|lived|live,living",
+"The film had started when we sat down.|Biz oturduğumuzda film başlamıştı.|The film had start when we sat down.|started|start,starts"
+],
+"lvl": 2
+},
+{
+"name": "used to",
+"sub": "eskiden …-rdım, artık değil",
+"intro": "Eskiden yapıp artık yapmadığın şeyler: eskiden burada yaşardım, eskiden çok seyahat ederdik. Hepsi için tek kalıp: used to + yalın fiil.",
+"rows": [
+[
+"yapı",
+"used to + yalın fiil"
+],
+[
+"örnek",
+"I used to live here."
+],
+[
+"olumsuz",
+"didn't use to"
+],
+[
+"soru",
+"Did you use to …?"
+]
+],
+"tip": "Olumsuz ve soruda d düşer: didn't use to, Did you use to? Şimdiki alışkanlık için used to yok, usually de.",
+"items": [
+"I used to live in Ankara.|Eskiden Ankara'da yaşardım.|I use to live in Ankara.|used to|use to,using to",
+"She used to have long hair.|Eskiden saçları uzundu.|She used to having long hair.|have|having,has",
+"We used to play football every weekend.|Eskiden her hafta sonu futbol oynardık.|We used to played football every weekend.|used to|use to,using to",
+"He didn't use to like coffee.|Eskiden kahveyi sevmezdi.|He didn't used to like coffee.|use|used,uses",
+"Did you use to live here?|Eskiden burada mı yaşardın?|Did you used to live here?|use|used,using",
+"My neighbour used to work at the airport.|Komşum eskiden havalimanında çalışırdı.|My neighbour used to working at the airport.|work|working,works",
+"There used to be a cinema here.|Eskiden burada bir sinema vardı.|There used to is a cinema here.|be|is,was",
+"I didn't use to like flying.|Eskiden uçmayı sevmezdim.|I didn't used to like flying.|didn't|don't,wasn't",
+"They used to travel a lot.|Eskiden çok seyahat ederlerdi.|They use to travel a lot.|used to|use to,using to",
+"Did he use to be a pilot?|Eskiden pilot muydu?|Did he used to be a pilot?|Did|Does,Was"
+],
+"lvl": 2
+},
+{
+"name": "If 1: gerçek ihtimal",
+"sub": "olursa … olacak",
+"intro": "Gerçekten olabilecek şeyler: yağmur yağarsa evde kalırım. if tarafı geniş zaman, diğer taraf will. Türkçedeki -rsa / -rse.",
+"rows": [
+[
+"if tarafı",
+"geniş zaman: if it rains"
+],
+[
+"sonuç",
+"will: I will stay home"
+],
+[
+"örnek",
+"If it rains, I will stay home."
+],
+[
+"olumsuz",
+"If you don't hurry, you will miss it."
+]
+],
+"tip": "if'ten sonra asla will gelmez: \"If it will rain\" yok. if'li taraf geniş zaman, will öbür tarafta bekler.",
+"items": [
+"If it rains, I will stay home.|Yağmur yağarsa evde kalırım.|If it will rain, I will stay home.|rains|will rain,raining",
+"If you study, you will pass the exam.|Çalışırsan sınavı geçersin.|If you will study, you will pass the exam.|study|will study,studying",
+"She will be late if she misses the bus.|Otobüsü kaçırırsa geç kalacak.|She will be late if she will miss the bus.|misses|will miss,missing",
+"If the flight is late, we will call you.|Uçuş gecikirse sizi ararız.|If the flight will be late, we will call you.|is|will be,be",
+"We won't go if the weather is bad.|Hava kötüyse gitmeyiz.|We won't go if the weather will be bad.|is|will be,be",
+"If you don't hurry, you will miss the plane.|Acele etmezsen uçağı kaçıracaksın.|If you won't hurry, you will miss the plane.|don't|won't,doesn't",
+"I will help you if you need it.|İhtiyacın olursa sana yardım ederim.|I will help you if you will need it.|need|will need,needing",
+"If she calls, I will tell her.|Ararsa ona söylerim.|If she will call, I will tell her.|calls|will call,calling",
+"What will you do if it snows?|Kar yağarsa ne yapacaksın?|What will you do if it will snow?|snows|will snow,snowing",
+"If they arrive early, we will have lunch together.|Erken gelirlerse birlikte öğle yemeği yeriz.|If they will arrive early, we will have lunch together.|arrive|will arrive,arriving"
+],
+"lvl": 2
+},
+{
+"name": "If 2: hayal",
+"sub": "olsaydı … yapardım",
+"intro": "Gerçek olmayan, hayal şeyler: bir milyon dolarım olsaydı... if tarafı geçmiş zaman gibi görünür ama anlamı şimdi; diğer tarafta would.",
+"rows": [
+[
+"if tarafı",
+"geçmiş hali: if I had"
+],
+[
+"sonuç",
+"would + fiil"
+],
+[
+"örnek",
+"If I had money, I would travel."
+],
+[
+"özel",
+"If I were you, …"
+]
+],
+"tip": "Hayal cümlesinde be fiili herkes için were: If I were you. would'un kısası 'd: I'd buy a house.",
+"items": [
+"If I had a million dollars, I would travel.|Bir milyon dolarım olsaydı seyahat ederdim.|If I had a million dollars, I will travel.|would|will,am",
+"If I were you, I would take the job.|Yerinde olsam o işi kabul ederdim.|If I was you, I would take the job.|were|am,be",
+"She would be happier if she had more time.|Daha çok zamanı olsa daha mutlu olurdu.|She would be happier if she has more time.|had|has,have",
+"If he lived here, we would see him more.|Burada yaşasaydı onu daha çok görürdük.|If he lives here, we would see him more.|lived|lives,living",
+"I'd buy a house if I won the lottery.|Piyangoyu kazansam bir ev alırdım.|I'd buy a house if I win the lottery.|won|win,wins",
+"What would you do if you were rich?|Zengin olsaydın ne yapardın?|What would you do if you are rich?|were|are,be",
+"If we had a car, we wouldn't walk.|Arabamız olsaydı yürümezdik.|If we have a car, we wouldn't walk.|wouldn't|won't,don't",
+"He would call you if he knew your number.|Numaranı bilseydi seni arardı.|He would call you if he knows your number.|knew|knows,know",
+"If I were taller, I would play basketball.|Daha uzun olsaydım basketbol oynardım.|If I were taller, I will play basketball.|would|will,am",
+"Would you fly more if tickets were cheaper?|Biletler daha ucuz olsa daha çok uçar mıydın?|Would you fly more if tickets are cheaper?|Would|Will,Do"
+],
+"lvl": 2
+},
+{
+"name": "Edilgen yapı",
+"sub": "yapılır, yapıldı: -ılır, -ıldı",
+"intro": "Kimin yaptığı önemli değilse işi yapan değil, yapılan şey öne geçer: Bu peynir İtalya'da yapılır. Yapı: is / are / was / were + fiilin 3. hali.",
+"rows": [
+[
+"geniş zaman",
+"is / are + 3. hal: is made"
+],
+[
+"geçmiş",
+"was / were + 3. hal: was built"
+],
+[
+"örnek",
+"The rooms are cleaned every day."
+],
+[
+"yapan kişi",
+"by: It was written by my friend."
+]
+],
+"tip": "3. hali unutma: \"is make\" değil \"is made\". Tek şeyse is / was, çoksa are / were.",
+"items": [
+"This cheese is made in Italy.|Bu peynir İtalya'da yapılır.|This cheese is make in Italy.|made|make,makes",
+"The rooms are cleaned every day.|Odalar her gün temizlenir.|The rooms is cleaned every day.|are|is,be",
+"This hotel was built in 1990.|Bu otel 1990'da inşa edildi.|This hotel was build in 1990.|built|build,builds",
+"English is spoken all over the world.|İngilizce tüm dünyada konuşulur.|English is speak all over the world.|spoken|speak,speaks",
+"My bag was found at the airport.|Çantam havalimanında bulundu.|My bag was find at the airport.|found|find,finds",
+"Breakfast is served at seven.|Kahvaltı yedide servis edilir.|Breakfast is serve at seven.|served|serve,serving",
+"This book was written by my friend.|Bu kitap arkadaşım tarafından yazıldı.|This book was wrote by my friend.|written|wrote,write",
+"The flight was cancelled because of snow.|Uçuş kar yüzünden iptal edildi.|The flight cancelled because of snow.|was|were,did",
+"Is breakfast included in the price?|Kahvaltı fiyata dahil mi?|Is breakfast include in the price?|included|include,includes",
+"The tickets weren't checked.|Biletler kontrol edilmedi.|The tickets weren't check.|weren't|wasn't,didn't"
+],
+"lvl": 2
+},
+{
+"name": "who / which / that / where",
+"sub": "…-en, …-dığı: iki cümleyi bağla",
+"intro": "İki cümleyi tek cümle yapar: \"Bu, Roma'da yaşayan arkadaşım.\" İnsan için who, eşya için which, ikisi için de that, yer için where.",
+"rows": [
+[
+"insan",
+"who: the man who helped me"
+],
+[
+"eşya / hayvan",
+"which: the bag which I lost"
+],
+[
+"ikisi de",
+"that: the film that we saw"
+],
+[
+"yer",
+"where: the hotel where we stayed"
+]
+],
+"tip": "İnsana which deme: \"the woman which\" olmaz, who ya da that. Yer için where'den sonra yeni bir özne gelir: the city where I live.",
+"items": [
+"This is the friend who lives in Rome.|Bu, Roma'da yaşayan arkadaşım.|This is the friend which lives in Rome.|who|which,where",
+"That's the hotel where we stayed.|İşte kaldığımız otel.|That's the hotel which we stayed.|where|which,who",
+"I lost the bag which I bought in Paris.|Paris'te aldığım çantayı kaybettim.|I lost the bag who I bought in Paris.|which|who,where",
+"The pilot who flew us was very kind.|Bizi uçuran pilot çok nazikti.|The pilot which flew us was very kind.|who|which,where",
+"This is the city where I was born.|Bu, doğduğum şehir.|This is the city which I was born.|where|which,who",
+"The food that we ate was delicious.|Yediğimiz yemek nefisti.|The food where we ate was delicious.|that|where,who",
+"She is the woman who helped me.|O, bana yardım eden kadın.|She is the woman which helped me.|who|which,where",
+"Is this the train that goes to the airport?|Havalimanına giden tren bu mu?|Is this the train who goes to the airport?|that|who,where",
+"I love the restaurant where we met.|Tanıştığımız restoranı çok seviyorum.|I love the restaurant which we met.|where|which,who",
+"I need a phone which works abroad.|Yurt dışında çalışan bir telefon lazım.|I need a phone who works abroad.|which|who,where"
+],
+"lvl": 2
+},
+{
+"name": "might / may",
+"sub": "belki, olabilir: -ebilir",
+"intro": "Emin değilsen, \"belki\" diyorsan: might veya may. İkisi de aynı kapıya çıkar: It might rain = Yağmur yağabilir. Fiil yalın kalır.",
+"rows": [
+[
+"yapı",
+"might / may + yalın fiil"
+],
+[
+"olumsuz",
+"might not / may not"
+],
+[
+"örnek",
+"She might be late."
+],
+[
+"kibar izin",
+"May I sit here?"
+]
+],
+"tip": "might'tan sonra to yok, -s yok, -ing yok: He might come. \"Maybe\" ise ayrı bir kelime, cümle başına gelir: Maybe he will come.",
+"items": [
+"It might rain in Paris.|Paris'te yağmur yağabilir.|It maybe rain in Paris.|might|maybe,is",
+"She might be late.|Geç kalabilir.|She might is late.|might|is,does",
+"We may stay another night.|Bir gece daha kalabiliriz.|We may staying another night.|may|are,is",
+"I might not come to the party.|Partiye gelmeyebilirim.|I might not to come to the party.|might|maybe,am",
+"The flight may be delayed.|Uçuş gecikebilir.|The flight may delayed.|may|maybe,is",
+"May I open the window?|Pencereyi açabilir miyim?|May I to open the window?|May|Maybe,Am",
+"He might know the answer.|Cevabı biliyor olabilir.|He might knows the answer.|might|maybe,is",
+"They may not have time.|Vakitleri olmayabilir.|They may not having time.|may|maybe,are",
+"It might be cold in London.|Londra'da hava soğuk olabilir.|It might cold in London.|might|maybe,is",
+"You may need a jacket.|Bir monta ihtiyacın olabilir.|You may needing a jacket.|may|maybe,are"
+],
+"lvl": 2
+},
+{
+"name": "Dolaylı anlatım",
+"sub": "dedi ki…, söyledi",
+"intro": "Birinin sözünü aktarırken zaman bir adım geriye gider: \"I am tired\" → She said that she was tired. Türkçedeki \"yorgun olduğunu söyledi\" gibi.",
+"rows": [
+[
+"am / is / are",
+"→ was / were"
+],
+[
+"work, like (geniş)",
+"→ worked, liked"
+],
+[
+"will / can",
+"→ would / could"
+],
+[
+"said",
+"She said that…"
+],
+[
+"told + kişi",
+"She told me that…"
+]
+],
+"tip": "say'e kişi gelmez, tell'e gelir: She said that… ama She told me that… \"She said me\" yok!",
+"items": [
+"She said that she was tired.|Yorgun olduğunu söyledi.|She said me that she was tired.|was|am,were",
+"He told me that he was busy.|Bana meşgul olduğunu söyledi.|He told that he was busy.|told|said,say",
+"They said that they were hungry.|Aç olduklarını söylediler.|They told that they were hungry.|were|was,be",
+"She said that she would call me.|Beni arayacağını söyledi.|She said that she would called me.|would|was,is",
+"He told me that he could swim.|Bana yüzebildiğini söyledi.|He told me that he could to swim.|could|was,to",
+"My friend said that she lived in Rome.|Arkadaşım Roma'da yaşadığını söyledi.|My friend said that she living in Rome.|lived|live,living",
+"The pilot said that we were landing.|Pilot iniş yaptığımızı söyledi.|The pilot said that we was landing.|were|was,is",
+"He told us that the hotel was full.|Bize otelin dolu olduğunu söyledi.|He told to us that the hotel was full.|told|said,telled",
+"She said that she didn't like fish.|Balık sevmediğini söyledi.|She said that she didn't liked fish.|didn't|not,wasn't",
+"He told me that he had a meeting.|Bana toplantısı olduğunu söyledi.|He told me that he have a meeting.|had|have,having"
+],
+"lvl": 2
+},
+{
+"name": "Phrasal verbs",
+"sub": "fiil + küçük kelime = yeni anlam",
+"intro": "Fiilin yanına up, off, for gibi küçük bir kelime gelir ve anlam değişir: get = almak ama get up = kalkmak. İkiliyi tek kelimeymiş gibi ezberle.",
+"rows": [
+[
+"get up / wake up",
+"kalkmak / uyanmak"
+],
+[
+"look for / find out",
+"aramak / öğrenmek"
+],
+[
+"turn on / turn off",
+"açmak / kapatmak"
+],
+[
+"put on / take off",
+"giymek / çıkarmak (uçak: kalkmak)"
+],
+[
+"pick up / give up",
+"gidip almak / vazgeçmek"
+],
+[
+"run out of",
+"bitmek: We ran out of milk."
+]
+],
+"tip": "\"Onu, seni\" gibi zamirler araya girer: turn it off, pick you up. \"Turn off it\" yok! Küçük kelimeyi atarsan anlam da gider.",
+"items": [
+"I get up at six o'clock.|Saat altıda kalkarım.|I get at six o'clock.|up|for,of",
+"She is looking for her passport.|Pasaportunu arıyor.|She is looking to her passport.|for|off,of",
+"Please turn it off.|Lütfen onu kapat.|Please turn off it.|off|for,at",
+"Let's find out where the gate is.|Kapının nerede olduğunu öğrenelim.|Let's find up where the gate is.|out|up,off",
+"Don't give up!|Pes etme!|Don't give off!|up|off,for",
+"You should put it on.|Onu giymelisin.|You should put on it.|on|for,at",
+"The plane takes off at nine.|Uçak dokuzda kalkıyor.|The plane takes out at nine.|off|out,up",
+"I will pick you up at seven.|Seni yedide alırım.|I will pick up you at seven.|up|off,for",
+"Hurry up, the bus is coming!|Acele et, otobüs geliyor!|Hurry in, the bus is coming!|up|in,for",
+"We ran out of milk.|Sütümüz bitti.|We ran out milk.|out|off,up"
+],
+"lvl": 2
+},
+{
+"name": "a few / a little",
+"sub": "birkaç, biraz",
+"intro": "Sayılabilen şeyler için a few (birkaç), sayılamayanlar için a little (biraz). Baştaki \"a\" düşerse tat değişir: few / little = çok az, yetmiyor.",
+"rows": [
+[
+"sayılan: friends, days",
+"a few = birkaç"
+],
+[
+"sayılamayan: time, money",
+"a little = biraz"
+],
+[
+"few / little",
+"çok az, yetersiz (olumsuz tat)"
+],
+[
+"örnek",
+"a few friends, a little milk"
+]
+],
+"tip": "Hile: \"birkaç tane\" diyebiliyorsan a few, sadece \"biraz\" diyorsan a little. Money, time, water, sugar hep a little.",
+"items": [
+"I have a few friends in London.|Londra'da birkaç arkadaşım var.|I have a little friends in London.|few|little,much",
+"We have a little time before the flight.|Uçuştan önce biraz vaktimiz var.|We have a few time before the flight.|little|few,many",
+"Can I have a little milk, please?|Biraz süt alabilir miyim, lütfen?|Can I have a few milk, please?|little|few,many",
+"She speaks a little English.|Biraz İngilizce konuşuyor.|She speaks a few English.|little|few,some",
+"There are a few shops near the hotel.|Otelin yakınında birkaç dükkan var.|There are a little shops near the hotel.|few|little,much",
+"I need a few minutes.|Birkaç dakikaya ihtiyacım var.|I need a little minutes.|few|little,much",
+"I drink very little coffee.|Çok az kahve içerim.|I drink very few coffee.|little|few,many",
+"There is little time left.|Çok az vakit kaldı.|There is few time left.|little|few,many",
+"Buy a few apples for the trip.|Yolculuk için birkaç elma al.|Buy a little apples for the trip.|few|little,much",
+"Very few people like cold tea.|Çok az kişi soğuk çay sever.|Very little people like cold tea.|few|little,much"
+],
+"lvl": 2
+},
+{
+"name": "Onay soruları",
+"sub": "…, değil mi?",
+"intro": "Türkçede her cümlenin sonuna \"değil mi?\" ekleriz. İngilizcede bu kuyruk cümleye göre değişir: olumlu cümleye olumsuz kuyruk, olumsuz cümleye olumlu kuyruk.",
+"rows": [
+[
+"It is cold,",
+"isn't it?"
+],
+[
+"You can swim,",
+"can't you?"
+],
+[
+"She doesn't like fish,",
+"does she?"
+],
+[
+"They went home,",
+"didn't they?"
+],
+[
+"I am late,",
+"aren't I?"
+]
+],
+"tip": "Kuyruk, cümledeki yardımcıyı kullanır: is → isn't, can → can't, yalın fiil varsa don't / doesn't / didn't. Cümle olumsuzsa kuyruk olumlu olur.",
+"items": [
+"It's very cold, isn't it?|Hava çok soğuk, değil mi?|It's very cold, doesn't it?|isn't|doesn't,aren't",
+"You can swim, can't you?|Yüzebiliyorsun, değil mi?|You can swim, don't you?|can't|don't,aren't",
+"She likes coffee, doesn't she?|Kahve seviyor, değil mi?|She likes coffee, isn't she?|doesn't|isn't,don't",
+"They went home, didn't they?|Eve gittiler, değil mi?|They went home, weren't they?|didn't|weren't,don't",
+"You're a flight attendant, aren't you?|Sen kabin memurusun, değil mi?|You're a flight attendant, isn't you?|aren't|isn't,don't",
+"He isn't here, is he?|O burada değil, değil mi?|He isn't here, isn't he?|is|isn't,does",
+"We don't have much time, do we?|Pek vaktimiz yok, değil mi?|We don't have much time, don't we?|do|don't,are",
+"The flight was late, wasn't it?|Uçuş gecikti, değil mi?|The flight was late, didn't it?|wasn't|didn't,isn't",
+"You will call me, won't you?|Beni arayacaksın, değil mi?|You will call me, don't you?|won't|don't,aren't",
+"I'm late, aren't I?|Geç kaldım, değil mi?|I'm late, amn't I?|aren't|amn't,isn't"
+],
+"lvl": 2
+},
+{
+"name": "Kibar sorular",
+"sub": "Acaba … söyler misiniz?",
+"intro": "Soruyu kibar bir kalıbın içine koyunca sıra düz cümle gibi olur: Where is the gate? → Can you tell me where the gate is? is / do başa gelmez.",
+"rows": [
+[
+"kalıp",
+"Can you tell me… / Do you know…"
+],
+[
+"direkt",
+"Where is the gate?"
+],
+[
+"kibar",
+"Can you tell me where the gate is?"
+],
+[
+"evet / hayır sorusu",
+"Do you know if it is open?"
+]
+],
+"tip": "Kalıptan sonra do / does / did kaybolur: Do you know where she lives? (where does she live değil.)",
+"items": [
+"Can you tell me where the gate is?|Kapının nerede olduğunu söyler misiniz?|Can you tell me where is the gate?|is|are,does",
+"Do you know what time it is?|Saatin kaç olduğunu biliyor musunuz?|Do you know what time is it?|is|are,does",
+"Could you tell me how much this costs?|Bunun ne kadar olduğunu söyleyebilir misiniz?|Could you tell me how much does this cost?|costs|cost,costing",
+"Do you know if the shop is open?|Dükkanın açık olup olmadığını biliyor musunuz?|Do you know if is the shop open?|if|what,does",
+"Can you tell me when the bus leaves?|Otobüsün ne zaman kalktığını söyler misiniz?|Can you tell me when does the bus leave?|leaves|leave,leaving",
+"Do you know where I can buy a ticket?|Nereden bilet alabileceğimi biliyor musunuz?|Do you know where can I buy a ticket?|can|am,does",
+"Do you know how far the airport is?|Havalimanının ne kadar uzak olduğunu biliyor musunuz?|Do you know how far is the airport?|is|are,does",
+"I wonder if she is at home.|Acaba evde mi?|I wonder if is she at home.|if|does,what",
+"Do you know when the museum opens?|Müzenin ne zaman açıldığını biliyor musunuz?|Do you know when does the museum open?|opens|open,opening",
+"Could you tell me where the toilets are?|Tuvaletlerin nerede olduğunu söyleyebilir misiniz?|Could you tell me where are the toilets?|are|is,do"
+],
+"lvl": 2
+},
+{
+"name": "So do I / Neither do I",
+"sub": "ben de / ben de değil",
+"intro": "Biri bir şey dedi, sen de aynısın: \"Ben de!\" Olumluya So do I, olumsuza Neither do I. Ortadaki kelime cümledeki yardımcıya göre değişir: am, can, did…",
+"rows": [
+[
+"I like tea.",
+"So do I."
+],
+[
+"I am tired.",
+"So am I."
+],
+[
+"I can swim.",
+"So can I."
+],
+[
+"I don't like fish.",
+"Neither do I."
+],
+[
+"I can't drive.",
+"Neither can I."
+],
+[
+"kısa yol",
+"Me too. / Me neither."
+]
+],
+"tip": "\"Ben de\" derken yardımcıya bak: She went → So did I. Olumsuzda \"So don't I\" yok, Neither do I var. Kısa yol: Me too. / Me neither.",
+"items": [
+"I love tea, and so does my husband.|Çayı severim, kocam da.|I love tea, and so do my husband.|does|do,is",
+"She can't swim, and neither can I.|O yüzemiyor, ben de.|She can't swim, and so can I.|neither|so,either",
+"He was late, and so were we.|O geç kaldı, biz de.|He was late, and so was we.|were|was,did",
+"I don't like fish, and neither does she.|Balık sevmem, o da sevmez.|I don't like fish, and neither do she.|does|do,is",
+"They went to Rome, and so did we.|Onlar Roma'ya gitti, biz de.|They went to Rome, and so went we.|did|went,were",
+"I'm hungry, and so is my daughter.|Ben açım, kızım da.|I'm hungry, and so does my daughter.|is|does,am",
+"She speaks French, and so do I.|O Fransızca konuşuyor, ben de.|She speaks French, and so does I.|do|does,am",
+"We aren't ready, and neither are they.|Biz hazır değiliz, onlar da değil.|We aren't ready, and neither do they.|are|do,is",
+"I didn't sleep well, and neither did he.|İyi uyumadım, o da uyumadı.|I didn't sleep well, and neither he did.|neither|so,either",
+"I can't cook, and neither can my husband.|Yemek yapamam, kocam da yapamaz.|I can't cook, and neither can't my husband.|can|does,is"
+],
+"lvl": 2
+},
+{
+"name": "If 3: geçmişe pişmanlık",
+"sub": "bilseydim, gelirdim",
+"intro": "Geçmişte olmayan bir şeyi hayal etmek: \"Bilseydim gelirdim.\" İş işten geçmiş, artık sadece hayıflanıyoruz. Türkçedeki -seydi, -erdi ikilisi.",
+"rows": [
+[
+"if tarafı",
+"if + had + fiilin 3. hali"
+],
+[
+"sonuç tarafı",
+"would have + fiilin 3. hali"
+],
+[
+"örnek",
+"If I had known, I would have come."
+],
+[
+"olumsuz",
+"hadn't … / wouldn't have …"
+]
+],
+"tip": "İki tarafı karıştırma: if tarafında had, sonuç tarafında would have. \"If I would have known\" diye bir şey yok!",
+"items": [
+"If I had known, I would have come.|Bilseydim gelirdim.|If I would have known, I would have come.|known|know,knew",
+"If we had hurried, we wouldn't have missed it.|Acele etseydik kaçırmazdık.|If we had hurried, we wouldn't missed it.|hurried|hurry,hurrying",
+"She would have called you if she had known.|Bilseydi seni arardı.|She would have call you if she had known.|called|call,calls",
+"If it hadn't rained, we would have gone out.|Yağmur yağmasaydı dışarı çıkardık.|If it hadn't rained, we would gone out.|hadn't|haven't,hasn't",
+"If I had seen you, I would have waved.|Seni görseydim el sallardım.|If I had seen you, I would have wave.|would|will,did",
+"What would you have done?|Sen olsan ne yapardın?|What would you have did?|done|did,do",
+"If you had asked, I would have helped.|Sorsaydın yardım ederdim.|If you had asked, I would have help.|helped|help,helping",
+"If he had run, he wouldn't have been late.|Koşsaydı geç kalmazdı.|If he has run, he wouldn't have been late.|wouldn't|didn't,hadn't",
+"If they had come, they would have loved it.|Gelselerdi çok severlerdi.|If they had come, they would loved it.|would have|would,would has",
+"If I had studied, I would have passed.|Çalışsaydım geçerdim.|If I had study, I would have passed.|studied|study,studying"
+],
+"lvl": 3
+},
+{
+"name": "wish / if only",
+"sub": "keşke…",
+"intro": "Türkçedeki \"keşke\" bu. Şimdiki durum için bir adım geriye git (geçmiş zaman), geçmişteki bir şey için iki adım (had + 3. hal).",
+"rows": [
+[
+"şimdi için",
+"I wish I had more time."
+],
+[
+"geçmiş için",
+"I wish I hadn't eaten so much."
+],
+[
+"if only",
+"= wish, biraz daha duygusal"
+],
+[
+"was yerine",
+"I wish I were there."
+]
+],
+"tip": "wish'ten sonra geniş zaman gelmez: \"I wish I have\" değil, \"I wish I had\". Hep bir adım geriye!",
+"items": [
+"I wish I had more time.|Keşke daha çok vaktim olsa.|I wish I have more time.|had|have,has",
+"I wish I hadn't eaten so much.|Keşke o kadar yemeseydim.|I wish I hadn't ate so much.|hadn't|didn't,haven't",
+"She wishes she lived by the sea.|Keşke deniz kenarında yaşasam diyor.|She wishes she lives by the sea.|lived|lives,living",
+"If only I could speak Spanish!|Keşke İspanyolca konuşabilsem!|If only I can speak Spanish!|could|can,able",
+"I wish I were on holiday now.|Keşke şu an tatilde olsam.|I wish I am on holiday now.|were|am,be",
+"We wish we had booked earlier.|Keşke daha erken rezervasyon yapsaydık.|We wish we have booked earlier.|had|have,did",
+"If only the flight weren't so long!|Keşke uçuş bu kadar uzun olmasa!|If only the flight isn't so long!|weren't|isn't,aren't",
+"I wish you were here.|Keşke burada olsan.|I wish you are here.|were|are,be",
+"He wishes he hadn't sold his car.|Keşke arabamı satmasaydım diyor.|He wishes he didn't sold his car.|hadn't|didn't,hasn't",
+"I wish I knew the answer.|Keşke cevabı bilsem.|I wish I know the answer.|knew|know,knows"
+],
+"lvl": 3
+},
+{
+"name": "should / could have",
+"sub": "yapmalıydın, yapabilirdin",
+"intro": "Geçmişe dönüp yorum yapmak: \"Aramalıydın\" (should have), \"gelebilirdin\" (could have), \"ben olsam giderdim\" (would have).",
+"rows": [
+[
+"should have",
+"yapmalıydın (ama yapmadın)"
+],
+[
+"shouldn't have",
+"yapmamalıydın (ama yaptın)"
+],
+[
+"could have",
+"yapabilirdin (ama olmadı)"
+],
+[
+"would have",
+"ben olsam yapardım"
+],
+[
+"yapı",
+"modal + have + fiilin 3. hali"
+]
+],
+"tip": "have hiç değişmez, arkasından hep 3. hal gelir: should have called. \"should called\" ya da \"should have call\" yok.",
+"items": [
+"You should have called me.|Beni aramalıydın.|You should called me.|called|call,calling",
+"I shouldn't have eaten so much.|O kadar yememeliydim.|I shouldn't have ate so much.|eaten|ate,eat",
+"We could have taken a taxi.|Taksiye binebilirdik.|We could have took a taxi.|taken|took,take",
+"She would have loved the view.|Manzaraya bayılırdı.|She would loved the view.|would|did,is",
+"You could have told me earlier!|Bana daha önce söyleyebilirdin!|You could told me earlier!|have|had,has",
+"He should have booked a hotel.|Otel ayırtmalıydı.|He should have book a hotel.|booked|book,booking",
+"I would have done the same.|Ben de aynısını yapardım.|I would have did the same.|done|did,do",
+"They shouldn't have left so early.|O kadar erken ayrılmamalıydılar.|They shouldn't left so early.|shouldn't|didn't,weren't",
+"You should have seen her face!|Yüzünü görmeliydin!|You should have saw her face!|seen|saw,see",
+"We could have missed the plane.|Uçağı kaçırabilirdik.|We could have miss the plane.|missed|miss,missing"
+],
+"lvl": 3
+},
+{
+"name": "must / can't / might be",
+"sub": "tahmin: kesin, olamaz, belki",
+"intro": "Bir şeyi görüp tahmin yürütmek. Eminsen must (kesin yorgundur), imkânsızsa can't (olamaz), emin değilsen might (olabilir).",
+"rows": [
+[
+"%90 eminim",
+"must be → kesin öyledir"
+],
+[
+"imkânsız",
+"can't be → olamaz"
+],
+[
+"belki",
+"might be / may be → olabilir"
+],
+[
+"fiille de olur",
+"must be sleeping, might know"
+]
+],
+"tip": "Tahminin olumsuzu mustn't değil can't: \"Yalnız olamaz\" → She can't be alone. Hepsinden sonra fiil yalın kalır: must be.",
+"items": [
+"You must be tired after that flight.|O uçuştan sonra kesin yorgunsundur.|You must are tired after that flight.|be|are,is",
+"That can't be true!|Bu doğru olamaz!|That mustn't be true!|can't|mustn't,don't",
+"She might be at the gate.|Kapıda olabilir.|She might is at the gate.|might|is,does",
+"He must be the new pilot.|Yeni pilot o olmalı.|He must to be the new pilot.|must|has,is",
+"They can't be home yet.|Henüz evde olamazlar.|They can't are home yet.|be|are,is",
+"You must be joking!|Şaka yapıyor olmalısın!|You must joking!|be|are,being",
+"The shop might be closed now.|Dükkân şu an kapalı olabilir.|The shop might closed now.|might|is,does",
+"This can't be the right gate.|Doğru kapı bu olamaz.|This can't to be the right gate.|can't|isn't,doesn't",
+"She must be very proud of you.|Seninle çok gurur duyuyor olmalı.|She must is very proud of you.|must|is,has",
+"He may not be at work.|İşte olmayabilir.|He may not is at work.|may|is,does"
+],
+"lvl": 3
+},
+{
+"name": "Gelişmiş edilgen",
+"sub": "has been done, will be done",
+"intro": "Edilgen = işi yapan değil, yapılan şey önemli. Zaman ne olursa olsun formül aynı: be'nin o zamandaki hali + fiilin 3. hali.",
+"rows": [
+[
+"şimdiye kadar",
+"has / have been done"
+],
+[
+"gelecek",
+"will be done"
+],
+[
+"modal ile",
+"can / must be done"
+],
+[
+"olumsuz",
+"hasn't been done, won't be done"
+]
+],
+"tip": "Zaman be'ye yüklenir, fiil hep 3. halde kalır: will be done (will be do değil), has been cleaned.",
+"items": [
+"Your room has been cleaned.|Odanız temizlendi.|Your room has cleaned.|been|be,being",
+"The flight has been cancelled.|Uçuş iptal edildi.|The flight has been cancel.|cancelled|cancel,cancelling",
+"Dinner will be served at seven.|Akşam yemeği yedide servis edilecek.|Dinner will serve at seven.|served|serve,serving",
+"Tickets can be bought online.|Biletler internetten alınabilir.|Tickets can be buy online.|bought|buy,buying",
+"The bags haven't been loaded yet.|Bavullar henüz yüklenmedi.|The bags haven't loaded yet.|been|be,being",
+"You will be picked up at the hotel.|Otelden alınacaksınız.|You will picked up at the hotel.|be|are,been",
+"This form must be signed.|Bu form imzalanmalı.|This form must be sign.|signed|sign,signing",
+"Has your luggage been found?|Bavulun bulundu mu?|Has your luggage found?|been|be,being",
+"The gate has been changed.|Kapı değiştirildi.|The gate has been change.|changed|change,changing",
+"Our bags will be delivered to the room.|Bavullarımız odaya getirilecek.|Our bags will delivered to the room.|delivered|deliver,delivering"
+],
+"lvl": 3
+},
+{
+"name": "have something done",
+"sub": "yaptırmak: saçımı kestirdim",
+"intro": "İşi kendin yapmıyorsun, birine yaptırıyorsun. Türkçedeki -tır, -dır eki: kestirdim, boyattım, tamir ettirdik.",
+"rows": [
+[
+"yapı",
+"have + şey + fiilin 3. hali"
+],
+[
+"örnek",
+"I had my hair cut."
+],
+[
+"get de olur",
+"I got my phone fixed."
+],
+[
+"karşılaştır",
+"I cut my hair = kendim kestim"
+]
+],
+"tip": "Sıra önemli: önce şey, sonra fiil. \"I had cut my hair\" = kendim kestim, \"I had my hair cut\" = kestirdim.",
+"items": [
+"I had my hair cut.|Saçımı kestirdim.|I had my hair cutting.|cut|cutting,cuts",
+"She had her car washed.|Arabasını yıkattı.|She had her car washing.|washed|washing,washes",
+"We got the room cleaned.|Odayı temizlettik.|We got the room cleaning.|cleaned|cleaning,cleans",
+"I need to get my phone fixed.|Telefonumu tamir ettirmem lazım.|I need to get my phone fix.|fixed|fix,fixing",
+"He had his suit made in Italy.|Takımını İtalya'da diktirdi.|He had his suit make in Italy.|made|make,making",
+"Did you have your eyes checked?|Gözlerini kontrol ettirdin mi?|Did you have your eyes check?|checked|check,checking",
+"We're having the house painted.|Evi boyatıyoruz.|We're having the house paint.|painted|paint,painting",
+"I got my passport renewed.|Pasaportumu yenilettim.|I got my passport renew.|renewed|renew,renewing",
+"She always has her nails done.|Tırnaklarını hep yaptırır.|She always has her nails do.|done|do,doing",
+"You should have your bag weighed.|Bavulunu tarttırmalısın.|You should have your bag weigh.|weighed|weigh,weighing"
+],
+"lvl": 3
+},
+{
+"name": "will be -ing / will have",
+"sub": "uçuyor olacağım, inmiş olacağım",
+"intro": "Gelecekteki bir ana bakıyoruz. O anda iş sürüyorsa will be + -ing (uçuyor olacağım), o ana kadar bitmişse will have + 3. hal (inmiş olacağım).",
+"rows": [
+[
+"sürüyor olacak",
+"will be + fiil-ing"
+],
+[
+"",
+"I will be flying at 9."
+],
+[
+"bitmiş olacak",
+"will have + fiilin 3. hali"
+],
+[
+"",
+"I will have landed by 10."
+],
+[
+"ipucu",
+"by = -e kadar → will have"
+]
+],
+"tip": "by (…-e kadar) gördün mü will have: By Friday I will have finished. \"at 9\" gibi bir an gördün mü will be -ing.",
+"items": [
+"I will be flying at this time tomorrow.|Yarın bu saatte uçuyor olacağım.|I will flying at this time tomorrow.|flying|fly,flew",
+"We will have landed by ten.|Ona kadar inmiş olacağız.|We will have land by ten.|landed|land,landing",
+"She will be working all weekend.|Bütün hafta sonu çalışıyor olacak.|She will working all weekend.|be|is,been",
+"I will have finished the course by June.|Hazirana kadar kursu bitirmiş olacağım.|I will have finish the course by June.|finished|finish,finishing",
+"Will you be using the car tonight?|Bu gece arabayı kullanıyor olacak mısın?|Will you using the car tonight?|be|are,been",
+"They will have eaten by the time we arrive.|Biz varana kadar yemiş olacaklar.|They will have ate by the time we arrive.|eaten|ate,eat",
+"I'll be sleeping at that time.|O saatte uyuyor olacağım.|I'll be sleep at that time.|sleeping|sleep,slept",
+"He will have left by then.|O zamana kadar gitmiş olacak.|He will has left by then.|have|has,had",
+"The passengers will be boarding soon.|Yolcular birazdan uçağa biniyor olacak.|The passengers will boarding soon.|boarding|board,boards",
+"We will have sold the car by May.|Mayısa kadar arabayı satmış olacağız.|We will have sell the car by May.|sold|sell,selling"
+],
+"lvl": 3
+},
+{
+"name": "although / despite / however",
+"sub": "rağmen, yine de",
+"intro": "Hepsi \"ama\"nın şık halleri. although'dan sonra tam cümle, despite'tan sonra isim ya da -ing gelir. however yeni cümlenin başına, virgülle.",
+"rows": [
+[
+"although + cümle",
+"Although it rained, we went out."
+],
+[
+"despite + isim / -ing",
+"Despite the rain, we went out."
+],
+[
+"however, …",
+"It rained. However, we went out."
+],
+[
+"dikkat",
+"despite of ✗ → in spite of ✓"
+]
+],
+"tip": "despite'tan sonra asla tam cümle gelmez: \"despite it was late\" yok; ya \"despite the time\" ya da \"although it was late\".",
+"items": [
+"Although it was raining, we went out.|Yağmur yağmasına rağmen dışarı çıktık.|Despite it was raining, we went out.|Although|Despite,However",
+"Despite the rain, we enjoyed the trip.|Yağmura rağmen geziyi çok sevdik.|Despite of the rain, we enjoyed the trip.|Despite|Although,However",
+"However, the room was very small.|Ancak oda çok küçüktü.|Although, the room was very small.|However|Although,Despite",
+"Although she was tired, she kept smiling.|Yorgun olmasına rağmen gülümsemeye devam etti.|Although she was tired, but she kept smiling.|Although|Despite,However",
+"Despite the delay, he was calm.|Rötara rağmen sakindi.|Despite of the delay, he was calm.|Despite|Although,However",
+"We went swimming although the water was cold.|Su soğuk olmasına rağmen yüzmeye gittik.|We went swimming despite the water was cold.|although|despite,however",
+"He went to work despite his headache.|Baş ağrısına rağmen işe gitti.|He went to work despite he had a headache.|despite|although,however",
+"However, I still love this city.|Yine de bu şehri hâlâ seviyorum.|Despite, I still love this city.|However|Despite,Although",
+"Although the flight was long, it was comfortable.|Uçuş uzun olmasına rağmen rahattı.|Despite the flight was long, it was comfortable.|Although|Despite,However",
+"In spite of the traffic, we arrived on time.|Trafiğe rağmen zamanında vardık.|In spite the traffic, we arrived on time.|In spite of|Despite of,Although of"
+],
+"lvl": 3
+},
+{
+"name": "unless, as long as, in case",
+"sub": "-medikçe, -dığı sürece, diye",
+"intro": "Üç küçük şart kelimesi: unless = -mezsen (if not), as long as = -dığı sürece, in case = olur diye (önlem için).",
+"rows": [
+[
+"unless",
+"-mezsen: Unless you hurry, …"
+],
+[
+"as long as",
+"-dığı sürece: as long as you call"
+],
+[
+"in case",
+"… olur diye: Take a coat in case."
+],
+[
+"dikkat",
+"unless + not olmaz, zaten olumsuz"
+]
+],
+"tip": "in case ≠ if: \"Yağarsa şemsiye al\" değil, \"yağar diye şemsiye al\" → Take an umbrella in case it rains.",
+"items": [
+"You'll miss the bus unless you hurry.|Acele etmezsen otobüsü kaçırırsın.|You'll miss the bus unless you don't hurry.|unless|except,without",
+"You can stay as long as you're quiet.|Sessiz olduğun sürece kalabilirsin.|You can stay as long you're quiet.|as long as|as long,so long",
+"Take a jacket in case it gets cold.|Soğur diye yanına ceket al.|Take a jacket in case of it gets cold.|in case|in case of,for case",
+"I won't go unless you come with me.|Sen de gelmezsen gitmem.|I won't go unless you don't come with me.|unless|except,if not",
+"We'll be fine as long as it's on time.|Zamanında olduğu sürece sorun yok.|We'll be fine as long it's on time.|as long as|as long,long as",
+"Keep the receipt in case you need it.|Lazım olur diye fişi sakla.|Keep the receipt in case of you need it.|in case|in case of,if case",
+"Unless it rains, we'll eat outside.|Yağmur yağmazsa dışarıda yeriz.|Unless it doesn't rain, we'll eat outside.|Unless|Except,Without",
+"Save my number in case you get lost.|Kaybolursun diye numaramı kaydet.|Save my number in case of you get lost.|in case|in case of,at case",
+"As long as you're careful, it's safe.|Dikkatli olduğun sürece güvenli.|As long you're careful, it's safe.|As long as|As long,So long",
+"Unless you book now, there won't be seats.|Şimdi rezervasyon yapmazsan koltuk kalmaz.|Unless you don't book now, there won't be seats.|Unless|Except,Without"
+],
+"lvl": 3
+},
+{
+"name": "Dolaylı soru ve emir",
+"sub": "nerede yaşadığımı sordu",
+"intro": "Birinin sorusunu ya da emrini aktarmak. Soruda sıra düz cümleye döner (where I lived), emirde to + fiil gelir (told me to wait).",
+"rows": [
+[
+"soru",
+"She asked me where I lived."
+],
+[
+"evet / hayır sorusu",
+"He asked if I was ready."
+],
+[
+"emir",
+"He told me to wait."
+],
+[
+"olumsuz emir",
+"She told me not to worry."
+],
+[
+"dikkat",
+"do / does / did kaybolur, sıra düz"
+]
+],
+"tip": "Aktarırken soru sırası kalmaz, düz cümle olur: \"She asked where I lived\" (where did I live değil). Zaman da bir adım geriye gider.",
+"items": [
+"She asked me where I lived.|Bana nerede yaşadığımı sordu.|She asked me where did I live.|lived|living,lives",
+"He told me to wait.|Bana beklememi söyledi.|He told me wait.|to|for,that",
+"They asked if the flight was late.|Uçağın rötarlı olup olmadığını sordular.|They asked if was the flight late.|if|that,what",
+"The pilot told us to sit down.|Pilot bize oturmamızı söyledi.|The pilot told us sit down.|to|for,must",
+"She asked me what time it was.|Bana saatin kaç olduğunu sordu.|She asked me what time was it.|was|were,been",
+"He told me not to worry.|Bana endişelenmememi söyledi.|He told me don't worry.|not|no,don't",
+"I asked him why he was late.|Ona neden geç kaldığını sordum.|I asked him why was he late.|why|that,for",
+"The officer asked me to open my bag.|Görevli benden çantamı açmamı istedi.|The officer asked me open my bag.|to|for,that",
+"She asked if I could help her.|Ona yardım edip edemeyeceğimi sordu.|She asked if could I help her.|could|able,am",
+"They told us not to take photos.|Bize fotoğraf çekmememizi söylediler.|They told us to don't take photos.|not|no,don't"
+],
+"lvl": 3
+}
 ];
-
-const GRAM = GRAM_RAW.map((t, ti) => Object.assign({}, t, { i: ti, items: t.items.trim().split("\n").map((l, i) => {
+const GLEVELS = [
+  { name: "A1 · Başlangıç", sub: "olmak, var, şimdi, soru sormak" },
+  { name: "A2 · Temel", sub: "geçmiş, gelecek, karşılaştırma" },
+  { name: "B1 · Orta", sub: "if cümleleri, edilgen, dolaylı anlatım" },
+  { name: "B2 · İleri", sub: "pişmanlık, tahmin, ince ayar" }
+];
+const gslug = s => s.toLowerCase().replace(/[^a-z0-9ğüşıöç]+/g, "-");
+const GRAM = GRAM_RAW.map((t, ti) => Object.assign({}, t, { i: ti, key: gslug(t.name), items: (Array.isArray(t.items) ? t.items : t.items.trim().split("\n")).map((l, i) => {
   const p = l.split("|"); return { id: "g" + ti + "-" + i, g: true, t: ti, en: p[0], tr: p[1], bad: p[2], gap: p[3], opts: p[4].split(",") };
 }) }));
 
@@ -832,7 +2811,7 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* ---------- State ---------- */
 const KEY = "sunflower-english-v1";
-const fresh = () => ({ v: 1, name: "", xp: 0, days: {}, streak: 0, best: 0, lastDay: -1, words: {}, active: 0, sound: true, sprintBest: 0, lessons: 0, gram: {}, updated: 0 });
+const fresh = () => ({ v: 1, name: "", xp: 0, days: {}, streak: 0, best: 0, lastDay: -1, words: {}, active: 0, sound: true, sprintBest: 0, lessons: 0, gram: {}, gopen: {}, gfocus: 0, updated: 0 });
 let S = fresh();
 try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(fresh(), JSON.parse(raw)); } catch (e) {}
 
@@ -856,10 +2835,18 @@ const curStreak = () => (S.lastDay >= today() - 1 ? S.streak : 0);
 const unitUnlocked = u => u.ph || u.i === 0 || UNITS[u.i - 1].items.every(seen);
 const dueList = () => { const t = today(); return ITEMS.filter(i => { const w = W(i); return w && w.s && (w.d ?? 0) <= t; }); };
 
-const gDone = t => !!(S.gram && S.gram[t] && S.gram[t].n);
-const gUnlocked = t => t === 0 || gDone(t - 1);
-const gStars = t => { const r = S.gram && S.gram[t]; if (!r || !r.n) return 0; return r.best >= 100 ? 3 : r.best >= 80 ? 2 : 1; };
-const gNext = () => GRAM.find(g => gUnlocked(g.i) && !gDone(g.i)) || GRAM.find(g => gStars(g.i) < 3) || GRAM[0];
+const OLD_GRAM = ["am / is / are", "have / has", "Geniş zaman", "Şimdiki zaman", "can", "was / were", "Geçmiş zaman", "will / going to", "there is / there are", "Soru kurma", "Karşılaştırma", "in / on / at"];
+function migrateGram() {
+  if (!S.gram) S.gram = {}; if (!S.gopen) S.gopen = {};
+  for (const k of Object.keys(S.gram)) if (/^\d+$/.test(k)) { const nk = OLD_GRAM[+k] ? gslug(OLD_GRAM[+k]) : ""; if (nk && !S.gram[nk]) S.gram[nk] = S.gram[k]; delete S.gram[k]; }
+}
+migrateGram();
+const gRec = t => S.gram && S.gram[GRAM[t].key];
+const gDone = t => !!(gRec(t) && gRec(t).n);
+const gFirstOfLvl = t => t === 0 || GRAM[t - 1].lvl !== GRAM[t].lvl;
+const gUnlocked = t => t === 0 || gDone(t - 1) || (gFirstOfLvl(t) && !!(S.gopen && S.gopen[GRAM[t].lvl]));
+const gStars = t => { const r = gRec(t); if (!r || !r.n) return 0; return r.best >= 100 ? 3 : r.best >= 80 ? 2 : 1; };
+const gNext = () => { const f = S.gfocus || 0; return GRAM.find(g => g.lvl >= f && gUnlocked(g.i) && !gDone(g.i)) || GRAM.find(g => gUnlocked(g.i) && !gDone(g.i)) || GRAM.find(g => gStars(g.i) < 3) || GRAM[0]; };
 const starStr = n => "★".repeat(n) + "☆".repeat(3 - n);
 const gDoneItems = () => GRAM.filter(g => gDone(g.i)).flatMap(g => g.items);
 function markSeen(i) {
@@ -1040,7 +3027,7 @@ function renderHome() {
       <span><b>${done ? "Bir tur daha" : S.lessons ? "Günün dersi" : "İlk dersi başlat"}</b><small>≈ 5 dk · ${newCount} yeni${due ? ", " + Math.min(due, 8) + " tekrar" : ""}</small></span>
       <span class="go">${IC.go}</span>
     </button>
-    ${(() => { const g = gNext(), d = gDone(g.i); return `<button class="unit gramhome" data-act="gram" data-t="${g.i}"><span class="num">Aa</span><span class="body"><h3>Gramer: ${esc(g.name)}</h3><small>${d ? "Yıldızları tamamla " + starStr(gStars(g.i)) : "Yeni konu · ≈ 3 dk · " + esc(g.sub)}</small></span><span class="tag">${d ? "Tekrar" : "Başla"}</span></button>`; })()}
+    ${(() => { const g = gNext(), d = gDone(g.i); return `<button class="unit gramhome" data-act="gram" data-t="${g.i}"><span class="num">Aa</span><span class="body"><h3>Gramer: ${esc(g.name)}</h3><small>${esc(GLEVELS[g.lvl].name.split(" · ")[0])} · ${d ? "Yıldızları tamamla " + starStr(gStars(g.i)) : "Yeni konu · ≈ 3 dk · " + esc(g.sub)}</small></span><span class="tag">${d ? "Tekrar" : "Başla"}</span></button>`; })()}
     <div class="goalcard"><div class="row"><span>Günlük hedef</span><span class="muted" style="font-variant-numeric:tabular-nums">${Math.min(tx, GOAL)} / ${GOAL} XP</span></div><div class="meter"><i style="width:${Math.min(100, tx / GOAL * 100)}%"></i></div></div>
     <div class="stats">
       <div class="stat"><b>${IC.flame}${curStreak()}</b><span>günlük seri</span></div>
@@ -1080,16 +3067,21 @@ function renderUnits() {
   }).join("")}</div>`;
 }
 function renderGram() {
-  const nxt = gNext();
-  view.innerHTML = `<div class="section-h"><h2>Gramer</h2><span class="muted" style="font-weight:700;font-size:.85rem">her konu ≈ 3 dk</span></div>
-  <p class="muted" style="margin:0 0 12px;font-weight:600">Kısa bir anlatım, ardından üç mini oyun. Bir konuyu bitirince sıradakinin kilidi açılır. Yıldızları toplamak için istediğin konuyu tekrar oynayabilirsin.</p>
-  <div class="units">${GRAM.map(g => {
+  const nxt = gNext(), doneAll = GRAM.filter(g => gDone(g.i)).length;
+  const unit = g => {
     const open = gUnlocked(g.i), st = gStars(g.i), cur = nxt === g && open && !gDone(g.i);
     return `<button class="unit ${cur ? "active" : ""} ${!open ? "locked" : ""} ${st ? "full" : ""}" data-act="gram" data-t="${g.i}" ${open ? "" : 'aria-disabled="true"'}>
       <span class="num">${st ? IC.check : g.i + 1}</span>
       <span class="body"><h3>${esc(g.name)}</h3><small>${esc(g.sub)}</small></span>
-      <span class="tag">${!open ? "Kilitli" : st ? `<span class="stars">${starStr(st)}</span>` : "Yeni"}</span></button>`;
-  }).join("")}</div>`;
+      <span class="tag">${!open ? "Kilitli" : st ? `<span class="stars">${starStr(st)}</span>` : cur ? "Sırada" : "Açık"}</span></button>`;
+  };
+  view.innerHTML = `<div class="section-h"><h2>Gramer</h2><span class="muted" style="font-weight:700;font-size:.85rem">${doneAll} / ${GRAM.length} konu</span></div>
+  <p class="muted" style="margin:0 0 4px;font-weight:600">Her konu ≈ 3 dakika: kısa bir anlatım, ardından üç mini oyun. Biraz İngilizcen varsa kolay seviyeleri atlayıp istediğin seviyeden başlayabilirsin.</p>
+  ${GLEVELS.map((L, li) => {
+    const ts = GRAM.filter(g => g.lvl === li), d = ts.filter(g => gDone(g.i)).length, open = gUnlocked(ts[0].i);
+    return `<div class="lvlhead"><div><h3>${esc(L.name)}</h3><small>${esc(L.sub)} · ${d}/${ts.length}</small><div class="meter" style="margin-top:6px"><i style="width:${d / ts.length * 100}%"></i></div></div>${open ? "" : `<button class="btn" data-act="glevel" data-l="${li}">Buradan başla</button>`}</div>
+    <div class="units">${ts.map(unit).join("")}</div>`;
+  }).join("")}`;
 }
 function renderNotes() {
   const list = ITEMS.filter(seen);
@@ -1119,6 +3111,7 @@ view.addEventListener("click", async e => {
   const act = b.dataset.act;
   if (act === "lesson") startLesson();
   else if (act === "game") startGame(b.dataset.game);
+  else if (act === "glevel") { const l = +b.dataset.l; S.gopen[l] = true; S.gfocus = l; save(); render(); }
   else if (act === "gram") {
     const t = +b.dataset.t;
     if (!gUnlocked(t)) { b.animate?.([{ transform: "translateX(-5px)" }, { transform: "translateX(5px)" }, { transform: "none" }], 250); return; }
@@ -1142,7 +3135,7 @@ view.addEventListener("click", async e => {
       if (!v.startsWith("SFE1:")) throw 0;
       const st = JSON.parse(decodeURIComponent(escape(atob(v.slice(5)))));
       if (typeof st.xp !== "number" || !st.words) throw 0;
-      S = Object.assign(fresh(), st); save(); msg.textContent = "Yüklendi! Kaldığın yerden devam."; setTimeout(render, 900);
+      S = Object.assign(fresh(), st); migrateGram(); save(); msg.textContent = "Yüklendi! Kaldığın yerden devam."; setTimeout(render, 900);
     } catch (err) { msg.textContent = "Bu kod okunamadı. Kodun tamamını kopyaladığından emin ol."; }
   } else if (act === "reset") {
     if (!resetArmed) { resetArmed = true; b.textContent = "Emin misin? Tekrar dokun"; setTimeout(() => { resetArmed = false; if (b.isConnected) b.textContent = "Sıfırla"; }, 3500); }
@@ -1303,7 +3296,7 @@ function endLesson() {
   }
   const acc = L.tries ? Math.round((L.ok / L.tries) * 100) : 100;
   const gt = L.gtopic, wasOpen = gt != null && GRAM[gt + 1] ? gUnlocked(gt + 1) : true;
-  if (gt != null) { const r = S.gram[gt] || { n: 0, best: 0 }; r.n++; r.best = Math.max(r.best, acc); S.gram[gt] = r; }
+  if (gt != null) { const gk = GRAM[gt].key, r = S.gram[gk] || { n: 0, best: 0 }; r.n++; r.best = Math.max(r.best, acc); S.gram[gk] = r; }
   save();
   const st1 = stageOf(plantPoints()), lv1 = levelOf(S.xp);
   const gTarget = gt == null ? null : (GRAM[gt + 1] && !gDone(gt + 1) ? gt + 1 : gt);
