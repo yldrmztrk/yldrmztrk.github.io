@@ -1,0 +1,1302 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<title>Sunflower English</title>
+<meta name="description" content="Kaydırmalı oyunlarla her gün biraz İngilizce.">
+<meta name="theme-color" content="#F2F6FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1524" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Sunflower">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+[hidden]{display:none!important}
+img{max-width:100%}
+/* Layout: one-screen phone/iPad app — growing sunflower as the hero, swipe-card games in a full-screen play sheet, floating tab bar */
+:root{
+  --bg:#F2F6FA; --surface:#FFFFFF; --sunk:#E6EEF6;
+  --ink:#2A1E12; --muted:#6B6256; --line:rgba(42,30,18,.10);
+  --petal:#F4B400; --petal-deep:#C98300; --petal-soft:#FFF1C7;
+  --leaf:#3C8D4A; --seed:#5A3A1A; --sky:#CFE3F5;
+  --good:#2E9E5B; --good-soft:#DDF3E5; --bad:#D9483B; --bad-soft:#FBE1DE;
+  --display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body:"Nunito", "Avenir Next", system-ui, sans-serif;
+  --r:20px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1524; --surface:#18223A; --sunk:#202C47;
+  --ink:#F4ECDD; --muted:#A8A08F; --line:rgba(244,236,221,.12);
+  --petal:#FFC629; --petal-deep:#FFB000; --petal-soft:#3A3220;
+  --leaf:#5DBB6D; --seed:#3B2510; --sky:#22314F;
+  --good:#47C47A; --good-soft:#173A28; --bad:#FF6B5E; --bad-soft:#40211F;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1524; --surface:#18223A; --sunk:#202C47;
+  --ink:#F4ECDD; --muted:#A8A08F; --line:rgba(244,236,221,.12);
+  --petal:#FFC629; --petal-deep:#FFB000; --petal-soft:#3A3220;
+  --leaf:#5DBB6D; --seed:#3B2510; --sky:#22314F;
+  --good:#47C47A; --good-soft:#173A28; --bad:#FF6B5E; --bad-soft:#40211F;
+  color-scheme:dark}
+html{box-sizing:border-box;height:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{height:100%;margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;overflow:hidden;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+button:focus-visible,.opt:focus-visible{outline:3px solid var(--petal);outline-offset:2px}
+#app{height:100%;max-width:640px;margin:0 auto;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;padding-block:12px 6px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+.brand i{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--seed) 0 34%,var(--petal) 36%);display:inline-block}
+.ver{font-size:.72rem;color:var(--muted);font-weight:700;background:var(--sunk);padding:3px 8px;border-radius:99px}
+#view{flex:1;overflow-y:auto;overflow-x:hidden;padding-block:4px 20px;-webkit-overflow-scrolling:touch}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border:1px solid var(--line);border-radius:22px;margin-block:6px 10px;padding:6px;box-shadow:0 6px 24px rgba(20,30,50,.08)}
+.tab{display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 4px;border-radius:16px;font-size:.74rem;font-weight:700;color:var(--muted)}
+.tab svg{width:24px;height:24px}
+.tab[aria-current="page"]{background:var(--petal-soft);color:var(--ink)}
+.tab[aria-current="page"] svg{color:var(--petal-deep)}
+
+h1,h2,h3{font-family:var(--display);letter-spacing:-.015em;margin:0;text-wrap:balance}
+h1{font-size:clamp(1.6rem,6vw,2.1rem);font-weight:800;line-height:1.1}
+h2{font-size:1.35rem;font-weight:800}
+h3{font-size:1.05rem;font-weight:800}
+.muted{color:var(--muted)}
+.eyebrow{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:var(--muted)}
+
+/* Home */
+.home{display:flex;flex-direction:column;gap:16px}
+.greet p{margin:6px 0 0;color:var(--muted);font-weight:600}
+.garden{position:relative;background:linear-gradient(180deg,var(--sky),var(--surface) 78%);border-radius:28px;padding:10px 12px 14px;display:flex;flex-direction:column;align-items:center;border:1px solid var(--line)}
+.garden svg.plant{width:min(62vw,230px);height:auto;display:block}
+.stagechip{font-weight:800;font-size:.85rem;background:var(--surface);border:1px solid var(--line);padding:4px 12px;border-radius:99px;margin-top:-4px}
+.growbar{width:100%;max-width:300px;margin-top:10px}
+.growbar small{display:flex;justify-content:space-between;color:var(--muted);font-weight:700;font-size:.74rem}
+.meter{height:10px;border-radius:99px;background:var(--sunk);overflow:hidden;margin-top:4px}
+.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--leaf),var(--petal));border-radius:99px;transition:width .6s}
+.cta{width:100%;background:var(--petal);color:#2A1E12;border-radius:22px;padding:16px 18px;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 6px 0 var(--petal-deep);transition:transform .1s, box-shadow .1s}
+.cta:active{transform:translateY(4px);box-shadow:0 2px 0 var(--petal-deep)}
+.cta b{font-family:var(--display);font-size:1.25rem;font-weight:800;display:block}
+.cta small{font-weight:700;opacity:.75}
+.cta .go{width:46px;height:46px;border-radius:50%;background:#2A1E12;color:var(--petal);display:grid;place-items:center;flex:none}
+.cta.done{background:var(--good-soft);color:var(--ink);box-shadow:0 6px 0 var(--good)}
+.cta.done .go{background:var(--good);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:10px 12px;min-width:0}
+.stat b{font-family:var(--display);font-size:1.5rem;font-weight:800;display:flex;align-items:center;gap:4px;font-variant-numeric:tabular-nums}
+.stat span{font-size:.75rem;color:var(--muted);font-weight:700}
+.stat svg{width:20px;height:20px;color:var(--petal-deep)}
+.goalcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:12px 14px}
+.goalcard .row{display:flex;justify-content:space-between;align-items:baseline;font-weight:700}
+.rank{display:flex;gap:12px;align-items:center}
+.rank .badge{width:44px;height:44px;border-radius:14px;background:var(--petal-soft);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.2rem;color:var(--petal-deep);flex:none}
+.rank>div:last-child{flex:1;min-width:0}
+.quote{border-left:4px solid var(--petal);padding:4px 0 4px 12px}
+.quote q{font-family:var(--display);font-weight:600;font-size:1.1rem;quotes:none;display:block}
+.quote .speak{margin-left:6px;vertical-align:middle}
+
+/* Games */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.game{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:14px;text-align:left;display:flex;flex-direction:column;gap:6px;min-height:128px;transition:transform .12s}
+.game:active{transform:scale(.97)}
+.game .ico{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:var(--sunk)}
+.game .ico svg{width:24px;height:24px}
+.game h3{margin-top:4px}
+.game p{margin:0;font-size:.82rem;color:var(--muted);font-weight:600}
+.game.hero{grid-column:1/-1;background:var(--petal);color:#2A1E12;flex-direction:row;align-items:center;min-height:0;gap:14px;border:0}
+.game.hero p{color:#2A1E12;opacity:.75}
+.game.hero .ico{background:#2A1E12;color:var(--petal);width:56px;height:56px;flex:none}
+.section-h{display:flex;justify-content:space-between;align-items:baseline;margin:6px 0 10px}
+
+/* Units */
+.units{display:flex;flex-direction:column;gap:10px}
+.unit{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:12px 14px;text-align:left;width:100%}
+.unit .num{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;background:var(--sunk);flex:none}
+.unit .body{flex:1;min-width:0}
+.unit .body small{color:var(--muted);font-weight:700}
+.unit.active{border:2px solid var(--petal);background:var(--petal-soft)}
+.unit.active .num{background:var(--petal);color:#2A1E12}
+.unit.locked{opacity:.55}
+.unit .tag{font-size:.7rem;font-weight:800;padding:3px 8px;border-radius:99px;background:var(--sunk);white-space:nowrap}
+.unit.active .tag{background:var(--petal);color:#2A1E12}
+.unit.full .num{background:var(--good);color:#fff}
+
+/* Notebook */
+.words{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.wrow{display:flex;align-items:center;gap:10px;padding:10px 12px;border-top:1px solid var(--line)}
+.wrow:first-child{border-top:0}
+.wrow .w{flex:1;min-width:0}
+.wrow .w b{display:block;font-weight:800}
+.wrow .w span{color:var(--muted);font-size:.88rem}
+.dots{display:flex;gap:3px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--sunk)}
+.dots i.on{background:var(--leaf)}
+.speak{width:36px;height:36px;border-radius:50%;display:inline-grid;place-items:center;background:var(--sunk);color:var(--ink);flex:none}
+.speak svg{width:20px;height:20px}
+.settings{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.set{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.set p{margin:2px 0 0;font-size:.82rem;color:var(--muted)}
+.btn{background:var(--sunk);padding:10px 14px;border-radius:14px;font-weight:800;white-space:nowrap}
+.btn.primary{background:var(--petal);color:#2A1E12}
+.btn.danger{background:var(--bad-soft);color:var(--bad)}
+.switch{width:52px;height:30px;border-radius:99px;background:var(--sunk);position:relative;flex:none}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .2s}
+.switch[aria-checked="true"]{background:var(--good)}
+.switch[aria-checked="true"]::after{left:25px}
+textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:10px;font:inherit;font-size:.85rem}
+.foot{text-align:center;color:var(--muted);font-size:.78rem;font-weight:700;margin-top:18px}
+
+/* Play sheet */
+#play{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;justify-content:center;
+  padding:env(safe-area-inset-top,0px) max(16px, env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(16px, env(safe-area-inset-left,0px))}
+#play .wrap{width:100%;max-width:560px;display:flex;flex-direction:column;height:100%}
+.ptop{display:flex;align-items:center;gap:12px;padding-block:14px 6px}
+.close{width:40px;height:40px;border-radius:50%;background:var(--sunk);display:grid;place-items:center;font-weight:800;flex:none;font-size:.9rem}
+.close.sure{width:auto;padding:0 14px;border-radius:99px;background:var(--bad-soft);color:var(--bad)}
+.pbar{flex:1;height:14px;border-radius:99px;background:var(--sunk);overflow:hidden}
+.pbar i{display:block;height:100%;width:0;background:var(--petal);border-radius:99px;transition:width .35s}
+.xpchip{font-weight:800;background:var(--petal-soft);color:var(--petal-deep);padding:6px 10px;border-radius:99px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.steplabel{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-block:8px}
+.steplabel h2{font-size:1.2rem}
+.combo{font-weight:800;font-size:.85rem;color:var(--petal-deep);white-space:nowrap}
+#stage{flex:1;display:flex;flex-direction:column;min-height:0;position:relative}
+#stage.flash-good{animation:fg .5s}
+#stage.flash-bad{animation:fb .5s}
+@keyframes fg{0%{background:var(--good-soft)}100%{background:transparent}}
+@keyframes fb{0%{background:var(--bad-soft)}100%{background:transparent}}
+
+/* Swipe cards */
+.deck{position:relative;flex:1;min-height:300px;margin-block:6px 12px}
+.card{position:absolute;inset:0;background:var(--surface);border:1px solid var(--line);border-radius:28px;box-shadow:0 10px 30px rgba(20,30,50,.10);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;touch-action:none;user-select:none;-webkit-user-select:none;will-change:transform;--yes:0;--no:0}
+.card.under{transform:scale(.94) translateY(14px);opacity:.7;box-shadow:none}
+.card .lbl{position:absolute;top:22px;font-family:var(--display);font-weight:800;font-size:1.1rem;padding:6px 14px;border-radius:12px;border:3px solid;transform:rotate(-8deg)}
+.card .lbl.yes{left:22px;color:var(--good);opacity:var(--yes)}
+.card .lbl.no{right:22px;color:var(--bad);opacity:var(--no);transform:rotate(8deg)}
+.card .big{font-family:var(--display);font-weight:800;font-size:clamp(2rem,9vw,3.1rem);line-height:1.05;letter-spacing:-.02em;word-break:break-word;text-wrap:balance}
+.card .big.phr{font-size:clamp(1.5rem,6.5vw,2.2rem)}
+.card .eq{width:40px;height:4px;border-radius:4px;background:var(--petal);margin:18px auto}
+.card .tr{font-size:clamp(1.3rem,5.5vw,1.8rem);font-weight:800}
+.card .hint{position:absolute;bottom:18px;left:0;right:0;font-size:.82rem;color:var(--muted);font-weight:700}
+.card .ex{margin-top:16px;font-size:1.05rem;color:var(--muted);font-style:italic;max-width:30ch}
+.card .ex mark{background:var(--petal-soft);color:var(--ink);font-style:normal;font-weight:800;padding:0 4px;border-radius:6px}
+.card .new{position:absolute;top:18px;left:18px;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:var(--petal-soft);color:var(--petal-deep);padding:4px 10px;border-radius:99px}
+.card .speak{margin-top:16px;width:48px;height:48px}
+.flipback{display:none}
+.card.flipped .flipfront{display:none}
+.card.flipped .hint{display:none}
+.card.flipped .flipback{display:flex;flex-direction:column;align-items:center}
+.decide{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-bottom:14px}
+.decide button{padding:16px;border-radius:20px;font-weight:800;font-size:1.05rem;display:flex;align-items:center;justify-content:center;gap:8px}
+.decide .l{background:var(--bad-soft);color:var(--bad)}
+.decide .r{background:var(--good-soft);color:var(--good)}
+.decide.soft .l{background:var(--sunk);color:var(--ink)}
+
+/* Choice questions */
+.q{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding-block:10px}
+.q .prompt{font-size:.9rem;color:var(--muted);font-weight:700}
+.q .sent{font-family:var(--display);font-weight:600;font-size:clamp(1.35rem,5.8vw,1.9rem);line-height:1.25;max-width:24ch}
+.blank{display:inline-block;min-width:3.2em;border-bottom:4px solid var(--petal);padding:0 4px;color:var(--petal-deep)}
+.blank.ok{color:var(--good);border-color:var(--good)}
+.blank.no{color:var(--bad);border-color:var(--bad)}
+.q .big{font-family:var(--display);font-weight:800;font-size:clamp(2rem,9vw,3rem);line-height:1.05}
+.q .reveal{font-weight:800;font-size:1.2rem;min-height:1.5em}
+.bigspeak{width:110px;height:110px;border-radius:50%;background:var(--petal);color:#2A1E12;display:grid;place-items:center;box-shadow:0 6px 0 var(--petal-deep)}
+.bigspeak:active{transform:translateY(4px);box-shadow:0 2px 0 var(--petal-deep)}
+.bigspeak svg{width:48px;height:48px}
+.opts{display:grid;gap:10px;padding-bottom:10px}
+.opts.two{grid-template-columns:1fr 1fr}
+.opt{background:var(--surface);border:2px solid var(--line);border-bottom-width:5px;border-radius:18px;padding:15px 14px;font-weight:800;font-size:1.05rem;text-align:center;transition:transform .08s}
+.opt:active{transform:translateY(2px)}
+.opt.ok{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+.opt.no{background:var(--bad-soft);border-color:var(--bad);color:var(--bad);animation:shake .35s}
+.opt.fade{opacity:.4}
+.after{min-height:58px;padding-bottom:12px}
+.after .btn{width:100%;padding:16px;font-size:1.05rem;border-radius:18px}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+/* Match */
+.match{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:center;padding-block:10px}
+.tile{background:var(--surface);border:2px solid var(--line);border-bottom-width:5px;border-radius:16px;padding:14px 8px;font-weight:800;min-height:62px;text-align:center;word-break:break-word;transition:transform .1s, opacity .3s}
+.tile.sel{border-color:var(--petal);background:var(--petal-soft)}
+.tile.ok{border-color:var(--good);background:var(--good-soft);color:var(--good);opacity:.45;pointer-events:none}
+.tile.no{border-color:var(--bad);background:var(--bad-soft);animation:shake .35s}
+
+/* Spell */
+.slots{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.slot{width:clamp(30px,8.5vw,44px);height:clamp(40px,11vw,54px);border-radius:12px;background:var(--sunk);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.4rem;text-transform:lowercase}
+.slot.f{background:var(--surface);border:2px solid var(--petal)}
+.slots.ok .slot{border-color:var(--good);color:var(--good)}
+.slots.no{animation:shake .35s}
+.slots.no .slot{border-color:var(--bad);color:var(--bad)}
+.letters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding-block:10px}
+.letter{width:clamp(42px,12vw,54px);height:clamp(48px,13vw,58px);border-radius:14px;background:var(--surface);border:2px solid var(--line);border-bottom-width:5px;font-family:var(--display);font-weight:800;font-size:1.4rem}
+.letter.used{visibility:hidden}
+.hintbtn{font-weight:800;color:var(--muted);text-decoration:underline;padding:6px}
+
+/* Sprint */
+.timer{height:10px;border-radius:99px;background:var(--sunk);overflow:hidden}
+.timer i{display:block;height:100%;background:var(--leaf);transition:width 1s linear}
+.score{font-family:var(--display);font-weight:800;font-size:1.3rem}
+
+/* End */
+.end{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;overflow-y:auto;padding-block:10px}
+.end svg.plant{width:min(46vw,180px);height:auto}
+.end h1{font-size:2rem}
+.end .msg{color:var(--muted);font-weight:700;max-width:32ch;margin:0}
+.endstats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.endstats div{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 6px}
+.endstats b{font-family:var(--display);font-size:1.5rem;display:block;font-variant-numeric:tabular-nums}
+.endstats span{font-size:.74rem;color:var(--muted);font-weight:700}
+.levelup{background:var(--petal);color:#2A1E12;font-weight:800;padding:10px 16px;border-radius:16px}
+.endbtns{display:flex;flex-direction:column;gap:10px;width:100%;padding-bottom:14px}
+.endbtns .btn{padding:16px;font-size:1.05rem;border-radius:18px}
+
+.toast{position:absolute;left:50%;bottom:110px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:14px;font-weight:800;max-width:92%;text-align:center;pointer-events:none;opacity:0;transition:opacity .2s;z-index:5}
+.toast.show{opacity:1}
+.float{position:fixed;font-family:var(--display);font-weight:800;color:var(--petal-deep);pointer-events:none;animation:up 1s forwards;z-index:60}
+@keyframes up{to{transform:translateY(-40px);opacity:0}}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:70}
+.sway{transform-origin:100px 222px;animation:sway 5s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(1.6deg)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+@media (min-width:700px){body{font-size:17px}.stats{gap:14px}}
+</style>
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <div class="brand"><i aria-hidden="true"></i>Sunflower English</div>
+    <span class="ver" id="ver">v1.2</span>
+  </header>
+  <main id="view" aria-live="polite"></main>
+  <nav class="tabs" aria-label="Bölümler">
+    <button class="tab" data-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>Bugün</button>
+    <button class="tab" data-tab="games"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7" width="19" height="11" rx="5"/><path d="M7.5 10.5v4M5.5 12.5h4"/><circle cx="16" cy="11.5" r=".6" fill="currentColor"/><circle cx="18" cy="13.5" r=".6" fill="currentColor"/></svg>Oyunlar</button>
+    <button class="tab" data-tab="units"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Rotalar</button>
+    <button class="tab" data-tab="notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v16H5.5A1.5 1.5 0 0 0 4 20.5z"/><path d="M4 20.5A1.5 1.5 0 0 0 5.5 22H20v-3"/><path d="M8 7h8M8 11h6"/></svg>Defterim</button>
+  </nav>
+</div>
+
+<div id="play" hidden>
+  <div class="wrap">
+    <div class="ptop">
+      <button class="close" id="closeBtn" aria-label="Çık">✕</button>
+      <div class="pbar"><i id="pbar"></i></div>
+      <div class="xpchip" id="xpchip">0 XP</div>
+    </div>
+    <div class="steplabel"><h2 id="steplabel"></h2><span class="combo" id="combo"></span></div>
+    <div id="stage"></div>
+    <div class="toast" id="toast"></div>
+  </div>
+</div>
+<canvas id="confetti" hidden></canvas>
+
+<script>
+const VERSION = "1.2";
+
+/* ---------- Content: 10 routes, 240 words & phrases ---------- */
+const RAW = [
+["Merhaba!", "Tanışma ve sohbet", `
+hello|merhaba|Hello, nice to meet you.
+name|isim|What is your name?
+meet|tanışmak|Nice to meet you.
+friend|arkadaş|She is my best friend.
+family|aile|My family lives in Ankara.
+husband|koca, eş|My husband is an engineer.
+daughter|kız evlat|Our daughter loves games.
+weekend|hafta sonu|What are you doing this weekend?
+weather|hava durumu|The weather is lovely today.
+job|iş, meslek|I love my job.
+live|yaşamak, oturmak|I live in Istanbul.
+from|-den, -dan (memleket)|I am from Turkey.
+thanks|teşekkürler|Thanks for your help.
+sorry|özür dilerim|Sorry, I am late.
+welcome|hoş geldiniz|Welcome to Istanbul!
+how|nasıl|How are you today?
+fine|iyi|I am fine, thank you.
+tired|yorgun|I am a little tired.
+happy|mutlu|I am so happy to see you.
+busy|meşgul, yoğun|I am very busy this week.
+holiday|tatil|We need a holiday.
+hobby|hobi|My favourite hobby is reading.
+favourite|en sevdiği|What is your favourite food?
+again|tekrar|See you again soon!`],
+["Havalimanı", "Check-in'den kapıya", `
+airport|havalimanı|The airport is very crowded today.
+flight|uçuş|Our flight leaves at nine.
+gate|biniş kapısı|Please go to gate 12.
+passport|pasaport|May I see your passport, please?
+ticket|bilet|I lost my ticket!
+luggage|bagaj|My luggage is too heavy.
+delay|rötar, gecikme|There is a short delay.
+departure|kalkış (saat)|The departure time is 10:45.
+arrival|varış|The arrival hall is downstairs.
+boarding|biniş|Boarding starts in ten minutes.
+customs|gümrük|We passed through customs quickly.
+security|güvenlik kontrolü|Please wait at security.
+connection|aktarma uçuşu|I might miss my connection.
+passenger|yolcu|Every passenger needs a boarding pass.
+cancel|iptal etmek|They had to cancel the flight.
+lost|kayıp|Where is the lost and found office?
+queue|kuyruk, sıra|The queue is very long.
+trolley|bagaj arabası|Take a trolley for your bags.
+announcement|anons|Please listen to the announcement.
+destination|varış noktası|What is your final destination?
+check in|check-in yapmak|You can check in online.
+on time|zamanında|Don't worry, we will arrive on time.
+abroad|yurt dışı|I travel abroad every month.
+visa|vize|Do I need a visa for Japan?`],
+["Kabinde", "Uçağın içinde", `
+seat|koltuk|Please return to your seat.
+aisle|koridor|Would you like an aisle seat?
+window|pencere|I prefer the window seat.
+seatbelt|emniyet kemeri|Please fasten your seatbelt.
+fasten|bağlamak|Fasten your belt, we are landing soon.
+blanket|battaniye|Could I have a blanket, please?
+pillow|yastık|Here is your pillow, sir.
+tray table|tepsi masa|Please close your tray table.
+take off|havalanmak|We will take off in five minutes.
+land|iniş yapmak|We will land in Paris soon.
+bumpy|sarsıntılı|The flight was a little bumpy.
+upright|dik (koltuk)|Please put your seat in the upright position.
+overhead bin|üst dolap|Put your bag in the overhead bin.
+drink|içecek|Would you like something to drink?
+meal|yemek, öğün|Your meal is chicken or pasta.
+crew|ekip|The crew is very friendly.
+emergency exit|acil çıkış|Do not block the emergency exit.
+lavatory|uçak tuvaleti|The lavatory is at the back.
+headphones|kulaklık|Do you need headphones?
+sparkling water|maden suyu|A glass of sparkling water, please.
+allergy|alerji|Do you have a food allergy?
+duty free|gümrüksüz satış|We sell duty free products on board.
+smooth|sakin, yumuşak|Have a smooth flight!
+altitude|irtifa, yükseklik|We are flying at a high altitude.`],
+["Otelde", "Konaklama", `
+reservation|rezervasyon|I have a reservation for two nights.
+room|oda|Our room has a sea view.
+key|anahtar|I lost my room key.
+reception|resepsiyon|Ask at the reception, please.
+breakfast|kahvaltı|Breakfast is served until ten.
+towel|havlu|Could I have an extra towel?
+available|müsait, boş|Is the room available tonight?
+single room|tek kişilik oda|I would like a single room.
+check out|otelden çıkış yapmak|We check out at noon.
+floor|kat|My room is on the fifth floor.
+elevator|asansör|The elevator is broken.
+noisy|gürültülü|My room is too noisy.
+clean|temiz|The room is very clean.
+wake-up call|uyandırma servisi|Can I get a wake-up call at six?
+view|manzara|What a beautiful view!
+stay|kalmak, konaklamak|How long will you stay?
+guest|misafir|Every guest gets free coffee.
+laundry|çamaşır servisi|Is there a laundry service?
+heater|ısıtıcı|The heater is not working.
+comfortable|rahat|The bed is very comfortable.
+price|fiyat|What is the price per night?
+include|dahil etmek|Does the price include breakfast?
+quiet|sessiz|I need a quiet room.
+lobby|lobi|Let's meet in the lobby.`],
+["Restoranda", "Yemek ve içmek", `
+menu|menü|Can we see the menu, please?
+order|sipariş vermek|Are you ready to order?
+bill|hesap|Can we have the bill, please?
+delicious|çok lezzetli|This soup is delicious!
+spicy|acı, baharatlı|Is this dish spicy?
+vegetarian|vejetaryen|Do you have vegetarian options?
+dessert|tatlı (yemek sonu)|I always have room for dessert.
+tip|bahşiş|We left a good tip.
+waiter|garson|The waiter was very kind.
+table|masa|A table for two, please.
+hungry|aç|I am so hungry!
+thirsty|susamış|I am thirsty, can I have some water?
+fork|çatal|Could I have a clean fork?
+knife|bıçak|This knife is not sharp.
+salty|tuzlu|The fish is too salty.
+sweet|şekerli, tatlı (tat)|This cake is very sweet.
+recommend|tavsiye etmek|What do you recommend?
+starter|başlangıç yemeği|Let's share a starter.
+main course|ana yemek|For the main course, I'll have fish.
+well done|iyi pişmiş|I want my steak well done.
+takeaway|paket servis|Can I get this as a takeaway?
+fresh|taze|The bread is fresh.
+glass|bardak|A glass of orange juice, please.
+cheers|şerefe|Cheers to us!`],
+["Şehirde", "Yol sormak, gezmek", `
+street|sokak, cadde|This street is very busy.
+corner|köşe|The café is on the corner.
+straight|dümdüz|Go straight ahead.
+left|sol|Turn left at the bank.
+right|sağ|The museum is on your right.
+near|yakın|Is there a pharmacy near here?
+far|uzak|Is it far from here?
+map|harita|Can you show me on the map?
+bus stop|otobüs durağı|Where is the nearest bus stop?
+subway|metro|Let's take the subway.
+crossroads|kavşak|Turn right at the crossroads.
+museum|müze|The museum opens at nine.
+pharmacy|eczane|I need a pharmacy.
+square|meydan|The square is full of people.
+bridge|köprü|Walk across the bridge.
+excuse me|affedersiniz|Excuse me, where is the station?
+station|istasyon|The train station is behind the hotel.
+walk|yürüyüş, yürümek|It is a ten minute walk.
+fare|yol ücreti|How much is the taxi fare?
+sightseeing|gezip görmek|We went sightseeing in Rome.
+crowded|kalabalık|The market is crowded today.
+behind|arkasında|The park is behind the church.
+opposite|karşısında|The bank is opposite the hotel.
+next to|yanında|The bakery is next to the bank.`],
+["Alışveriş", "Mağazada", `
+cheap|ucuz|This bag is really cheap.
+expensive|pahalı|It's too expensive for me.
+size|beden|What size are you?
+try on|üstüne denemek|Can I try on this dress?
+fitting room|deneme kabini|Where is the fitting room?
+discount|indirim|Is there a discount today?
+sale|satış, kampanya|Everything is on sale!
+cash|nakit|Can I pay in cash?
+receipt|fiş, makbuz|Could I have the receipt, please?
+change|para üstü|Keep the change.
+refund|para iadesi|I would like a refund.
+bargain|kelepir|This jacket was a real bargain.
+shop assistant|satış görevlisi|The shop assistant was very helpful.
+gift|hediye|I am looking for a gift.
+wrap|paketlemek|Could you wrap it, please?
+tight|dar|These shoes are too tight.
+loose|bol|This shirt is a bit loose.
+colour|renk|Do you have it in another colour?
+open|açık|Is the shop open on Sunday?
+closed|kapalı|Sorry, we are closed.
+browse|göz gezdirmek|I just want to browse, thanks.
+card|kart|Can I pay by card?
+how much|ne kadar|How much is this scarf?
+souvenir|hediyelik eşya|I bought a souvenir for my daughter.`],
+["Duygular", "Nasıl hissediyorsun?", `
+excited|heyecanlı|I am so excited about the trip!
+nervous|gergin|I feel nervous before exams.
+proud|gururlu|I am proud of you.
+worried|endişeli|Don't be worried, it's fine.
+angry|kızgın|He was angry about the delay.
+bored|sıkılmış|I get bored very quickly.
+scared|korkmuş|Don't be scared of English!
+confident|kendinden emin|Every day I feel more confident.
+calm|sakin|Stay calm and breathe.
+surprised|şaşırmış|I was surprised by the gift.
+lonely|yalnız|He feels lonely in the city.
+grateful|minnettar|I am grateful for my family.
+relaxed|rahatlamış|I feel relaxed on holiday.
+upset|morali bozuk|She is upset about the news.
+kind|nazik|You are very kind.
+funny|komik|My husband is very funny.
+shy|utangaç|Don't be shy, just speak!
+brave|cesur|Be brave and try.
+patient|sabırlı|Be patient with yourself.
+curious|meraklı|Children are always curious.
+jealous|kıskanç|Are you jealous?
+cheerful|neşeli|She is always cheerful.
+lazy|tembel|I feel lazy on Sundays.
+hard-working|çalışkan|She is very hard-working.`],
+["Günlük Hayat", "Evde ve gün içinde", `
+wake up|uyanmak|I wake up at seven.
+shower|duş|I take a shower every morning.
+cook|yemek pişirmek|I love to cook on weekends.
+tidy|ortalığı toplamak|Please tidy your room!
+dishes|bulaşık|Who will wash the dishes?
+groceries|market alışverişi|I buy groceries on Saturday.
+early|erken|I go to bed early.
+late|geç|Sorry, I'm late again.
+usually|genellikle|I usually drink tea in the morning.
+sometimes|bazen|Sometimes I watch a movie.
+never|asla, hiç|I never skip breakfast.
+always|her zaman|I always call my mother.
+neighbour|komşu|Our neighbour has a dog.
+cat|kedi|Our cat sleeps all day.
+rest|dinlenmek|You need to rest.
+exercise|egzersiz|I do exercise three times a week.
+relax|gevşemek|Let's relax tonight.
+rent|kira|The rent is due on Monday.
+appointment|randevu|I have a doctor's appointment.
+hurry|acele etmek|Hurry up, we are late!
+forget|unutmak|Don't forget your keys!
+remember|hatırlamak|I can't remember his name.
+chores|ev işleri|I do my chores on Sunday.
+sleepy|uykulu|I feel sleepy after lunch.`],
+["Konuşma Kalıpları", "Hazır cümleler, her zaman açık", `
+Could you repeat that, please?|Tekrar eder misiniz, lütfen?
+Could you speak more slowly?|Daha yavaş konuşabilir misiniz?
+What does this mean?|Bu ne anlama geliyor?
+How do you say this in English?|Bunu İngilizce nasıl söylersin?
+I'm not sure.|Emin değilim.
+That sounds great!|Kulağa harika geliyor!
+No problem at all.|Hiç sorun değil.
+Let me check.|Bir bakayım.
+It's my pleasure.|Ne demek, rica ederim.
+I'm looking forward to it.|Dört gözle bekliyorum.
+Can I help you?|Yardımcı olabilir miyim?
+Take your time.|Acele etme, rahat ol.
+Enjoy your flight!|İyi uçuşlar!
+What do you think?|Sen ne düşünüyorsun?
+I totally agree.|Kesinlikle katılıyorum.
+I don't think so.|Sanmıyorum.
+Just a moment, please.|Bir dakika, lütfen.
+Have a nice day!|İyi günler!
+It doesn't matter.|Önemli değil.
+Good luck!|Bol şans!
+I'm on my way.|Yoldayım.
+Never mind.|Boş ver.
+Same here.|Bende de öyle.
+See you soon!|Görüşürüz!`, true]
+];
+
+const ITEMS = [];
+const UNITS = RAW.map((u, ui) => {
+  const items = u[2].trim().split("\n").map((line, i) => {
+    const p = line.split("|").map(s => s.trim());
+    const it = { id: ui + "-" + i, u: ui, en: p[0], tr: p[1], ex: p[2] || "", ph: !!u[3] };
+    ITEMS.push(it); return it;
+  });
+  return { i: ui, name: u[0], sub: u[1], items, ph: !!u[3] };
+});
+
+const LEVELS = [
+  [0, "Yolcu"], [150, "Check-in Tamam"], [400, "Biniş Kartlı"], [800, "Koltuğuna Kuruldu"],
+  [1400, "Kemerler Bağlı"], [2200, "Kalkışta"], [3200, "Bulutların Üstünde"], [4500, "Seyir İrtifasında"],
+  [6000, "Kabin Yıldızı"], [8000, "Purser"], [10500, "Kaptan"], [14000, "Gökyüzü Kraliçesi"]
+];
+const STAGES = [
+  [0, "Tohum"], [4, "Filiz"], [12, "Fidan"], [25, "Yeşeriyor"], [45, "Boy atıyor"], [70, "Tomurcuk"],
+  [100, "Açıyor"], [140, "Ayçiçeği!"], [190, "Güneşe dönük"], [260, "İkiz ayçiçeği"], [360, "Üçüz ayçiçeği"], [480, "Ayçiçeği tarlası"]
+];
+const INTERVALS = [0, 1, 2, 4, 7, 15];
+const GOAL = 100;
+const GOOD = ["Süpersin!", "Aynen öyle!", "Bravo!", "Uçuyorsun!", "Tam isabet!", "Kusursuz!", "İşte bu!", "Kaptan gururlu!", "Harikasın!", "Çok iyi gidiyorsun!"];
+const BAD = ["Olsun, bir dahakine!", "Az kaldı!", "Hata yapan öğrenir.", "Takılma, devam!", "Bunu tekrar göreceğiz, merak etme."];
+const STEPNAMES = { intro: "Yeni kelimeler", tf: "Doğru mu, yanlış mı?", match: "Eşleştir", fill: "Boşluğu doldur", listen: "Dinle ve bul", pick: "Anlamını seç", spell: "Harf harf yaz", sprint: "60 saniye kaydır", flash: "Kelime kartları" };
+
+/* ---------- Icons ---------- */
+const IC = {
+  speak: '<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',
+  flame: '<svg viewBox="0 0 24 24"><path d="M12 2c.8 3.6 4.8 5.6 4.8 10.6a4.8 4.8 0 0 1-9.6 0c0-2.8 1.6-4.2 2.2-6.6 1.4 1 2 2.4 2.1 3.9 1-1.9.9-4.7.5-7.9z" fill="currentColor"/></svg>',
+  leaf: '<svg viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c-1 10-6 15-15 15z" fill="currentColor"/><path d="M5 19l8-8" stroke="var(--surface)" stroke-width="1.6" stroke-linecap="round"/></svg>',
+  star: '<svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z" fill="currentColor"/></svg>',
+  go: '<svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5l8 7-8 7" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  check: '<svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  x: '<svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>',
+  swipe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="3" transform="rotate(12 12 12)"/><path d="M2 12h3M19 12h3"/></svg>',
+  cards: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="6" width="13" height="15" rx="2.5"/><path d="M8 3h10.5A2.5 2.5 0 0 1 21 5.5V17"/></svg>',
+  pairs: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="4" width="7" height="7" rx="2"/><rect x="14" y="13" width="7" height="7" rx="2"/><path d="M10 7.5h3.5a2 2 0 0 1 2 2V13" stroke-linecap="round"/></svg>',
+  blank: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 8h6M15 8h6M3 16h4M17 16h4"/><path d="M10 17h6" stroke-width="3"/></svg>',
+  ear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 9a5 5 0 0 1 10 0c0 3-3 4-3 7a3 3 0 0 1-5.5 1.6"/><path d="M10 10a2 2 0 0 1 4 0"/></svg>',
+  abc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2.5" y="7" width="6" height="10" rx="1.5"/><rect x="9" y="7" width="6" height="10" rx="1.5"/><rect x="15.5" y="7" width="6" height="10" rx="1.5"/></svg>'
+};
+
+/* ---------- Helpers ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const rnd = a => a[Math.floor(Math.random() * a.length)];
+const firstTok = s => s.toLowerCase().split(/[\s,(]/)[0];
+const today = () => { const d = new Date(); return Math.floor((d.getTime() - d.getTimezoneOffset() * 60000) / 86400000); };
+const spellable = i => !i.ph && /^[a-z]{3,10}$/i.test(i.en);
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- State ---------- */
+const KEY = "sunflower-english-v1";
+const fresh = () => ({ v: 1, name: "", xp: 0, days: {}, streak: 0, best: 0, lastDay: -1, words: {}, active: 0, sound: true, sprintBest: 0, lessons: 0, updated: 0 });
+let S = fresh();
+try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(fresh(), JSON.parse(raw)); } catch (e) {}
+
+function save() {
+  S.updated = Date.now();
+  const t = today();
+  for (const k of Object.keys(S.days)) if (+k < t - 60) delete S.days[k];
+  try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {}
+  pushRemote();
+}
+const W = i => S.words[i.id];
+const seen = i => !!(W(i) && W(i).s);
+const box = i => (W(i) ? W(i).b || 0 : 0);
+const learnedCount = () => ITEMS.filter(i => box(i) >= 3).length;
+const seenCount = () => ITEMS.filter(seen).length;
+const plantPoints = () => ITEMS.reduce((a, i) => a + box(i), 0) + seenCount() * 0.5;
+const stageOf = p => { let s = 0; STAGES.forEach((x, k) => { if (p >= x[0]) s = k; }); return s; };
+const levelOf = xp => { let s = 0; LEVELS.forEach((x, k) => { if (xp >= x[0]) s = k; }); return s; };
+const todayXP = () => S.days[today()] || 0;
+const curStreak = () => (S.lastDay >= today() - 1 ? S.streak : 0);
+const unitUnlocked = u => u.ph || u.i === 0 || UNITS[u.i - 1].items.every(seen);
+const dueList = () => { const t = today(); return ITEMS.filter(i => { const w = W(i); return w && w.s && (w.d ?? 0) <= t; }); };
+
+function markSeen(i) {
+  if (!S.words[i.id]) S.words[i.id] = { s: 1, b: 0, d: today() };
+  else S.words[i.id].s = 1;
+}
+function addXP(n) { S.xp += n; const t = today(); S.days[t] = (S.days[t] || 0) + n; }
+
+/* ---------- Remote sync (only where this viewer may save) ---------- */
+let REMOTE = null, writing = false, pending = false, pushTimer = null;
+function pushRemote() {
+  if (!REMOTE) return;
+  clearTimeout(pushTimer);
+  pushTimer = setTimeout(async () => {
+    if (writing) { pending = true; return; }
+    writing = true;
+    try { await REMOTE.set({ state: JSON.stringify(S), updated: S.updated }); }
+    catch (e) { if (e && (e.code === "invalid_argument" || e.code === "revoked" || e.code === "not_granted")) REMOTE = null; }
+    writing = false;
+    if (pending) { pending = false; pushRemote(); }
+  }, 1500);
+}
+(async () => {
+  try {
+    if (!window.claude || typeof window.claude.use !== "function") return;
+    const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+    if (!db || !user) return;
+    const id = await user.id();
+    if (!id) return;
+    const ref = db.doc("data/users/" + id + "/progress");
+    const snap = await Promise.race([ref.get(), new Promise((_, rej) => setTimeout(() => rej({ code: "timeout" }), 10000))]);
+    REMOTE = ref;
+    const r = snap.exists ? snap.data() : null;
+    if (r && r.state) {
+      const rs = JSON.parse(r.state);
+      if ((rs.updated || 0) > (S.updated || 0)) {
+        S = Object.assign(fresh(), rs);
+        try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {}
+        if ($("#play").hidden) render();
+      } else if ((S.updated || 0) > (rs.updated || 0)) pushRemote();
+    } else if (S.updated) pushRemote();
+    if (tab === "notes" && $("#play").hidden) render();
+  } catch (e) { /* stays device-only */ }
+})();
+
+/* ---------- Sound & voice ---------- */
+let AC = null;
+function beep(kind) {
+  if (!S.sound) return;
+  try {
+    AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+    const seq = { ok: [660, 880], no: [240, 180], win: [523, 659, 784, 1047], tap: [520] }[kind] || [440];
+    let t = AC.currentTime;
+    seq.forEach(f => {
+      const o = AC.createOscillator(), g = AC.createGain();
+      o.type = kind === "no" ? "triangle" : "sine"; o.frequency.value = f;
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.18, t + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.16);
+      o.connect(g).connect(AC.destination); o.start(t); o.stop(t + 0.18); t += 0.11;
+    });
+  } catch (e) {}
+}
+const TTS = "speechSynthesis" in window && typeof SpeechSynthesisUtterance !== "undefined";
+let voice = null;
+function pickVoice() {
+  try {
+    const vs = speechSynthesis.getVoices().filter(v => /^en[-_]/i.test(v.lang));
+    voice = vs.find(v => /Samantha|Karen|Daniel|Serena|Google US/i.test(v.name)) || vs.find(v => /en[-_]US/i.test(v.lang)) || vs[0] || null;
+  } catch (e) {}
+}
+if (TTS) { pickVoice(); try { speechSynthesis.onvoiceschanged = pickVoice; } catch (e) {} }
+function speak(text, force) {
+  if (!TTS || (!S.sound && !force)) return;
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = voice ? voice.lang : "en-US"; if (voice) u.voice = voice; u.rate = 0.88;
+    speechSynthesis.speak(u);
+  } catch (e) {}
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-say]");
+  if (b) { e.stopPropagation(); speak(b.dataset.say, true); }
+}, true);
+const sayBtn = (text, cls = "speak") => TTS ? `<button class="${cls}" data-say="${esc(text)}" aria-label="Dinle">${IC.speak}</button>` : "";
+
+/* ---------- Sunflower drawing ---------- */
+function flowerHead(cx, cy, r, open, petals) {
+  let s = "";
+  if (open <= 0) {
+    s += `<circle cx="${cx}" cy="${cy}" r="${r * .55}" fill="var(--leaf)"/>`;
+    for (let k = 0; k < 6; k++) { const a = k * 60 * Math.PI / 180; s += `<ellipse cx="${cx + Math.cos(a) * r * .45}" cy="${cy + Math.sin(a) * r * .45}" rx="${r * .14}" ry="${r * .3}" transform="rotate(${k * 60 + 90} ${cx + Math.cos(a) * r * .45} ${cy + Math.sin(a) * r * .45})" fill="var(--petal)" opacity=".9"/>`; }
+    return s;
+  }
+  const len = r * (0.45 + 0.55 * open);
+  for (let k = 0; k < petals; k++) {
+    const ang = (360 / petals) * k, a = ang * Math.PI / 180, d = r * .42 + len * .45;
+    const px = cx + Math.cos(a) * d, py = cy + Math.sin(a) * d;
+    s += `<ellipse cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" rx="${(r * .16).toFixed(1)}" ry="${(len * .5).toFixed(1)}" transform="rotate(${ang + 90} ${px.toFixed(1)} ${py.toFixed(1)})" fill="${k % 2 ? "var(--petal)" : "var(--petal-deep)"}"/>`;
+  }
+  s += `<circle cx="${cx}" cy="${cy}" r="${r * .46}" fill="var(--seed)"/>`;
+  for (let k = 0; k < 14; k++) { const a = k * 2.4, rr = r * .36 * Math.sqrt((k + .5) / 14); s += `<circle cx="${(cx + Math.cos(a) * rr).toFixed(1)}" cy="${(cy + Math.sin(a) * rr).toFixed(1)}" r="${(r * .045).toFixed(1)}" fill="var(--petal)" opacity=".55"/>`; }
+  return s;
+}
+function plantSVG(stage) {
+  const H = [0, 26, 52, 78, 104, 124, 138, 148, 152, 156, 160, 164][stage];
+  const ground = 214, top = ground - H;
+  let g = `<ellipse cx="100" cy="${ground + 6}" rx="74" ry="12" fill="var(--seed)" opacity=".9"/><ellipse cx="100" cy="${ground + 2}" rx="60" ry="7" fill="var(--seed)"/>`;
+  if (stage === 0) {
+    g += `<ellipse cx="100" cy="${ground - 4}" rx="8" ry="11" fill="var(--seed)" transform="rotate(-20 100 ${ground - 4})"/><ellipse cx="98" cy="${ground - 7}" rx="2.5" ry="5" fill="var(--petal)" opacity=".5" transform="rotate(-20 98 ${ground - 7})"/>`;
+    g += `<path d="M120 ${ground - 30}l3 6 6 3-6 3-3 6-3-6-6-3 6-3z" fill="var(--petal)"/>`;
+    return wrapSVG(g, 150);
+  }
+  let f = `<path d="M100 ${ground} C ${stage > 3 ? 104 : 101} ${ground - H * .4}, ${stage > 3 ? 96 : 99} ${ground - H * .7}, 100 ${top}" stroke="var(--leaf)" stroke-width="${3 + Math.min(stage, 8) * .6}" fill="none" stroke-linecap="round"/>`;
+  const leaves = Math.min(1 + Math.floor(stage / 2), 5);
+  for (let k = 0; k < leaves; k++) {
+    const y = ground - 14 - k * (H * .72 / Math.max(leaves, 1)), side = k % 2 ? -1 : 1, sz = 14 + Math.min(stage, 8) * 1.6 - k;
+    f += `<path d="M100 ${y} q ${side * sz * .9} ${-sz * .9} ${side * sz * 1.9} ${-sz * .25} q ${-side * sz * .9} ${sz * .8} ${-side * sz * 1.9} ${sz * .25}z" fill="var(--leaf)"/>`;
+  }
+  if (stage === 1) f += `<circle cx="100" cy="${top}" r="3" fill="var(--leaf)"/>`;
+  if (stage >= 9) {
+    f += `<path d="M100 ${ground - H * .45} C 80 ${ground - H * .55}, 64 ${ground - H * .62}, 58 ${ground - H * .74}" stroke="var(--leaf)" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+    f += flowerHead(58, ground - H * .74, 22, 1, 14);
+  }
+  if (stage >= 10) {
+    f += `<path d="M100 ${ground - H * .55} C 120 ${ground - H * .62}, 136 ${ground - H * .7}, 142 ${ground - H * .82}" stroke="var(--leaf)" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+    f += flowerHead(142, ground - H * .82, 20, 1, 13);
+  }
+  if (stage >= 5) {
+    const open = stage === 5 ? 0 : stage === 6 ? 0.45 : 1;
+    const r = stage === 5 ? 18 : 22 + Math.min(stage - 6, 4) * 3;
+    f += flowerHead(100, top - r * .3, r, open, 12 + Math.min(stage - 6, 5) * 2);
+  }
+  if (stage >= 11) {
+    [[30, ground - 18], [170, ground - 16], [46, ground - 6], [156, ground - 4]].forEach(([x, y], k) => {
+      f += `<path d="M${x} ${ground + 2} L${x} ${y}" stroke="var(--leaf)" stroke-width="2.4"/>` + flowerHead(x, y - 6, 9 + (k % 2) * 2, 1, 10);
+    });
+  }
+  g += `<g class="${reduced ? "" : "sway"}">${f}</g>`;
+  return wrapSVG(g, Math.max(0, Math.min(140, top - (stage >= 5 ? 66 : 40))));
+}
+const wrapSVG = (inner, vy = 0) => `<svg class="plant" viewBox="0 ${vy} 200 ${232 - vy}" role="img" aria-label="Ayçiçeği">${inner}</svg>`;
+
+/* ---------- Views ---------- */
+let tab = "home";
+const view = $("#view");
+$("#ver").textContent = "v" + VERSION;
+
+function greeting() { const h = new Date().getHours(); return h < 6 ? "İyi geceler" : h < 12 ? "Günaydın" : h < 18 ? "İyi günler" : "İyi akşamlar"; }
+function homeMsg() {
+  const st = curStreak(), tx = todayXP();
+  if (!S.lessons) return "İlk dersine hazır mısın? 5 dakikacık, söz. Bu sefer sıkılmak yok.";
+  if (tx >= GOAL) return "Bugünkü hedef tamam! Ayçiçeğin güneşe döndü. İstersen bir oyun daha?";
+  if (tx > 0) return `Bugün ${tx} XP topladın. Hedefe ${GOAL - tx} XP kaldı, az kaldı!`;
+  if (st >= 2) return `${st} günlük serin var. Bugün de bir tur atalım, seri bozulmasın.`;
+  return "Ayçiçeğin seni bekliyor. Bir tur kelime suyu verelim mi?";
+}
+function render() {
+  document.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-current", b.dataset.tab === tab ? "page" : "false"));
+  ({ home: renderHome, games: renderGames, units: renderUnits, notes: renderNotes })[tab]();
+}
+function renderHome() {
+  const p = plantPoints(), st = stageOf(p), lv = levelOf(S.xp);
+  const next = STAGES[st + 1], prev = STAGES[st][0];
+  const growPct = next ? Math.min(100, ((p - prev) / (next[0] - prev)) * 100) : 100;
+  const lvNext = LEVELS[lv + 1], lvPct = lvNext ? ((S.xp - LEVELS[lv][0]) / (lvNext[0] - LEVELS[lv][0])) * 100 : 100;
+  const tx = todayXP(), done = tx >= GOAL;
+  const due = dueList().length, newCount = Math.min(due >= 6 ? 3 : due >= 3 ? 5 : 6, ITEMS.filter(i => !seen(i)).length);
+  const phrases = UNITS[UNITS.length - 1].items, ph = phrases[today() % phrases.length];
+  view.innerHTML = `<div class="home">
+    ${S.name ? "" : `<div class="goalcard"><h3>Merhaba! Sana nasıl seslenelim?</h3><div style="display:flex;gap:8px;margin-top:10px"><input id="nameInput" maxlength="24" placeholder="Adın" autocomplete="given-name" style="flex:1;min-width:0;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:10px 12px;font:inherit"><button class="btn primary" data-act="setname">Tamam</button></div></div>`}
+    <div class="greet"><h1>${greeting()}${S.name ? ", " + esc(S.name) : ""}</h1><p>${homeMsg()}</p></div>
+    <div class="garden">
+      ${plantSVG(st)}
+      <span class="stagechip">${STAGES[st][1]}</span>
+      <div class="growbar"><small><span>Ayçiçeğin büyüyor</span><span>${next ? "Sıradaki: " + next[1] : "Tam açtı!"}</span></small><div class="meter"><i style="width:${growPct}%"></i></div></div>
+    </div>
+    <button class="cta ${done ? "done" : ""}" data-act="lesson">
+      <span><b>${done ? "Bir tur daha" : S.lessons ? "Günün dersi" : "İlk dersi başlat"}</b><small>≈ 5 dk · ${newCount} yeni${due ? ", " + Math.min(due, 8) + " tekrar" : ""}</small></span>
+      <span class="go">${IC.go}</span>
+    </button>
+    <div class="goalcard"><div class="row"><span>Günlük hedef</span><span class="muted" style="font-variant-numeric:tabular-nums">${Math.min(tx, GOAL)} / ${GOAL} XP</span></div><div class="meter"><i style="width:${Math.min(100, tx / GOAL * 100)}%"></i></div></div>
+    <div class="stats">
+      <div class="stat"><b>${IC.flame}${curStreak()}</b><span>günlük seri</span></div>
+      <div class="stat"><b>${IC.leaf}${learnedCount()}</b><span>öğrenilen</span></div>
+      <div class="stat"><b>${IC.star}${S.xp}</b><span>toplam XP</span></div>
+    </div>
+    <div class="goalcard rank"><div class="badge">${lv + 1}</div><div><div class="row"><span>${LEVELS[lv][1]}</span><span class="muted" style="font-size:.8rem">${lvNext ? "→ " + lvNext[1] : "Zirvedesin"}</span></div><div class="meter"><i style="width:${lvPct}%"></i></div></div></div>
+    <div class="quote"><div class="eyebrow">Günün kalıbı</div><q>${esc(ph.en)}${sayBtn(ph.en)}</q><span class="muted">${esc(ph.tr)}</span></div>
+  </div>`;
+}
+function renderGames() {
+  const g = (id, ico, name, desc, color) => `<button class="game" data-act="game" data-game="${id}"><span class="ico" style="color:${color}">${IC[ico]}</span><h3>${name}</h3><p>${desc}</p></button>`;
+  view.innerHTML = `<div class="section-h"><h2>Oyunlar</h2><span class="muted" style="font-weight:700;font-size:.85rem">canın sıkılınca</span></div>
+  <div class="grid">
+    <button class="game hero" data-act="game" data-game="sprint"><span class="ico">${IC.swipe}</span><span><h3>60 Saniye Kaydır</h3><p>Doğruysa sağa, yanlışsa sola. Rekorun: ${S.sprintBest}</p></span></button>
+    ${g("flash", "cards", "Kelime Kartları", "Kaydır, çevir, hatırla", "var(--petal-deep)")}
+    ${g("match", "pairs", "Eşleştir", "Çiftleri bul", "var(--leaf)")}
+    ${g("fill", "blank", "Boşluk Doldur", "Cümleyi tamamla", "var(--bad)")}
+    ${TTS ? g("listen", "ear", "Dinle ve Bul", "Kulağın alışsın", "var(--good)") : g("pick", "ear", "Anlamını Seç", "Hızlı seçim", "var(--good)")}
+    ${g("spell", "abc", "Harf Harf", "Kelimeyi kur", "var(--petal-deep)")}
+    ${g("tf", "swipe", "Doğru mu?", "Sakin tempo kaydırma", "var(--leaf)")}
+  </div>
+  <p class="muted" style="font-size:.85rem;margin-top:14px">Oyunlar öğrendiğin kelimelerle oynanır, her doğru cevap XP getirir.</p>`;
+}
+function renderUnits() {
+  view.innerHTML = `<div class="section-h"><h2>Rotalar</h2><span class="muted" style="font-weight:700;font-size:.85rem">bir rota bitince sıradaki açılır</span></div>
+  <div class="units">${UNITS.map(u => {
+    const tot = u.items.length, s = u.items.filter(seen).length, l = u.items.filter(i => box(i) >= 3).length;
+    const open = unitUnlocked(u), active = S.active === u.i, full = s === tot;
+    const tag = !open ? "Kilitli" : active ? "Şu an burada" : full ? "Tamamlandı" : "Açık";
+    return `<button class="unit ${active ? "active" : ""} ${!open ? "locked" : ""} ${full && !active ? "full" : ""}" data-act="unit" data-u="${u.i}" ${open ? "" : 'aria-disabled="true"'}>
+      <span class="num">${full ? IC.check : u.ph ? "★" : u.i + 1}</span>
+      <span class="body"><h3>${esc(u.name)}</h3><small>${esc(u.sub)} · ${s}/${tot} görüldü · ${l} öğrenildi</small><div class="meter" style="margin-top:6px"><i style="width:${s / tot * 100}%"></i></div></span>
+      <span class="tag">${tag}</span></button>`;
+  }).join("")}</div>`;
+}
+function renderNotes() {
+  const list = ITEMS.filter(seen);
+  const groups = UNITS.map(u => ({ u, ws: list.filter(i => i.u === u.i) })).filter(g => g.ws.length);
+  view.innerHTML = `<div class="section-h"><h2>Defterim</h2><span class="muted" style="font-weight:700;font-size:.85rem">${list.length} kelime gördün</span></div>
+  ${groups.length ? groups.map(g => `<div class="eyebrow" style="margin:14px 0 8px">${esc(g.u.name)}</div><div class="words">${g.ws.map(i => `<div class="wrow">${sayBtn(i.en)}<div class="w"><b>${esc(i.en)}</b><span>${esc(i.tr)}</span></div><div class="dots" title="Ne kadar iyi biliyorsun">${[1, 2, 3, 4, 5].map(k => `<i class="${box(i) >= k ? "on" : ""}"></i>`).join("")}</div></div>`).join("")}</div>`).join("")
+    : `<div class="goalcard"><h3>Defterin henüz boş</h3><p class="muted" style="margin:6px 0 0">İlk derste öğrendiğin kelimeler buraya yazılır. Yeşil noktalar ne kadar iyi bildiğini gösterir.</p></div>`}
+  <div class="settings">
+    <div class="eyebrow">Ayarlar</div>
+    <div class="set"><div style="flex:1;min-width:0"><b>Adın</b><div style="display:flex;gap:8px;margin-top:8px"><input id="nameInput" maxlength="24" value="${esc(S.name)}" placeholder="Adın" style="flex:1;min-width:0;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:10px 12px;font:inherit"><button class="btn" data-act="setname">Kaydet</button></div></div></div>
+    <div class="set"><div><b>Sesler ve telaffuz</b><p>Doğru-yanlış sesleri ve kelimelerin okunuşu</p></div><button class="switch" role="switch" aria-checked="${S.sound}" data-act="sound" aria-label="Sesler"></button></div>
+    <div class="set" style="flex-direction:column;align-items:stretch">
+      <div><b>iPad ve iPhone arasında taşı</b><p>${REMOTE ? "İlerlemen hesabına da kaydediliyor; diğer cihazda aynı hesapla açınca kaldığın yerden devam edersin." : "İlerleme bu cihazda saklanıyor. Diğer cihaza geçmek için kodu kopyala, orada yapıştır."}</p></div>
+      <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="btn primary" data-act="export">Kodu kopyala</button><button class="btn" data-act="showimport">Kod yapıştır</button></div>
+      <div id="importBox" hidden style="margin-top:10px"><textarea id="importTxt" placeholder="Kodu buraya yapıştır"></textarea><button class="btn primary" data-act="import" style="margin-top:8px">İlerlemeyi yükle</button><p id="importMsg" class="muted"></p></div>
+    </div>
+    <div class="set"><div><b>Baştan başla</b><p>Tüm ilerleme silinir</p></div><button class="btn danger" data-act="reset" id="resetBtn">Sıfırla</button></div>
+  </div>
+  <div class="foot">Sunflower English · Sürüm ${VERSION}<br>Sun Flower Apps</div>`;
+}
+
+/* ---------- Navigation & actions ---------- */
+document.querySelectorAll(".tab").forEach(b => b.onclick = () => { tab = b.dataset.tab; view.scrollTop = 0; render(); });
+let resetArmed = false;
+view.addEventListener("click", async e => {
+  const b = e.target.closest("[data-act]"); if (!b) return;
+  const act = b.dataset.act;
+  if (act === "lesson") startLesson();
+  else if (act === "game") startGame(b.dataset.game);
+  else if (act === "unit") {
+    const u = UNITS[+b.dataset.u];
+    if (!unitUnlocked(u)) { b.animate?.([{ transform: "translateX(-5px)" }, { transform: "translateX(5px)" }, { transform: "none" }], 250); return; }
+    S.active = u.i; save(); render();
+  } else if (act === "setname") { const v = ($("#nameInput").value || "").trim().slice(0, 24); if (v) { S.name = v; save(); render(); } }
+  else if (act === "sound") { S.sound = !S.sound; save(); render(); if (S.sound) beep("ok"); }
+  else if (act === "export") {
+    const code = "SFE1:" + btoa(unescape(encodeURIComponent(JSON.stringify(S))));
+    try { await navigator.clipboard.writeText(code); b.textContent = "Kopyalandı!"; }
+    catch (err) { $("#importBox").hidden = false; const t = $("#importTxt"); t.value = code; t.select(); b.textContent = "Kodu seçip kopyala"; }
+    setTimeout(() => { b.textContent = "Kodu kopyala"; }, 2500);
+  } else if (act === "showimport") { $("#importBox").hidden = false; $("#importTxt").focus(); }
+  else if (act === "import") {
+    const v = $("#importTxt").value.trim(), msg = $("#importMsg");
+    try {
+      if (!v.startsWith("SFE1:")) throw 0;
+      const st = JSON.parse(decodeURIComponent(escape(atob(v.slice(5)))));
+      if (typeof st.xp !== "number" || !st.words) throw 0;
+      S = Object.assign(fresh(), st); save(); msg.textContent = "Yüklendi! Kaldığın yerden devam."; setTimeout(render, 900);
+    } catch (err) { msg.textContent = "Bu kod okunamadı. Kodun tamamını kopyaladığından emin ol."; }
+  } else if (act === "reset") {
+    if (!resetArmed) { resetArmed = true; b.textContent = "Emin misin? Tekrar dokun"; setTimeout(() => { resetArmed = false; if (b.isConnected) b.textContent = "Sıfırla"; }, 3500); }
+    else { resetArmed = false; const snd = S.sound; S = fresh(); S.sound = snd; save(); tab = "home"; render(); }
+  }
+});
+
+/* ---------- Lesson building ---------- */
+function nextNew(n) {
+  const out = [];
+  const start = UNITS[S.active] && unitUnlocked(UNITS[S.active]) ? S.active : 0;
+  const order = UNITS[start].ph ? [UNITS[start], ...UNITS.filter(u => !u.ph)] : [...UNITS.slice(start).filter(u => !u.ph), ...UNITS.filter(u => u.ph)];
+  for (const u of order) {
+    for (const it of u.items) { if (out.length >= n) break; if (!seen(it)) out.push(it); }
+    if (out.length >= n) break;
+  }
+  if (out.length) S.active = out[0].u;
+  return out;
+}
+function uniqueTr(list) { const s = new Set(), out = []; list.forEach(i => { const k = firstTok(i.tr); if (!s.has(k)) { s.add(k); out.push(i); } }); return out; }
+function distract(item, n, key) {
+  const bad = new Set([firstTok(item[key])]);
+  const pool = shuffle(ITEMS.filter(i => i.u === item.u && i.id !== item.id)).concat(shuffle(ITEMS.filter(i => i.ph === item.ph && i.u !== item.u)));
+  const out = [];
+  for (const i of pool) { const k = firstTok(i[key]); if (bad.has(k)) continue; bad.add(k); out.push(i[key]); if (out.length >= n) break; }
+  return out;
+}
+function buildLesson() {
+  const due = dueList().sort((a, b) => (box(a) - box(b)) || (Math.random() - .5));
+  const rev = due.slice(0, 8);
+  const fr = nextNew(rev.length >= 6 ? 3 : rev.length >= 3 ? 5 : 6);
+  let core = [...fr, ...rev];
+  if (core.length < 6) core = core.concat(shuffle(ITEMS.filter(i => seen(i) && !core.includes(i))).slice(0, 6 - core.length));
+  if (!core.length) core = shuffle(ITEMS).slice(0, 6);
+  const steps = [];
+  if (fr.length) steps.push({ type: "intro", items: fr });
+  steps.push({ type: "tf", items: shuffle(core).slice(0, 8) });
+  const m = uniqueTr(shuffle(core)).slice(0, 5); if (m.length >= 3) steps.push({ type: "match", items: m });
+  const f = shuffle(core.filter(i => !i.ph && i.ex)).slice(0, 4); if (f.length) steps.push({ type: "fill", items: f });
+  steps.push({ type: TTS ? "listen" : "pick", items: shuffle(core).slice(0, 4) });
+  const s = shuffle(core.filter(spellable)).slice(0, 3); if (s.length) steps.push({ type: "spell", items: s });
+  return steps;
+}
+function practicePool(min) {
+  let pool = ITEMS.filter(seen);
+  if (pool.length < min) {
+    const u = UNITS[S.active] || UNITS[0];
+    pool = pool.concat(u.items.filter(i => !seen(i)).slice(0, min - pool.length));
+    if (pool.length < min) pool = pool.concat(UNITS[0].items.filter(i => !pool.includes(i))).slice(0, Math.max(min, pool.length));
+  }
+  return shuffle(pool);
+}
+function startGame(g) {
+  const pool = practicePool(10);
+  let items;
+  if (g === "sprint") return startLesson([{ type: "sprint", items: pool }], true);
+  if (g === "flash") items = pool.slice(0, 10);
+  else if (g === "match") items = uniqueTr(pool).slice(0, 6);
+  else if (g === "fill") items = pool.filter(i => !i.ph && i.ex).slice(0, 8);
+  else if (g === "spell") items = pool.filter(spellable).slice(0, 6);
+  else items = pool.slice(0, 8);
+  if (!items.length) items = shuffle(UNITS[0].items).slice(0, 6);
+  startLesson([{ type: g === "flash" ? "flash" : g, items }], true);
+}
+
+/* ---------- Lesson runner ---------- */
+let L = null;
+const play = $("#play"), stage = $("#stage");
+function unlockAudio() {
+  try { AC = AC || new (window.AudioContext || window.webkitAudioContext)(); if (AC.state === "suspended") AC.resume(); } catch (e) {}
+  if (TTS) { try { const u = new SpeechSynthesisUtterance(" "); u.volume = 0; speechSynthesis.speak(u); } catch (e) {} }
+}
+function startLesson(steps, practice) {
+  if (!steps) steps = buildLesson();
+  L = { steps, si: 0, ans: {}, xp: 0, combo: 0, best: 0, q: 0, ok: 0, tries: 0, practice: !!practice, newSeen: 0,
+    total: steps.reduce((a, s) => a + (s.type === "sprint" ? 0 : s.items.length), 0),
+    stage0: stageOf(plantPoints()), level0: levelOf(S.xp) };
+  play.hidden = false; document.body.style.overflow = "hidden";
+  $("#pbar").parentElement.style.visibility = "";
+  unlockAudio();
+  $("#closeBtn").className = "close"; $("#closeBtn").textContent = "✕";
+  updTop(); runStep();
+}
+function updTop() {
+  $("#pbar").style.width = (L.total ? (L.q / L.total) * 100 : 0) + "%";
+  $("#xpchip").textContent = "+" + L.xp + " XP";
+  $("#combo").textContent = L.combo >= 3 ? L.combo + "'li seri" : "";
+}
+function runStep() {
+  stage.className = "";
+  if (L.si >= L.steps.length) return endLesson();
+  const st = L.steps[L.si];
+  $("#steplabel").textContent = STEPNAMES[st.type];
+  MODS[st.type](st.items, () => { L.si++; runStep(); });
+}
+function progress() { L.q++; updTop(); }
+function toast(t, ms = 1400) { const el = $("#toast"); el.textContent = t; el.classList.add("show"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("show"), ms); }
+function floatXP(n) {
+  const c = $("#xpchip").getBoundingClientRect(), el = document.createElement("div");
+  el.className = "float"; el.textContent = "+" + n; el.style.left = c.left + 6 + "px"; el.style.top = c.bottom + 4 + "px";
+  document.body.appendChild(el); setTimeout(() => el.remove(), 1000);
+}
+function record(item, ok, xp = 10) {
+  L.tries++;
+  if (item && !L.practice) { if (!(item.id in L.ans)) L.ans[item.id] = ok; else if (!ok) L.ans[item.id] = false; }
+  if (ok) {
+    L.ok++; L.combo++; L.best = Math.max(L.best, L.combo);
+    let gain = xp; if (xp && L.combo > 0 && L.combo % 5 === 0) { gain += 10; toast(L.combo + " doğru üst üste! +10 bonus"); }
+    if (gain) { L.xp += gain; addXP(gain); floatXP(gain); }
+    beep("ok"); stage.classList.remove("flash-good"); void stage.offsetWidth; stage.classList.add("flash-good");
+  } else {
+    L.combo = 0; beep("no"); stage.classList.remove("flash-bad"); void stage.offsetWidth; stage.classList.add("flash-bad");
+  }
+  updTop();
+}
+let closeArmed = false;
+$("#closeBtn").onclick = () => {
+  const b = $("#closeBtn");
+  if (!closeArmed && L && L.si < L.steps.length) {
+    closeArmed = true; b.className = "close sure"; b.textContent = "Çık? XP'n kalır";
+    setTimeout(() => { closeArmed = false; if (L) { b.className = "close"; b.textContent = "✕"; } }, 3000); return;
+  }
+  closeArmed = false; quitLesson();
+};
+function quitLesson() {
+  if (L && !L.practice) applySRS();
+  if (L) save();
+  clearInterval(sprintTimer);
+  L = null; play.hidden = true; stage.innerHTML = ""; try { speechSynthesis.cancel(); } catch (e) {}
+  render();
+}
+function applySRS() {
+  const t = today();
+  for (const [id, ok] of Object.entries(L.ans)) {
+    const w = S.words[id] || (S.words[id] = { s: 1, b: 0, d: t });
+    w.s = 1;
+    if (ok) { w.b = Math.min(5, (w.b || 0) + 1); w.d = t + INTERVALS[w.b]; }
+    else { w.b = Math.max(1, (w.b || 0) - 2); w.d = t + 1; }
+  }
+  L.ans = {};
+}
+function endLesson() {
+  const t = today();
+  if (!L.practice) {
+    applySRS();
+    if (S.lastDay !== t) { S.streak = S.lastDay === t - 1 ? S.streak + 1 : 1; S.lastDay = t; }
+    S.best = Math.max(S.best, S.streak); S.lessons++;
+  }
+  save();
+  const st1 = stageOf(plantPoints()), lv1 = levelOf(S.xp);
+  const acc = L.tries ? Math.round((L.ok / L.tries) * 100) : 100;
+  const grew = st1 > L.stage0, lvUp = lv1 > L.level0;
+  const msg = L.sprintScore != null ? `${L.sprintScore} doğru kaydırma! Rekorun: ${S.sprintBest}` : L.practice ? rnd(["Güzel tur!", "Parmakların ısındı!", "Kelimeler seni tanımaya başladı."]) :
+    grew ? `Ayçiçeğin büyüdü: artık "${STAGES[st1][1]}"!` :
+    acc >= 90 ? "Neredeyse kusursuz. Bu İngilizce senden korkmaya başladı." :
+    acc >= 70 ? "Çok iyi! Yanlışları yarın tekrar göstereceğim, kafana takma." :
+    "Zor bir turdu ama bitirdin. Asıl önemli olan bu. Yarın daha kolay gelecek.";
+  $("#steplabel").textContent = ""; $("#combo").textContent = ""; $("#pbar").style.width = "100%";
+  stage.innerHTML = `<div class="end">
+    ${plantSVG(st1)}
+    <h1>${L.practice ? "Tur bitti!" : "Ders tamam!"}</h1>
+    <p class="msg">${esc(msg)}</p>
+    ${lvUp ? `<div class="levelup">Yeni rütbe: ${esc(LEVELS[lv1][1])}</div>` : ""}
+    <div class="endstats">
+      <div><b>+${L.xp}</b><span>XP</span></div>
+      <div><b>%${acc}</b><span>isabet</span></div>
+      <div><b>${L.practice ? L.best : curStreak()}</b><span>${L.practice ? "en uzun seri" : "günlük seri"}</span></div>
+    </div>
+    <div class="endbtns"><button class="btn primary" id="endHome">Harika, ana sayfaya dön</button><button class="btn" id="endAgain">${L.practice ? "Bir daha oyna" : "Bir tur daha"}</button></div>
+  </div>`;
+  beep("win"); confetti();
+  const again = L.practice ? L.steps[0].type : null;
+  $("#endHome").onclick = () => { L = null; quitLesson(); };
+  $("#endAgain").onclick = () => { const g = again; L = null; play.hidden = true; if (g) startGame(g === "flash" ? "flash" : g); else startLesson(); };
+}
+
+/* ---------- Swipe mechanics ---------- */
+function swipeable(card, onDecide, onTap) {
+  let sx = 0, sy = 0, dx = 0, drag = false, gone = false;
+  const set = x => { card.style.transform = `translateX(${x}px) rotate(${x / 18}deg)`; const r = Math.max(-1, Math.min(1, x / 110)); card.style.setProperty("--yes", Math.max(0, r)); card.style.setProperty("--no", Math.max(0, -r)); };
+  card.addEventListener("pointerdown", e => { if (gone || e.target.closest("button")) return; drag = true; sx = e.clientX; sy = e.clientY; dx = 0; card.style.transition = "none"; try { card.setPointerCapture(e.pointerId); } catch (_) {} });
+  card.addEventListener("pointermove", e => { if (!drag) return; dx = e.clientX - sx; set(dx); });
+  const up = () => {
+    if (!drag) return; drag = false;
+    if (Math.abs(dx) > 90) fling(dx > 0 ? "right" : "left");
+    else { card.style.transition = "transform .25s"; set(0); if (Math.abs(dx) < 6 && onTap) onTap(); }
+  };
+  card.addEventListener("pointerup", up); card.addEventListener("pointercancel", up);
+  function fling(dir) {
+    if (gone) return; gone = true;
+    card.style.transition = "transform .3s ease, opacity .3s";
+    set(dir === "right" ? 140 : -140);
+    requestAnimationFrame(() => { card.style.transform = `translateX(${dir === "right" ? 600 : -600}px) rotate(${dir === "right" ? 24 : -24}deg)`; card.style.opacity = "0"; });
+    setTimeout(() => onDecide(dir), 200);
+  }
+  card.fling = fling;
+  return card;
+}
+document.addEventListener("keydown", e => {
+  if (play.hidden) return;
+  const top = stage.querySelector(".card:not(.under)");
+  if (top && top.fling && (e.key === "ArrowRight" || e.key === "ArrowLeft")) top.fling(e.key === "ArrowRight" ? "right" : "left");
+});
+
+/* ---------- Game modules ---------- */
+const MODS = {};
+
+MODS.intro = (items, done) => flashDeck(items, done, true);
+MODS.flash = (items, done) => flashDeck(items, done, false);
+function flashDeck(items, done, isIntro) {
+  let deck = items.map(i => ({ i, again: false }));
+  stage.innerHTML = `<div class="deck"></div><div class="decide soft"><button class="l">↺ Tekrar göster</button><button class="r">${IC.check} ${isIntro ? "Öğrendim" : "Biliyorum"}</button></div>`;
+  const dk = $(".deck", stage);
+  const cardHTML = (it, under) => {
+    const ex = it.ex ? `<div class="ex">${esc(it.ex).replace(new RegExp("(" + it.en.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "i"), "<mark>$1</mark>")}</div>` : "";
+    return `<div class="card ${under ? "under" : ""}"><span class="lbl yes">TAMAM</span><span class="lbl no">TEKRAR</span>
+      ${isIntro ? '<span class="new">Yeni</span>' : ""}
+      <div class="flipfront"><div class="big ${it.ph ? "phr" : ""}">${esc(it.en)}</div>${sayBtn(it.en)}</div>
+      <div class="flipback"><div class="big ${it.ph ? "phr" : ""}" style="font-size:clamp(1.4rem,6vw,2rem)">${esc(it.en)}</div><div class="eq"></div><div class="tr">${esc(it.tr)}</div>${ex}${it.ex ? sayBtn(it.ex) : sayBtn(it.en)}</div>
+      <div class="hint">Anlamı için dokun · sağa kaydır: ${isIntro ? "öğrendim" : "biliyorum"}</div></div>`;
+  };
+  const show = () => {
+    if (!deck.length) return setTimeout(done, 150);
+    dk.innerHTML = (deck[1] ? cardHTML(deck[1].i, true) : "") + cardHTML(deck[0].i, false);
+    const card = dk.lastElementChild, cur = deck[0];
+    if (S.sound) setTimeout(() => speak(cur.i.en), 150);
+    swipeable(card, dir => {
+      deck.shift();
+      if (dir === "right" || cur.again) {
+        markSeen(cur.i); progress();
+        if (dir === "right") { L.xp += 2; addXP(2); updTop(); beep("tap"); }
+      } else { cur.again = true; deck.push(cur); toast("Tamam, birazdan tekrar geliyor"); }
+      show();
+    }, () => { card.classList.toggle("flipped"); if (card.classList.contains("flipped") && S.sound) speak(cur.i.en); });
+  };
+  $(".decide .l", stage).onclick = () => { const c = dk.querySelector(".card:not(.under)"); c && c.fling("left"); };
+  $(".decide .r", stage).onclick = () => { const c = dk.querySelector(".card:not(.under)"); c && c.fling("right"); };
+  show();
+}
+
+const makeTF = it => { const tru = Math.random() < .5; const d = tru ? null : distract(it, 1, "tr")[0]; return { it, tru: tru || !d, shown: tru || !d ? it.tr : d }; };
+MODS.tf = (items, done) => tfDeck(items.map(makeTF), done, null);
+let sprintTimer = null;
+MODS.sprint = (items, done) => {
+  let left = 60, score = 0, pool = items.slice(), qs = [];
+  const nextQ = () => { if (!qs.length) qs = shuffle(pool).map(makeTF); return qs.shift(); };
+  stage.insertAdjacentHTML("beforeend", "");
+  tfDeck(null, () => {}, { next: nextQ, onAnswer: ok => { if (ok) { score++; } $("#sprintScore").textContent = score; } });
+  stage.insertAdjacentHTML("afterbegin", `<div style="display:flex;align-items:center;gap:12px"><div class="timer" style="flex:1"><i id="sprintT" style="width:100%"></i></div><span class="score" id="sprintScore">0</span></div>`);
+  $("#pbar").parentElement.style.visibility = "hidden";
+  clearInterval(sprintTimer);
+  sprintTimer = setInterval(() => {
+    left--; const t = $("#sprintT"); if (t) t.style.width = (left / 60 * 100) + "%";
+    if (left <= 0) {
+      clearInterval(sprintTimer); $("#pbar").parentElement.style.visibility = "";
+      const rec = score > S.sprintBest; if (rec) S.sprintBest = score;
+      L.si = L.steps.length; L.sprintScore = score;
+      if (rec && score > 0) setTimeout(() => toast("Yeni rekor: " + score + "!", 2200), 400);
+      endLesson();
+    }
+  }, 1000);
+};
+function tfDeck(qs, done, sprint) {
+  stage.insertAdjacentHTML("beforeend", "");
+  stage.innerHTML = `<div class="deck"></div><div class="decide"><button class="l">${IC.x} Yanlış</button><button class="r">${IC.check} Doğru</button></div>`;
+  const dk = $(".deck", stage);
+  let cur = sprint ? sprint.next() : qs[0], nxt = sprint ? sprint.next() : qs[1], k = 0;
+  const cardHTML = (q, under) => q ? `<div class="card ${under ? "under" : ""}"><span class="lbl yes">DOĞRU</span><span class="lbl no">YANLIŞ</span>
+    <div class="big ${q.it.ph ? "phr" : ""}">${esc(q.it.en)}</div><div class="eq"></div><div class="tr">${esc(q.shown)}</div>${sprint ? "" : sayBtn(q.it.en)}
+    <div class="hint">Doğruysa sağa, yanlışsa sola kaydır</div></div>` : "";
+  const show = () => {
+    if (!cur) return setTimeout(done, 200);
+    dk.innerHTML = cardHTML(nxt, true) + cardHTML(cur, false);
+    const card = dk.lastElementChild, q = cur;
+    swipeable(card, dir => {
+      const ok = (dir === "right") === q.tru;
+      record(q.it, ok, sprint ? 3 : 5);
+      if (!ok) toast(`${q.it.en} = ${q.it.tr}`, 1700); else if (!sprint && Math.random() < .35) toast(rnd(GOOD), 900);
+      if (sprint) { sprint.onAnswer(ok); cur = nxt; nxt = sprint.next(); }
+      else { progress(); k++; cur = qs[k]; nxt = qs[k + 1]; }
+      show();
+    });
+  };
+  $(".decide .l", stage).onclick = () => { const c = dk.querySelector(".card:not(.under)"); c && c.fling("left"); };
+  $(".decide .r", stage).onclick = () => { const c = dk.querySelector(".card:not(.under)"); c && c.fling("right"); };
+  show();
+}
+
+MODS.match = (items, done) => {
+  const L1 = shuffle(items), R1 = shuffle(items);
+  stage.innerHTML = `<p class="muted" style="text-align:center;margin:0;font-weight:700">İngilizceyi Türkçesiyle eşleştir</p><div class="match">${L1.map((it, k) => `<button class="tile" data-side="l" data-id="${it.id}">${esc(it.en)}</button><button class="tile" data-side="r" data-id="${R1[k].id}">${esc(R1[k].tr)}</button>`).join("")}</div>`;
+  let sel = { l: null, r: null }, left = items.length, wrongOnce = new Set();
+  stage.querySelectorAll(".tile").forEach(t => t.onclick = () => {
+    const side = t.dataset.side;
+    if (sel[side]) sel[side].classList.remove("sel");
+    sel[side] = t; t.classList.add("sel");
+    if (side === "l") { const it = items.find(i => i.id === t.dataset.id); if (S.sound) speak(it.en); }
+    if (sel.l && sel.r) {
+      const a = sel.l, b = sel.r, it = items.find(i => i.id === a.dataset.id);
+      if (a.dataset.id === b.dataset.id) {
+        a.classList.replace("sel", "ok"); b.classList.replace("sel", "ok");
+        record(it, true, wrongOnce.has(it.id) ? 2 : 5); progress();
+        if (--left === 0) setTimeout(done, 600);
+      } else {
+        wrongOnce.add(it.id); record(null, false);
+        [a, b].forEach(x => { x.classList.remove("sel"); x.classList.add("no"); setTimeout(() => x.classList.remove("no"), 400); });
+        if (!L.practice) L.ans[it.id] = false;
+      }
+      sel = { l: null, r: null };
+    }
+  });
+};
+
+function seq(items, one, done) { let k = 0; const go = () => (k >= items.length ? done() : one(items[k++], go)); go(); }
+function choice(it, html, correct, wrongs, next, onReveal) {
+  const opts = shuffle([correct, ...wrongs]);
+  stage.innerHTML = `<div class="q">${html}</div><div class="opts ${opts.length === 4 ? "two" : ""}">${opts.map(o => `<button class="opt">${esc(o)}</button>`).join("")}</div><div class="after"></div>`;
+  let locked = false;
+  stage.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+    if (locked) return; locked = true;
+    const ok = b.textContent === correct;
+    stage.querySelectorAll(".opt").forEach(x => { if (x.textContent === correct) x.classList.add("ok"); else if (x !== b) x.classList.add("fade"); });
+    if (!ok) b.classList.add("no");
+    record(it, ok, 10); progress();
+    onReveal && onReveal(ok);
+    if (ok) { if (Math.random() < .4) toast(rnd(GOOD), 900); setTimeout(next, 1150); }
+    else { toast(rnd(BAD), 1300); $(".after", stage).innerHTML = `<button class="btn primary">Devam</button>`; $(".after .btn", stage).onclick = next; }
+  });
+}
+MODS.fill = (items, done) => seq(items, (it, next) => {
+  const re = new RegExp("\\b" + it.en.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "i");
+  const m = it.ex.match(re), word = m ? m[0] : it.en;
+  const parts = it.ex.split(re);
+  const html = `<div class="prompt">Boşluğa hangisi gelir?</div><div class="sent">${esc(parts[0])}<span class="blank">&nbsp;</span>${esc(parts.slice(1).join(word))}</div><div class="muted" style="font-weight:700">${esc(it.tr)} anlamında</div>`;
+  choice(it, html, it.en, distract(it, 2, "en"), next, ok => { const bl = $(".blank", stage); bl.textContent = word; bl.classList.add(ok ? "ok" : "no"); if (ok) bl.classList.add("ok"); speak(it.ex); });
+}, done);
+MODS.listen = (items, done) => seq(items, (it, next) => {
+  const html = `<div class="prompt">Dinle, anlamını seç</div><button class="bigspeak" data-say="${esc(it.en)}" aria-label="Tekrar dinle">${IC.speak}</button><div class="reveal" id="rev"></div>`;
+  choice(it, html, it.tr, distract(it, 3, "tr"), next, () => { $("#rev").textContent = it.en; });
+  setTimeout(() => speak(it.en, true), 250);
+}, done);
+MODS.pick = (items, done) => seq(items, (it, next) => {
+  const html = `<div class="prompt">Bu ne demek?</div><div class="big">${esc(it.en)}</div>${sayBtn(it.en)}`;
+  choice(it, html, it.tr, distract(it, 3, "tr"), next);
+}, done);
+
+MODS.spell = (items, done) => seq(items, (it, next) => {
+  const word = it.en.toLowerCase(), letters = shuffle(word.split("").map((c, k) => ({ c, k })));
+  let filled = [], finished = false, hinted = 0, wrongs = 0;
+  stage.innerHTML = `<div class="q"><div class="prompt">Bunu İngilizce yaz</div><div class="big" style="font-size:clamp(1.6rem,7vw,2.4rem)">${esc(it.tr)}</div><div class="slots" id="slots">${word.split("").map(() => '<div class="slot"></div>').join("")}</div><button class="hintbtn" id="hint">İpucu ver</button></div>
+    <div class="letters">${letters.map((l, k) => `<button class="letter" data-k="${k}">${l.c}</button>`).join("")}</div><div class="after"></div>`;
+  const slots = [...stage.querySelectorAll(".slot")], btns = [...stage.querySelectorAll(".letter")];
+  const draw = () => slots.forEach((s, k) => { s.textContent = filled[k] ? filled[k].c : ""; s.classList.toggle("f", !!filled[k]); });
+  const check = () => {
+    if (filled.length < word.length) return;
+    const got = filled.map(f => f.c).join("");
+    if (got === word) {
+      finished = true; $("#slots").classList.add("ok"); speak(it.en);
+      record(it, true, (hinted || wrongs) ? 0 : 10); progress(); setTimeout(next, 1100);
+    } else {
+      wrongs++; $("#slots").classList.add("no"); record(it, false);
+      setTimeout(() => { $("#slots").classList.remove("no"); filled.forEach(f => btns[f.b].classList.remove("used")); filled = []; draw();
+        if (wrongs >= 2) { finished = true; slots.forEach((s, k) => { s.textContent = word[k]; s.classList.add("f"); }); toast("Doğrusu: " + it.en, 1600); speak(it.en); progress(); $(".after", stage).innerHTML = `<button class="btn primary">Devam</button>`; $(".after .btn", stage).onclick = next; }
+      }, 600);
+    }
+  };
+  btns.forEach(b => b.onclick = () => { if (finished || b.classList.contains("used") || filled.length >= word.length) return; b.classList.add("used"); filled.push({ c: letters[+b.dataset.k].c, b: +b.dataset.k }); draw(); beep("tap"); check(); });
+  slots.forEach((s, k) => s.onclick = () => { if (finished || !filled[k]) return; const rem = filled.splice(k); rem.forEach(f => btns[f.b].classList.remove("used")); draw(); });
+  $("#hint").onclick = () => {
+    if (finished) return;
+    let k = 0; while (k < filled.length && filled[k].c === word[k]) k++;
+    filled.splice(k).forEach(f => btns[f.b].classList.remove("used"));
+    if (k >= word.length) return;
+    const bi = btns.findIndex((b, j) => !b.classList.contains("used") && letters[j].c === word[k]);
+    if (bi < 0) return;
+    hinted++; btns[bi].classList.add("used"); filled.push({ c: word[k], b: bi }); draw(); check();
+  };
+}, done);
+
+/* ---------- Confetti ---------- */
+function confetti() {
+  if (reduced) return;
+  const c = $("#confetti"), ctx = c.getContext("2d"); c.hidden = false;
+  const dpr = window.devicePixelRatio || 1; c.width = innerWidth * dpr; c.height = innerHeight * dpr; ctx.scale(dpr, dpr);
+  const cs = getComputedStyle(document.documentElement);
+  const cols = ["--petal", "--petal-deep", "--leaf", "--good"].map(v => cs.getPropertyValue(v).trim() || "#F4B400");
+  const P = Array.from({ length: 110 }, () => ({ x: innerWidth / 2 + (Math.random() - .5) * 120, y: innerHeight * .35, vx: (Math.random() - .5) * 9, vy: -Math.random() * 11 - 3, r: Math.random() * 6 + 4, a: Math.random() * 6, va: (Math.random() - .5) * .3, c: rnd(cols), petal: Math.random() < .5 }));
+  let t0 = performance.now();
+  const frame = now => {
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    P.forEach(p => { p.vy += .32; p.x += p.vx; p.y += p.vy; p.a += p.va; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.fillStyle = p.c;
+      if (p.petal) { ctx.beginPath(); ctx.ellipse(0, 0, p.r * .45, p.r, 0, 0, Math.PI * 2); ctx.fill(); } else ctx.fillRect(-p.r / 2, -p.r / 4, p.r, p.r / 2);
+      ctx.restore(); });
+    if (now - t0 < 2600) requestAnimationFrame(frame); else { ctx.clearRect(0, 0, innerWidth, innerHeight); c.hidden = true; }
+  };
+  requestAnimationFrame(frame);
+}
+
+render();
+if ("serviceWorker" in navigator) window.addEventListener("load", () => { navigator.serviceWorker.register("sw.js").catch(() => {}); });
+</script>
+
+</body>
+</html>
