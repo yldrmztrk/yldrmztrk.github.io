@@ -308,7 +308,7 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 <div id="app">
   <header class="top">
     <div class="brand"><i aria-hidden="true"></i>Sunflower English</div>
-    <span class="ver" id="ver">v2.2</span>
+    <span class="ver" id="ver">v2.3</span>
   </header>
   <main id="view" aria-live="polite"></main>
   <nav class="tabs" aria-label="Bölümler">
@@ -335,7 +335,7 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 <canvas id="confetti" hidden></canvas>
 
 <script>
-const VERSION = "2.2";
+const VERSION = "2.3";
 
 /* ---------- Content: 10 routes, 240 words & phrases ---------- */
 const RAW = [
@@ -1513,7 +1513,1000 @@ honest|dürüst|He is an honest man.
 modern|modern|The hotel is new and modern.
 traditional|geleneksel|We ate a traditional dinner.
 huge|çok büyük|The airport is huge.
-main|ana, başlıca|The main entrance is on the left.`, false, "B1 · Bir adım öteye"]
+main|ana, başlıca|The main entrance is on the left.`, false, "B1 · Bir adım öteye"],
+["Ev işleri ve aletler", "Elektrik süpürgesi, ütü, çamaşır", `
+vacuum|elektrikli süpürge, süpürmek|I vacuum the living room every Saturday.
+iron|ütü, ütülemek|Can I borrow your iron, please?
+washing machine|çamaşır makinesi|The washing machine is making a strange noise.
+broom|süpürge|Use the broom to clean the kitchen floor.
+mop|paspas|Where is the mop and bucket?
+bucket|kova|Fill the bucket with warm water.
+detergent|deterjan|We need more detergent for the washing machine.
+sponge|sünger|Use a sponge to wash the dishes.
+dustpan|faraş|Hold the dustpan while I sweep.
+ironing board|ütü masası|Put the ironing board next to the window.
+hanger|askı|I need a hanger for this shirt.
+sweep|süpürmek|Please sweep the balcony before dinner.
+wipe|silmek|Wipe the table with a clean cloth.
+scrub|ovmak, fırçalamak|You have to scrub the bathtub hard.
+dust|toz almak, toz|I dust the shelves every week.
+fold|katlamak|Please fold the towels and put them away.
+hang|asmak|Hang the clothes outside to dry.
+rubbish|çöp|Take the rubbish out before you leave.
+light bulb|ampul|The light bulb in the hall is broken.
+plug|fiş, tıkaç|Put the plug in the socket.
+socket|priz|There is no socket near my bed.
+hammer|çekiç|Dad needs a hammer to fix the shelf.
+screwdriver|tornavida|Can you pass me the screwdriver?
+ladder|merdiven|Be careful on the ladder!
+fan|vantilatör, fan|Turn on the fan, it is very hot.`, false, "A2 · Günlük pratik"],
+["Banyo ve bakım", "Sabun, şampuan, diş fırçası", `
+soap|sabun|Wash your hands with soap.
+shampoo|şampuan|I forgot my shampoo at the hotel.
+toothbrush|diş fırçası|Don't forget your toothbrush!
+toothpaste|diş macunu|We are out of toothpaste.
+comb|tarak, taramak|Where is my comb?
+razor|tıraş bıçağı|He bought a new razor yesterday.
+shave|tıraş olmak|I shave every morning before work.
+deodorant|deodorant|Put on some deodorant before the flight.
+perfume|parfüm|She wears a lovely perfume.
+lotion|losyon|Use body lotion after the shower.
+bath|banyo, küvet|I like a long hot bath at night.
+bathtub|küvet|The bathtub is very big.
+hairdryer|saç kurutma makinesi|Does the room have a hairdryer?
+tissue|kâğıt mendil|Can I have a tissue, please?
+toilet paper|tuvalet kâğıdı|We need to buy more toilet paper.
+nail|tırnak|She cut her nail and it hurt.
+scissors|makas|Pass me the scissors, please.
+conditioner|saç kremi|I use shampoo and conditioner.
+face wash|yüz temizleyici|This face wash is good for dry skin.
+cotton bud|kulak çöpü|Do you have a cotton bud?
+bathrobe|bornoz|The bathrobe is behind the door.
+slippers|terlik|Wear your slippers, the floor is cold.
+wash|yıkamak|Wash your face with cold water.
+brush|fırça, fırçalamak|I brush my teeth twice a day.
+lipstick|ruj|She put on red lipstick.`, false, "A2 · Günlük pratik"],
+["Markette", "Paket, kilo, reyon, donmuş", `
+packet|paket|I bought a packet of biscuits.
+kilo|kilo|Two kilo of tomatoes, please.
+gram|gram|I need 200 gram of cheese.
+litre|litre|Buy a litre of milk, please.
+dozen|düzine|Can I have a dozen eggs?
+shelf|raf|The pasta is on the top shelf.
+basket|sepet|Take a basket, I only need a few things.
+checkout|kasa|There is a long queue at the checkout.
+frozen|dondurulmuş, donmuş|The frozen pizza is in the freezer section.
+canned|konserve|I bought some canned tuna.
+organic|organik|Organic vegetables are more expensive.
+label|etiket|Read the label before you buy it.
+expiry date|son kullanma tarihi|Check the expiry date on the milk.
+meat|et|We don't eat much meat.
+dairy|süt ürünleri|Dairy products are in the next aisle.
+sausage|sosis|Would you like sausage for breakfast?
+pasta|makarna|We are having pasta for dinner.
+weigh|tartmak|Please weigh the apples at the counter.
+carrier bag|market poşeti|Do you need a carrier bag?
+price tag|fiyat etiketi|There is no price tag on this jacket.
+special offer|özel teklif, kampanya|Tea is on special offer this week.
+out of stock|stokta yok|Sorry, this brand is out of stock.
+half|yarım, yarı|I'd like half a kilo of cherries.
+bunch|demet, salkım|Buy a bunch of bananas.
+loaf|somun, ekmek|Can you get a loaf of bread?`, false, "A2 · Günlük pratik"],
+["Tatlar ve mutfaklar", "Ekşi, acı, çıtır, ev yapımı", `
+sour|ekşi|This lemon is very sour.
+bitter|acı, buruk|Black coffee tastes bitter to me.
+crispy|çıtır|I love crispy chicken.
+homemade|ev yapımı|My mother makes homemade jam.
+tasty|lezzetli|The soup was really tasty.
+bland|tatsız|The rice was a bit bland.
+juicy|sulu|These oranges are sweet and juicy.
+creamy|kremsi|The sauce is rich and creamy.
+greasy|yağlı|Fried food is too greasy for me.
+tender|yumuşak, körpe|The lamb was soft and tender.
+raw|çiğ|Don't eat raw chicken.
+ripe|olgun|These bananas are not ripe yet.
+stale|bayat|This bread is stale.
+crunchy|çıtır çıtır, gevrek|I like crunchy apples.
+taste|tat, tadına bakmak|Taste the soup, please.
+flavour|lezzet, aroma|What flavour of ice cream do you want?
+cuisine|mutfak (yemek kültürü)|Turkish cuisine is famous around the world.
+dish|yemek, tabak|This dish comes with rice and salad.
+portion|porsiyon|The portion was too big for me.
+speciality|özel yemek, uzmanlık|Fish is the speciality of this restaurant.
+seafood|deniz ürünleri|We had fresh seafood by the sea.
+Italian|İtalyan, İtalyanca|I love Italian pizza.
+Chinese|Çin, Çince|We ate at a Chinese restaurant yesterday.
+Japanese|Japon, Japonca|Japanese food is healthy.
+Indian|Hint|Indian food is often very spicy.`, false, "A2 · Günlük pratik"],
+["Tatil ve plaj", "Mayo, şemsiye, kum, deniz", `
+swimsuit|mayo|Don't forget your swimsuit.
+swimming pool|yüzme havuzu|The hotel has a big swimming pool.
+sunbed|şezlong|Is this sunbed free?
+parasol|plaj şemsiyesi|Sit under the parasol, it's very hot.
+lifeguard|cankurtaran|The lifeguard watches the sea all day.
+shell|deniz kabuğu, kabuk|I found a beautiful shell on the beach.
+seagull|martı|A seagull took my sandwich!
+sunburn|güneş yanığı|I got sunburn on my back.
+tan|bronzluk, bronzlaşmak|You have a nice tan!
+flip-flops|plaj terliği|Wear flip-flops on the hot sand.
+snorkel|şnorkel|We used a snorkel to see the fish.
+diving|dalış|Diving is my favourite summer activity.
+surfing|sörf|Surfing is hard in small waves.
+sailing|yelkencilik, yelken|We went sailing on Sunday.
+boat|tekne, kayık|Let's take a boat to the next bay.
+coast|kıyı, sahil|The coast is only an hour away.
+shore|kıyı, sahil|We walked along the shore.
+cliff|uçurum, kayalık|There is a small cafe on the cliff.
+bay|koy|This bay is quiet and clean.
+tide|gelgit|The tide is coming in.
+sandcastle|kumdan kale|The children built a big sandcastle.
+ice cream|dondurma|Let's get an ice cream on the beach.
+sunset|gün batımı|The sunset here is beautiful.
+vacation|tatil|We are on vacation next month.
+sunscreen|güneş kremi|Put on sunscreen before you swim.`, false, "A2 · Günlük pratik"],
+["Otel olanakları", "Minibar, spa, suit, oda servisi", `
+amenities|olanaklar, imkânlar|The hotel has many great amenities.
+minibar|minibar|Drinks from the minibar cost extra.
+spa|spa|I booked a massage at the spa.
+suite|suit oda|We stayed in a suite with a sea view.
+room service|oda servisi|Let's order room service tonight.
+double room|çift kişilik oda|We reserved a double room for two nights.
+twin room|iki yataklı oda|Do you have a twin room available?
+sea view|deniz manzarası|I'd like a room with a sea view.
+concierge|konsiyerj|Ask the concierge for a taxi.
+housekeeping|kat hizmetleri|Housekeeping cleans the room every morning.
+room safe|oda kasası|Put your passport in the room safe.
+sauna|sauna|The sauna is open until ten.
+buffet|açık büfe|The breakfast buffet is on the ground floor.
+full board|tam pansiyon|Our price includes full board.
+half board|yarım pansiyon|We chose half board for the week.
+all inclusive|her şey dahil|It is an all inclusive hotel.
+shuttle|servis aracı|A shuttle takes guests to the airport.
+porter|komi, bavul taşıyıcı|The porter carried our bags to the room.
+extra bed|ilave yatak|Can we have an extra bed for our son?
+air conditioning|klima|The air conditioning in my room is broken.
+complimentary|ücretsiz, ikram|Complimentary water is in the room.
+receptionist|resepsiyon görevlisi|The receptionist was very friendly.
+sheet|çarşaf|Could I get a clean sheet, please?
+pillowcase|yastık kılıfı|The pillowcase smells fresh.
+do not disturb|rahatsız etmeyin|I put the do not disturb sign on the door.`, false, "A2 · Günlük pratik"],
+["Havalimanında 2", "Bagaj teslim, biniş kartı, transit", `
+baggage claim|bagaj teslim alanı|Meet me at the baggage claim.
+boarding pass|biniş kartı|Show your boarding pass at the gate.
+terminal|terminal|Our flight leaves from terminal two.
+connecting flight|aktarmalı uçuş|I missed my connecting flight.
+carry-on|kabin bagajı|My carry-on is under the seat.
+hand luggage|el bagajı|You can take one hand luggage on board.
+conveyor belt|bagaj bandı|Our suitcases are on the conveyor belt.
+check-in desk|check-in tezgâhı|The check-in desk opens at six.
+immigration|göçmenlik, pasaport kontrolü|The immigration line was very long.
+passport control|pasaport kontrolü|Go through passport control first.
+arrivals|geliş salonu|I'll wait for you in arrivals.
+layover|aktarma bekleme süresi|I have a four-hour layover in Dubai.
+stopover|ara durak|We had a stopover in Frankfurt.
+transit|transit, aktarma|I am in transit to Tokyo.
+delayed|rötarlı, gecikmiş|Our flight is delayed by two hours.
+metal detector|metal dedektörü|Walk through the metal detector slowly.
+scanner|tarayıcı|Put your bag on the scanner.
+luggage tag|bagaj etiketi|Write your name on the luggage tag.
+lost property|kayıp eşya|Go to lost property to find your bag.
+lounge|lounge, bekleme salonu|We waited in the airport lounge.
+overweight|fazla kilolu, aşırı ağır|My suitcase is overweight.
+fragile|kırılgan|Be careful, this bag is fragile.
+declare|beyan etmek|Do you have anything to declare?
+final call|son çağrı|This is the final call for flight 52.
+runway|pist|The plane is waiting on the runway.`, false, "A2 · Günlük pratik"],
+["Eczanede", "Ağrı kesici, şurup, hap, merhem", `
+painkiller|ağrı kesici|I need a painkiller for my headache.
+cough syrup|öksürük şurubu|Do you have cough syrup for children?
+plaster|yara bandı|Can I have a plaster, please?
+first-aid kit|ilk yardım çantası|Keep a first-aid kit in the car.
+capsule|kapsül|Swallow the capsule with water.
+ointment|merhem|Put this ointment on the cut.
+drops|damla|Use eye drops twice a day.
+antibiotic|antibiyotik|The doctor gave me an antibiotic.
+vitamin|vitamin|I take a vitamin every morning.
+thermometer|ateş ölçer|Use the thermometer to check his temperature.
+sore throat|boğaz ağrısı|I have a sore throat and a cough.
+runny nose|akan burun|She has a runny nose and a cold.
+dose|doz|Don't take more than one dose a day.
+side effect|yan etki|This medicine has a side effect.
+nasal spray|burun spreyi|Use the nasal spray in the morning.
+antiseptic|antiseptik|Clean the cut with antiseptic.
+diarrhoea|ishal|He has diarrhoea after the trip.
+rash|kızarıklık, döküntü|I have a rash on my arm.
+insect bite|böcek ısırığı|This cream is good for an insect bite.
+indigestion|hazımsızlık|I have indigestion after big meals.
+heartburn|mide yanması|Spicy food gives me heartburn.
+cream|krem|Put some cream on your hands.
+over the counter|reçetesiz|You can buy it over the counter.
+cotton wool|pamuk|Use cotton wool to clean the cut.
+swollen|şişmiş|My ankle is swollen.`, false, "A2 · Günlük pratik"],
+["Acil durumlar", "Yangın, yaralı, kurtarma, alarm", `
+fire|yangın, ateş|Call the fire brigade, there's a fire!
+injured|yaralı|Two people were injured in the crash.
+rescue|kurtarmak, kurtarma|The team will rescue the children.
+alarm|alarm|The fire alarm is very loud.
+smoke|duman|There is smoke in the kitchen.
+flood|sel, su baskını|The flood closed the main road.
+earthquake|deprem|There was a small earthquake last night.
+fire exit|yangın çıkışı|Where is the nearest fire exit?
+fire extinguisher|yangın söndürücü|Use the fire extinguisher on the small fire.
+evacuation|tahliye|The evacuation took only ten minutes.
+unconscious|bilinçsiz|He was unconscious after the fall.
+bleed|kanamak|Her finger started to bleed.
+choke|boğulmak, tıkanmak|The baby began to choke on a grape.
+faint|bayılmak|I feel dizzy, I think I'll faint.
+burn|yanmak, yakmak|Be careful, you can burn your hand.
+trapped|mahsur kalmış|Three people are trapped in the lift.
+thief|hırsız|A thief stole my wallet.
+police|polis|Call the police right now!
+paramedic|ilk yardım görevlisi|The paramedic arrived in five minutes.
+stretcher|sedye|They carried him on a stretcher.
+shelter|sığınak, barınak|We found shelter from the storm.
+panic|panik, paniğe kapılmak|Don't panic, stay calm.
+emergency number|acil durum numarası|The emergency number is 112.
+witness|tanık|She was a witness to the accident.
+siren|siren|I heard a siren outside.`, false, "A2 · Günlük pratik"],
+["Yön ve konum", "Üstünde, altında, arasında, kuzey", `
+above|yukarısında, üstünde|The clock is above the door.
+below|altında, aşağısında|Please sign your name below.
+between|arasında|The bank is between the cafe and the shop.
+north|kuzey|Istanbul is in the north-west of Turkey.
+south|güney|Birds fly south in winter.
+east|doğu|The sun rises in the east.
+west|batı|Go west for two kilometres.
+inside|içeride, içinde|It's cold, let's go inside.
+outside|dışarıda, dışında|The kids are playing outside.
+under|altında|The cat is sleeping under the table.
+in front of|önünde|Wait in front of the station.
+beside|yanında|Sit beside me on the plane.
+around|etrafında, çevresinde|We walked around the lake.
+across|karşısında, karşıya|The post office is across the street.
+along|boyunca|Walk along the river for ten minutes.
+through|içinden, boyunca|The road goes through a small village.
+towards|doğru|The bus is moving towards the city.
+top|üst, tepe|Our room is on the top floor.
+bottom|alt, dip|The keys are at the bottom of my bag.
+middle|orta, ortası|Our seats are in the middle of the plane.
+upstairs|üst kat, yukarıda|The bedrooms are upstairs.
+downstairs|alt kat, aşağıda|The kitchen is downstairs.
+nearby|yakında|Is there a pharmacy nearby?
+here|burada, buraya|Please sign here.
+there|orada, oraya|The museum is over there.`, false, "A2 · Günlük pratik"],
+["Güçlü duygular", "Sevinç, öfke, hayal kırıklığı", `
+thrilled|çok heyecanlı, çok sevinçli|I was thrilled to get the job.
+furious|çok öfkeli|He was furious about the cancelled flight.
+gloomy|kederli, somurtkan|He looked gloomy after the news.
+relieved|rahatlamış|She was relieved to find her passport.
+envious|imrenen, gıpta eden|I am envious of her long holiday.
+embarrassed|utanmış, mahcup|He felt embarrassed about his mistake.
+restless|huzursuz, tedirgin|The baby was restless all night.
+anxious|kaygılı, endişeli|She felt anxious about the interview.
+glad|memnun, sevinçli|I am glad you came.
+suspicious|şüpheci|The officer looked suspicious.
+homesick|memleket özlemi çeken|She felt homesick abroad.
+shocked|şok olmuş|I was shocked by the high price.
+confused|kafası karışmış|The passengers were confused by the signs.
+annoyed|sinirli, canı sıkkın|I am annoyed with the noisy neighbours.
+puzzled|şaşkın, hayret içinde|He looked puzzled by the map.
+miserable|perişan, mutsuz|We were miserable in the rain.
+terrified|çok korkmuş|He was terrified of the storm.
+delighted|çok memnun|We are delighted to see you again.
+depressed|depresyonda, bunalmış|He felt depressed during the dark winter.
+ashamed|utanç duyan|I am ashamed of my bad behaviour.
+stressed|stresli|She is stressed because of work.
+content|memnun, tatmin olmuş|He is content with his life.
+hopeful|umutlu|We are hopeful about the new plan.
+overwhelmed|bunalmış, altında ezilmiş|I felt overwhelmed by so much work.
+amazed|hayran kalmış, şaşkın|They were amazed by the view.`, false, "A2-B1 · İnsanlar ve hayat"],
+["Karakter 2", "Dürüst, cömert, bencil, inatçı", `
+sincere|samimi, içten|She gave a sincere apology.
+generous|cömert|My uncle is very generous with money.
+selfish|bencil|Don't be selfish and share the cake.
+stubborn|inatçı|My brother is too stubborn to listen.
+humble|alçakgönüllü|He is humble despite his fame.
+greedy|açgözlü|The greedy boy ate all the sweets.
+careless|dikkatsiz|He is careless with his keys.
+clever|zeki, akıllı|She is a clever girl.
+outgoing|girişken, dışa dönük|She is outgoing and loves parties.
+fair|adil|Our teacher is always fair.
+cautious|temkinli|Be cautious on the wet road.
+creative|yaratıcı|She is a creative person who loves painting.
+reliable|güvenilir|He is a reliable friend.
+arrogant|kibirli|The manager is arrogant and never listens.
+modest|alçakgönüllü, mütevazı|He is modest about his success.
+friendly|arkadaş canlısı|The hotel staff were very friendly.
+sensitive|hassas, duyarlı|She is sensitive and cries easily.
+optimistic|iyimser|I am optimistic about the future.
+mean|cimri, kötü niyetli|Don't be mean to your little sister.
+thoughtful|düşünceli, nazik|He is a thoughtful husband.
+caring|şefkatli, ilgili|She is a caring nurse.
+loyal|sadık, vefalı|A loyal friend never leaves you.
+easygoing|rahat, uyumlu|My boss is easygoing and relaxed.
+talkative|konuşkan|The taxi driver was very talkative.
+hardworking|çalışkan|He is a hardworking student.`, false, "A2-B1 · İnsanlar ve hayat"],
+["Sosyal medya", "Mesaj, paylaşım, takipçi", `
+post|paylaşım, paylaşmak|I will post the photo tonight.
+follower|takipçi|One follower sent me a lovely note.
+tag|etiketlemek|Please tag me in the photo.
+emoji|emoji|I sent a smiling emoji.
+comment|yorum, yorum yapmak|He left a nice comment under my post.
+feed|akış, ana sayfa|My feed is full of travel photos.
+hashtag|etiket, hashtag|Use a hashtag for your holiday photos.
+profile|profil|Check my profile for more photos.
+inbox|gelen kutusu|My inbox is full of emails.
+text|kısa mesaj, mesaj atmak|Text me when you land.
+forward|iletmek|Please forward the email to me.
+group chat|grup sohbeti|We planned the trip in a group chat.
+notification|bildirim|I got a notification from the app.
+screenshot|ekran görüntüsü|Send me a screenshot of the ticket.
+emoticon|ifade simgesi|I added a smiling emoticon.
+username|kullanıcı adı|Choose a simple username.
+account|hesap|I created a new account yesterday.
+livestream|canlı yayın|We watched the livestream together.
+upload|yüklemek|I want to upload the video now.
+selfie|selfie|Let's take a selfie here!
+offline|çevrimdışı|My phone is offline in the air.
+video call|görüntülü arama|Let's have a video call tonight.
+voice message|sesli mesaj|She sent me a voice message.
+viral|viral, çok yayılan|The video went viral overnight.
+block|engellemek|I had to block that annoying number.`, false, "A2-B1 · İnsanlar ve hayat"],
+["Kutlamalar", "Doğum günü, bayram, düğün", `
+ceremony|tören|The ceremony starts at noon.
+gathering|toplantı, buluşma|We had a family gathering.
+honeymoon|balayı|They went on honeymoon to Italy.
+anniversary|yıl dönümü|It is our tenth wedding anniversary.
+greeting|selamlama, tebrik|I sent a short greeting to everyone.
+present|hediye|She opened her present with a smile.
+bouquet|buket|She held a bouquet of roses.
+candle|mum|Blow out the candle and make a wish!
+balloon|balon|The children love the red balloon.
+invitation|davetiye, davet|Did you get the invitation?
+host|ev sahibi|The host welcomed everyone.
+celebrate|kutlamak|Let's celebrate your new job!
+congratulations|tebrikler|Congratulations on your wedding!
+applause|alkış|The bride got loud applause.
+fireworks|havai fişek|We watched the fireworks at midnight.
+New Year|yılbaşı|We travel every New Year.
+Christmas|Noel|They fly home for Christmas.
+Easter|Paskalya|We visit family at Easter.
+festival|festival, şenlik|The festival starts next week.
+holiday season|bayram dönemi, tatil sezonu|Flights are full in the holiday season.
+decoration|süs, dekorasyon|Put the decoration on the tree.
+champagne|şampanya|They opened a bottle of champagne.
+bride|gelin|The bride looked wonderful.
+groom|damat|The groom is nervous today.
+wish|dilek, dilemek|Make a wish before you blow out the candles.`, false, "A2-B1 · İnsanlar ve hayat"],
+["Aile ve akrabalar", "Amca, teyze, kuzen, torun", `
+uncle|amca, dayı|My uncle lives in Ankara.
+aunt|teyze, hala|My aunt makes great soup.
+cousin|kuzen|My cousin is getting married.
+nephew|erkek yeğen|My nephew is five years old.
+niece|kız yeğen|My niece loves to draw.
+grandmother|büyükanne|My grandmother tells wonderful stories.
+grandfather|büyükbaba|My grandfather likes his morning tea.
+grandchild|torun|She has one grandchild.
+grandparents|büyükanne ve büyükbaba|I visit my grandparents every summer.
+parents|anne baba, ebeveynler|My parents live near the sea.
+relatives|akrabalar|All my relatives came to dinner.
+brother-in-law|enişte, kayınbirader|My brother-in-law is a doctor.
+sister-in-law|yenge, baldız|My sister-in-law is very kind.
+mother-in-law|kayınvalide|Her mother-in-law cooks very well.
+father-in-law|kayınpeder|His father-in-law is a retired teacher.
+stepmother|üvey anne|His stepmother is very kind.
+twin|ikiz|My friend has a twin sister.
+only child|tek çocuk|I am an only child.
+sibling|kardeş|Do you have a sibling?
+elder|büyük, yaşça büyük|My elder sister lives abroad.
+younger|küçük, yaşça küçük|My younger brother studies in London.
+ancestor|ata, soy|He has an ancestor from Greece.
+generation|nesil, kuşak|Each generation learns from the last one.
+widow|dul kadın|The widow lives alone near us.
+adopted|evlat edinilmiş|They have an adopted son.`, false, "A2-B1 · İnsanlar ve hayat"],
+["Bebekler ve çocuklar", "Biberon, bez, oyuncak", `
+baby|bebek|The baby is sleeping now.
+toddler|yeni yürümeye başlayan çocuk|The toddler runs everywhere.
+newborn|yeni doğmuş bebek|The newborn slept all night.
+nappy|bebek bezi|I need to change her nappy.
+feeding|besleme, beslenme|Feeding time is at six.
+pram|bebek arabası|She pushed the pram in the park.
+cot|bebek yatağı|The baby sleeps in a cot.
+dummy|emzik|The baby wants her dummy.
+toy|oyuncak|The boy dropped his toy.
+teddy bear|oyuncak ayı|She hugs her teddy bear at night.
+crawl|emeklemek|The baby began to crawl last week.
+cry|ağlamak|Why does the baby cry so much?
+giggle|kıkırdamak|The girl began to giggle.
+bedtime|yatma zamanı|Bedtime is at eight o'clock.
+lullaby|ninni|She sang a lullaby to the baby.
+babysitter|bebek bakıcısı|We need a babysitter for tonight.
+nursery|kreş, anaokulu|My son goes to nursery in the morning.
+kindergarten|anaokulu|She starts kindergarten in September.
+playground|oyun parkı|The kids are at the playground.
+swing|salıncak|The girl loves the swing.
+slide|kaydırak|He climbed up the slide.
+crayon|pastel boya|Give me a red crayon, please.
+tantrum|trip atma, hırçınlık|The boy had a tantrum in the shop.
+naughty|yaramaz|Don't be naughty in the restaurant!
+cuddle|sarılmak|Come and cuddle with Mummy.`, false, "A2-B1 · İnsanlar ve hayat"],
+["Futbol ve spor 2", "Maç, hakem, gol, taraftar", `
+referee|hakem|The referee blew his whistle.
+supporter|destekçi, taraftar|A supporter gave me his scarf.
+pitch|saha|The pitch was wet.
+coach|antrenör|The coach is very happy today.
+whistle|düdük|The referee blew the whistle.
+penalty|penaltı|He missed the penalty.
+goalkeeper|kaleci|The goalkeeper saved the ball.
+defender|savunma oyuncusu|The defender is very tall.
+striker|forvet|The striker scored two goals.
+dribble|top sürmek|He can dribble past anyone.
+pass|pas vermek|Pass the ball to me!
+tackle|müdahale etmek|He tried to tackle the player.
+foul|faul|That was a clear foul.
+offside|ofsayt|The goal was offside.
+header|kafa vuruşu|He scored with a header.
+half-time|devre arası|We bought drinks at half-time.
+final|final|Our team is in the final.
+league|lig|Which league does your team play in?
+championship|şampiyonluk|They won the championship last year.
+tournament|turnuva|The tournament starts on Friday.
+goal|gol|We scored a goal at last.
+beat|yenmek|We want to beat them today.
+trophy|kupa|The team held up the trophy.
+substitute|yedek oyuncu|The substitute scored a goal.`, false, "A2-B1 · İnsanlar ve hayat"],
+["Müzik ve sanat", "Şarkı, resim, müze", `
+tune|ezgi|I can't forget this tune.
+composer|besteci|The composer wrote this piece.
+band|müzik grubu|My brother plays in a band.
+orchestra|orkestra|The orchestra plays tonight.
+flute|flüt|She plays the flute.
+piano|piyano|She practises the piano every day.
+violin|keman|The violin sounds so sweet.
+drums|davul, bateri|The drums were very loud.
+lyrics|şarkı sözleri|I don't know the lyrics.
+melody|melodi, ezgi|I can't forget this melody.
+rhythm|ritim|I love the rhythm of this song.
+choir|koro|He sings in a choir.
+ballet|bale|We watched a ballet in Istanbul.
+portrait|portre|The portrait is very old.
+painter|ressam|The painter works near the harbour.
+drawing|çizim|The child gave me a drawing.
+sculpture|heykel|The sculpture stands in the square.
+gallery|galeri|We visited an art gallery today.
+exhibition|sergi|The exhibition opens on Monday.
+statue|heykel, anıt|There is a statue in the square.
+poster|afiş, poster|I bought a poster of the band.
+opera|opera|We went to the opera.
+audience|seyirci, izleyici|The audience clapped for a long time.
+stage|sahne|The singer walked onto the stage.
+playlist|çalma listesi|I made a playlist for the flight.`, false, "A2-B1 · İnsanlar ve hayat"],
+["Kitaplar ve okuma", "Roman, yazar, kütüphane", `
+novel|roman|I am reading a long novel.
+author|yazar|The author signed my book.
+writer|yazar|She is a famous writer.
+chapter|bölüm|I finished the first chapter on the plane.
+page|sayfa|Open your book at page ten.
+cover|kapak|The book has a blue cover.
+title|başlık, kitap adı|What is the title of the book?
+reader|okuyucu|She is a fast reader.
+bookmark|ayraç|I lost my bookmark.
+story|hikaye|My mother told me a story.
+poem|şiir|She wrote a short poem for me.
+poet|şair|The poet reads in the garden.
+fiction|kurgu, roman edebiyatı|I like fiction more than history.
+blog|blog|She writes a travel blog.
+volume|cilt, kitap|He bought the second volume.
+paperback|ciltsiz kitap|I prefer a paperback for travel.
+ebook|e-kitap|I read an ebook on the plane.
+bestseller|çok satan kitap|Her new book is a bestseller.
+summary|özet|Read the summary first.
+character|karakter, kişi|The main character is a young pilot.
+plot|olay örgüsü|The plot of the book is exciting.
+translate|çevirmek|Can you translate this page for me?
+sequel|devam kitabı|I loved the sequel more.
+fairy tale|masal|The children love every fairy tale.`, false, "A2-B1 · İnsanlar ve hayat"],
+["Oyun ve eğlence", "Kart, bilgisayar oyunu, sinema", `
+video game|bilgisayar oyunu|My son plays a video game every night.
+console|oyun konsolu|He bought a new console.
+controller|oyun kolu|Give me the controller, please.
+level|seviye, bölüm|I finished the last level.
+gamer|oyuncu (oyun)|My brother is a serious gamer.
+winner|kazanan|The winner gets a prize.
+loser|kaybeden|Nobody wants to be the loser.
+cards|iskambil kağıtları|Let's play cards tonight.
+arcade|oyun salonu|The arcade is full of kids.
+puzzle|yapboz, bulmaca|She finished the puzzle in an hour.
+hide and seek|saklambaç|The kids play hide and seek.
+dice|zar|Roll the dice and move forward.
+prize|ödül|She won a prize in the lottery.
+trailer|fragman|I saw the trailer yesterday.
+theme park|tema park|We spent a day at the theme park.
+drama|dizi, drama|I watch a drama every night.
+horror|korku filmi|I don't like horror films.
+popcorn|patlamış mısır|Do you want some popcorn?
+amusement park|lunapark|The kids love the amusement park.
+roller coaster|hız treni|I was scared on the roller coaster.
+joke|şaka, fıkra|He told a funny joke.
+magic|sihir, sihirbazlık|The children loved the magic show.
+fun|eğlence|We had so much fun yesterday.
+entertainment|eğlence|There is free entertainment on the flight.
+challenge|meydan okuma, zor görev|Climbing the hill was a real challenge.`, false, "A2-B1 · İnsanlar ve hayat"],
+["İş hayatı 2", "Toplantı, terfi, mesai", `
+workload|iş yükü|My workload is heavy this month.
+meeting room|toplantı odası|The meeting room is on the second floor.
+raise|zam|He asked his boss for a raise.
+coworker|iş arkadaşı|My coworker brought cakes today.
+chairman|yönetim kurulu başkanı|The chairman opened the meeting.
+wage|ücret, maaş|The wage here is fair.
+headquarters|genel merkez|The headquarters is in Istanbul.
+employee|çalışan|Every employee gets a free lunch.
+agenda|gündem|What is on the agenda today?
+minutes|toplantı tutanağı|Who will take the minutes today?
+proposal|teklif, öneri|Our proposal was accepted.
+client|müşteri, danışan|We have a meeting with a new client.
+branch|şube|She works at our Izmir branch.
+candidate|aday|The candidate arrived ten minutes early.
+resign|istifa etmek|He decided to resign last week.
+hire|işe almak|They want to hire two new people.
+shift|vardiya|I work the night shift this week.
+training|eğitim|The new staff start training on Monday.
+profit|kâr|The company made a good profit this year.
+invoice|fatura|Please send me the invoice by email.
+staff|personel|The staff are very helpful.
+workplace|iş yeri|My workplace is close to home.
+assistant|asistan, yardımcı|My assistant booked the room.
+supervisor|süpervizör, amir|Ask your supervisor about the new rules.`, false, "B1 · İş ve dünya"],
+["E-posta ve yazışma", "Ekle, ilet, konu, saygılar", `
+attach|eklemek|Please attach your photo to the email.
+regards|saygılar|Kind regards, Yıldırım.
+get back to|geri dönmek|I will get back to you tomorrow.
+draft|taslak|I saved the message as a draft.
+attachment|ek dosya|I could not open the attachment.
+sender|gönderen|Who is the sender of this email?
+address|adres|What is your email address?
+spam|gereksiz posta|This email went straight to spam.
+delete|silmek|You can delete the old messages.
+click|tıklamak|Click the button to continue.
+reminder|hatırlatma|I got a reminder about the meeting.
+confirm|onaylamak|Please confirm your booking by email.
+reach|ulaşmak|You can reach me by email.
+dear|sayın, sevgili|Dear Sir or Madam, I am writing to you.
+sincerely|saygılarımla|Yours sincerely, Mehmet.
+in touch|iletişimde|Let's keep in touch by email.
+cc|bilgi kopyası|Please cc my manager on the email.
+enclosed|ekte|Enclosed you will find my CV.
+signature|e-posta imzası|Add your phone number to your email signature.`, false, "B1 · İş ve dünya"],
+["Ev kiralamak", "Ev sahibi, depozito, sözleşme", `
+landlord|ev sahibi|The landlord lives in the same building.
+tenant|kiracı|The tenant pays the rent on the first day.
+security deposit|güvence bedeli, depozito|The security deposit is returned at the end.
+furnished|eşyalı|We are looking for a furnished flat.
+unfurnished|eşyasız|This unfurnished flat is cheaper.
+agreement|anlaşma|We signed the rental agreement today.
+rental|kiralık, kira|The rental is near the metro.
+lease|kira sözleşmesi|The lease ends in June.
+studio|stüdyo daire|We live in a small studio.
+caretaker|kapıcı|The caretaker cleans the stairs.
+bills|faturalar|Are the bills included in the rent?
+utilities|elektrik su gibi giderler|Utilities cost about a hundred euros.
+landlady|ev sahibi (kadın)|My landlady is very kind.
+move in|taşınmak (içeri)|We can move in next Monday.
+move out|taşınmak (dışarı)|They have to move out by Friday.
+terrace|teras|We have breakfast on the terrace.
+storage|depo, eşya odası|There is storage in the basement.
+heating|ısıtma|The heating does not work well.
+garage|garaj|The building has a garage for two cars.
+estate agent|emlakçı|The estate agent showed us three flats.
+viewing|ev gezme, görme|We have a viewing at five o'clock.
+monthly|aylık|The monthly rent is five hundred euros.
+vacant|boş|There is a vacant flat upstairs.
+staircase|merdiven|The staircase is very narrow.`, false, "B1 · İş ve dünya"],
+["Tamir ve bakım", "Bozuk, sızıntı, tamir", `
+jammed|sıkışmış|The door is jammed again.
+leak|sızıntı, akıtmak|There is a leak under the sink.
+mend|onarmak, yamamak|Can you mend this torn bag?
+plumber|tesisatçı|We called a plumber this morning.
+technician|teknisyen|The technician came to check the machine.
+electrician|elektrikçi|The electrician is coming at noon.
+tool|alet|I need a tool to open this box.
+drill|matkap|He used a drill to make a hole.
+paint|boya, boyamak|We want to paint the kitchen white.
+pipe|boru|The water pipe is cold.
+wrench|İngiliz anahtarı|Pass me the wrench, please.
+switch|düğme, anahtar|Where is the light switch?
+bulb|ampul|The bulb in the hall is dead.
+crack|çatlak|There is a crack in the window.
+rust|pas|The old gate is covered in rust.
+tighten|sıkmak|Please tighten this screw.
+maintenance|bakım|The lift is closed for maintenance.
+blocked|tıkalı|The sink is blocked again.
+scratch|çizik|There is a scratch on the door.
+screw|vida|One screw is missing.
+power cut|elektrik kesintisi|We had a power cut last night.`, false, "B1 · İş ve dünya"],
+["Araba ve yol", "Lastik, benzin, otopark", `
+tyre|lastik|I have a flat tyre.
+diesel|dizel|This car runs on diesel.
+crossing|yaya geçidi|Stop at the crossing, please.
+motorway|otoyol|The motorway is busy on Fridays.
+lane|şerit|Stay in your lane.
+learner|acemi sürücü|He is a learner and drives slowly.
+speed limit|hız sınırı|The speed limit here is fifty.
+roundabout|kavşak (dönel)|Turn left at the next roundabout.
+pavement|kaldırım|Walk on the pavement.
+junction|kavşak|Turn right at the next junction.
+fuel|yakıt|The car is almost out of fuel.
+exhaust|egzoz|The exhaust is very loud.
+brake|fren|Press the brake slowly.
+steering wheel|direksiyon|He held the steering wheel with both hands.
+bonnet|kaput|Open the bonnet and check the oil.
+boot|bagaj|Put the bags in the boot.
+windscreen|ön cam|The windscreen is dirty.
+number plate|plaka|I forgot the number plate of my car.
+car park|otopark|The car park is full today.
+petrol station|benzinlik|There is a petrol station on the left.
+gear|vites|Change gear before the hill.
+horn|korna|Do not press the horn here.
+overtake|sollamak|Do not overtake on a bend.
+toll|geçiş ücreti|You have to pay a toll on this road.
+traffic jam|trafik sıkışıklığı|We were stuck in a traffic jam.`, false, "B1 · İş ve dünya"],
+["Bilim ve teknoloji 2", "Robot, pil, yazılım", `
+robot|robot|A robot cleans our floor every day.
+gadget|küçük teknolojik alet|He loves every new gadget.
+software|yazılım|You need to update the software.
+wireless|kablosuz|The speaker is wireless.
+headset|kulaklıklı mikrofon|He wears a headset at work.
+touchscreen|dokunmatik ekran|The touchscreen is very smooth.
+cable|kablo|I need a cable for my phone.
+virus|virüs|My computer has a virus.
+microscope|mikroskop|We looked at the leaf under a microscope.
+processor|işlemci|A fast processor makes the laptop quick.
+smartphone|akıllı telefon|Her smartphone has a great camera.
+data|veri|I have no mobile data left.
+experiment|deney|The students did an experiment today.
+invention|icat|The phone is a great invention.
+laboratory|laboratuvar|She works in a laboratory in Ankara.
+physics|fizik|He teaches physics at the university.
+satellite|uydu|A satellite sends us the pictures.
+artificial intelligence|yapay zeka|Artificial intelligence is changing our lives.
+network|ağ|The network is down.
+keyboard|klavye|My keyboard has a new language.
+technology|teknoloji|Technology makes life easier.
+discover|keşfetmek|Scientists discover new stars every year.
+research|araştırma|They do research on new medicine.
+device|cihaz|This small device can charge two phones.`, false, "B1 · İş ve dünya"],
+["Çevre ve iklim", "Kirlilik, geri dönüşüm", `
+climate|iklim|The climate here is warm and dry.
+pollution|kirlilik|Air pollution is high in big cities.
+recycle|geri dönüştürmek|We recycle paper and glass at home.
+energy|enerji|Solar panels give us clean energy.
+solar|güneş enerjisi ile ilgili|We use solar power on the roof.
+global warming|küresel ısınma|Global warming is a big problem.
+jungle|tropik orman|There is a river in the jungle.
+ocean|okyanus|The ocean is deep and cold here.
+drought|kuraklık|The drought lasted for two years.
+wildlife|yaban hayatı|This park is full of wildlife.
+waste|atık, israf|We produce too much waste.
+carbon|karbon|Planes produce a lot of carbon.
+nature|doğa|I love spending time in nature.
+planet|gezegen|We must take care of our planet.
+environment|çevre|Cars are bad for the environment.
+endangered|nesli tehlikede|The tiger is an endangered animal.
+renewable|yenilenebilir|Wind is a renewable source of power.
+thunder|gök gürültüsü|I heard thunder last night.
+protect|korumak|We must protect the sea.
+sea level|deniz seviyesi|The sea level is going up.
+air quality|hava kalitesi|The air quality is bad today.
+rainforest|yağmur ormanı|The rainforest has millions of animals.
+species|tür (canlı)|This species lives only on this island.`, false, "B1 · İş ve dünya"],
+["Malzemeler", "Ahşap, metal, pamuk, deri", `
+wood|ahşap, odun|The table is made of wood.
+metal|metal|The spoon is made of metal.
+polyester|polyester|This shirt is made of polyester.
+ceramic|seramik|She bought a ceramic bowl.
+marble|mermer|The floor is made of marble.
+plastic|plastik|Do not use plastic bags.
+velvet|kadife|The sofa is made of velvet.
+denim|kot kumaşı|He wears denim jeans.
+paper|kağıt|I need a piece of paper.
+stone|taş|The old bridge is made of stone.
+steel|çelik|The pan is made of steel.
+aluminium|alüminyum|The can is made of aluminium.
+bamboo|bambu|The chair is made of bamboo.
+rubber|lastik, kauçuk|These boots are made of rubber.
+fabric|kumaş|I like the fabric of this dress.
+concrete|beton|The wall is made of concrete.
+brick|tuğla|Their house is made of red brick.
+foam|sünger, köpük|The pillow is made of foam.
+clay|kil, çamur|The pot is made of clay.
+cardboard|karton|Put the books in a cardboard box.
+nylon|naylon|This bag is made of nylon.
+linen|keten|Linen shirts are cool in summer.
+copper|bakır|The old pan is made of copper.
+material|malzeme, madde|What material is this jacket?`, false, "B1 · İş ve dünya"],
+["Ölçüler ve miktarlar", "Yarım, çift, düzine", `
+pair|çift|I need a new pair of shoes.
+metre|metre|The table is one metre long.
+weight|ağırlık, kilo|What is the weight of your suitcase?
+centimetre|santimetre|It is only one centimetre wide.
+inch|inç|It is about one inch long.
+mile|mil|The hotel is one mile from here.
+kilometre|kilometre|The airport is one kilometre away.
+quarter|çeyrek|It is a quarter past nine.
+double|iki katı, çift|I would like a double espresso.
+piece|parça|Would you like a piece of cake?
+spoonful|kaşık dolusu|Add a spoonful of sugar.
+amount|miktar|What is the total amount?
+length|uzunluk|What is the length of the table?
+height|yükseklik, boy|What is your height?
+width|genişlik|Measure the width of the window.
+enough|yeterli|Is there enough food for everyone?
+percent|yüzde|Fifty percent of the seats are free.
+average|ortalama|The average price is ten euros.`, false, "B1 · İş ve dünya"],
+["Hukuk ve resmi işler", "Form, imza, başvuru", `
+form|form|Please fill in this form.
+passport office|pasaport dairesi|The passport office opens at nine.
+passport photo|vesikalık|I need a passport photo for the form.
+apply|başvurmak|I want to apply for a new passport.
+application|başvuru|Your application is ready.
+identity card|kimlik kartı|Show your identity card at the door.
+official|resmi|This is an official letter.
+permit|izin belgesi|You need a permit to work here.
+fee|ücret, harç|The fee is fifty euros.
+certificate|sertifika, belge|I need a birth certificate.
+stamp|damga, pul|The officer put a stamp on my passport.
+sign|imzalamak|Please sign here.
+fill in|doldurmak|Fill in your name and address.
+submit|teslim etmek, sunmak|You must submit the form by Friday.
+solicitor|avukat (İngiltere)|The solicitor read the contract.
+court|mahkeme|The case is in court today.
+law|kanun, yasa|It is against the law.
+licence|ruhsat, lisans|You need a licence to sell food here.
+citizen|vatandaş|She is a Turkish citizen.
+proof|kanıt, ispat|Do you have proof of address?
+translation|tercüme|I need a translation of this paper.
+notary|noter|The notary signed the contract.
+embassy|büyükelçilik|The embassy is closed on Sunday.`, false, "B1 · İş ve dünya"],
+["B1 fiiller 2", "Tanımak, içermek, gerektirmek", `
+recognise|tanımak|I did not recognise you with short hair.
+involve|içermek, kapsamak|Does the job involve travel?
+approve|onaylamak|The boss will approve the plan.
+expand|genişletmek|They plan to expand the airport.
+propose|önermek, teklif etmek|I propose a short break.
+remove|çıkarmak, kaldırmak|Please remove your shoes.
+prevent|önlemek|Washing hands helps prevent illness.
+contain|içermek|Does this soup contain meat?
+consider|düşünmek, göz önünde bulundurmak|Please consider my offer.
+deliver|teslim etmek|They deliver food to your room.
+succeed|başarılı olmak|I hope you succeed.
+arrange|ayarlamak, düzenlemek|I will arrange a taxi.
+insist|ısrar etmek|I insist on paying.
+obtain|elde etmek|You can obtain a visa online.
+support|desteklemek|My family will support me.
+earn|kazanmak (para)|I earn enough to live.
+announce|duyurmak|They announce the gate number soon.
+attract|çekmek, cezbetmek|Cheap tickets attract many people.
+organise|düzenlemek, organize etmek|We organise a party every year.
+persuade|ikna etmek|Can I persuade you to stay?
+encourage|cesaretlendirmek|Good teachers encourage students.
+adapt|uyum sağlamak|You must adapt to new places.
+influence|etkilemek|Music can influence your mood.
+admit|kabul etmek, itiraf etmek|I admit I was wrong.`, false, "B1 · Akıcı konuşma"],
+["B1 sıfatlar 2", "Belli, tanıdık, tipik", `
+obvious|açık, belli|The answer is obvious.
+familiar|tanıdık|This street looks familiar.
+typical|tipik, her zamanki|It was a typical Monday morning.
+accurate|doğru, kesin|The map is not very accurate.
+suitable|uygun|This hotel is suitable for families.
+essential|çok önemli, şart|Water is essential for life.
+convenient|rahat, elverişli|The hotel is in a convenient location.
+sensible|makul, mantıklı|That is a sensible idea.
+permanent|kalıcı|This is not a permanent job.
+ancient|antik, çok eski|We visited an ancient city.
+valuable|değerli|Keep your valuable things safe.
+mild|ılıman, hafif|The winter here is mild.
+rough|sert, dalgalı|The sea is rough today.
+tiny|minik|We live in a tiny flat.
+wealthy|zengin|He comes from a wealthy family.
+independent|bağımsız|She is a very independent woman.
+flexible|esnek|My schedule is quite flexible.`, false, "B1 · Akıcı konuşma"],
+["Soyut kavramlar", "Şans, deneyim, amaç", `
+chance|şans, fırsat|This is your last chance.
+experience|deneyim, tecrübe|I have five years of experience.
+purpose|amaç|What is the purpose of your visit?
+opportunity|fırsat|It is a great opportunity for me.
+advantage|avantaj|Speaking English is a big advantage.
+disadvantage|dezavantaj|The main disadvantage is the price.
+benefit|fayda, yarar|Exercise is a great benefit for health.
+reality|gerçek|Reality is different from dreams.
+effect|etki|The medicine has a strong effect.
+risk|risk|Travelling alone has some risk.
+quality|kalite|The quality is very good.
+principle|ilke|It is a matter of principle.
+progress|ilerleme|You are making good progress.
+success|başarı|Hard work leads to success.
+failure|başarısızlık|Failure is part of learning.
+skill|beceri|Cooking is a useful skill.
+habit|alışkanlık|Reading before bed is a good habit.
+custom|gelenek, adet|It is a local custom.
+tradition|gelenek|We have a family tradition.
+memory|hatıra, hafıza|This is my best memory of summer.
+attitude|tutum, tavır|He has a positive attitude.
+freedom|özgürlük|Travel gives me a feeling of freedom.
+silence|sessizlik|I enjoy the silence of the morning.
+belief|inanç|It is my personal belief.`, false, "B1 · Akıcı konuşma"],
+["Günlük phrasal verbs", "Look after, run out, set off", `
+look after|bakmak, ilgilenmek|Can you look after my cat?
+run out|bitmek, tükenmek|We always run out of milk.
+set off|yola çıkmak|We set off at six o'clock.
+come back|geri dönmek|When will you come back?
+calm down|sakinleşmek|Please calm down.
+hurry up|acele etmek|Hurry up, we are late!
+look up|bir şeye bakmak, aramak|Look up the word online.
+turn on|açmak|Please turn on the light.
+switch off|kapatmak|Switch off the lights, please.
+pick up|almak, almaya gitmek|I will pick up the kids at three.
+show up|ortaya çıkmak, gelmek|He did not show up.
+get on|binmek|You can get on the bus here.
+get off|inmek|I get off at the next stop.
+sit down|oturmak|Please sit down and relax.
+stand up|ayağa kalkmak|You must stand up now.
+slow down|yavaşlamak|Please slow down.
+get up|kalkmak|I get up early on weekdays.
+put on|giymek|Put on your jacket, it is cold.
+hang out|takılmak, vakit geçirmek|We hang out at the cafe.
+carry on|devam etmek|Carry on down this street.
+call back|geri aramak|I will call back later.
+log in|giriş yapmak|Log in with your password.
+grow up|büyümek|Kids grow up fast.
+throw away|atmak, çöpe atmak|Don't throw away the receipt.`, false, "B1 · Akıcı konuşma"],
+["Sık kalıplar", "Karar vermek, mola vermek", `
+make a decision|karar vermek|It is hard to make a decision.
+take a break|mola vermek|Let's take a break for ten minutes.
+have fun|eğlenmek|Have fun at the party!
+pay attention|dikkat etmek|Please pay attention to the signs.
+make a mistake|hata yapmak|Everyone can make a mistake.
+take a photo|fotoğraf çekmek|Can I take a photo here?
+make a call|telefon etmek|I need to make a call.
+take a shower|duş almak|I take a shower every morning.
+have a rest|dinlenmek|You should have a rest.
+make progress|ilerleme kaydetmek|You will make progress soon.
+take care|dikkat etmek, kendine bakmak|Take care and have a safe trip.
+make an effort|çaba göstermek|Please make an effort to be on time.
+take a seat|oturmak|Please take a seat here.
+have a look|göz atmak|Let me have a look at the menu.
+do the shopping|alışveriş yapmak|I do the shopping on Saturdays.
+do the dishes|bulaşık yıkamak|Who will do the dishes tonight?
+do homework|ödev yapmak|The kids do homework after school.
+take a taxi|taksiye binmek|It is late, so let's take a taxi.
+make a reservation|rezervasyon yapmak|I want to make a reservation.
+catch a cold|üşütmek, nezle olmak|Wear a coat or you will catch a cold.
+keep in touch|iletişimde kalmak|Let's keep in touch by email.
+change my mind|fikrimi değiştirmek|I may change my mind.
+take a risk|risk almak|Sometimes you must take a risk.
+have a chat|sohbet etmek|Let's have a chat later.
+make a plan|plan yapmak|Let's make a plan for the weekend.`, false, "B1 · Akıcı konuşma"],
+["Düşünme fiilleri", "Fark etmek, merak etmek", `
+realise|fark etmek|I realise I forgot my passport.
+wonder|merak etmek|I wonder what time it is.
+suppose|sanmak, varsaymak|I suppose you are right.
+assume|varsaymak|Don't assume he knows the way.
+suspect|şüphelenmek|I suspect he is lying.
+recall|hatırlamak|I can't recall his name.
+reckon|sanmak|I reckon it will rain.
+hope|ummak|I hope you feel better soon.
+memorise|ezberlemek|I memorise new words daily.
+pretend|numara yapmak|Don't pretend you are asleep.
+remind|hatırlatmak|Please remind me to call him.
+regret|pişman olmak|I regret not going with you.
+misunderstand|yanlış anlamak|I often misunderstand the rules.
+judge|yargılamak|Don't judge a book by its cover.
+predict|tahmin etmek|Nobody can predict the weather exactly.
+compare|karşılaştırmak|Let's compare the two hotels.
+doubtful|şüpheli|I am doubtful about the plan.
+figure out|çözmek, anlamak|I can't figure out this machine.
+make sense|mantıklı olmak|It does not make sense.
+concentrate|konsantre olmak|It is hard to concentrate here.
+focus|odaklanmak|Focus on your work, please.
+think about|düşünmek|I will think about it tonight.
+dream|hayal etmek, rüya görmek|I often dream about the sea.
+forgive|affetmek|Please forgive me for being late.`, false, "B1 · Akıcı konuşma"],
+["Seyahat sorunları", "Kayıp bavul, kaçan uçuş", `
+lost luggage|kayıp bagaj|I need to report my lost luggage.
+missed flight|kaçırılan uçuş|I had a missed flight yesterday.
+overbooked|fazla rezervasyonlu|The flight is overbooked today.
+jet lag|jet lag|I have terrible jet lag.
+cancelled|iptal edilmiş|My flight was cancelled.
+long queue|uzun kuyruk|There is a long queue at security.
+damaged bag|hasarlı çanta|My bag is a damaged bag now.
+wrong gate|yanlış kapı|I went to the wrong gate.
+lost passport|kayıp pasaport|He reported a lost passport.
+extra charge|ek ücret|There is an extra charge for this bag.
+heavy suitcase|ağır bavul|This heavy suitcase is too big.
+travel insurance|seyahat sigortası|Do you have travel insurance?
+inspection|kontrol, denetim|Bags go through inspection here.
+rebook|yeniden rezervasyon yapmak|Can you rebook me on the next flight?
+strike|grev|The airport strike caused many delays.
+bad weather|kötü hava|Bad weather closed the airport.
+no vacancy|oda yok|The sign says no vacancy.
+noisy room|gürültülü oda|I would like to change this noisy room.
+stolen wallet|çalınmış cüzdan|The police found his stolen wallet.
+lost ticket|kayıp bilet|I need a new one for my lost ticket.
+wrong direction|yanlış yön|We went in the wrong direction.`, false, "B1 · Akıcı konuşma"],
+["Kibar ifadeler", "Takdir etmek, özür dilemek", `
+appreciate|takdir etmek, minnettar olmak|I really appreciate your help.
+apologies|özürler|Apologies for the mess.
+kindly|nazikçe|Kindly wait here, please.
+forgive me|beni affet|Forgive me, I am late.
+pardon|efendim, pardon|Pardon, could you repeat that?
+no problem|sorun değil|No problem, I can wait.
+my pleasure|rica ederim|Thank you! My pleasure.
+with pleasure|memnuniyetle|I will help you with pleasure.
+would you mind|rica etsem|Would you mind closing the window?
+if possible|mümkünse|Please come early, if possible.
+I'm afraid|maalesef|I'm afraid the table is taken.
+many thanks|çok teşekkürler|Many thanks for your help.
+be my guest|buyurun, çekinmeyin|Be my guest, take a seat.
+after you|önce siz|After you, please.
+bless you|çok yaşa (hapşırana)|Bless you, my friend!
+gratitude|minnettarlık|She showed deep gratitude.
+best wishes|en iyi dileklerimle|Best wishes for your trip.
+good luck|iyi şanslar|Good luck with your interview!
+take your time|acele etme|Take your time, there is no hurry.
+feel free|çekinme, serbestçe|Feel free to ask me.
+much obliged|çok minnettarım|I am much obliged to you.
+please accept|lütfen kabul edin|Please accept our apologies.`, false, "B1 · Akıcı konuşma"],
+["Bağlaçlar", "Bu yüzden, bu arada, yerine", `
+therefore|bu yüzden|It rained, therefore we stayed home.
+meanwhile|bu arada|Cook the rice; meanwhile I will make salad.
+instead|onun yerine|We took the bus instead.
+otherwise|aksi halde|Hurry up, otherwise we will miss it.
+however|ancak, fakat|It is cheap. However, it is not good.
+although|-e rağmen|Although it was late, we kept walking.
+because of|yüzünden|We were late because of the traffic.
+in addition|ek olarak|In addition, breakfast is free.
+for example|örneğin|I like fruit, for example apples.
+in fact|aslında|In fact, I was born here.
+as well|de, ayrıca|Can I have a coffee as well?
+besides|ayrıca, bunun dışında|I am tired, and besides, it is late.
+unless|-medikçe|Unless you hurry, we will be late.
+whereas|oysa, -ken|He likes tea, whereas I like coffee.
+whether|-ip -mediği|I don't know whether he is coming.
+even though|-e rağmen|I went out even though it was cold.
+in order to|-mek için|I study in order to pass the exam.
+so that|-sin diye|Speak slowly so that I can understand.
+at first|önce, başlangıçta|At first, I did not like it.
+nevertheless|yine de|It was hard; nevertheless, we finished.
+afterwards|sonradan, ardından|We had dinner, and afterwards we walked.
+in contrast|buna karşılık|In contrast, my sister is quiet.
+as a result|sonuç olarak|As a result, we missed the flight.
+in the end|sonunda|In the end, we took the train.
+anyway|neyse, yine de|Anyway, let's start the meeting.`, false, "B1 · Akıcı konuşma"],
+["Sıklık ve derece", "Nadiren, neredeyse, son derece", `
+rarely|nadiren|I rarely drink coffee at night.
+nearly|neredeyse|We are nearly there.
+extremely|son derece|The food was extremely good.
+slightly|biraz, hafifçe|The room is slightly small.
+roughly|yaklaşık olarak|It takes roughly an hour.
+entirely|tamamen|I entirely agree with you.
+rather|oldukça, biraz|It is rather cold today.
+totally|tamamen|I totally agree with you.
+fully|tamamen, sonuna kadar|The hotel is fully booked.
+absolutely|kesinlikle|You are absolutely right.
+fairly|epey, oldukça|The test was fairly easy.
+seldom|nadiren|He seldom eats meat.
+occasionally|ara sıra|I occasionally visit my cousin.
+frequently|sık sık|She frequently travels for work.
+constantly|sürekli|The phone is constantly ringing.
+regularly|düzenli olarak|I regularly go to the gym.
+twice|iki kez|I call my mother twice a week.
+once|bir kez|I have been there once.
+a bit|biraz|Can you speak a bit slower?
+a little|biraz, az|I speak a little French.
+too much|çok fazla|There is too much salt in it.
+barely|zar zor, neredeyse hiç|I barely slept last night.
+highly|son derece, yüksek derecede|This hotel is highly recommended.
+deeply|derinden|I am deeply sorry.`, false, "B1 · Akıcı konuşma"]
 ];
 
 const ITEMS = [];
