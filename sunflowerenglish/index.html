@@ -260,13 +260,42 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 .endbtns{display:flex;flex-direction:column;gap:10px;width:100%;padding-bottom:14px}
 .endbtns .btn{padding:16px;font-size:1.05rem;border-radius:18px}
 
-.toast{position:absolute;left:50%;bottom:110px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:14px;font-weight:800;max-width:92%;text-align:center;pointer-events:none;opacity:0;transition:opacity .2s;z-index:5}
+.toast{position:absolute;left:50%;top:108px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:14px;font-weight:800;max-width:92%;text-align:center;pointer-events:none;opacity:0;transition:opacity .2s;z-index:5}
 .toast.show{opacity:1}
 .float{position:fixed;font-family:var(--display);font-weight:800;color:var(--petal-deep);pointer-events:none;animation:up 1s forwards;z-index:60}
 @keyframes up{to{transform:translateY(-40px);opacity:0}}
 #confetti{position:fixed;inset:0;pointer-events:none;z-index:70}
 .sway{transform-origin:100px 222px;animation:sway 5s ease-in-out infinite}
 @keyframes sway{50%{transform:rotate(1.6deg)}}
+.tabs{grid-template-columns:repeat(5,1fr)}
+.tab{font-size:.7rem;padding:7px 2px}
+.scroll{flex:1;overflow-y:auto;min-height:0;padding-bottom:10px}
+.rule{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.rule .intro{font-size:1.08rem;font-weight:600;margin:0}
+.rrows{display:flex;flex-direction:column}
+.rrow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-top:1px dashed var(--line)}
+.rrow:first-child{border-top:0}
+.rrow span{color:var(--muted);font-weight:700;font-size:.9rem}
+.rrow b{font-family:var(--display);font-weight:800;font-size:1.08rem;text-align:right;min-width:0}
+.tip{background:var(--petal-soft);border-radius:16px;padding:12px 14px;font-weight:700}
+.tip strong{color:var(--petal-deep)}
+.exs{display:flex;flex-direction:column;gap:8px}
+.ex1{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 12px}
+.ex1 div{flex:1;min-width:0}
+.ex1 b{display:block;font-weight:800}
+.ex1 span{color:var(--muted);font-size:.9rem}
+.built{width:100%;min-height:70px;border-bottom:3px dashed var(--line);padding:8px 0;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:8px}
+.built.ok .chip{border-color:var(--good);color:var(--good);background:var(--good-soft)}
+.built.no{animation:shake .35s}
+.built.no .chip{border-color:var(--bad);color:var(--bad)}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding-block:10px}
+.chip{background:var(--surface);border:2px solid var(--line);border-bottom-width:5px;border-radius:14px;padding:10px 14px;font-weight:800;font-size:1.1rem}
+.chip.used{visibility:hidden}
+.stars{color:var(--petal-deep);font-size:.9rem;letter-spacing:1px;white-space:nowrap}
+.gsent{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,6.5vw,2.1rem);line-height:1.15;text-wrap:balance}
+.gramhome{border:2px solid var(--leaf)}
+.gramhome .num{background:var(--leaf);color:#fff;font-size:.95rem}
+.gramhome .tag{background:var(--leaf);color:#fff}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 @media (min-width:700px){body{font-size:17px}.stats{gap:14px}}
 </style>
@@ -275,13 +304,14 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 <div id="app">
   <header class="top">
     <div class="brand"><i aria-hidden="true"></i>Sunflower English</div>
-    <span class="ver" id="ver">v1.3</span>
+    <span class="ver" id="ver">v2.0</span>
   </header>
   <main id="view" aria-live="polite"></main>
   <nav class="tabs" aria-label="Bölümler">
     <button class="tab" data-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>Bugün</button>
     <button class="tab" data-tab="games"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7" width="19" height="11" rx="5"/><path d="M7.5 10.5v4M5.5 12.5h4"/><circle cx="16" cy="11.5" r=".6" fill="currentColor"/><circle cx="18" cy="13.5" r=".6" fill="currentColor"/></svg>Oyunlar</button>
-    <button class="tab" data-tab="units"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Rotalar</button>
+    <button class="tab" data-tab="units"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Kelimeler</button>
+    <button class="tab" data-tab="gram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19L8 5l5 14M4.8 14h6.4"/><path d="M15 15l2.5 2.5L21.5 12"/></svg>Gramer</button>
     <button class="tab" data-tab="notes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5A1.5 1.5 0 0 1 5.5 3H20v16H5.5A1.5 1.5 0 0 0 4 20.5z"/><path d="M4 20.5A1.5 1.5 0 0 0 5.5 22H20v-3"/><path d="M8 7h8M8 11h6"/></svg>Defterim</button>
   </nav>
 </div>
@@ -301,7 +331,7 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 <canvas id="confetti" hidden></canvas>
 
 <script>
-const VERSION = "1.3";
+const VERSION = "2.0";
 
 /* ---------- Content: 10 routes, 240 words & phrases ---------- */
 const RAW = [
@@ -567,6 +597,195 @@ const UNITS = RAW.map((u, ui) => {
   return { i: ui, name: u[0], sub: u[1], items, ph: !!u[3] };
 });
 
+/* ---------- Grammar: 12 topics ---------- */
+/* line: correct sentence | Türkçesi | wrong version | gap word (in sentence) | wrong options */
+const GRAM_RAW = [
+{ name: "am / is / are", sub: "olmak: -ım, -sın, -dır",
+  intro: "İngilizcede \"olmak\" kişiye göre değişir. Türkçedeki -ım, -sın, -dır eklerinin İngilizcesi gibi düşün.",
+  rows: [["I", "am"], ["he / she / it", "is"], ["you / we / they", "are"]],
+  tip: "Olumsuz için arkasına not: I am not. Soru için başa al: Are you ready?",
+  items: `
+I am tired.|Yorgunum.|I is tired.|am|is,are
+She is a pilot.|O bir pilot.|She are a pilot.|is|am,are
+We are at the airport.|Havalimanındayız.|We is at the airport.|are|am,is
+You are very kind.|Çok naziksin.|You is very kind.|are|am,is
+It is cold today.|Bugün hava soğuk.|It are cold today.|is|am,are
+They are my friends.|Onlar benim arkadaşlarım.|They is my friends.|are|am,is
+My husband is at home.|Kocam evde.|My husband are at home.|is|am,are
+I am not hungry.|Aç değilim.|I not am hungry.|am|is,are
+Is the flight late?|Uçuş geç mi?|Are the flight late?|Is|Am,Are
+Are you ready?|Hazır mısın?|Is you ready?|Are|Am,Is` },
+{ name: "have / has", sub: "sahip olmak: \"var\"",
+  intro: "\"Benim bir kedim var\" demenin yolu: I have a cat. Sahip olmak = have.",
+  rows: [["I / you / we / they", "have"], ["he / she / it", "has"]],
+  tip: "has sadece he, she, it ve tek bir şey için: The hotel has a pool.",
+  items: `
+I have a cat.|Bir kedim var.|I has a cat.|have|has,am
+She has two children.|Onun iki çocuğu var.|She have two children.|has|have,is
+We have a big family.|Kalabalık bir ailemiz var.|We has a big family.|have|has,are
+He has a new car.|Onun yeni bir arabası var.|He have a new car.|has|have,is
+They have a nice house.|Onların güzel bir evi var.|They has a nice house.|have|has,are
+The hotel has a pool.|Otelin havuzu var.|The hotel have a pool.|has|have,is
+I have a question.|Bir sorum var.|I has a question.|have|has,am
+You have beautiful eyes.|Güzel gözlerin var.|You has beautiful eyes.|have|has,are
+My sister has a dog.|Kız kardeşimin köpeği var.|My sister have a dog.|has|have,is
+We have time.|Vaktimiz var.|We has time.|have|has,are` },
+{ name: "Geniş zaman", sub: "her gün, her zaman: -r",
+  intro: "Alışkanlıkla, her zaman yaptığın şeyler. Türkçedeki -r gibi: çalışırım, içer.",
+  rows: [["I / you / we / they", "work"], ["he / she / it", "works  (+s)"], ["olumsuz", "don't / doesn't"], ["soru", "Do …? / Does …?"]],
+  tip: "Sadece he, she, it'te fiile -s gelir. doesn't geldiyse -s kaybolur: She doesn't work.",
+  items: `
+I work every day.|Her gün çalışırım.|I works every day.|work|works,working
+She works on planes.|O uçaklarda çalışır.|She work on planes.|works|work,working
+He drinks coffee in the morning.|Sabahları kahve içer.|He drink coffee in the morning.|drinks|drink,drinking
+We live in Istanbul.|İstanbul'da yaşıyoruz.|We lives in Istanbul.|live|lives,living
+My daughter loves games.|Kızım oyunları sever.|My daughter love games.|loves|love,loving
+They play tennis on Sundays.|Pazar günleri tenis oynarlar.|They plays tennis on Sundays.|play|plays,playing
+I don't like coffee.|Kahveyi sevmem.|I doesn't like coffee.|don't|doesn't,am not
+She doesn't speak French.|O Fransızca konuşmaz.|She don't speak French.|doesn't|don't,isn't
+Do you speak English?|İngilizce konuşur musun?|Does you speak English?|Do|Does,Are
+Does he work here?|Burada mı çalışıyor?|Do he work here?|Does|Do,Is` },
+{ name: "Şimdiki zaman", sub: "şu an oluyor: -yor",
+  intro: "Tam şu an olan şeyler. Türkçedeki -yor: okuyorum, bekliyoruz.",
+  rows: [["yapı", "am / is / are + fiil-ing"], ["örnek", "I am reading."], ["olumsuz", "I am not working."]],
+  tip: "am / is / are'ı unutma! \"I reading\" yarım cümle olur, \"I am reading\" tam.",
+  items: `
+I am reading a book.|Kitap okuyorum.|I reading a book.|reading|read,reads
+She is cooking dinner.|Akşam yemeği pişiriyor.|She cooking dinner.|cooking|cook,cooks
+We are waiting for the bus.|Otobüsü bekliyoruz.|We waiting for the bus.|waiting|wait,waits
+It is raining now.|Şu an yağmur yağıyor.|It raining now.|raining|rains,rain
+They are watching TV.|Televizyon izliyorlar.|They watching TV.|watching|watch,watches
+He is talking on the phone.|Telefonda konuşuyor.|He talking on the phone.|talking|talk,talks
+You are doing great!|Harika gidiyorsun!|You doing great!|doing|do,does
+I am not working today.|Bugün çalışmıyorum.|I not working today.|working|work,works
+What are you doing?|Ne yapıyorsun?|What you doing?|doing|do,does
+Are you listening?|Dinliyor musun?|Are you listen?|listening|listen,listens` },
+{ name: "can", sub: "yapabilmek: -ebil",
+  intro: "Yapabildiğin şeyler: yüzebilirim, konuşabilir. Hepsi tek kelime: can.",
+  rows: [["yapı", "can + yalın fiil"], ["olumsuz", "can't"], ["soru", "Can you …?"]],
+  tip: "can hiç değişmez: \"she cans\" yok, \"can to\" yok. She can swim, bitti.",
+  items: `
+I can swim.|Yüzebilirim.|I can to swim.|can|am,do
+She can speak English.|İngilizce konuşabilir.|She cans speak English.|can|is,does
+Can you help me?|Bana yardım edebilir misin?|Do you can help me?|Can|Do,Are
+I can't find my keys.|Anahtarlarımı bulamıyorum.|I don't can find my keys.|can't|don't,am not
+We can meet tomorrow.|Yarın buluşabiliriz.|We can meeting tomorrow.|can|are,do
+He can't come today.|Bugün gelemez.|He can't comes today.|can't|doesn't,isn't
+Can I sit here?|Buraya oturabilir miyim?|Can I to sit here?|Can|Am,Do
+You can do it!|Sen yapabilirsin!|You can doing it!|can|are,do
+They can play the piano.|Piyano çalabilirler.|They can plays the piano.|can|are,do
+Can she drive?|O araba kullanabilir mi?|Can she drives?|Can|Is,Does` },
+{ name: "was / were", sub: "geçmişte: -dı, -di",
+  intro: "Geçmişteki \"idi\": dün yorgundum, geçen hafta Paris'teydik.",
+  rows: [["I / he / she / it", "was"], ["you / we / they", "were"], ["olumsuz", "wasn't / weren't"]],
+  tip: "Kolay hile: am ve is → was olur, are → were olur.",
+  items: `
+I was tired yesterday.|Dün yorgundum.|I were tired yesterday.|was|were,am
+They were at home.|Onlar evdeydi.|They was at home.|were|was,are
+The flight was long.|Uçuş uzundu.|The flight were long.|was|were,is
+We were in Paris last week.|Geçen hafta Paris'teydik.|We was in Paris last week.|were|was,are
+She was very happy.|Çok mutluydu.|She were very happy.|was|were,is
+You were right.|Haklıydın.|You was right.|were|was,are
+It was a great day.|Harika bir gündü.|It were a great day.|was|were,is
+Were you at work?|İşte miydin?|Was you at work?|Were|Was,Are
+I wasn't hungry.|Aç değildim.|I weren't hungry.|wasn't|weren't,isn't
+The rooms were clean.|Odalar temizdi.|The rooms was clean.|were|was,are` },
+{ name: "Geçmiş zaman", sub: "yaptım, gittim: -ed",
+  intro: "Geçmişte yaptığın şeyler. Çoğu fiile -ed eklenir, bazıları ise kafasına göre takılır.",
+  rows: [["çoğu fiil", "work → worked"], ["huysuzlar", "go → went, see → saw"], ["", "eat → ate, have → had, buy → bought"], ["olumsuz / soru", "didn't … / Did …?"]],
+  tip: "didn't ve Did'den sonra fiil yalın kalır: I didn't sleep (slept değil).",
+  items: `
+I worked yesterday.|Dün çalıştım.|I work yesterday.|worked|work,works
+We visited London last year.|Geçen yıl Londra'yı ziyaret ettik.|We visit London last year.|visited|visit,visits
+She went to Rome.|Roma'ya gitti.|She goed to Rome.|went|goed,goes
+I saw a great film.|Harika bir film izledim.|I seed a great film.|saw|seed,see
+They ate pizza.|Pizza yediler.|They eated pizza.|ate|eated,eat
+He had a good time.|İyi vakit geçirdi.|He haved a good time.|had|haved,has
+I didn't sleep well.|İyi uyumadım.|I didn't slept well.|didn't|don't,wasn't
+Did you call me?|Beni aradın mı?|Did you called me?|Did|Do,Was
+We landed late last night.|Dün gece geç indik.|We land late last night.|landed|land,lands
+She bought a new bag.|Yeni bir çanta aldı.|She buyed a new bag.|bought|buyed,buys` },
+{ name: "will / going to", sub: "gelecek: -ecek, -acak",
+  intro: "Gelecekten bahsetmenin iki yolu var. Anlık karar ve söz için will, önceden planladığın işler için going to.",
+  rows: [["anlık karar, söz", "will + fiil"], ["plan", "am / is / are going to + fiil"], ["olumsuz", "won't"]],
+  tip: "I'll = I will. \"Telefon çalıyor, ben bakarım!\" → I'll get it.",
+  items: `
+I will call you later.|Seni sonra ararım.|I will calling you later.|will|am,do
+It will be sunny tomorrow.|Yarın hava güneşli olacak.|It will is sunny tomorrow.|will|is,does
+We are going to travel next month.|Gelecek ay seyahat edeceğiz.|We going to travel next month.|going|go,goes
+She is going to learn English.|İngilizce öğrenecek.|She is going learn English.|going|go,goes
+I'll help you.|Sana yardım ederim.|I'll helping you.|help|helping,helps
+Will you come to the party?|Partiye gelecek misin?|Do you will come to the party?|Will|Do,Are
+They won't be late.|Geç kalmayacaklar.|They willn't be late.|won't|don't,aren't
+I am going to cook tonight.|Bu akşam yemek yapacağım.|I going to cook tonight.|going|go,goes
+He will be a great pilot.|Harika bir pilot olacak.|He wills be a great pilot.|will|is,does
+Are you going to stay?|Kalacak mısın?|You going to stay?|going|go,goes` },
+{ name: "there is / there are", sub: "\"var\" ve \"yok\"",
+  intro: "Bir yerde bir şey var mı yok mu? Tek şeyse there is, birden çoksa there are.",
+  rows: [["tek şey", "there is"], ["birden çok", "there are"], ["soru", "Is there …? / Are there …?"], ["olumsuz", "there isn't / there aren't"]],
+  tip: "Odada iki yatak var → there are two beds. Yakında bir banka var → there is a bank.",
+  items: `
+There is a bank near here.|Yakında bir banka var.|There are a bank near here.|is|are,am
+There are two beds in the room.|Odada iki yatak var.|There is two beds in the room.|are|is,am
+There is a problem.|Bir sorun var.|There are a problem.|is|are,has
+There are many tourists.|Çok turist var.|There is many tourists.|are|is,has
+Is there a pharmacy here?|Burada eczane var mı?|Are there a pharmacy here?|Is|Are,Has
+Are there any seats?|Hiç koltuk var mı?|Is there any seats?|Are|Is,Has
+There isn't any milk.|Hiç süt yok.|There aren't any milk.|isn't|aren't,don't
+There are three flights today.|Bugün üç uçuş var.|There is three flights today.|are|is,has
+There is a cat in the garden.|Bahçede bir kedi var.|There are a cat in the garden.|is|are,has
+There aren't any taxis.|Hiç taksi yok.|There isn't any taxis.|aren't|isn't,don't` },
+{ name: "Soru kurma", sub: "ne, nerede, ne zaman?",
+  intro: "Soru kelimesi hep cümlenin başına gelir, sonra is / are / do, sonra kişi.",
+  rows: [["What", "ne"], ["Where", "nerede"], ["When", "ne zaman"], ["Who", "kim"], ["Why", "neden"], ["How", "nasıl"]],
+  tip: "Sıra: soru kelimesi + is / are / do + kişi → Where is the gate? (Where the gate is? değil)",
+  items: `
+Where is the gate?|Kapı nerede?|Where the gate is?|Where|What,Who
+What is your name?|Adın ne?|What your name is?|What|Where,Who
+When does the flight leave?|Uçuş ne zaman kalkıyor?|When the flight leaves?|When|Who,What
+Who is that man?|O adam kim?|Who that man is?|Who|Where,When
+How are you?|Nasılsın?|How you are?|How|Who,Where
+Where do you live?|Nerede yaşıyorsun?|Where you live?|Where|What,Who
+What time is it?|Saat kaç?|What time it is?|What|Where,Who
+Why are you late?|Neden geç kaldın?|Why you are late?|Why|Who,Where
+How much is this?|Bu ne kadar?|How much this is?|How|What,Who
+What do you want?|Ne istiyorsun?|What you want?|What|Where,Who` },
+{ name: "Karşılaştırma", sub: "daha … , en …",
+  intro: "\"Daha büyük\", \"en güzel\" demek için. -den kısmı İngilizcede than olur.",
+  rows: [["kısa sıfat", "big → bigger → the biggest"], ["uzun sıfat", "more beautiful → the most beautiful"], ["-den", "than"], ["huysuz", "good → better → the best"]],
+  tip: "Kısa kelimeye -er eklenir, uzun kelimenin önüne more gelir. İkisi birden asla: \"more bigger\" yok.",
+  items: `
+Istanbul is bigger than Ankara.|İstanbul Ankara'dan büyük.|Istanbul is more big than Ankara.|bigger|more big,biggest
+This hotel is cheaper.|Bu otel daha ucuz.|This hotel is more cheap.|cheaper|more cheap,cheapest
+English is easier than you think.|İngilizce sandığından kolay.|English is more easy than you think.|easier|more easy,easiest
+This dress is more beautiful.|Bu elbise daha güzel.|This dress is beautifuler.|more|most,much
+Today is hotter than yesterday.|Bugün dünden sıcak.|Today is more hot than yesterday.|hotter|more hot,hottest
+She is taller than me.|O benden uzun.|She is more tall than me.|taller|more tall,tallest
+This is the best day!|Bu en güzel gün!|This is the goodest day!|best|goodest,better
+It is the biggest airport.|Bu en büyük havalimanı.|It is the most big airport.|biggest|most big,bigger
+My job is more interesting now.|İşim artık daha ilginç.|My job is interestinger now.|more|most,much
+Your English is better now!|İngilizcen artık daha iyi!|Your English is gooder now!|better|gooder,best` },
+{ name: "in / on / at", sub: "zaman ve yer edatları",
+  intro: "Ne zaman ve nerede? Üç küçük kelime, kolay bir hileyle çözülüyor.",
+  rows: [["at", "saat, nokta: at 7, at the gate"], ["on", "gün, yüzey: on Monday, on the table"], ["in", "ay, yıl, şehir, içi: in May, in Istanbul"]],
+  tip: "Hile: at küçük bir nokta, on bir yüzey, in büyük bir kutu.",
+  items: `
+I wake up at seven.|Yedide uyanırım.|I wake up in seven.|at|in,on
+My birthday is in April.|Doğum günüm nisanda.|My birthday is on April.|in|on,at
+We fly on Monday.|Pazartesi uçuyoruz.|We fly in Monday.|on|in,at
+She lives in Istanbul.|İstanbul'da yaşıyor.|She lives at Istanbul.|in|on,at
+The keys are on the table.|Anahtarlar masanın üstünde.|The keys are in the table.|on|in,at
+Meet me at the gate.|Kapıda buluşalım.|Meet me on the gate.|at|in,on
+I was born in 1985.|1985'te doğdum.|I was born on 1985.|in|on,at
+The meeting is at noon.|Toplantı öğlen.|The meeting is in noon.|at|in,on
+Your bag is in the overhead bin.|Çantan üst dolapta.|Your bag is at the overhead bin.|in|on,at
+See you on Friday!|Cuma görüşürüz!|See you in Friday!|on|in,at` }
+];
+
+const GRAM = GRAM_RAW.map((t, ti) => Object.assign({}, t, { i: ti, items: t.items.trim().split("\n").map((l, i) => {
+  const p = l.split("|"); return { id: "g" + ti + "-" + i, g: true, t: ti, en: p[0], tr: p[1], bad: p[2], gap: p[3], opts: p[4].split(",") };
+}) }));
+
 const LEVELS = [
   [0, "Yolcu"], [150, "Check-in Tamam"], [400, "Biniş Kartlı"], [800, "Koltuğuna Kuruldu"],
   [1400, "Kemerler Bağlı"], [2200, "Kalkışta"], [3200, "Bulutların Üstünde"], [4500, "Seyir İrtifasında"],
@@ -580,7 +799,7 @@ const INTERVALS = [0, 1, 2, 4, 7, 15];
 const GOAL = 100;
 const GOOD = ["Süpersin!", "Aynen öyle!", "Bravo!", "Uçuyorsun!", "Tam isabet!", "Kusursuz!", "İşte bu!", "Kaptan gururlu!", "Harikasın!", "Çok iyi gidiyorsun!"];
 const BAD = ["Olsun, bir dahakine!", "Az kaldı!", "Hata yapan öğrenir.", "Takılma, devam!", "Bunu tekrar göreceğiz, merak etme."];
-const STEPNAMES = { intro: "Yeni kelimeler", tf: "Doğru mu, yanlış mı?", match: "Eşleştir", fill: "Boşluğu doldur", listen: "Dinle ve bul", pick: "Anlamını seç", spell: "Harf harf yaz", sprint: "60 saniye kaydır", flash: "Kelime kartları" };
+const STEPNAMES = { intro: "Yeni kelimeler", tf: "Doğru mu, yanlış mı?", match: "Eşleştir", fill: "Boşluğu doldur", listen: "Dinle ve bul", pick: "Anlamını seç", spell: "Harf harf yaz", sprint: "60 saniye kaydır", flash: "Kelime kartları", gcard: "Konu anlatımı", ggap: "Boşluğu doldur", gright: "Doğru cümle mi?", gorder: "Cümleyi kur" };
 
 /* ---------- Icons ---------- */
 const IC = {
@@ -596,6 +815,8 @@ const IC = {
   pairs: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="4" width="7" height="7" rx="2"/><rect x="14" y="13" width="7" height="7" rx="2"/><path d="M10 7.5h3.5a2 2 0 0 1 2 2V13" stroke-linecap="round"/></svg>',
   blank: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 8h6M15 8h6M3 16h4M17 16h4"/><path d="M10 17h6" stroke-width="3"/></svg>',
   ear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 9a5 5 0 0 1 10 0c0 3-3 4-3 7a3 3 0 0 1-5.5 1.6"/><path d="M10 10a2 2 0 0 1 4 0"/></svg>',
+  build: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2.5" y="5" width="8" height="5" rx="1.5"/><rect x="13.5" y="5" width="8" height="5" rx="1.5"/><rect x="6" y="14" width="12" height="5" rx="1.5"/></svg>',
+  okq: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16.5 9"/></svg>',
   abc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2.5" y="7" width="6" height="10" rx="1.5"/><rect x="9" y="7" width="6" height="10" rx="1.5"/><rect x="15.5" y="7" width="6" height="10" rx="1.5"/></svg>'
 };
 
@@ -611,7 +832,7 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* ---------- State ---------- */
 const KEY = "sunflower-english-v1";
-const fresh = () => ({ v: 1, name: "", xp: 0, days: {}, streak: 0, best: 0, lastDay: -1, words: {}, active: 0, sound: true, sprintBest: 0, lessons: 0, updated: 0 });
+const fresh = () => ({ v: 1, name: "", xp: 0, days: {}, streak: 0, best: 0, lastDay: -1, words: {}, active: 0, sound: true, sprintBest: 0, lessons: 0, gram: {}, updated: 0 });
 let S = fresh();
 try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(fresh(), JSON.parse(raw)); } catch (e) {}
 
@@ -627,7 +848,7 @@ const seen = i => !!(W(i) && W(i).s);
 const box = i => (W(i) ? W(i).b || 0 : 0);
 const learnedCount = () => ITEMS.filter(i => box(i) >= 3).length;
 const seenCount = () => ITEMS.filter(seen).length;
-const plantPoints = () => ITEMS.reduce((a, i) => a + box(i), 0) + seenCount() * 0.5;
+const plantPoints = () => ITEMS.reduce((a, i) => a + box(i), 0) + seenCount() * 0.5 + GRAM.reduce((a, g) => a + gStars(g.i) * 3, 0);
 const stageOf = p => { let s = 0; STAGES.forEach((x, k) => { if (p >= x[0]) s = k; }); return s; };
 const levelOf = xp => { let s = 0; LEVELS.forEach((x, k) => { if (xp >= x[0]) s = k; }); return s; };
 const todayXP = () => S.days[today()] || 0;
@@ -635,6 +856,12 @@ const curStreak = () => (S.lastDay >= today() - 1 ? S.streak : 0);
 const unitUnlocked = u => u.ph || u.i === 0 || UNITS[u.i - 1].items.every(seen);
 const dueList = () => { const t = today(); return ITEMS.filter(i => { const w = W(i); return w && w.s && (w.d ?? 0) <= t; }); };
 
+const gDone = t => !!(S.gram && S.gram[t] && S.gram[t].n);
+const gUnlocked = t => t === 0 || gDone(t - 1);
+const gStars = t => { const r = S.gram && S.gram[t]; if (!r || !r.n) return 0; return r.best >= 100 ? 3 : r.best >= 80 ? 2 : 1; };
+const gNext = () => GRAM.find(g => gUnlocked(g.i) && !gDone(g.i)) || GRAM.find(g => gStars(g.i) < 3) || GRAM[0];
+const starStr = n => "★".repeat(n) + "☆".repeat(3 - n);
+const gDoneItems = () => GRAM.filter(g => gDone(g.i)).flatMap(g => g.items);
 function markSeen(i) {
   if (!S.words[i.id]) S.words[i.id] = { s: 1, b: 0, d: today() };
   else S.words[i.id].s = 1;
@@ -791,7 +1018,7 @@ function homeMsg() {
 }
 function render() {
   document.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-current", b.dataset.tab === tab ? "page" : "false"));
-  ({ home: renderHome, games: renderGames, units: renderUnits, notes: renderNotes })[tab]();
+  ({ home: renderHome, games: renderGames, units: renderUnits, gram: renderGram, notes: renderNotes })[tab]();
 }
 function renderHome() {
   const p = plantPoints(), st = stageOf(p), lv = levelOf(S.xp);
@@ -813,6 +1040,7 @@ function renderHome() {
       <span><b>${done ? "Bir tur daha" : S.lessons ? "Günün dersi" : "İlk dersi başlat"}</b><small>≈ 5 dk · ${newCount} yeni${due ? ", " + Math.min(due, 8) + " tekrar" : ""}</small></span>
       <span class="go">${IC.go}</span>
     </button>
+    ${(() => { const g = gNext(), d = gDone(g.i); return `<button class="unit gramhome" data-act="gram" data-t="${g.i}"><span class="num">Aa</span><span class="body"><h3>Gramer: ${esc(g.name)}</h3><small>${d ? "Yıldızları tamamla " + starStr(gStars(g.i)) : "Yeni konu · ≈ 3 dk · " + esc(g.sub)}</small></span><span class="tag">${d ? "Tekrar" : "Başla"}</span></button>`; })()}
     <div class="goalcard"><div class="row"><span>Günlük hedef</span><span class="muted" style="font-variant-numeric:tabular-nums">${Math.min(tx, GOAL)} / ${GOAL} XP</span></div><div class="meter"><i style="width:${Math.min(100, tx / GOAL * 100)}%"></i></div></div>
     <div class="stats">
       <div class="stat"><b>${IC.flame}${curStreak()}</b><span>günlük seri</span></div>
@@ -834,11 +1062,13 @@ function renderGames() {
     ${TTS ? g("listen", "ear", "Dinle ve Bul", "Kulağın alışsın", "var(--good)") : g("pick", "ear", "Anlamını Seç", "Hızlı seçim", "var(--good)")}
     ${g("spell", "abc", "Harf Harf", "Kelimeyi kur", "var(--petal-deep)")}
     ${g("tf", "swipe", "Doğru mu?", "Sakin tempo kaydırma", "var(--leaf)")}
+    ${g("gorder", "build", "Cümle Kur", "Kelimeleri sıraya diz", "var(--petal-deep)")}
+    ${g("gright", "okq", "Doğru Cümle", "Gramer hatasını yakala", "var(--good)")}
   </div>
   <p class="muted" style="font-size:.85rem;margin-top:14px">Oyunlar öğrendiğin kelimelerle oynanır, her doğru cevap XP getirir.</p>`;
 }
 function renderUnits() {
-  view.innerHTML = `<div class="section-h"><h2>Rotalar</h2><span class="muted" style="font-weight:700;font-size:.85rem">bir rota bitince sıradaki açılır</span></div>
+  view.innerHTML = `<div class="section-h"><h2>Kelime Rotaları</h2><span class="muted" style="font-weight:700;font-size:.85rem">bir rota bitince sıradaki açılır</span></div>
   <div class="units">${UNITS.map(u => {
     const tot = u.items.length, s = u.items.filter(seen).length, l = u.items.filter(i => box(i) >= 3).length;
     const open = unitUnlocked(u), active = S.active === u.i, full = s === tot;
@@ -847,6 +1077,18 @@ function renderUnits() {
       <span class="num">${full ? IC.check : u.ph ? "★" : u.i + 1}</span>
       <span class="body"><h3>${esc(u.name)}</h3><small>${esc(u.sub)} · ${s}/${tot} görüldü · ${l} öğrenildi</small><div class="meter" style="margin-top:6px"><i style="width:${s / tot * 100}%"></i></div></span>
       <span class="tag">${tag}</span></button>`;
+  }).join("")}</div>`;
+}
+function renderGram() {
+  const nxt = gNext();
+  view.innerHTML = `<div class="section-h"><h2>Gramer</h2><span class="muted" style="font-weight:700;font-size:.85rem">her konu ≈ 3 dk</span></div>
+  <p class="muted" style="margin:0 0 12px;font-weight:600">Kısa bir anlatım, ardından üç mini oyun. Bir konuyu bitirince sıradakinin kilidi açılır. Yıldızları toplamak için istediğin konuyu tekrar oynayabilirsin.</p>
+  <div class="units">${GRAM.map(g => {
+    const open = gUnlocked(g.i), st = gStars(g.i), cur = nxt === g && open && !gDone(g.i);
+    return `<button class="unit ${cur ? "active" : ""} ${!open ? "locked" : ""} ${st ? "full" : ""}" data-act="gram" data-t="${g.i}" ${open ? "" : 'aria-disabled="true"'}>
+      <span class="num">${st ? IC.check : g.i + 1}</span>
+      <span class="body"><h3>${esc(g.name)}</h3><small>${esc(g.sub)}</small></span>
+      <span class="tag">${!open ? "Kilitli" : st ? `<span class="stars">${starStr(st)}</span>` : "Yeni"}</span></button>`;
   }).join("")}</div>`;
 }
 function renderNotes() {
@@ -877,6 +1119,11 @@ view.addEventListener("click", async e => {
   const act = b.dataset.act;
   if (act === "lesson") startLesson();
   else if (act === "game") startGame(b.dataset.game);
+  else if (act === "gram") {
+    const t = +b.dataset.t;
+    if (!gUnlocked(t)) { b.animate?.([{ transform: "translateX(-5px)" }, { transform: "translateX(5px)" }, { transform: "none" }], 250); return; }
+    startGrammar(t);
+  }
   else if (act === "unit") {
     const u = UNITS[+b.dataset.u];
     if (!unitUnlocked(u)) { b.animate?.([{ transform: "translateX(-5px)" }, { transform: "translateX(5px)" }, { transform: "none" }], 250); return; }
@@ -937,6 +1184,7 @@ function buildLesson() {
   const f = shuffle(core.filter(i => !i.ph && i.ex)).slice(0, 4); if (f.length) steps.push({ type: "fill", items: f });
   steps.push({ type: TTS ? "listen" : "pick", items: shuffle(core).slice(0, 4) });
   const s = shuffle(core.filter(spellable)).slice(0, 3); if (s.length) steps.push({ type: "spell", items: s });
+  const gi = shuffle(gDoneItems()).slice(0, 3); if (gi.length) steps.push({ type: "gright", items: gi, label: "Gramer molası" });
   return steps;
 }
 function practicePool(min) {
@@ -948,7 +1196,16 @@ function practicePool(min) {
   }
   return shuffle(pool);
 }
+function startGrammar(t) {
+  const g = GRAM[t], it = shuffle(g.items);
+  startLesson([{ type: "gcard", items: [g] }, { type: "ggap", items: it.slice(0, 4) }, { type: "gright", items: shuffle(g.items).slice(0, 4) }, { type: "gorder", items: it.slice(4, 7) }], false);
+  L.gtopic = t;
+}
 function startGame(g) {
+  if (g === "gorder" || g === "gright") {
+    let gp = gDoneItems(); if (gp.length < 8) gp = gp.concat(GRAM[0].items.filter(i => !gp.includes(i)));
+    return startLesson([{ type: g, items: shuffle(gp).slice(0, g === "gorder" ? 5 : 8) }], true);
+  }
   const pool = practicePool(10);
   let items;
   if (g === "sprint") return startLesson([{ type: "sprint", items: pool }], true);
@@ -985,10 +1242,10 @@ function updTop() {
   $("#combo").textContent = L.combo >= 3 ? L.combo + "'li seri" : "";
 }
 function runStep() {
-  stage.className = "";
+  stage.className = ""; $("#toast").classList.remove("show");
   if (L.si >= L.steps.length) return endLesson();
   const st = L.steps[L.si];
-  $("#steplabel").textContent = STEPNAMES[st.type];
+  $("#steplabel").textContent = st.label || STEPNAMES[st.type];
   MODS[st.type](st.items, () => { L.si++; runStep(); });
 }
 function progress() { L.q++; updTop(); }
@@ -1000,7 +1257,7 @@ function floatXP(n) {
 }
 function record(item, ok, xp = 10) {
   L.tries++;
-  if (item && !L.practice) { if (!(item.id in L.ans)) L.ans[item.id] = ok; else if (!ok) L.ans[item.id] = false; }
+  if (item && !item.g && !L.practice) { if (!(item.id in L.ans)) L.ans[item.id] = ok; else if (!ok) L.ans[item.id] = false; }
   if (ok) {
     L.ok++; L.combo++; L.best = Math.max(L.best, L.combo);
     let gain = xp; if (xp && L.combo > 0 && L.combo % 5 === 0) { gain += 10; toast(L.combo + " doğru üst üste! +10 bonus"); }
@@ -1044,15 +1301,19 @@ function endLesson() {
     if (S.lastDay !== t) { S.streak = S.lastDay === t - 1 ? S.streak + 1 : 1; S.lastDay = t; }
     S.best = Math.max(S.best, S.streak); S.lessons++;
   }
+  const acc = L.tries ? Math.round((L.ok / L.tries) * 100) : 100;
+  const gt = L.gtopic, wasOpen = gt != null && GRAM[gt + 1] ? gUnlocked(gt + 1) : true;
+  if (gt != null) { const r = S.gram[gt] || { n: 0, best: 0 }; r.n++; r.best = Math.max(r.best, acc); S.gram[gt] = r; }
   save();
   const st1 = stageOf(plantPoints()), lv1 = levelOf(S.xp);
-  const acc = L.tries ? Math.round((L.ok / L.tries) * 100) : 100;
+  const gTarget = gt == null ? null : (GRAM[gt + 1] && !gDone(gt + 1) ? gt + 1 : gt);
   const grew = st1 > L.stage0, lvUp = lv1 > L.level0;
-  const msg = L.sprintScore != null ? `${L.sprintScore} doğru kaydırma! Rekorun: ${S.sprintBest}` : L.practice ? rnd(["Güzel tur!", "Parmakların ısındı!", "Kelimeler seni tanımaya başladı."]) :
+  let msg = L.sprintScore != null ? `${L.sprintScore} doğru kaydırma! Rekorun: ${S.sprintBest}` : L.practice ? rnd(["Güzel tur!", "Parmakların ısındı!", "Kelimeler seni tanımaya başladı."]) :
     grew ? `Ayçiçeğin büyüdü: artık "${STAGES[st1][1]}"!` :
     acc >= 90 ? "Neredeyse kusursuz. Bu İngilizce senden korkmaya başladı." :
     acc >= 70 ? "Çok iyi! Yanlışları yarın tekrar göstereceğim, kafana takma." :
     "Zor bir turdu ama bitirdin. Asıl önemli olan bu. Yarın daha kolay gelecek.";
+  if (gt != null) msg = `"${GRAM[gt].name}" bitti, ${starStr(gStars(gt))}` + (!wasOpen && GRAM[gt + 1] ? ` Sıradaki konu açıldı: ${GRAM[gt + 1].name}.` : gStars(gt) < 3 ? " Tekrar oynayıp yıldızları tamamlayabilirsin." : " Kusursuz!");
   $("#steplabel").textContent = ""; $("#combo").textContent = ""; $("#pbar").style.width = "100%";
   stage.innerHTML = `<div class="end">
     ${plantSVG(st1)}
@@ -1064,12 +1325,12 @@ function endLesson() {
       <div><b>%${acc}</b><span>isabet</span></div>
       <div><b>${L.practice ? L.best : curStreak()}</b><span>${L.practice ? "en uzun seri" : "günlük seri"}</span></div>
     </div>
-    <div class="endbtns"><button class="btn primary" id="endHome">Harika, ana sayfaya dön</button><button class="btn" id="endAgain">${L.practice ? "Bir daha oyna" : "Bir tur daha"}</button></div>
+    <div class="endbtns"><button class="btn primary" id="endHome">Harika, ana sayfaya dön</button><button class="btn" id="endAgain">${gTarget != null ? (gTarget !== gt ? "Sıradaki konu: " + esc(GRAM[gTarget].name) : "Bu konuyu tekrar oyna") : L.practice ? "Bir daha oyna" : "Bir tur daha"}</button></div>
   </div>`;
   beep("win"); confetti();
   const again = L.practice ? L.steps[0].type : null;
   $("#endHome").onclick = () => { L = null; quitLesson(); };
-  $("#endAgain").onclick = () => { const g = again; L = null; play.hidden = true; if (g) startGame(g === "flash" ? "flash" : g); else startLesson(); };
+  $("#endAgain").onclick = () => { const g = again; L = null; play.hidden = true; if (gTarget != null) startGrammar(gTarget); else if (g) startGame(g === "flash" ? "flash" : g); else startLesson(); };
 }
 
 /* ---------- Swipe mechanics ---------- */
@@ -1273,6 +1534,85 @@ MODS.spell = (items, done) => seq(items, (it, next) => {
     if (bi < 0) return;
     hinted++; btns[bi].classList.add("used"); filled.push({ c: word[k], b: bi }); draw(); check();
   };
+}, done);
+
+/* ---------- Grammar modules ---------- */
+MODS.gcard = (items, done) => {
+  const g = items[0];
+  stage.innerHTML = `<div class="scroll"><div class="rule">
+    <div class="eyebrow">Konu ${g.i + 1} · ${esc(g.sub)}</div><h2 style="font-size:1.6rem">${esc(g.name)}</h2>
+    <p class="intro">${esc(g.intro)}</p>
+    <div class="rrows">${g.rows.map(r => `<div class="rrow"><span>${esc(r[0])}</span><b>${esc(r[1])}</b></div>`).join("")}</div>
+    <div class="tip"><strong>İpucu:</strong> ${esc(g.tip)}</div></div>
+    <div class="eyebrow" style="margin:16px 0 8px">Örnekler · dinlemek için dokun</div>
+    <div class="exs">${g.items.slice(0, 3).map(i => `<div class="ex1">${sayBtn(i.en)}<div><b>${esc(i.en)}</b><span>${esc(i.tr)}</span></div></div>`).join("")}</div></div>
+    <div class="after" style="padding-top:10px"><button class="btn primary" id="gGo">Anladım, oyuna geç</button></div>`;
+  $("#gGo").onclick = () => { progress(); beep("tap"); done(); };
+};
+MODS.ggap = (items, done) => seq(items, (it, next) => {
+  const re = new RegExp("(^|[^A-Za-z'])" + it.gap.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![A-Za-z'])");
+  const m = it.en.match(re), at = m.index + m[1].length;
+  const html = `<div class="prompt">Boşluğa hangisi gelir?</div><div class="sent">${esc(it.en.slice(0, at))}<span class="blank">&nbsp;</span>${esc(it.en.slice(at + it.gap.length))}</div><div class="muted" style="font-weight:700">${esc(it.tr)}</div>`;
+  choice(it, html, it.gap, it.opts, next, ok => { const bl = $(".blank", stage); bl.textContent = it.gap; bl.classList.add(ok ? "ok" : "no"); speak(it.en); });
+}, done);
+MODS.gright = (items, done) => {
+  const qs = items.map(it => { const ok = Math.random() < .5; return { it, ok, s: ok ? it.en : it.bad }; });
+  stage.innerHTML = `<div class="deck"></div><div class="decide"><button class="l">${IC.x} Yanlış</button><button class="r">${IC.check} Doğru</button></div>`;
+  const dk = $(".deck", stage); let k = 0;
+  const card = (q, under) => q ? `<div class="card ${under ? "under" : ""}"><span class="lbl yes">DOĞRU</span><span class="lbl no">YANLIŞ</span>
+    <div class="eyebrow">Bu cümle doğru mu?</div><div class="gsent" style="margin-top:14px">${esc(q.s)}</div><div class="eq"></div><div class="muted" style="font-weight:700">${esc(q.it.tr)}</div>
+    <div class="hint">Doğruysa sağa, yanlışsa sola kaydır</div></div>` : "";
+  const show = () => {
+    if (k >= qs.length) return setTimeout(done, 200);
+    dk.innerHTML = card(qs[k + 1], true) + card(qs[k], false);
+    const q = qs[k];
+    swipeable(dk.lastElementChild, dir => {
+      const ok = (dir === "right") === q.ok;
+      record(q.it, ok, 10); progress();
+      if (!q.ok) { toast("Doğrusu: " + q.it.en, 2200); speak(q.it.en); }
+      else if (!ok) { toast("Bu cümle doğruydu: " + q.it.en, 2200); speak(q.it.en); }
+      else if (Math.random() < .35) toast(rnd(GOOD), 900);
+      k++; show();
+    });
+  };
+  $(".decide .l", stage).onclick = () => { const c = dk.querySelector(".card:not(.under)"); c && c.fling("left"); };
+  $(".decide .r", stage).onclick = () => { const c = dk.querySelector(".card:not(.under)"); c && c.fling("right"); };
+  show();
+};
+MODS.gorder = (items, done) => seq(items, (it, next) => {
+  const words = it.en.split(" ");
+  let order = shuffle(words.map(w => ({ w })));
+  for (let n = 0; words.length > 2 && n < 10 && order.map(o => o.w).join(" ") === it.en; n++) order = shuffle(order);
+  let built = [], fails = 0, finished = false;
+  stage.innerHTML = `<div class="q"><div class="prompt">Kelimeleri doğru sıraya diz</div><div class="big" style="font-size:clamp(1.3rem,5.5vw,1.8rem)">${esc(it.tr)}</div><div class="built" id="built"></div></div>
+    <div class="chips" id="pool">${order.map((o, j) => `<button class="chip" data-j="${j}">${esc(o.w)}</button>`).join("")}</div><div class="after"></div>`;
+  const chips = [...stage.querySelectorAll("#pool .chip")], box = $("#built", stage);
+  const draw = () => {
+    box.innerHTML = built.map((j, x) => `<button class="chip" data-x="${x}">${esc(order[j].w)}</button>`).join("");
+    box.querySelectorAll(".chip").forEach(c => c.onclick = () => { if (finished) return; const j = built.splice(+c.dataset.x, 1)[0]; chips[j].classList.remove("used"); draw(); });
+  };
+  const check = () => {
+    if (built.map(j => order[j].w).join(" ") === it.en) {
+      finished = true; box.classList.add("ok"); speak(it.en);
+      record(it, true, fails ? 0 : 10); progress(); setTimeout(next, 1200); return;
+    }
+    fails++; box.classList.add("no"); if (fails === 1) record(it, false);
+    if (fails < 2) {
+      toast("Az kaldı, bir daha dene!", 1200);
+      setTimeout(() => { box.classList.remove("no"); built.forEach(j => chips[j].classList.remove("used")); built = []; draw(); }, 600);
+    } else {
+      finished = true;
+      setTimeout(() => {
+        box.classList.remove("no"); box.innerHTML = `<div class="gsent" style="font-size:1.35rem;color:var(--good)">${esc(it.en)}</div>`; speak(it.en); progress();
+        $(".after", stage).innerHTML = `<button class="btn primary">Devam</button>`; $(".after .btn", stage).onclick = next;
+      }, 600);
+    }
+  };
+  chips.forEach(c => c.onclick = () => {
+    if (finished || c.classList.contains("used")) return;
+    c.classList.add("used"); built.push(+c.dataset.j); draw(); beep("tap");
+    if (built.length === words.length) check();
+  });
 }, done);
 
 /* ---------- Confetti ---------- */
