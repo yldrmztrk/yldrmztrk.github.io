@@ -308,7 +308,7 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 <div id="app">
   <header class="top">
     <div class="brand"><i aria-hidden="true"></i>Sunflower English</div>
-    <span class="ver" id="ver">v2.4</span>
+    <span class="ver" id="ver">v2.5</span>
   </header>
   <main id="view" aria-live="polite"></main>
   <nav class="tabs" aria-label="Bölümler">
@@ -335,7 +335,7 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 <canvas id="confetti" hidden></canvas>
 
 <script>
-const VERSION = "2.4";
+const VERSION = "2.5";
 
 /* ---------- Content: 10 routes, 240 words & phrases ---------- */
 const RAW = [
@@ -5754,7 +5754,7 @@ const levelOf = xp => { let s = 0; LEVELS.forEach((x, k) => { if (xp >= x[0]) s 
 const todayXP = () => S.days[today()] || 0;
 const curStreak = () => (S.lastDay >= today() - 1 ? S.streak : 0);
 const prevUnit = u => { for (let k = u.i - 1; k >= 0; k--) if (!UNITS[k].ph) return UNITS[k]; return null; };
-const unitUnlocked = u => u.ph || !prevUnit(u) || prevUnit(u).items.every(seen);
+const unitUnlocked = u => true; // all routes open
 const dueList = () => { const t = today(); return ITEMS.filter(i => { const w = W(i); return w && w.s && (w.d ?? 0) <= t; }); };
 
 const OLD_GRAM = ["am / is / are", "have / has", "Geniş zaman", "Şimdiki zaman", "can", "was / were", "Geçmiş zaman", "will / going to", "there is / there are", "Soru kurma", "Karşılaştırma", "in / on / at"];
@@ -5766,7 +5766,7 @@ migrateGram();
 const gRec = t => S.gram && S.gram[GRAM[t].key];
 const gDone = t => !!(gRec(t) && gRec(t).n);
 const gFirstOfLvl = t => t === 0 || GRAM[t - 1].lvl !== GRAM[t].lvl;
-const gUnlocked = t => t === 0 || gDone(t - 1) || (gFirstOfLvl(t) && !!(S.gopen && S.gopen[GRAM[t].lvl]));
+const gUnlocked = t => true; // all topics open
 const gStars = t => { const r = gRec(t); if (!r || !r.n) return 0; return r.best >= 100 ? 3 : r.best >= 80 ? 2 : 1; };
 const gNext = () => { const f = S.gfocus || 0; return GRAM.find(g => g.lvl >= f && gUnlocked(g.i) && !gDone(g.i)) || GRAM.find(g => gUnlocked(g.i) && !gDone(g.i)) || GRAM.find(g => gStars(g.i) < 3) || GRAM[0]; };
 const starStr = n => "★".repeat(n) + "☆".repeat(3 - n);
@@ -5981,7 +5981,7 @@ function renderUnits() {
   let lastGrp = "", n = 0;
   const totalSeen = seenCount();
   view.innerHTML = `<div class="section-h"><h2>Kelime Rotaları</h2><span class="muted" style="font-weight:700;font-size:.85rem">${totalSeen} / ${ITEMS.length} kelime</span></div>
-  <p class="muted" style="margin:0 0 4px;font-weight:600">Günün dersi yeni kelimeleri sırayla getirir. Bir rota bitince sıradaki açılır, istediğin açık rotaya dokunup oradan devam edebilirsin.</p>
+  <p class="muted" style="margin:0 0 4px;font-weight:600">Bütün rotalar açık. Hangi rotaya dokunursan günün dersi yeni kelimeleri oradan getirir.</p>
   ${list.map(u => {
     const tot = u.items.length, s = u.items.filter(seen).length, l = u.items.filter(i => box(i) >= 3).length;
     const open = unitUnlocked(u), active = S.active === u.i, full = s === tot;
@@ -6001,10 +6001,10 @@ function renderGram() {
     return `<button class="unit ${cur ? "active" : ""} ${!open ? "locked" : ""} ${st ? "full" : ""}" data-act="gram" data-t="${g.i}" ${open ? "" : 'aria-disabled="true"'}>
       <span class="num">${st ? IC.check : g.i + 1}</span>
       <span class="body"><h3>${esc(g.name)}</h3><small>${esc(g.sub)}</small></span>
-      <span class="tag">${!open ? "Kilitli" : st ? `<span class="stars">${starStr(st)}</span>` : cur ? "Sırada" : "Açık"}</span></button>`;
+      <span class="tag">${st ? `<span class="stars">${starStr(st)}</span>` : cur ? "Sırada" : "Yeni"}</span></button>`;
   };
   view.innerHTML = `<div class="section-h"><h2>Gramer</h2><span class="muted" style="font-weight:700;font-size:.85rem">${doneAll} / ${GRAM.length} konu</span></div>
-  <p class="muted" style="margin:0 0 4px;font-weight:600">Her konu ≈ 3 dakika: kısa bir anlatım, ardından üç mini oyun. Biraz İngilizcen varsa kolay seviyeleri atlayıp istediğin seviyeden başlayabilirsin.</p>
+  <p class="muted" style="margin:0 0 4px;font-weight:600">Her konu ≈ 3 dakika: kısa bir anlatım, ardından üç mini oyun. Bütün konular açık; istediğine dokun, istediğin kadar oyna.</p>
   ${GLEVELS.map((L, li) => {
     const ts = GRAM.filter(g => g.lvl === li), d = ts.filter(g => gDone(g.i)).length, open = gUnlocked(ts[0].i);
     return `<div class="lvlhead"><div><h3>${esc(L.name)}</h3><small>${esc(L.sub)} · ${d}/${ts.length}</small><div class="meter" style="margin-top:6px"><i style="width:${d / ts.length * 100}%"></i></div></div>${open ? "" : `<button class="btn" data-act="glevel" data-l="${li}">Buradan başla</button>`}</div>
@@ -6119,6 +6119,7 @@ function practicePool(min) {
 }
 function startGrammar(t) {
   const g = GRAM[t], it = shuffle(g.items);
+  S.gfocus = g.lvl;
   startLesson([{ type: "gcard", items: [g] }, { type: "ggap", items: it.slice(0, 4) }, { type: "gright", items: shuffle(g.items).slice(0, 4) }, { type: "gorder", items: it.slice(4, 7) }], false);
   L.gtopic = t;
 }
