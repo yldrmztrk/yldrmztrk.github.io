@@ -193,6 +193,11 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 .flipback{display:none}
 .card.flipped .flipfront{display:none}
 .card.flipped .hint{display:none}
+.learn{display:flex;flex-direction:column;align-items:center}
+.learn .speak{margin-top:12px}
+.learn .eq{margin:14px auto}
+.exsay{margin-top:12px;display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:.9rem;color:var(--muted);background:var(--sunk);padding:8px 12px;border-radius:99px}
+.exsay svg{width:18px;height:18px}
 .card.flipped .flipback{display:flex;flex-direction:column;align-items:center}
 .decide{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-bottom:14px}
 .decide button{padding:16px;border-radius:20px;font-weight:800;font-size:1.05rem;display:flex;align-items:center;justify-content:center;gap:8px}
@@ -308,7 +313,7 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 <div id="app">
   <header class="top">
     <div class="brand"><i aria-hidden="true"></i>Sunflower English</div>
-    <span class="ver" id="ver">v2.5</span>
+    <span class="ver" id="ver">v2.6</span>
   </header>
   <main id="view" aria-live="polite"></main>
   <nav class="tabs" aria-label="Bölümler">
@@ -335,7 +340,7 @@ textarea{width:100%;min-height:80px;border-radius:14px;border:1px solid var(--li
 <canvas id="confetti" hidden></canvas>
 
 <script>
-const VERSION = "2.5";
+const VERSION = "2.6";
 
 /* ---------- Content: 10 routes, 240 words & phrases ---------- */
 const RAW = [
@@ -5839,14 +5844,26 @@ function pickVoice() {
   } catch (e) {}
 }
 if (TTS) { pickVoice(); try { speechSynthesis.onvoiceschanged = pickVoice; } catch (e) {} }
+let speakSeq = 0;
+const wait = ms => new Promise(r => setTimeout(r, ms));
+function stopSpeech() { speakSeq++; try { if (TTS) speechSynthesis.cancel(); } catch (e) {} }
 function speak(text, force) {
-  if (!TTS || (!S.sound && !force)) return;
-  try {
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = voice ? voice.lang : "en-US"; if (voice) u.voice = voice; u.rate = 0.88;
-    speechSynthesis.speak(u);
-  } catch (e) {}
+  return new Promise(res => {
+    if (!TTS || (!S.sound && !force)) return res();
+    const my = ++speakSeq;
+    let fin = false; const end = () => { if (!fin) { fin = true; res(); } };
+    const go = () => {
+      if (my !== speakSeq) return end();
+      try {
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = voice ? voice.lang : "en-US"; if (voice) u.voice = voice; u.rate = 0.88;
+        u.onend = end; u.onerror = end;
+        speechSynthesis.speak(u);
+      } catch (e) { end(); }
+      setTimeout(end, Math.min(7000, 900 + text.length * 80));
+    };
+    try { if (speechSynthesis.speaking || speechSynthesis.pending) { speechSynthesis.cancel(); setTimeout(go, 90); } else go(); } catch (e) { end(); }
+  });
 }
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-say]");
@@ -6130,14 +6147,15 @@ function startGame(g) {
   }
   const pool = practicePool(10);
   let items;
-  if (g === "sprint") return startLesson([{ type: "sprint", items: pool }], true);
+  const teach = list => { const u = list.filter(i => !seen(i)); return u.length ? [{ type: "intro", items: u, label: "Önce yeni kelimeler" }] : []; };
+  if (g === "sprint") return startLesson([...teach(pool), { type: "sprint", items: pool }], true);
   if (g === "flash") items = pool.slice(0, 10);
   else if (g === "match") items = uniqueTr(pool).slice(0, 6);
   else if (g === "fill") items = pool.filter(i => !i.ph && i.ex).slice(0, 8);
   else if (g === "spell") items = pool.filter(spellable).slice(0, 6);
   else items = pool.slice(0, 8);
   if (!items.length) items = shuffle(UNITS[0].items).slice(0, 6);
-  startLesson([{ type: g === "flash" ? "flash" : g, items }], true);
+  startLesson(g === "flash" ? [{ type: "flash", items }] : [...teach(items), { type: g, items }], true);
 }
 
 /* ---------- Lesson runner ---------- */
@@ -6164,7 +6182,7 @@ function updTop() {
   $("#combo").textContent = L.combo >= 3 ? L.combo + "'li seri" : "";
 }
 function runStep() {
-  stage.className = ""; $("#toast").classList.remove("show");
+  stage.className = ""; $("#toast").classList.remove("show"); stopSpeech();
   if (L.si >= L.steps.length) return endLesson();
   const st = L.steps[L.si];
   $("#steplabel").textContent = st.label || STEPNAMES[st.type];
@@ -6203,7 +6221,7 @@ function quitLesson() {
   if (L && !L.practice) applySRS();
   if (L) save();
   clearInterval(sprintTimer);
-  L = null; play.hidden = true; stage.innerHTML = ""; try { speechSynthesis.cancel(); } catch (e) {}
+  L = null; play.hidden = true; stage.innerHTML = ""; stopSpeech();
   render();
 }
 function applySRS() {
@@ -6296,15 +6314,16 @@ function flashDeck(items, done, isIntro) {
     const ex = it.ex ? `<div class="ex">${esc(it.ex).replace(new RegExp("(" + it.en.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "i"), "<mark>$1</mark>")}</div>` : "";
     return `<div class="card ${under ? "under" : ""}"><span class="lbl yes">TAMAM</span><span class="lbl no">TEKRAR</span>
       ${isIntro ? '<span class="new">Yeni</span>' : ""}
-      <div class="flipfront"><div class="big ${it.ph ? "phr" : ""}">${esc(it.en)}</div>${sayBtn(it.en)}</div>
+      ${isIntro ? `<div class="learn"><div class="big ${it.ph ? "phr" : ""}">${esc(it.en)}</div>${sayBtn(it.en)}<div class="eq"></div><div class="tr">${esc(it.tr)}</div>${ex}${it.ex ? `<button class="exsay" data-say="${esc(it.ex)}">${IC.speak} Cümleyi dinle</button>` : ""}</div>
+      <div class="hint">Öğrendiysen sağa kaydır · tekrar görmek için sola</div></div>` : `<div class="flipfront"><div class="big ${it.ph ? "phr" : ""}">${esc(it.en)}</div>${sayBtn(it.en)}</div>
       <div class="flipback"><div class="big ${it.ph ? "phr" : ""}" style="font-size:clamp(1.4rem,6vw,2rem)">${esc(it.en)}</div><div class="eq"></div><div class="tr">${esc(it.tr)}</div>${ex}${it.ex ? sayBtn(it.ex) : sayBtn(it.en)}</div>
-      <div class="hint">Anlamı için dokun · sağa kaydır: ${isIntro ? "öğrendim" : "biliyorum"}</div></div>`;
+      <div class="hint">Anlamı için dokun · sağa kaydır: biliyorum</div></div>`}`;
   };
   const show = () => {
     if (!deck.length) return setTimeout(done, 150);
     dk.innerHTML = (deck[1] ? cardHTML(deck[1].i, true) : "") + cardHTML(deck[0].i, false);
     const card = dk.lastElementChild, cur = deck[0];
-    if (S.sound) setTimeout(() => speak(cur.i.en), 150);
+    if (S.sound) speak(cur.i.en);
     swipeable(card, dir => {
       deck.shift();
       if (dir === "right" || cur.again) {
@@ -6312,7 +6331,7 @@ function flashDeck(items, done, isIntro) {
         if (dir === "right") { L.xp += 2; addXP(2); updTop(); beep("tap"); }
       } else { cur.again = true; deck.push(cur); toast("Tamam, birazdan tekrar geliyor"); }
       show();
-    }, () => { card.classList.toggle("flipped"); if (card.classList.contains("flipped") && S.sound) speak(cur.i.en); });
+    }, () => { if (isIntro) { speak(cur.i.en, true); return; } card.classList.toggle("flipped"); if (card.classList.contains("flipped") && S.sound) speak(cur.i.en); });
   };
   $(".decide .l", stage).onclick = () => { const c = dk.querySelector(".card:not(.under)"); c && c.fling("left"); };
   $(".decide .r", stage).onclick = () => { const c = dk.querySelector(".card:not(.under)"); c && c.fling("right"); };
@@ -6403,8 +6422,8 @@ function choice(it, html, correct, wrongs, next, onReveal) {
     stage.querySelectorAll(".opt").forEach(x => { if (x.textContent === correct) x.classList.add("ok"); else if (x !== b) x.classList.add("fade"); });
     if (!ok) b.classList.add("no");
     record(it, ok, 10); progress();
-    onReveal && onReveal(ok);
-    if (ok) { if (Math.random() < .4) toast(rnd(GOOD), 900); setTimeout(next, 1150); }
+    const said = onReveal ? onReveal(ok) : null;
+    if (ok) { if (Math.random() < .4) toast(rnd(GOOD), 900); Promise.all([said, wait(1000)]).then(next); }
     else { toast(rnd(BAD), 1300); $(".after", stage).innerHTML = `<button class="btn primary">Devam</button>`; $(".after .btn", stage).onclick = next; }
   });
 }
@@ -6413,7 +6432,7 @@ MODS.fill = (items, done) => seq(items, (it, next) => {
   const m = it.ex.match(re), word = m ? m[0] : it.en;
   const parts = it.ex.split(re);
   const html = `<div class="prompt">Boşluğa hangisi gelir?</div><div class="sent">${esc(parts[0])}<span class="blank">&nbsp;</span>${esc(parts.slice(1).join(word))}</div><div class="muted" style="font-weight:700">${esc(it.tr)} anlamında</div>`;
-  choice(it, html, it.en, distract(it, 2, "en"), next, ok => { const bl = $(".blank", stage); bl.textContent = word; bl.classList.add(ok ? "ok" : "no"); if (ok) bl.classList.add("ok"); speak(it.ex); });
+  choice(it, html, it.en, distract(it, 2, "en"), next, ok => { const bl = $(".blank", stage); bl.textContent = word; bl.classList.add(ok ? "ok" : "no"); return speak(it.ex); });
 }, done);
 MODS.listen = (items, done) => seq(items, (it, next) => {
   const html = `<div class="prompt">Dinle, anlamını seç</div><button class="bigspeak" data-say="${esc(it.en)}" aria-label="Tekrar dinle">${IC.speak}</button><div class="reveal" id="rev"></div>`;
@@ -6436,8 +6455,8 @@ MODS.spell = (items, done) => seq(items, (it, next) => {
     if (filled.length < word.length) return;
     const got = filled.map(f => f.c).join("");
     if (got === word) {
-      finished = true; $("#slots").classList.add("ok"); speak(it.en);
-      record(it, true, (hinted || wrongs) ? 0 : 10); progress(); setTimeout(next, 1100);
+      finished = true; $("#slots").classList.add("ok"); const spoken = speak(it.en);
+      record(it, true, (hinted || wrongs) ? 0 : 10); progress(); Promise.all([spoken, wait(1000)]).then(next);
     } else {
       wrongs++; $("#slots").classList.add("no"); record(it, false);
       setTimeout(() => { $("#slots").classList.remove("no"); filled.forEach(f => btns[f.b].classList.remove("used")); filled = []; draw();
@@ -6475,7 +6494,7 @@ MODS.ggap = (items, done) => seq(items, (it, next) => {
   const re = new RegExp("(^|[^A-Za-z'])" + it.gap.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![A-Za-z'])");
   const m = it.en.match(re), at = m.index + m[1].length;
   const html = `<div class="prompt">Boşluğa hangisi gelir?</div><div class="sent">${esc(it.en.slice(0, at))}<span class="blank">&nbsp;</span>${esc(it.en.slice(at + it.gap.length))}</div><div class="muted" style="font-weight:700">${esc(it.tr)}</div>`;
-  choice(it, html, it.gap, it.opts, next, ok => { const bl = $(".blank", stage); bl.textContent = it.gap; bl.classList.add(ok ? "ok" : "no"); speak(it.en); });
+  choice(it, html, it.gap, it.opts, next, ok => { const bl = $(".blank", stage); bl.textContent = it.gap; bl.classList.add(ok ? "ok" : "no"); return speak(it.en); });
 }, done);
 MODS.gright = (items, done) => {
   const qs = items.map(it => { const ok = Math.random() < .5; return { it, ok, s: ok ? it.en : it.bad }; });
@@ -6491,10 +6510,11 @@ MODS.gright = (items, done) => {
     swipeable(dk.lastElementChild, dir => {
       const ok = (dir === "right") === q.ok;
       record(q.it, ok, 10); progress();
-      if (!q.ok) { toast("Doğrusu: " + q.it.en, 2200); speak(q.it.en); }
-      else if (!ok) { toast("Bu cümle doğruydu: " + q.it.en, 2200); speak(q.it.en); }
-      else if (Math.random() < .35) toast(rnd(GOOD), 900);
-      k++; show();
+      k++;
+      if (!q.ok || !ok) {
+        toast((q.ok ? "Bu cümle doğruydu: " : "Doğrusu: ") + q.it.en, 4000);
+        Promise.all([speak(q.it.en), wait(1300)]).then(() => { $("#toast").classList.remove("show"); show(); });
+      } else { if (Math.random() < .35) toast(rnd(GOOD), 900); show(); }
     });
   };
   $(".decide .l", stage).onclick = () => { const c = dk.querySelector(".card:not(.under)"); c && c.fling("left"); };
@@ -6515,8 +6535,8 @@ MODS.gorder = (items, done) => seq(items, (it, next) => {
   };
   const check = () => {
     if (built.map(j => order[j].w).join(" ") === it.en) {
-      finished = true; box.classList.add("ok"); speak(it.en);
-      record(it, true, fails ? 0 : 10); progress(); setTimeout(next, 1200); return;
+      finished = true; box.classList.add("ok"); const spoken = speak(it.en);
+      record(it, true, fails ? 0 : 10); progress(); Promise.all([spoken, wait(1000)]).then(next); return;
     }
     fails++; box.classList.add("no"); if (fails === 1) record(it, false);
     if (fails < 2) {
