@@ -65,8 +65,10 @@ button { border: 0; background: none; padding: 0; cursor: pointer; }
 }
 .selam.silik { opacity: 0; }
 .selam { display: flex; align-items: center; justify-content: center; gap: .35em; }
-.selam-logo { width: 1.2em; height: 1.2em; flex: none; }
-.buyuk-logo { width: 96px; height: 96px; display: block; margin: 0 auto; }
+.selam-daire { width: 1.4em; height: 1.4em; border-radius: 50%; background: #FFFAF0; display: flex; align-items: center; justify-content: center; flex: none; box-shadow: 0 2px 3px rgba(90, 58, 26, .25); }
+.selam-logo { width: 1.1em; height: 1.1em; display: block; }
+.buyuk-daire { width: 140px; height: 140px; border-radius: 50%; background: #FFFAF0; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 4px 8px rgba(90, 58, 26, .25); }
+.buyuk-logo { width: 104px; height: 104px; display: block; }
 .orta { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; padding: 8px 18px; touch-action: pan-y pinch-zoom; }
 .foto img { -webkit-user-drag: none; user-select: none; }
 .sahne {

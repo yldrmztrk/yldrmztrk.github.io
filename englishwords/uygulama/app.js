@@ -346,9 +346,9 @@
     // mod: "ilk" | "degistir"
     var k = katmanAc("sicak-ad");
     var s = el("div", "sayfa ad-ekrani");
-    var logoBuyuk = el("img", "buyuk-logo"); logoBuyuk.src = "icons/sunflower-logo.png"; logoBuyuk.alt = ""; logoBuyuk.width = 96; logoBuyuk.height = 96;
+    var logoBuyuk = el("img", "buyuk-logo"); logoBuyuk.src = "icons/sunflower-logo.png"; logoBuyuk.alt = ""; logoBuyuk.width = 104; logoBuyuk.height = 104;
     logoBuyuk.setAttribute("aria-hidden", "true");
-    var logoSar = el("div", "buyuk-emoji"); logoSar.appendChild(logoBuyuk); s.appendChild(logoSar);
+    var logoSar = el("div", "buyuk-emoji"); var logoDaire = el("div", "buyuk-daire"); logoDaire.appendChild(logoBuyuk); logoSar.appendChild(logoDaire); s.appendChild(logoSar);
     s.appendChild(el("h1", "", mod === "ilk" ? "Sana nasıl seslenelim?" : "Adını değiştir"));
     s.appendChild(el("p", "alt-yazi", "İstersen adını yaz, istersen atla."));
     var form = el("form", "kart-beyaz"); form.autocomplete = "off"; form.noValidate = true;
@@ -481,7 +481,8 @@
     var selam = el("div", "selam"); selam.id = "selam";
     selam.appendChild(el("span", "selam-yazi"));
     var selamLogo = el("img", "selam-logo"); selamLogo.src = "icons/sunflower-logo.png"; selamLogo.alt = ""; selamLogo.setAttribute("aria-hidden", "true");
-    selam.appendChild(selamLogo);
+    var selamDaire = el("span", "selam-daire"); selamDaire.appendChild(selamLogo);
+    selam.appendChild(selamDaire);
     ana.appendChild(selam);
     setTimeout(function () { selam.classList.add("silik"); }, 9000);
     var orta = el("div", "orta"); orta.appendChild(el("div", "sahne")); ana.appendChild(orta);
