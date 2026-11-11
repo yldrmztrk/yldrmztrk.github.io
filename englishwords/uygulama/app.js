@@ -319,6 +319,14 @@
     harfler[0] = harfler[0].toLocaleUpperCase("tr-TR");
     return { ok: true, ad: harfler.join("") };
   }
+  // Bugün bakılan kelime sayısına göre tek övgü cümlesi (0 -> boş). Ad yoksa ad kısmı yazılmaz.
+  function ovguCumlesi(sayi, ad) {
+    var a = ad ? " " + ad : "";
+    if (sayi >= 100) return "Bugün harika iş çıkardın" + a + "!";
+    if (sayi >= 50) return "Çok güzel iş çıkardın" + a + "!";
+    if (sayi >= 1) return "İyi iş çıkardın" + a + "!";
+    return "";
+  }
   function kayitliAd() { var a = dep.oku(K.ad); return a ? a : ""; }
 
   var katman = null;
@@ -558,8 +566,8 @@
       });
       s.appendChild(ozet);
       var ad = kayitliAd();
-      var af = el("p", "aferin", ad ? "Aferin " + ad + ", bugün " + bs + " kelime!" : "Aferin, bugün " + bs + " kelime!");
-      af.id = "aferin"; s.appendChild(af);
+      var ov = ovguCumlesi(bs, ad);
+      if (ov) { var af = el("p", "aferin", ov); af.id = "aferin"; s.appendChild(af); }
       var gl = el("div", "gunler"); gl.id = "gunler";
       gunlereGoreGecmis().forEach(function (g) {
         var b2 = el("button", "gun"); b2.type = "button";
@@ -731,6 +739,14 @@
         var d = new Date(); d.setHours(12, 0, 0, 0); d.setDate(d.getDate() - 1);
         idler.forEach(function (id, i) { S.gecmis.push([id, d.getTime() + i * 1000]); S.gorulen.add(id); });
         S.gecmis.sort(function (a, b) { return b[1] - a[1]; });
+        dep.yazJson(K.gorulen, Array.from(S.gorulen)); dep.yazJson(K.gecmis, S.gecmis);
+      },
+      ovgu: ovguCumlesi,
+      adTemizle: adTemizle,
+      // bugun: ilk n kelime "bugün görülmüş" olarak yazılır
+      bugunDoldur: function (n) {
+        S.gecmis = []; var t = Date.now();
+        for (var i = 0; i < n && i < kelimeler.length; i++) { S.gecmis.push([kelimeler[i].id, t - i]); S.gorulen.add(kelimeler[i].id); }
         dep.yazJson(K.gorulen, Array.from(S.gorulen)); dep.yazJson(K.gecmis, S.gecmis);
       },
       goster: function (id) { goster(kartlar[id]); },

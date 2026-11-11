@@ -1,7 +1,7 @@
 // English Words for Kids · Web — çevrimdışı açılış.
 // Uygulama kabuğu önbellekte; açılan resim ve sesler (cache-first) bir kere indirilince internetsiz de açılır.
 // Hiçbir veri dışarı gönderilmez; sadece aynı adresten dosya alınır.
-const SURUM = "1.8.14";
+const SURUM = "1.8.15";
 const KABUK = "ewk-kabuk-" + SURUM;
 const MEDYA = "ewk-medya-v1";
 const DOSYALAR = [
