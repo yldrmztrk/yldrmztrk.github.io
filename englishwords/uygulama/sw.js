@@ -1,12 +1,12 @@
 // English Words for Kids · Web — çevrimdışı açılış.
 // Uygulama kabuğu önbellekte; açılan resim ve sesler (cache-first) bir kere indirilince internetsiz de açılır.
 // Hiçbir veri dışarı gönderilmez; sadece aynı adresten dosya alınır.
-const SURUM = "1.8.15";
+const SURUM = "1.8.16";
 const KABUK = "ewk-kabuk-" + SURUM;
 const MEDYA = "ewk-medya-v1";
 const DOSYALAR = [
   "./", "index.html", "style.css", "app.js", "config.js", "manifest.webmanifest", "data/kelimeler.json",
-  "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"
+  "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png", "icons/sunflower-logo.png"
 ];
 
 self.addEventListener("install", (e) => {

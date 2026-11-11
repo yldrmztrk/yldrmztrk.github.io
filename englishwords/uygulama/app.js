@@ -346,7 +346,9 @@
     // mod: "ilk" | "degistir"
     var k = katmanAc("sicak-ad");
     var s = el("div", "sayfa ad-ekrani");
-    s.appendChild(el("div", "buyuk-emoji", "🌻"));
+    var logoBuyuk = el("img", "buyuk-logo"); logoBuyuk.src = "icons/sunflower-logo.png"; logoBuyuk.alt = ""; logoBuyuk.width = 96; logoBuyuk.height = 96;
+    logoBuyuk.setAttribute("aria-hidden", "true");
+    var logoSar = el("div", "buyuk-emoji"); logoSar.appendChild(logoBuyuk); s.appendChild(logoSar);
     s.appendChild(el("h1", "", mod === "ilk" ? "Sana nasıl seslenelim?" : "Adını değiştir"));
     s.appendChild(el("p", "alt-yazi", "İstersen adını yaz, istersen atla."));
     var form = el("form", "kart-beyaz"); form.autocomplete = "off"; form.noValidate = true;
@@ -427,7 +429,7 @@
     // Selam (sadece açılışta, adı olan/olmayan)
     var selam = ana.querySelector(".selam");
     var ad = kayitliAd();
-    selam.textContent = ad ? "Merhaba " + ad + "! 🌻" : "Merhaba! 🌻";
+    selam.querySelector(".selam-yazi").textContent = ad ? "Merhaba " + ad + "!" : "Merhaba!";
 
     // Kelime kartı
     var gorsel = null;
@@ -476,7 +478,11 @@
     var s2 = el("span"); s2.appendChild(svg(SIMGE.hediye)); ger.appendChild(s2);
     ust.appendChild(kat); ust.appendChild(bosluk); ust.appendChild(yil); ust.appendChild(gec); ust.appendChild(ger);
     ana.appendChild(ust);
-    var selam = el("div", "selam"); selam.id = "selam"; ana.appendChild(selam);
+    var selam = el("div", "selam"); selam.id = "selam";
+    selam.appendChild(el("span", "selam-yazi"));
+    var selamLogo = el("img", "selam-logo"); selamLogo.src = "icons/sunflower-logo.png"; selamLogo.alt = ""; selamLogo.setAttribute("aria-hidden", "true");
+    selam.appendChild(selamLogo);
+    ana.appendChild(selam);
     setTimeout(function () { selam.classList.add("silik"); }, 9000);
     var orta = el("div", "orta"); orta.appendChild(el("div", "sahne")); ana.appendChild(orta);
     var alt = el("div", "alt");

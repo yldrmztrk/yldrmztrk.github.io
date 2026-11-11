@@ -64,6 +64,9 @@ button { border: 0; background: none; padding: 0; cursor: pointer; }
   color: var(--rozet-yazi); transition: opacity .8s; min-height: 1.4em;
 }
 .selam.silik { opacity: 0; }
+.selam { display: flex; align-items: center; justify-content: center; gap: .35em; }
+.selam-logo { width: 1.2em; height: 1.2em; flex: none; }
+.buyuk-logo { width: 96px; height: 96px; display: block; margin: 0 auto; }
 .orta { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; padding: 8px 18px; touch-action: pan-y pinch-zoom; }
 .foto img { -webkit-user-drag: none; user-select: none; }
 .sahne {
