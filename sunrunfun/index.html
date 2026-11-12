@@ -18,6 +18,8 @@
       var fromSite = document.referrer.indexOf(location.host) !== -1;
       var stay = /[?&]sayfa\b/.test(location.search);
       if (ios && !fromSite && !stay) {
+        // Yönlenirken sayfa içeriği bir an bile görünmesin
+        document.write('<style>body{visibility:hidden}</style>');
         location.replace("https://apps.apple.com/app/id6831972849");
       }
     } catch (e) {}
