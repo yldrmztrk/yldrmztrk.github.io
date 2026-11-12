@@ -38,16 +38,8 @@
 
   <h2>iPhone'una kur</h2>
   <div class="card">
-    <p style="margin-top:0">Oyun şu an deneme sürümünde. Apple'ın <strong>TestFlight</strong> uygulamasıyla ücretsiz kurabilirsin:</p>
-    <ol>
-      <li>iPhone'unda App Store'dan <strong>TestFlight</strong> uygulamasını indir (Apple'ın kendi uygulaması, ücretsiz).</li>
-      <li>Aşağıdaki düğmeye dokun.</li>
-      <li>TestFlight açılınca <strong>Kabul Et</strong>, sonra <strong>Yükle</strong>'ye bas.</li>
-      <li>Sun Run Fun ana ekranına gelir. Hadi uç! 🌻</li>
-    </ol>
-    <a id="tf-btn" class="big-btn" href="#" hidden>🪁 Sun Run Fun'ı kur</a>
-    <p id="tf-soon" class="soon">Kurulum bağlantısı çok yakında burada! 🌻</p>
-    <p style="margin-bottom:0;color:var(--muted);font-size:.95rem">Deneme sürümü sınırlı sayıda kişiye açık; yer dolarsa App Store sürümünü bekle.</p>
+    <p style="margin-top:0">Sun Run Fun App Store'da! Ücretsiz, reklamsız.</p>
+    <a id="tf-btn" class="big-btn" href="https://apps.apple.com/app/id6831972849">🪁 App Store'dan ücretsiz indir</a>
   </div>
 
   <h2>Daha fazlası</h2>
@@ -58,16 +50,10 @@
     </div>
   </div>
 
+  <p style="text-align:center;color:var(--muted);font-size:.9rem">Yeni özellikleri önce denemek istersen: <a href="https://testflight.apple.com/join/54xnQ187">TestFlight</a></p>
+
   <footer>© 2026 Yıldırım Öztürk · Sun Flower Apps 🌻</footer>
 </main>
-<script>
-  // TestFlight herkese açık bağlantısı buraya yazılır. Boşken "çok yakında" yazısı görünür.
-  var TESTFLIGHT_URL = "https://testflight.apple.com/join/54xnQ187";
-  if (TESTFLIGHT_URL) {
-    var b = document.getElementById("tf-btn");
-    b.href = TESTFLIGHT_URL; b.hidden = false;
-    document.getElementById("tf-soon").hidden = true;
-  }
-</script>
+
 </body>
 </html>
