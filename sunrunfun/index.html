@@ -7,6 +7,22 @@
 <meta name="description" content="Sun Run Fun — tek dokunuşla uçurtmayla Türkiye şehirlerinin üstünde uç. Reklamsız, ücretsiz iPhone oyunu.">
 <meta property="og:title" content="Sun Run Fun">
 <meta property="og:description" content="Tek dokunuşla uçurtmayla Türkiye şehirlerinin üstünde uç. Reklamsız, ücretsiz.">
+<meta name="apple-itunes-app" content="app-id=6831972849">
+<script>
+  // iPhone/iPad'de QR veya paylaşım bağlantısıyla gelen kişiyi doğrudan App Store'a gönder.
+  // Sitenin kendi içinden gelenler (ana sayfadan "Oyun") ve ?sayfa ile açanlar sayfayı görür.
+  (function () {
+    try {
+      var ua = navigator.userAgent || "";
+      var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      var fromSite = document.referrer.indexOf(location.host) !== -1;
+      var stay = /[?&]sayfa\b/.test(location.search);
+      if (ios && !fromSite && !stay) {
+        location.replace("https://apps.apple.com/app/id6831972849");
+      }
+    } catch (e) {}
+  })();
+</script>
 <link rel="stylesheet" href="/style.css">
 <style>
   .big-btn {
