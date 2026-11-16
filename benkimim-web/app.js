@@ -10,6 +10,11 @@
   const tabs = document.getElementById("tabs");
   const dialogRoot = document.getElementById("dialog-root");
 
+  const WEB_URL = "https://yldrmztrk.github.io/benkimim-web/";
+  const APP_STORE_URL = "https://apps.apple.com/app/id6819154879";
+  const RECOMMEND_TEXT = "Ben Kimim?'i dene! Hangi terliksin, hangi kahvaltılıksın? Çöz, gül, sonucunu paylaş 😄 " + WEB_URL +
+    "\niPhone'daysan App Store'dan indir: " + APP_STORE_URL;
+
   let DATA = null;
   let quiz = null; // { test, answers, index, result, busy }
 
@@ -64,13 +69,45 @@
     dialogRoot.querySelector('[data-act="cancel"]').focus();
   }
 
-  async function share(text) {
+  async function share(text, copiedMessage) {
     if (navigator.share) {
       try { await navigator.share({ text }); } catch (_) {}
       return;
     }
-    try { await navigator.clipboard.writeText(text); toast("Sonuç kopyalandı, istediğin yere yapıştırabilirsin 📋"); }
+    try { await navigator.clipboard.writeText(text); toast(copiedMessage || "Sonuç kopyalandı, istediğin yere yapıştırabilirsin 📋"); }
     catch (_) { toast(text); }
+  }
+
+  // Sıralama kuralı (kalıcı, iOS TestLibrary.newestFirst ile aynı): "eklenme" sayısı büyük olan üstte,
+  // eşitler data.json'daki (catalog.json) sırasını korur → yeni kategori ana sayfada, yeni test kategorisinde en üstte.
+  const newestFirst = (items) => items
+    .map((item, i) => [item, i])
+    .sort((a, b) => ((b[0].eklenme || 0) - (a[0].eklenme || 0)) || (a[1] - b[1]))
+    .map(([item]) => item);
+  function applyOrder(d) {
+    d.categories = newestFirst(d.categories);
+    d.categories.forEach((c) => {
+      const sorted = newestFirst(c.entries);
+      c.entries = sorted.filter((e) => d.tests[e.id]).concat(sorted.filter((e) => !d.tests[e.id])); // hazırlar önce
+    });
+    return d;
+  }
+  const newBadge = (cls) => `<span class="new-badge ${cls || ""}" aria-label="Yeni">Yeni ✨</span>`;
+
+  function recommendBox() {
+    let qr = "";
+    try { qr = window.BKQR.svg(WEB_URL, 2); } catch (_) {}
+    dialogRoot.innerHTML = `<div class="overlay" role="dialog" aria-modal="true" aria-labelledby="rec-t">
+      <div class="dialog recommend"><h3 id="rec-t">Arkadaşına öner</h3>
+        <div class="qr-card" id="recommend-qr" aria-label="Ben Kimim? web adresinin QR kodu">${qr}</div>
+        <p>Arkadaşın telefonunun kamerasıyla okutsun, Ben Kimim? hemen açılsın.</p>
+        <button class="btn-primary pressable" id="rec-share">📤 Bağlantıyı paylaş</button>
+        <button class="btn-link" id="rec-done">Bitti</button></div></div>`;
+    const close = () => { dialogRoot.innerHTML = ""; };
+    dialogRoot.querySelector("#rec-done").onclick = close;
+    dialogRoot.querySelector(".overlay").onclick = (e) => { if (e.target.classList.contains("overlay")) close(); };
+    dialogRoot.querySelector("#rec-share").onclick = () => share(RECOMMEND_TEXT, "Kopyalandı 📋");
+    dialogRoot.querySelector("#rec-share").focus();
   }
 
   const topbar = (title, backHref) =>
@@ -130,7 +167,7 @@
       : `<div class="report-entry" id="report-card" aria-label="Karne ${R.requiredTests} test çözünce açılır">${reportInner}</div>`;
     const cards = DATA.categories.map((c, i) =>
       `<a class="cat-card pressable ${[0, 3].includes(i % 4) ? "purple" : ""}" href="#/k/${esc(c.id)}">
-        <span class="emoji" aria-hidden="true">${esc(c.emoji)}</span>
+        <span class="top"><span class="emoji" aria-hidden="true">${esc(c.emoji)}</span>${c.yeni ? newBadge(i % 4 === 0 || i % 4 === 3 ? "on-purple" : "") : ""}</span>
         <span class="name">${esc(c.name)}</span><span class="count">${c.entries.length} test</span></a>`).join("");
     app.innerHTML = `<div class="greeting"><h1>${name ? `Merhaba ${esc(name)}! 👋` : "Merhaba! 👋"}</h1>
       <p>Bugün kim olmak istersin?</p></div>${reportCard}<div class="grid">${cards}</div>`;
@@ -140,15 +177,14 @@
     const cat = DATA.categories.find((c) => c.id === id);
     if (!cat) return go("#/");
     setTabs("home");
-    const rows = cat.entries.map((e, i) => {
-      const group = e.grup && (i === 0 || cat.entries[i - 1].grup !== e.grup) ? `<h2 class="group-title">${esc(e.grup)}</h2>` : "";
+    const rows = cat.entries.map((e) => {
       const ready = !!visibleTest(e.id);
       const inner = `<span class="icon" aria-hidden="true">${esc(e.emoji)}</span>
-        <span class="text"><strong>${esc(e.title)}</strong>
+        <span class="text"><strong>${esc(e.title)}</strong>${e.yeni ? newBadge() : ""}
         ${e.everyone ? '<span class="everyone">Herkes çözebilir</span>' : ""}
         ${ready ? `<small>${esc(e.intro)}</small>` : ""}</span>
         ${ready ? '<span class="chev" aria-hidden="true"></span>' : '<span class="badge">Yakında</span>'}`;
-      return group + (ready ? `<a class="row pressable" href="#/t/${esc(e.id)}">${inner}</a>` : `<div class="row soon">${inner}</div>`);
+      return ready ? `<a class="row pressable" href="#/t/${esc(e.id)}">${inner}</a>` : `<div class="row soon">${inner}</div>`;
     }).join("");
     app.innerHTML = `${topbar("", "#/")}<h1 class="large-title">${esc(cat.emoji)} ${esc(cat.name)}</h1><div class="list">${rows}</div>`;
   }
@@ -224,7 +260,6 @@
     const backHref = opts.closeHref || `#/k/${test ? test.category : ""}`;
     const testTitle = test ? test.title : opts.testTitle;
     const anma = test && test.anmaNotu;
-    const anmaSatiri = test && test.anmaSatiri;
     app.innerHTML = `${topbar("", backHref)}<div class="center">
       <div class="result-test">${esc(testTitle)}</div>
       <div class="big-emoji" aria-hidden="true">${esc(result.emoji)}</div>
@@ -232,7 +267,6 @@
       <h1 class="result-title" id="result-title">${esc(result.title)}</h1>
       <div class="card"><p class="result-desc">${esc(result.description)}</p>
         ${result.quote ? `<p class="quote">“${esc(result.quote)}”</p>` : ""}</div>
-      ${anmaSatiri ? `<p class="anma-satiri">${esc(anmaSatiri)}</p>` : ""}
       ${anma ? `<div class="card anma"><div class="flag" aria-hidden="true">🇹🇷</div><p>${esc(anma)}</p></div>` : ""}
       <div class="buttons">
         <button class="btn-primary pressable" id="share">📤 Paylaş</button>
@@ -312,6 +346,10 @@
       <div class="section-h">Adın</div>
       <div class="group"><input class="input" id="name" maxlength="${MAX_NAME}" placeholder="Adın (isteğe bağlı)" autocapitalize="words" autocorrect="off" spellcheck="false" enterkeyhint="done"></div>
       <p class="section-f">Ana sayfada sana bu adla merhaba deriz. Boş bırakabilirsin.</p>
+      <div class="group"><button class="recommend-row" id="recommend">
+        <span class="gift" aria-hidden="true">🎁</span>
+        <span class="text"><strong>Arkadaşına öner</strong><small>QR kodu okut ya da bağlantıyı gönder</small></span>
+        <span class="chev" aria-hidden="true"></span></button></div>
       <div class="section-h">Veriler</div>
       <div class="group"><div><button class="danger" id="wipe">Verilerimi Sil</button></div></div>
       <p class="section-f">Sonuçların, karakter karnen ve adın yalnızca bu cihazın tarayıcısında saklanır, hiçbir yere gönderilmez. Silme işlemi geri alınamaz.</p>
@@ -322,6 +360,7 @@
     const input = document.getElementById("name");
     input.value = getName();
     input.oninput = () => store.set(KEY.name, input.value.slice(0, MAX_NAME));
+    document.getElementById("recommend").onclick = recommendBox;
     input.onkeydown = (e) => { if (e.key === "Enter") input.blur(); };
     document.getElementById("wipe").onclick = () =>
       confirmBox("Tüm verilerin silinsin mi?", "Kaydedilen tüm sonuçların, karakter karnen ve adın bu cihazdan silinecek.", "Sil", () => {
@@ -357,7 +396,7 @@
 
   fetch("data.json?v=0.2")
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then((d) => { DATA = d; route(); })
+    .then((d) => { DATA = applyOrder(d); route(); })
     .catch(() => { app.innerHTML = '<div class="empty"><div class="e">😕</div><h2>Testler yüklenemedi</h2><p>İnternet bağlantını kontrol edip sayfayı yenile.</p></div>'; });
 
   if ("serviceWorker" in navigator && location.protocol === "https:") {
