@@ -120,6 +120,16 @@ a { color: inherit; text-decoration: none; }
 }
 .cat-card.purple { background: var(--purple-card); color: #fff; box-shadow: 0 6px 20px rgba(108, 43, 217, .3); }
 .cat-card .emoji { font-size: 3rem; line-height: 1.1; }
+.cat-card .top { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; }
+
+/* "Yeni ✨" etiketi: mor kartta sarı, diğer yerlerde mor (iOS NewBadge) */
+.new-badge {
+  display: inline-block; flex: none; font-size: .75rem; font-weight: 900; line-height: 1.2; white-space: nowrap;
+  padding: 5px 10px; border-radius: 99px; background: var(--purple); color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .12); transform: rotate(4deg);
+}
+.new-badge.on-purple { background: var(--yellow-card); color: var(--deep-purple); }
+.row .new-badge { margin-top: 4px; }
 .cat-card .name { margin-top: auto; padding-top: 10px; font-size: 1.25rem; font-weight: 900; line-height: 1.15; }
 .cat-card .count { font-size: .9375rem; font-weight: 700; opacity: .8; margin-top: 4px; }
 
@@ -281,6 +291,27 @@ a { color: inherit; text-decoration: none; }
 .group .kv { display: flex; justify-content: space-between; gap: 12px; }
 .group .kv span:last-child { color: var(--secondary); }
 .danger { color: #FF3B30; font-weight: 800; width: 100%; text-align: left; }
+/* Arkadaşına öner */
+.group > .recommend-row {
+  display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 10px 16px; min-height: 60px;
+}
+.recommend-row .gift {
+  flex: none; width: 40px; height: 40px; border-radius: 12px; background: var(--yellow-card);
+  display: grid; place-items: center; font-size: 1.4rem;
+}
+.recommend-row .text { flex: 1; min-width: 0; }
+.recommend-row strong { display: block; font-weight: 700; }
+.recommend-row small { display: block; color: var(--secondary); font-size: .8125rem; font-weight: 600; }
+.recommend-row .chev { color: var(--secondary); width: 18px; font-size: 1.4rem; }
+.dialog.recommend { max-width: 380px; padding: 22px 22px 12px; max-height: calc(100dvh - 32px); overflow-y: auto; }
+.dialog.recommend h3 { font-size: 1.25rem; margin-bottom: 16px; }
+.qr-card {
+  background: #fff; border-radius: 28px; padding: 14px; margin: 0 auto 18px; width: min(100%, 280px);
+  box-shadow: 0 6px 20px rgba(108, 43, 217, .18);
+}
+.qr-card svg { display: block; width: 100%; height: auto; }
+.dialog.recommend p { font-size: 1.0625rem; font-weight: 700; margin-bottom: 18px; }
+.dialog.recommend .btn-link { margin-top: 6px; font-size: 1.0625rem; }
 .section-f { color: var(--secondary); font-size: .8125rem; font-weight: 600; margin: 8px 16px 0; }
 
 /* Onay penceresi */
