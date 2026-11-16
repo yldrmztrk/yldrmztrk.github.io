@@ -1,7 +1,7 @@
 // Ben Kimim? web: çevrimdışı açılış için basit önbellek.
 // Önce ağdan dener (yeni sürüm hemen gelsin), ağ yoksa önbellekten açar. Hiçbir veri dışarı gönderilmez.
 const CACHE = "benkimim-web-0.2";
-const FILES = ["./", "index.html", "style.css?v=0.2", "scoring.js?v=0.2", "qr.js?v=0.2", "app.js?v=0.2", "data.json?v=0.2", "manifest.webmanifest",
+const FILES = ["./", "index.html", "style.css?v=0.2", "scoring.js?v=0.2", "app.js?v=0.2", "data.json?v=0.2", "manifest.webmanifest",
   "icon-192.png", "icon-512.png", "apple-touch-icon.png", "logo.png", "favicon.png",
   "fonts/nunito-latin.woff2", "fonts/nunito-latin-ext.woff2"];
 
