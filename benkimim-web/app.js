@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  const VERSION = "Web v0.2";
+  const VERSION = "Web v0.3";
   const MAX_NAME = 30;
   const KEY = { name: "bk.name", prompted: "bk.namePromptDone", results: "bk.results" };
   const S = window.BKScoring;
@@ -177,14 +177,16 @@
     const cat = DATA.categories.find((c) => c.id === id);
     if (!cat) return go("#/");
     setTabs("home");
-    const rows = cat.entries.map((e) => {
+    const rows = cat.entries.map((e, i) => {
+      // Grup başlığı (catalog.json "grup"): aynı gruptaki testlerin üstünde bir kez
+      const group = e.grup && (i === 0 || cat.entries[i - 1].grup !== e.grup) ? `<h2 class="group-title">${esc(e.grup)}</h2>` : "";
       const ready = !!visibleTest(e.id);
       const inner = `<span class="icon" aria-hidden="true">${esc(e.emoji)}</span>
         <span class="text"><strong>${esc(e.title)}</strong>${e.yeni ? newBadge() : ""}
         ${e.everyone ? '<span class="everyone">Herkes çözebilir</span>' : ""}
         ${ready ? `<small>${esc(e.intro)}</small>` : ""}</span>
         ${ready ? '<span class="chev" aria-hidden="true"></span>' : '<span class="badge">Yakında</span>'}`;
-      return ready ? `<a class="row pressable" href="#/t/${esc(e.id)}">${inner}</a>` : `<div class="row soon">${inner}</div>`;
+      return group + (ready ? `<a class="row pressable" href="#/t/${esc(e.id)}">${inner}</a>` : `<div class="row soon">${inner}</div>`);
     }).join("");
     app.innerHTML = `${topbar("", "#/")}<h1 class="large-title">${esc(cat.emoji)} ${esc(cat.name)}</h1><div class="list">${rows}</div>`;
   }
@@ -260,6 +262,7 @@
     const backHref = opts.closeHref || `#/k/${test ? test.category : ""}`;
     const testTitle = test ? test.title : opts.testTitle;
     const anma = test && test.anmaNotu;
+    const anmaSatiri = test && test.anmaSatiri;
     app.innerHTML = `${topbar("", backHref)}<div class="center">
       <div class="result-test">${esc(testTitle)}</div>
       <div class="big-emoji" aria-hidden="true">${esc(result.emoji)}</div>
@@ -267,6 +270,7 @@
       <h1 class="result-title" id="result-title">${esc(result.title)}</h1>
       <div class="card"><p class="result-desc">${esc(result.description)}</p>
         ${result.quote ? `<p class="quote">“${esc(result.quote)}”</p>` : ""}</div>
+      ${anmaSatiri ? `<p class="anma-satiri">${esc(anmaSatiri)}</p>` : ""}
       ${anma ? `<div class="card anma"><div class="flag" aria-hidden="true">🇹🇷</div><p>${esc(anma)}</p></div>` : ""}
       <div class="buttons">
         <button class="btn-primary pressable" id="share">📤 Paylaş</button>
@@ -394,7 +398,7 @@
 
   window.addEventListener("hashchange", () => { route(); window.scrollTo(0, 0); });
 
-  fetch("data.json?v=0.2")
+  fetch("data.json?v=0.3")
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then((d) => { DATA = applyOrder(d); route(); })
     .catch(() => { app.innerHTML = '<div class="empty"><div class="e">😕</div><h2>Testler yüklenemedi</h2><p>İnternet bağlantını kontrol edip sayfayı yenile.</p></div>'; });

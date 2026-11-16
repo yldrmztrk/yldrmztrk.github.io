@@ -38,7 +38,8 @@ def load_tests():
     categories, tests = [], {}
     for cat in catalog["categories"]:
         entries = [dict(id=e["id"], title=e["title"], emoji=e["emoji"], everyone=bool(e.get("everyone")),
-                        eklenme=int(e.get("eklenme", 0)), yeni=bool(e.get("yeni")))
+                        eklenme=int(e.get("eklenme", 0)), yeni=bool(e.get("yeni")),
+                        **({"grup": e["grup"]} if e.get("grup") else {}))
                    for e in cat["tests"] if e["id"] not in hidden]
         listed = {e["id"] for e in cat["tests"]}
         extras = sorted((t for t in visible.values() if t["category"] == cat["id"] and t["id"] not in listed),
@@ -54,8 +55,9 @@ def load_tests():
             t = visible[e["id"]]
             e["intro"] = t["intro"]
             tests[e["id"]] = {k: t[k] for k in ("id", "category", "title", "emoji", "intro", "results", "questions")}
-            if t.get("anmaNotu"):
-                tests[e["id"]]["anmaNotu"] = t["anmaNotu"]
+            for extra in ("anmaNotu", "anmaSatiri"):
+                if t.get(extra):
+                    tests[e["id"]][extra] = t[extra]
             for q in tests[e["id"]]["questions"]:
                 for o in q["options"]:
                     o.setdefault("traits", {})

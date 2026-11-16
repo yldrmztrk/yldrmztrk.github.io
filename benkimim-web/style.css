@@ -214,6 +214,9 @@ a { color: inherit; text-decoration: none; }
 .card { background: var(--card); border-radius: 26px; padding: 20px; box-shadow: var(--shadow); margin-bottom: 22px; }
 .result-desc { font-size: 1.25rem; font-weight: 600; margin: 0; }
 .quote { color: var(--purple); font-style: italic; font-weight: 800; margin: 14px 0 0; }
+.group-title { color: var(--purple); font-size: 1.25rem; font-weight: 900; margin: 12px 0 0; line-height: 1.25; }
+.group-title:first-child { margin-top: 0; }
+.anma-satiri { color: var(--secondary); font-size: .9375rem; font-weight: 700; text-align: center; margin: 0 8px; line-height: 1.35; }
 .anma { border: 1.5px solid rgba(255, 59, 48, .35); }
 .anma .flag { font-size: 2.25rem; }
 .anma p { margin: 10px 0 0; font-weight: 600; }

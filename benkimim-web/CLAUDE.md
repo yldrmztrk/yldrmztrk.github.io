@@ -1,4 +1,4 @@
-# Ben Kimim? — web sürümü (Web v0.2)
+# Ben Kimim? — web sürümü (Web v0.3)
 
 Canlı adres: https://yldrmztrk.github.io/benkimim-web/ (noindex). Düz HTML/CSS/JS; sunucu, giriş, dış kütüphane YOK.
 Ad ve sonuçlar sadece tarayıcıda (localStorage `bk.*`). Hiçbir veri toplanmaz, hiçbir yere gönderilmez.
@@ -19,7 +19,7 @@ Ad ve sonuçlar sadece tarayıcıda (localStorage `bk.*`). Hiçbir veri toplanma
 - Tek yerden yönetilir: iOS `catalog.json`'da kategoriye/teste `"eklenme": <o ana kadarki en büyük + 1>` ve `"yeni": true`.
   Web'de sıralamayı `app.js` → `newestFirst` yapar (büyük `eklenme` üstte, eşitler katalog sırasında).
   Katalogda olmayan test JSON'u da en üste, "Yeni" etiketiyle gelir.
-- Şu an: Burç 🌙 (`eklenme: 1`, "Yeni ✨") ana sayfada ilk. Toplam 13 kategori, 61 test.
+- Şu an: Burç 🌙 (`eklenme: 1`, "Yeni ✨") ana sayfada ilk. Toplam 13 kategori, 65 test. Özel Günler'in en üstünde "Öğretmenler Günü'ne Özel 4 Test 🍎" grubu (catalog.json `"grup"` → `.group-title`); bu 4 testin sonucunda `anmaSatiri` (Atatürk satırı, `.anma-satiri`).
 
 ## Özellikler
 - Sonuç ekranı, Karakter Karnem ve Ayarlar'da "Eğlence amaçlıdır, bilimsel bir değerlendirme değildir 🙂" notu; kaldırma.
