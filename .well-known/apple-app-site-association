@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["QKRR5ZS7TG.Human.AlsamMi"],
+        "components": [
+          { "/": "/swipebuy/d/*", "comment": "Swipe & Buy arkadaslik daveti" },
+          { "/": "/swipebuy/d", "comment": "Swipe & Buy arkadaslik daveti" }
+        ]
+      }
+    ]
+  }
+}
