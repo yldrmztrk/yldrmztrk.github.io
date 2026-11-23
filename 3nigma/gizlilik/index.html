@@ -21,6 +21,10 @@ h2 { font-size:1.1rem; margin:1.6rem 0 .4rem; color:var(--blue); }
 a { color:var(--blue); }
 ul { padding-left:1.2rem; }
 li { margin-bottom:.4rem; }
+div.tablo { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:.92rem; margin:.4rem 0 1rem; }
+th, td { border:1px solid var(--line); padding:.45rem .5rem; text-align:left; vertical-align:top; }
+th { color:var(--blue); }
 .date { color:var(--muted); margin:0 0 1rem; font-size:.95rem; }
 footer { text-align:center; color:var(--muted); font-size:.9rem; margin-top:1.5rem; }
 </style>
@@ -33,7 +37,7 @@ footer { text-align:center; color:var(--muted); font-size:.9rem; margin-top:1.5r
 <p class="date">Son güncelleme: 23 Kasım 2026</p>
 <p>3nigma, eklediğin kişilerle ve kurduğun gruplarla özel yazışman için Sun Flower Apps tarafından yapılmış bir iPhone uygulamasıdır. Bu sayfa hangi bilgilerin nerede durduğunu ve kimin görebildiğini sade bir dille anlatır.</p>
 <h2>Sunucumuz yok</h2>
-<p>Sun Flower Apps'in kendi sunucusu yoktur. Mesajlarını, fotoğraflarını, sesli mesajlarını, videolarını ya da profilini göremeyiz. Bize yalnız senin kendi isteğinle gönderdiğin şikâyet ya da destek e-postaları ulaşır.</p>
+<p>Sun Flower Apps'in kendi sunucusu yoktur. Mesajlarını, fotoğraflarını, sesli mesajlarını, videolarını ya da profilini göremeyiz. Bize yalnız senin kendi isteğinle gönderdiğin şikâyet ya da destek e-postaları ulaşır. Bizim yönettiğimiz tek liste, aşağıda anlatılan yasaklı hesap listesidir; o da Apple'ın iCloud hizmetinde durur ve içinde ad, numara ya da mesaj yoktur.</p>
 <h2>Bilgiler nerede durur?</h2>
 <ul>
 <li>Mesajlar, fotoğraflar, sesli mesajlar, videolar ve profil bilgileri Apple'ın iCloud hizmetinde (CloudKit) saklanır. Apple'ın sunucuları yurt dışında olabilir.</li>
@@ -58,6 +62,8 @@ footer { text-align:center; color:var(--muted); font-size:.9rem; margin-top:1.5r
 <li><strong>Engellediğin kişiler:</strong> senin iCloud Anahtar Zinciri'nde tutulur (yalnız senin cihazların görür). Karşı taraf bunu bilmez.</li>
 <li><strong>Şikâyet:</strong> bir kişiyi ya da mesajı "Şikâyet et" ile bildirirsen, telefonunun Mail uygulamasında bize yazılacak bir e-posta açılır; göndermek sana kalmıştır. E-postada sebep, tarih ve şikâyet edilen kişinin uygulama kimliği olur. Mesajın yazısı yalnız sen seçersen eklenir; fotoğraf eklenmez. E-postayı kendi Mail'inden gönderdiğin için e-posta adresin de bize ulaşır. Şikâyetler 24 saat içinde incelenir.</li>
 <li><strong>Arkadaşına öner:</strong> Ayarlar'daki "Arkadaşına öner", iPhone'un paylaş penceresiyle herkes için aynı olan bir yükleme bağlantısı ve kısa bir tanıtım yazısı paylaşır. İçinde senin hakkında hiçbir bilgi yoktur; bize bir şey gelmez.</li>
+<li><strong>18 yaş onayı:</strong> uygulama ilk açılışta 18 yaşından büyük olduğunu ve koşulları kabul ettiğini onaylamanı ister. iPhone'un destekliyorsa önce Apple'ın yaş aralığı bilgisi sorulur (paylaşıp paylaşmamak sana kalmıştır; uygulamaya yalnız "18 ve üstü mü" bilgisi gelir). Paylaşmazsan doğum tarihini seçersin. <strong>Doğum tarihin hiçbir yere kaydedilmez</strong>; yalnız o anda yaşını hesaplamak için kullanılır. Saklanan yalnız "18 yaşından büyük olduğu onaylandı" işareti ve kabul ettiğin koşulların sürümüdür; bunlar telefonunda ve kendi iCloud'unun özel alanında durur, biz göremeyiz.</li>
+<li><strong>Yasaklı hesap listesi:</strong> kuralları çiğnediği için kapatılan hesapların listesidir. Apple'ın iCloud hizmetinde, 3nigma'ya ait ortak alanda durur. Listede yalnız kapatılan hesabın uygulama kimliğinin geri çevrilemeyen bir özeti ve kapatılma zamanı vardır; ad, numara, sebep ya da mesaj yoktur. Liste topluca okunamaz: uygulaman yalnız kendi kimliğinin ve tanıdığın kişilerin kimliklerinin listede olup olmadığına bakar. Listeye yalnız Sun Flower Apps yazabilir. Kapatılan hesap mesaj gönderemez, grup kuramaz, kişi ekleyemez; telefonun da böyle bir hesabın kapatıldıktan sonra gönderdiği mesajları göstermez.</li>
 </ul>
 <h2>Sohbet ekranı ve kilit</h2>
 <p>Uygulama her açılışta kilitlidir. Kilitliyken ekranda ve bildirimde gerçek mesajın yerine sıradan bir cümle ya da hazır bir stok fotoğraf görünür; gerçek mesajlar Face ID ile açılır. Bu cümleler ve fotoğraf numaraları gerçek mesajla ilgili değildir ve gönderen telefon tarafından gerçek içeriğe bakılmadan seçilir. Bildirimde de görünebilsinler diye mesajla birlikte şifresiz gider. Grup davetinin bildiriminde de davet edenin adı ve grubun adı yazmaz. Arşivdeki bir sohbete gelen mesajın bildiriminde ad ve cümle yazmaz.</p>
@@ -82,17 +88,35 @@ footer { text-align:center; color:var(--muted); font-size:.9rem; margin-top:1.5r
 <p>Reklam yok, izleme yok, üçüncü taraf analiz ya da reklam aracı yok. Hiçbir veri satılmaz. Uygulama yalnız telefonda kalan, mesaj içeriği, ad ya da numara taşımayan küçük bir hata kaydı tutar; bu kayıt hiçbir yere gönderilmez.</p>
 <h2>Verini silmek</h2>
 <ul>
-<li>Uygulamayı telefonundan silerek telefondaki verileri silebilirsin.</li>
-<li>iCloud'daki 3nigma verilerini iPhone'da Ayarlar &gt; [adın] &gt; iCloud &gt; Hesap Depolamasını Yönet bölümünden silebilirsin. Bu, senin kurduğun sohbetlerin ve grupların verilerini siler.</li>
+<li><strong>Hesabımı sil:</strong> uygulamada Ayarlar &gt; Hesap &gt; "Hesabımı sil" ile hesabını ve verilerini kendin silebilirsin. Face ID ve ikinci bir onay istenir; işlem geri alınamaz. Silinenler: iCloud'daki profilin; kurduğun bütün sohbetlerin ve grupların iCloud'daki verisi (bu sohbetler üyelerin telefonlarından da kalkar); başkalarının kurduğu sohbetlere ve gruplara gönderdiğin mesajlar; bu telefondaki bütün anahtarlar, mesajlar, engellediklerinin listesi, ayarlar ve 18 yaş onayı.</li>
+<li>Hesabını silince, başkalarının kurduğu sohbetlerde adının yerinde "Silinmiş hesap" yazar. İnternet yoksa telefondaki her şey hemen silinir, iCloud'daki silme internete bağlanıp uygulamayı açtığında tamamlanır.</li>
+<li>Silmeden sonra kısa süre kalabilenler: kurduğun sohbetlerin yerinde, üyelerin telefonları sohbetin silindiğini öğrenebilsin diye, içinde mesaj olmayan imzalı bir "silindi" notu en çok 7 gün durur, sonra o da silinir. Başkalarının kurduğu sohbetlerde, o kişinin iCloud'unda ayrıldığını gösteren içeriksiz teknik kayıtlar kalabilir. Karşı tarafın telefonuna daha önce inmiş olan adın ve profilin, o kişi sohbeti silene kadar o telefonda kalabilir; bunlara biz ulaşamayız.</li>
+<li>Apple ile Giriş iznini ayrıca kaldırmak için: iPhone'da Ayarlar &gt; [adın] &gt; Apple ile Giriş &gt; 3nigma &gt; "Sil" (ya da "Kullanmayı Bırak"). Sunucumuz olmadığı için bu izni senin yerine biz kaldıramayız.</li>
+<li>Hesabın kuralları çiğnediği için kapatılmışsa da "Hesabımı sil"i kullanabilirsin. Yasaklı hesap listesindeki kayıt (yalnız kimlik özeti) silinmez.</li>
+<li>Uygulamayı telefonundan silmek tek başına hesabı silmez: anahtarların iPhone'un Anahtar Zinciri'nde, verilerin iCloud'da kalır. iCloud'daki 3nigma verilerini iPhone'da Ayarlar &gt; [adın] &gt; iCloud &gt; Hesap Depolamasını Yönet bölümünden de silebilirsin.</li>
 <li>Kendi gönderdiğin bir mesajı "Herkesten sil" ile sohbetten kaldırabilirsin.</li>
 <li>Grubu kuran kişi grubu silerse grubun içeriği silinir ve grup üyelerin telefonlarından kalkar. Bir gruptan çıkarsan sonrasında o gruptaki mesajları göremezsin. Bir gruptan çıkarılırsan, daha önce aldığın mesajlar kendi telefonunda kalır; istersen grubu yalnız kendi telefonundan silebilirsin.</li>
-<li>Başkasının kurduğu bir sohbete gönderdiğin mesajlar o kişinin iCloud'unda şifreli olarak durur. Biz bu verilere ulaşamadığımız için silemeyiz; "Herkesten sil"i kullanabilir ya da sohbeti kurandan sohbeti silmesini isteyebilirsin.</li>
-<li>Uygulamanın içinde ayrı bir "Hesabımı sil" düğmesi henüz yoktur.</li>
+<li>Başkasının kurduğu bir sohbete gönderdiğin mesajlar o kişinin iCloud'unda şifreli olarak durur. Biz bu verilere ulaşamadığımız için silemeyiz; "Herkesten sil"i ya da "Hesabımı sil"i kullanabilirsin.</li>
 </ul>
-<h2>Çocuklar</h2>
-<p>13 yaşından küçükler 3nigma'yı kullanamaz. Türkiye'de 18 yaşından küçükler ancak veli onayıyla kullanabilir. 3nigma çocuklara yönelik değildir ve bilerek çocuklardan bilgi toplamaz.</p>
-<h2>Hakların</h2>
-<p>Kişisel verilerinle ilgili her soru ve isteğin için (Türkiye'de KVKK'dan doğan hakların dahil) bize yazabilirsin. Mesajlarının içi bizde olmadığı için, içerikle ilgili çoğu isteği uygulamanın kendisinden (silme, engelleme) sen yerine getirebilirsin.</p>
+<h2>Yaş sınırı</h2>
+<p>18 yaşından küçükler 3nigma'yı kullanamaz. Uygulama ilk açılışta 18 yaşından büyük olduğunu onaylamanı ister; 18 yaşından küçük olduğu anlaşılan kişi uygulamaya giremez. 3nigma çocuklara yönelik değildir ve bilerek çocuklardan bilgi toplamaz.</p>
+<h2>KVKK Aydınlatma Metni</h2>
+<p>Bu bölüm, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında hazırlanmıştır.</p>
+<p><strong>Veri sorumlusu:</strong> Yıldırım Öztürk (bireysel geliştirici; uygulamalarını "Sun Flower Apps" adıyla yayınlar). E-posta: <a href="mailto:sun.flower.apps@icloud.com">sun.flower.apps@icloud.com</a></p>
+<p><strong>Hangi veri, hangi amaçla, hangi hukuki sebeple:</strong></p>
+<div class="tablo"><table>
+<tr><th>Veri</th><th>Amaç</th><th>Hukuki sebep</th></tr>
+<tr><td>Apple ile Giriş kimliği, ad, soyad, telefon numarası, isteğe bağlı profil fotoğrafı</td><td>Hesabını açmak, seni eklediğin kişilere ve grup üyelerine tanıtmak</td><td>Sözleşmenin kurulması ve ifası (KVKK m.5/2-c)</td></tr>
+<tr><td>Kişilerin, grupların, mesajların, fotoğrafların, sesli mesajların, videoların (şifreli)</td><td>Mesajlaşmanı sağlamak</td><td>Sözleşmenin kurulması ve ifası (m.5/2-c)</td></tr>
+<tr><td>Konum ve kişi kartı (yalnız sen gönderince, şifreli mesajın içinde)</td><td>İstediğin kişiye senin isteğinle iletmek</td><td>Sözleşmenin ifası (m.5/2-c)</td></tr>
+<tr><td>"18 yaşından büyük olduğu onaylandı" işareti ve kabul edilen koşul sürümü</td><td>Yaş sınırını ve koşulların kabulünü uygulamak</td><td>Hukuki yükümlülük ve meşru menfaat (m.5/2-ç, m.5/2-f)</td></tr>
+<tr><td>Yasaklı hesap listesi (kimlik özeti ve zaman)</td><td>Kötüye kullanımı önlemek, diğer kullanıcıları korumak</td><td>Meşru menfaat ve hukuki yükümlülük (m.5/2-f, m.5/2-ç)</td></tr>
+<tr><td>Şikâyet ve destek e-postaları (e-posta adresin, yazdıkların)</td><td>Şikâyeti incelemek, sana cevap vermek</td><td>Meşru menfaat ve hukuki yükümlülük (m.5/2-f, m.5/2-ç)</td></tr>
+</table></div>
+<p><strong>Yurt dışına aktarım:</strong> Uygulamanın kendi sunucusu yoktur. Veriler Apple'ın iCloud hizmetinde (CloudKit) saklanır; Apple ile Giriş ve bildirimler de Apple tarafından sağlanır. Apple'ın sunucuları yurt dışındadır; bu nedenle veriler KVKK m.9 kapsamında yurt dışına aktarılmış olur. Mesajlar, fotoğraflar, sesli mesajlar ve videolar oraya yalnız şifreli olarak gider; açan anahtar telefonundan çıkmaz. Veriler Apple dışında, yalnız aynı sohbetteki kişilerle paylaşılır. Reklam ya da analiz şirketine veri verilmez. Yasal bir talep gelirse yalnız elimizde olan bilgi verilebilir; mesajların içeriği bizde yoktur ve açılamaz.</p>
+<p><strong>Toplama yöntemi:</strong> Veriler, uygulamayı kullanırken senin girdiğin ve gönderdiğin bilgilerden, Apple ile Giriş'ten ve bize kendi isteğinle gönderdiğin e-postalardan, otomatik yollarla (uygulama ve iCloud aracılığıyla) toplanır.</p>
+<p><strong>Hakların (KVKK m.11):</strong> Verilerinin işlenip işlenmediğini öğrenmek, işlenmişse bilgi istemek, işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenmek, yurt içinde ya da yurt dışında aktarıldığı üçüncü kişileri bilmek, eksik ya da yanlış işlenmişse düzeltilmesini istemek, silinmesini ya da yok edilmesini istemek, bu işlemlerin aktarılan kişilere bildirilmesini istemek, otomatik sistemlerle yapılan analiz sonucunda aleyhine bir sonuç çıkmasına itiraz etmek ve kanuna aykırı işleme yüzünden zarara uğradıysan zararının giderilmesini istemek hakkına sahipsin.</p>
+<p><strong>Başvuru:</strong> İsteklerini <a href="mailto:sun.flower.apps@icloud.com">sun.flower.apps@icloud.com</a> adresine yazabilirsin; en geç 30 gün içinde cevap verilir. Mesajlarının içi bizde olmadığı için, içerikle ilgili çoğu isteği uygulamanın kendisinden (mesaj silme, engelleme, "Hesabımı sil") sen yerine getirebilirsin.</p>
 <h2>Değişiklikler</h2>
 <p>Bu politika değişirse bu sayfa güncellenir ve üstteki tarih değişir.</p>
 <h2>İletişim</h2>
@@ -103,7 +127,7 @@ footer { text-align:center; color:var(--muted); font-size:.9rem; margin-top:1.5r
 <p class="date">Last updated: November 23, 2026</p>
 <p>3nigma is an iPhone app by Sun Flower Apps for private messaging with the people you add and the groups you create. This page explains, in plain words, what information is stored where and who can see it.</p>
 <h2>We have no servers</h2>
-<p>Sun Flower Apps does not run any servers. We cannot see your messages, photos, voice messages, videos or profile. The only things that reach us are report or support emails that you choose to send.</p>
+<p>Sun Flower Apps does not run any servers. We cannot see your messages, photos, voice messages, videos or profile. The only things that reach us are report or support emails that you choose to send. The only list we manage is the banned-account list described below; it is also stored in Apple's iCloud service and contains no names, numbers or messages.</p>
 <h2>Where is information stored?</h2>
 <ul>
 <li>Messages, photos, voice messages, videos and profile information are stored in Apple's iCloud service (CloudKit). Apple's servers may be located outside your country.</li>
@@ -128,6 +152,8 @@ footer { text-align:center; color:var(--muted); font-size:.9rem; margin-top:1.5r
 <li><strong>People you block:</strong> kept in your iCloud Keychain (seen only by your own devices). The other person is not told.</li>
 <li><strong>Reports:</strong> if you report a person or a message with "Report", an email to us opens in your phone's Mail app; sending it is up to you. The email contains the reason, the date and the app identifier of the reported person. The text of the message is included only if you choose so; photos are never attached. Because you send it from your own Mail, your email address also reaches us. Reports are reviewed within 24 hours.</li>
 <li><strong>Recommend to a friend:</strong> "Arkadaşına öner" in Settings shares, through the iPhone's share sheet, an install link that is the same for everyone and a short description. It contains no information about you; nothing reaches us.</li>
+<li><strong>Age confirmation (18+):</strong> when the app first opens, it asks you to confirm that you are over 18 and that you accept the terms. If your iPhone supports it, Apple's age-range information is asked first (sharing it is up to you; the app only learns whether you are 18 or over). If you do not share it, you pick your date of birth. <strong>Your date of birth is never stored anywhere</strong>; it is used only at that moment to work out your age. What is stored is only a "confirmed to be over 18" mark and the version of the terms you accepted; these are kept on your phone and in the private area of your own iCloud, where we cannot see them.</li>
+<li><strong>Banned-account list:</strong> the list of accounts closed for breaking the rules. It is stored in Apple's iCloud service, in the shared area that belongs to 3nigma. The list contains only an irreversible digest of the closed account's app identifier and the time it was closed; no name, number, reason or message. The list cannot be read as a whole: your app only checks whether your own identifier and those of people you know are on it. Only Sun Flower Apps can write to the list. A closed account cannot send messages, create groups or add people; your phone also does not show messages such an account sends after it was closed.</li>
 </ul>
 <h2>The chat screen and the lock</h2>
 <p>The app is locked every time it opens. While it is locked, an ordinary sentence or a ready-made stock photo appears on screen and in notifications instead of the real message; real messages open with Face ID. These sentences and photo numbers are unrelated to the real message and are chosen by the sending phone without looking at the real content. So that they can also appear in notifications, they travel with the message unencrypted. A group invitation notification does not show the inviter's name or the group's name either. A notification for a message in an archived chat shows no name and no sentence.</p>
@@ -152,17 +178,35 @@ footer { text-align:center; color:var(--muted); font-size:.9rem; margin-top:1.5r
 <p>No ads, no tracking, no third-party analytics or advertising tools. No data is sold. The app keeps a small error log on the phone that contains no message content, names or numbers; it is never sent anywhere.</p>
 <h2>Deleting your data</h2>
 <ul>
-<li>You can delete the data on your phone by deleting the app.</li>
-<li>You can delete 3nigma's iCloud data on your iPhone in Settings &gt; [your name] &gt; iCloud &gt; Manage Account Storage. This deletes the data of the chats and groups you created.</li>
+<li><strong>Delete my account:</strong> in the app, Settings &gt; Hesap &gt; "Hesabımı sil" (Delete my account) lets you delete your account and data yourself. Face ID and a second confirmation are required; this cannot be undone. What is deleted: your profile in iCloud; the iCloud data of all chats and groups you created (these chats also disappear from the members' phones); the messages you sent to chats and groups created by others; and all keys, messages, your block list, settings and the 18+ confirmation on this phone.</li>
+<li>After you delete your account, "Silinmiş hesap" (Deleted account) appears in place of your name in chats created by others. If there is no internet, everything on the phone is deleted immediately and the iCloud deletion completes when you are online and open the app.</li>
+<li>What may remain for a short time: in place of the chats you created, a signed "deleted" note with no messages in it stays for at most 7 days so that the members' phones can learn the chat was deleted; then it is deleted too. In chats created by others, content-free technical records showing that you left may remain in that person's iCloud. Your name and profile that had already been downloaded to another person's phone may stay on that phone until that person deletes the chat; we cannot reach these.</li>
+<li>To also remove the Sign in with Apple permission: on your iPhone, Settings &gt; [your name] &gt; Sign in with Apple &gt; 3nigma &gt; "Delete" (or "Stop Using"). Because we have no servers, we cannot remove this permission for you.</li>
+<li>If your account was closed for breaking the rules, you can still use "Delete my account". The entry in the banned-account list (only an identifier digest) is not deleted.</li>
+<li>Deleting the app from your phone does not by itself delete the account: your keys stay in the iPhone's Keychain and your data stays in iCloud. You can also delete 3nigma's iCloud data on your iPhone in Settings &gt; [your name] &gt; iCloud &gt; Manage Account Storage.</li>
 <li>You can remove a message you sent with "Delete for everyone".</li>
 <li>If the creator of a group deletes it, the group's content is deleted and the group disappears from the members' phones. If you leave a group, you can no longer see its messages afterwards. If you are removed from a group, the messages you had already received stay on your own phone; you can delete the group from your own phone if you wish.</li>
-<li>Messages you sent to a chat created by someone else stay, encrypted, in that person's iCloud. We cannot reach this data, so we cannot delete it; you can use "Delete for everyone" or ask the chat's creator to delete the chat.</li>
-<li>There is not yet a separate "Delete my account" button inside the app.</li>
+<li>Messages you sent to a chat created by someone else stay, encrypted, in that person's iCloud. We cannot reach this data, so we cannot delete it; you can use "Delete for everyone" or "Delete my account".</li>
 </ul>
-<h2>Children</h2>
-<p>Children under 13 may not use 3nigma. In Türkiye, people under 18 may use it only with a parent's or guardian's consent. 3nigma is not directed at children and does not knowingly collect information from children.</p>
-<h2>Your rights</h2>
-<p>For any question or request about your personal data (including your rights under Türkiye's personal data law, KVKK), write to us. Because the content of your messages is not with us, you can carry out most content requests (deleting, blocking) yourself in the app.</p>
+<h2>Age limit</h2>
+<p>People under 18 may not use 3nigma. When the app first opens, it asks you to confirm that you are over 18; a person found to be under 18 cannot enter the app. 3nigma is not directed at children and does not knowingly collect information from children.</p>
+<h2>Information notice under Türkiye's personal data law (KVKK)</h2>
+<p>This section is prepared under Türkiye's Law No. 6698 on the Protection of Personal Data (KVKK).</p>
+<p><strong>Data controller:</strong> Yıldırım Öztürk (an individual developer who publishes apps under the name "Sun Flower Apps"). Email: <a href="mailto:sun.flower.apps@icloud.com">sun.flower.apps@icloud.com</a></p>
+<p><strong>Which data, for what purpose, on what legal ground:</strong></p>
+<div class="tablo"><table>
+<tr><th>Data</th><th>Purpose</th><th>Legal ground</th></tr>
+<tr><td>Sign in with Apple identifier, first name, last name, phone number, optional profile photo</td><td>To open your account and identify you to the people you add and to group members</td><td>Formation and performance of a contract (KVKK Art. 5/2-c)</td></tr>
+<tr><td>Your contacts, groups, messages, photos, voice messages and videos (encrypted)</td><td>To provide messaging</td><td>Formation and performance of a contract (Art. 5/2-c)</td></tr>
+<tr><td>Location and contact cards (only when you send them, inside the encrypted message)</td><td>To deliver them, at your request, to the person you choose</td><td>Performance of a contract (Art. 5/2-c)</td></tr>
+<tr><td>The "confirmed to be over 18" mark and the accepted terms version</td><td>To apply the age limit and the acceptance of the terms</td><td>Legal obligation and legitimate interest (Art. 5/2-ç, 5/2-f)</td></tr>
+<tr><td>Banned-account list (identifier digest and time)</td><td>To prevent abuse and protect other users</td><td>Legitimate interest and legal obligation (Art. 5/2-f, 5/2-ç)</td></tr>
+<tr><td>Report and support emails (your email address and what you write)</td><td>To review the report and reply to you</td><td>Legitimate interest and legal obligation (Art. 5/2-f, 5/2-ç)</td></tr>
+</table></div>
+<p><strong>Transfer abroad:</strong> The app has no servers of its own. Data is stored in Apple's iCloud service (CloudKit); Sign in with Apple and notifications are also provided by Apple. Apple's servers are located outside Türkiye, so data is transferred abroad within the meaning of KVKK Art. 9. Messages, photos, voice messages and videos go there only in encrypted form; the key that opens them never leaves your phone. Apart from Apple, data is shared only with the people in the same chat. No data is given to advertising or analytics companies. If a lawful request is received, only the information we actually hold can be provided; we do not hold the content of your messages and cannot open it.</p>
+<p><strong>Method of collection:</strong> Data is collected by automated means (through the app and iCloud) from the information you enter and send while using the app, from Sign in with Apple, and from emails you choose to send us.</p>
+<p><strong>Your rights (KVKK Art. 11):</strong> You have the right to learn whether your data is processed; to request information if it is; to learn the purpose of processing and whether it is used accordingly; to know the third parties, in Türkiye or abroad, to whom it is transferred; to request correction if it is incomplete or inaccurate; to request its deletion or destruction; to request that these operations be notified to the parties it was transferred to; to object to a result against you produced solely by automated analysis; and to claim compensation if you suffer damage because of unlawful processing.</p>
+<p><strong>How to apply:</strong> Write to <a href="mailto:sun.flower.apps@icloud.com">sun.flower.apps@icloud.com</a>; you will receive a reply within 30 days at the latest. Because the content of your messages is not with us, you can carry out most content requests yourself in the app (deleting messages, blocking, "Delete my account").</p>
 <h2>Changes</h2>
 <p>If this policy changes, this page will be updated and the date above will change.</p>
 <h2>Contact</h2>
