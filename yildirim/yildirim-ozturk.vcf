@@ -1,0 +1,21 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Öztürk;Yıldırım
+FN:Yıldırım Öztürk
+ORG:Sun Flower Apps
+TITLE:iOS Uygulama Geliştirici
+TEL:+905428259084
+EMAIL:sun.flower.apps@icloud.com
+item1.URL:https://www.linkedin.com/in/y%C4%B1ld%C4%B1r%C4%B1m-%C3%B6zt%C3%BCrk-7969a8b9
+item1.X-ABLabel:LinkedIn
+item2.URL:https://www.instagram.com/sun.flower.apps
+item2.X-ABLabel:Instagram
+item3.URL:https://www.youtube.com/@sunflowerappsios
+item3.X-ABLabel:YouTube
+item4.URL:https://apps.apple.com/app/id6819154879
+item4.X-ABLabel:Ben Kimim?
+item5.URL:https://apps.apple.com/app/id6811545894
+item5.X-ABLabel:English Words for Kids
+item6.URL:https://yldrmztrk.github.io/yildirim/
+item6.X-ABLabel:Kartvizit
+END:VCARD
