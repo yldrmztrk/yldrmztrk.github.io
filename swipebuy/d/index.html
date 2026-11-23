@@ -7,9 +7,11 @@
 <meta name="referrer" content="no-referrer">
 <title>Swipe &amp; Buy · Arkadaşlık daveti</title>
 <style>
-  :root { --bg:#fffbea; --card:#ffffff; --text:#2b2340; --muted:#6b6380; --sun:#ffc93c; --line:#f3e3a6; }
+  :root { --bg:#fffbea; --card:#ffffff; --text:#2b2340; --muted:#6b6380; --sun:#ffc93c; --line:#f3e3a6;
+          --indir:#2b2340; --indir-yazi:#ffffff; --indir-kenar:#2b2340; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#1d1828; --card:#2a2338; --text:#f6f1ff; --muted:#bfb5d6; --line:#3d3350; }
+    :root { --bg:#1d1828; --card:#2a2338; --text:#f6f1ff; --muted:#bfb5d6; --line:#3d3350;
+            --indir:#3d3350; --indir-yazi:#ffffff; --indir-kenar:#ffc93c; }
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
@@ -30,6 +32,15 @@
     display: block; margin-top: 18px; padding: 14px 16px; border-radius: 999px;
     background: var(--sun); color: #2b2340; text-decoration: none; font-weight: 500;
   }
+  a.indir {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin-top: 18px; padding: 14px 16px; border-radius: 999px;
+    background: var(--indir); color: var(--indir-yazi); border: 1.5px solid var(--indir-kenar);
+    text-decoration: none; font-weight: 500;
+  }
+  a.indir svg { width: 24px; height: 24px; flex: none; }
+  .not { margin: 12px 0 0; font-size: .95rem; }
+  .ayrac { margin: 22px 0 0; border: 0; border-top: 1px solid var(--line); }
   small { display: block; margin-top: 22px; color: var(--muted); font-size: .85rem; }
 </style>
 </head>
@@ -37,10 +48,21 @@
 <main>
   <img class="simge" src="/swipebuy/ikon.png" width="96" height="96" alt="">
   <div class="kart">
-    <h1>Swipe &amp; Buy henüz yayında değil</h1>
-    <p>Bir arkadaşın seni Swipe &amp; Buy'a davet etti. Uygulama yayınlandığında arkadaşından yeni bir davet isteyebilirsin.</p>
-    <p id="yuklu" hidden>Uygulama telefonunda yüklüyse daveti aşağıdaki düğmeyle açabilirsin.</p>
-    <a id="ac" class="dugme" href="#" hidden>Uygulamada aç</a>
+    <h1>Swipe &amp; Buy'a davet edildin</h1>
+    <p>Bir arkadaşın seninle Swipe &amp; Buy'da arkadaş olmak istiyor. Bir şey almadan önce arkadaşlarına sor: "AL" mı, "ALMA" mı?</p>
+    <a class="indir" href="https://apps.apple.com/tr/app/id6837296950">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5.2 8.2h13.6l-1 11.3a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z" fill="#ffc93c"/>
+        <path d="M8.8 9.6V7.4a3.2 3.2 0 0 1 6.4 0v2.2" fill="none" stroke="#ffc93c" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span>Swipe &amp; Buy'ı App Store'dan indir</span>
+    </a>
+    <p class="not">İndirdikten sonra bu linke tekrar dokun, arkadaşlığın tamamlansın.</p>
+    <div id="yukluBolum" hidden>
+      <hr class="ayrac">
+      <p id="yuklu" style="margin-top:18px">Uygulama telefonunda yüklüyse daveti aşağıdaki düğmeyle açabilirsin.</p>
+      <a id="ac" class="dugme" href="#">Uygulamada aç</a>
+    </div>
   </div>
   <small>Sun Flower Apps</small>
 </main>
@@ -49,10 +71,8 @@
   (function () {
     var kod = location.hash.replace(/^#/, "");
     if (!/^[A-Za-z0-9_-]{43}$/.test(kod)) return;
-    var ac = document.getElementById("ac");
-    ac.href = "swipebuy://d#" + kod;
-    ac.hidden = false;
-    document.getElementById("yuklu").hidden = false;
+    document.getElementById("ac").href = "swipebuy://d#" + kod;
+    document.getElementById("yukluBolum").hidden = false;
   })();
 </script>
 </body>
