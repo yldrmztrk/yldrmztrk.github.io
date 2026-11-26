@@ -1,0 +1,7381 @@
+{
+ "sinif": 6,
+ "ad": "6. Sınıf",
+ "temalar": [
+  {
+   "no": 1,
+   "en": "School Life & Education",
+   "tr": "Okul Hayatı ve Eğitim",
+   "kelimeler": [
+    {
+     "tip": "uygulama",
+     "id": "feelings_miserable",
+     "en": "miserable"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_mission",
+     "en": "mission"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_motivating",
+     "en": "motivating",
+     "tr": "motive eden, cesaretlendiren",
+     "tur": "adj",
+     "ses": "muf_motivating.m4a",
+     "resim": "muf_motivating_35745342",
+     "resim_turu": "foto",
+     "fotografci": "Ahmet Kurt",
+     "pexels_sayfa": "https://www.pexels.com/photo/teacher-and-student-high-fiving-in-classroom-35745342/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_motivation",
+     "en": "motivation"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_obey",
+     "en": "obey"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_obstacle",
+     "en": "obstacle"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_offensive",
+     "en": "offensive",
+     "tr": "kırıcı, kaba",
+     "tur": "adj",
+     "ses": "muf_offensive.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_opponent",
+     "en": "opponent"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_oppose",
+     "en": "oppose",
+     "tr": "karşı çıkmak",
+     "tur": "v",
+     "ses": "muf_oppose.m4a",
+     "resim": "cizim_muf_oppose",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_opposing",
+     "en": "opposing",
+     "tr": "karşı olan",
+     "tur": "adj",
+     "ses": "muf_opposing.m4a",
+     "resim": "cizim_muf_opposing",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_output",
+     "en": "output",
+     "tr": "ürün, çıktı",
+     "tur": "n",
+     "ses": "muf_output.m4a",
+     "resim": "cizim_muf_output",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_overcome",
+     "en": "overcome"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_participate",
+     "en": "participate"
+    },
+    {
+     "tip": "uygulama",
+     "id": "family_peer",
+     "en": "peer"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_permit",
+     "en": "permit"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_pitch",
+     "en": "pitch"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_prioritize",
+     "en": "prioritize",
+     "tr": "önem sırasına koymak",
+     "tur": "v",
+     "ses": "muf_prioritize.m4a",
+     "resim": "cizim_muf_prioritize",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_procedure",
+     "en": "procedure"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_proposer",
+     "en": "proposer",
+     "tr": "öneri sunan kişi",
+     "tur": "n",
+     "ses": "muf_proposer.m4a",
+     "resim": "cizim_muf_proposer",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_redesign",
+     "en": "redesign",
+     "tr": "yeniden tasarlamak",
+     "tur": "v",
+     "ses": "muf_redesign.m4a",
+     "resim": "cizim_muf_redesign",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_referee",
+     "en": "referee"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_register",
+     "en": "register"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_registration",
+     "en": "registration",
+     "tr": "kayıt",
+     "tur": "n",
+     "ses": "muf_registration.m4a",
+     "resim": "muf_registration_9064715",
+     "resim_turu": "foto",
+     "fotografci": "RDNE Stock project",
+     "pexels_sayfa": "https://www.pexels.com/photo/woman-signing-documents-9064715/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_rehearsal",
+     "en": "rehearsal"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_replay",
+     "en": "replay",
+     "tr": "tekrar izleme",
+     "tur": "n",
+     "ses": "muf_replay.m4a",
+     "resim": "cizim_muf_replay",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_reward",
+     "en": "reward"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_rewarding",
+     "en": "rewarding"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_semi_finalist",
+     "en": "semi-finalist",
+     "tr": "yarı finalist",
+     "tur": "n",
+     "ses": "muf_semi_finalist.m4a",
+     "resim": "cizim_muf_semi_finalist",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_shoot",
+     "en": "shoot",
+     "tr": "şut çekmek, atmak",
+     "tur": "v",
+     "ses": "muf_shoot.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_silence",
+     "en": "silence",
+     "tr": "sessizlik",
+     "tur": "n",
+     "ses": "muf_silence.m4a",
+     "resim": "muf_silence_9572692",
+     "resim_turu": "foto",
+     "fotografci": "Tima Miroshnichenko",
+     "pexels_sayfa": "https://www.pexels.com/photo/people-sitting-on-chair-in-front-of-table-9572692/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_slogan",
+     "en": "slogan",
+     "tr": "slogan, parola",
+     "tur": "n",
+     "ses": "muf_slogan.m4a",
+     "resim": "cizim_muf_slogan",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_spectator",
+     "en": "spectator"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adverbs_thoughtfully",
+     "en": "thoughtfully"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_tournament",
+     "en": "tournament"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_transform",
+     "en": "transform"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_victory",
+     "en": "victory"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_well_argued",
+     "en": "well-argued",
+     "tr": "iyi gerekçelendirilmiş",
+     "tur": "adj",
+     "ses": "muf_well_argued.m4a",
+     "resim": "cizim_muf_well_argued",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_accessibility",
+     "en": "accessibility",
+     "tr": "erişilebilirlik",
+     "tur": "n",
+     "ses": "muf_accessibility.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_accompany",
+     "en": "accompany"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_agency",
+     "en": "agency",
+     "tr": "ajans, kurum",
+     "tur": "n",
+     "ses": "muf_agency.m4a",
+     "resim": "cizim_muf_agency",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_aid",
+     "en": "aid",
+     "tr": "yardım",
+     "tur": "n",
+     "ses": "muf_aid.m4a",
+     "resim": "cizim_muf_aid",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_amusing",
+     "en": "amusing"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_animation",
+     "en": "animation"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_assign",
+     "en": "assign"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_cancel",
+     "en": "cancel"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_challenge",
+     "en": "challenge"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_charming",
+     "en": "charming"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_committee",
+     "en": "committee",
+     "tr": "komite",
+     "tur": "n",
+     "ses": "muf_committee.m4a",
+     "resim": "muf_committee_35362880",
+     "resim_turu": "foto",
+     "fotografci": "Almer Caagbay",
+     "pexels_sayfa": "https://www.pexels.com/photo/students-collaborating-in-a-classroom-setting-35362880/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_competitive",
+     "en": "competitive"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_confusion",
+     "en": "confusion",
+     "tr": "kafa karışıklığı",
+     "tur": "n",
+     "ses": "muf_confusion.m4a",
+     "resim": "muf_confusion_6256115",
+     "resim_turu": "foto",
+     "fotografci": "Kaboompics",
+     "pexels_sayfa": "https://www.pexels.com/photo/overwhelmed-young-man-against-trigonometry-calculations-6256115/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "animals_conservation",
+     "en": "conservation"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_defeat",
+     "en": "defeat"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_defense",
+     "en": "defense",
+     "tr": "savunma",
+     "tur": "n",
+     "ses": "muf_defense.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_disappointment",
+     "en": "disappointment"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_discipline",
+     "en": "discipline"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_distract",
+     "en": "distract",
+     "tr": "dikkatini dağıtmak",
+     "tur": "v",
+     "ses": "muf_distract.m4a",
+     "resim": "cizim_muf_distract",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_diverse",
+     "en": "diverse"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_diversity",
+     "en": "diversity"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_effective",
+     "en": "effective"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_encourage",
+     "en": "encourage"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_engaging",
+     "en": "engaging",
+     "tr": "ilgi çekici",
+     "tur": "adj",
+     "ses": "muf_engaging.m4a",
+     "resim": "cizim_muf_engaging",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_enhance",
+     "en": "enhance"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_failure",
+     "en": "failure",
+     "tr": "başarısızlık",
+     "tur": "n",
+     "ses": "muf_failure.m4a",
+     "resim": "cizim_muf_failure",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_festive",
+     "en": "festive"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_finalist",
+     "en": "finalist",
+     "tr": "finalist",
+     "tur": "n",
+     "ses": "muf_finalist.m4a",
+     "resim": "cizim_muf_finalist",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_goal",
+     "en": "goal",
+     "tr": "hedef, amaç",
+     "tur": "n",
+     "ses": "goal.m4a",
+     "resim": "cizim_muf_goal",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_implement",
+     "en": "implement",
+     "tr": "uygulamak",
+     "tur": "v",
+     "ses": "muf_implement.m4a",
+     "resim": "cizim_muf_implement",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_infrastructure",
+     "en": "infrastructure"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_innovate",
+     "en": "innovate",
+     "tr": "yenilik yapmak",
+     "tur": "v",
+     "ses": "muf_innovate.m4a",
+     "resim": "muf_innovate_7868890",
+     "resim_turu": "foto",
+     "fotografci": "Vanessa Loring",
+     "pexels_sayfa": "https://www.pexels.com/photo/robotic-car-on-the-table-7868890/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_inspire",
+     "en": "inspire"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_inspiring",
+     "en": "inspiring",
+     "tr": "ilham verici",
+     "tur": "adj",
+     "ses": "muf_inspiring.m4a",
+     "resim": "cizim_muf_inspiring",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_joy",
+     "en": "joy"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_leadership",
+     "en": "leadership"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_mentorship",
+     "en": "mentorship",
+     "tr": "rehberlik, mentorluk",
+     "tur": "n",
+     "ses": "muf_mentorship.m4a",
+     "resim": "muf_mentorship_8423098",
+     "resim_turu": "foto",
+     "fotografci": "Pavel Danilyuk",
+     "pexels_sayfa": "https://www.pexels.com/photo/teacher-standing-beside-her-student-8423098/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_event",
+     "en": "event"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_competition",
+     "en": "competition"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_organize",
+     "en": "organize"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_practice",
+     "en": "practice",
+     "tr": "alıştırma yapmak, pratik yapmak",
+     "tur": "v",
+     "ses": "muf_practice.m4a",
+     "resim": "muf_practice_8471824",
+     "resim_turu": "foto",
+     "fotografci": "MART PRODUCTION",
+     "pexels_sayfa": "https://www.pexels.com/photo/a-girl-playing-a-violin-8471824/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_motivate",
+     "en": "motivate"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_arts_classroom",
+     "en": "arts classroom",
+     "tr": "görsel sanatlar sınıfı",
+     "tur": "ifade",
+     "ses": "muf_arts_classroom.m4a",
+     "resim": "muf_arts_classroom_8382313",
+     "resim_turu": "foto",
+     "fotografci": "Pavel Danilyuk",
+     "pexels_sayfa": "https://www.pexels.com/photo/students-painting-together-8382313/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_music_classroom",
+     "en": "music classroom",
+     "tr": "müzik sınıfı",
+     "tur": "ifade",
+     "ses": "muf_music_classroom.m4a",
+     "resim": "muf_music_classroom_8520472",
+     "resim_turu": "foto",
+     "fotografci": "Yan Krukau",
+     "pexels_sayfa": "https://www.pexels.com/photo/a-boy-playing-piano-8520472/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_it_classroom",
+     "en": "IT classroom",
+     "tr": "bilişim sınıfı",
+     "tur": "ifade",
+     "ses": "muf_it_classroom.m4a",
+     "resim": "muf_it_classroom_10638115",
+     "resim_turu": "foto",
+     "fotografci": "Ron Lach",
+     "pexels_sayfa": "https://www.pexels.com/photo/students-using-computers-10638115/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_science_club",
+     "en": "science club",
+     "tr": "fen kulübü",
+     "tur": "ifade",
+     "ses": "muf_science_club.m4a",
+     "resim": "muf_science_club_6036669",
+     "resim_turu": "foto",
+     "fotografci": "Arthur Krijgsman",
+     "pexels_sayfa": "https://www.pexels.com/photo/girl-with-safety-glasses-holding-a-pipette-on-a-science-experiment-6036669/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_drama_club",
+     "en": "drama club",
+     "tr": "tiyatro kulübü",
+     "tur": "ifade",
+     "ses": "muf_drama_club.m4a",
+     "resim": "muf_drama_club_6895797",
+     "resim_turu": "foto",
+     "fotografci": "cottonbro studio",
+     "pexels_sayfa": "https://www.pexels.com/photo/three-people-having-a-discussion-6895797/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_chess_club",
+     "en": "chess club",
+     "tr": "satranç kulübü",
+     "tur": "ifade",
+     "ses": "muf_chess_club.m4a",
+     "resim": "muf_chess_club_8466021",
+     "resim_turu": "foto",
+     "fotografci": "Anastasia Shuraeva",
+     "pexels_sayfa": "https://www.pexels.com/photo/kids-playing-chess-8466021/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_school_rules",
+     "en": "school rules",
+     "tr": "okul kuralları",
+     "tur": "ifade",
+     "ses": "muf_school_rules.m4a",
+     "resim": "cizim_muf_school_rules",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_school_routines",
+     "en": "school routines",
+     "tr": "okul rutinleri",
+     "tur": "ifade",
+     "ses": "muf_school_routines.m4a",
+     "resim": "cizim_muf_school_routines",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_school_activity",
+     "en": "school activity",
+     "tr": "okul etkinliği",
+     "tur": "ifade",
+     "ses": "muf_school_activity.m4a",
+     "resim": "cizim_muf_school_activity",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_responsibility",
+     "en": "responsibility"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_celebration",
+     "en": "celebration"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_pe_teacher",
+     "en": "PE teacher",
+     "tr": "beden eğitimi öğretmeni",
+     "tur": "ifade",
+     "ses": "muf_pe_teacher.m4a",
+     "resim": "cizim_muf_pe_teacher",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_headmistress",
+     "en": "headmistress",
+     "tr": "okul müdürü (kadın)",
+     "tur": "n",
+     "ses": "muf_headmistress.m4a",
+     "resim": "cizim_muf_headmistress",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "jobs_counselor",
+     "en": "counselor"
+    },
+    {
+     "tip": "uygulama",
+     "id": "jobs_librarian",
+     "en": "librarian"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_debate_event",
+     "en": "debate event",
+     "tr": "münazara etkinliği",
+     "tur": "ifade",
+     "ses": "muf_debate_event.m4a",
+     "resim": "cizim_muf_debate_event",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_welcome_party",
+     "en": "welcome party",
+     "tr": "karşılama partisi",
+     "tur": "ifade",
+     "ses": "muf_welcome_party.m4a",
+     "resim": "cizim_muf_welcome_party",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_national_day",
+     "en": "national day",
+     "tr": "milli bayram",
+     "tur": "ifade",
+     "ses": "muf_national_day.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_chess_tournament",
+     "en": "chess tournament",
+     "tr": "satranç turnuvası",
+     "tur": "ifade",
+     "ses": "muf_chess_tournament.m4a",
+     "resim": "muf_chess_tournament_29595919",
+     "resim_turu": "foto",
+     "fotografci": "ÀniL",
+     "pexels_sayfa": "https://www.pexels.com/photo/aerial-view-of-children-playing-chess-in-tournament-29595919/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_assembly",
+     "en": "assembly",
+     "tr": "okul töreni",
+     "tur": "n",
+     "ses": "muf_assembly.m4a",
+     "resim": "cizim_muf_assembly",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_art_workshop",
+     "en": "art workshop",
+     "tr": "sanat atölyesi",
+     "tur": "ifade",
+     "ses": "muf_art_workshop.m4a",
+     "resim": "muf_art_workshop_33824863",
+     "resim_turu": "foto",
+     "fotografci": "Tahir Xəlfəquliyev",
+     "pexels_sayfa": "https://www.pexels.com/photo/aerial-view-of-children-engaged-in-art-workshop-33824863/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_outdoor_science_experiment",
+     "en": "outdoor science experiment",
+     "tr": "açık havada fen deneyi",
+     "tur": "ifade",
+     "ses": "muf_outdoor_science_experiment.m4a",
+     "resim": "muf_outdoor_science_experiment_7106022",
+     "resim_turu": "foto",
+     "fotografci": "Kindel Media",
+     "pexels_sayfa": "https://www.pexels.com/photo/a-boy-playing-a-rocket-7106022/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_book_festival",
+     "en": "book festival",
+     "tr": "kitap festivali",
+     "tur": "ifade",
+     "ses": "muf_book_festival.m4a",
+     "resim": "cizim_muf_book_festival",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_food_festival",
+     "en": "food festival",
+     "tr": "yemek festivali",
+     "tur": "ifade",
+     "ses": "muf_food_festival.m4a",
+     "resim": "cizim_muf_food_festival",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "school_debate",
+     "en": "debate"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_enjoyable",
+     "en": "enjoyable"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_sporting",
+     "en": "sporting",
+     "tr": "sporla ilgili",
+     "tur": "adj",
+     "ses": "muf_sporting.m4a",
+     "resim": "muf_sporting_8941643",
+     "resim_turu": "foto",
+     "fotografci": "Kampus Production",
+     "pexels_sayfa": "https://www.pexels.com/photo/kid-holding-the-soccer-ball-8941643/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_involvement",
+     "en": "involvement",
+     "tr": "katılım, ilgi",
+     "tur": "n",
+     "ses": "muf_involvement.m4a",
+     "resim": "cizim_muf_involvement",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_exhibition",
+     "en": "exhibition"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_anniversary",
+     "en": "anniversary",
+     "tr": "yıl dönümü",
+     "tur": "n",
+     "ses": "muf_anniversary.m4a",
+     "resim": "cizim_muf_anniversary",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_religious_day",
+     "en": "religious day",
+     "tr": "dini gün",
+     "tur": "ifade",
+     "ses": "muf_religious_day.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_art_exhibition",
+     "en": "art exhibition",
+     "tr": "sanat sergisi",
+     "tur": "ifade",
+     "ses": "muf_art_exhibition.m4a",
+     "resim": "muf_art_exhibition_8467274",
+     "resim_turu": "foto",
+     "fotografci": "Anastasia Shuraeva",
+     "pexels_sayfa": "https://www.pexels.com/photo/students-showing-their-artwork-8467274/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_music_rehearsal",
+     "en": "music rehearsal",
+     "tr": "müzik provası",
+     "tur": "ifade",
+     "ses": "muf_music_rehearsal.m4a",
+     "resim": "muf_music_rehearsal_39272798",
+     "resim_turu": "foto",
+     "fotografci": "Maty Matvey Rynkov",
+     "pexels_sayfa": "https://www.pexels.com/photo/young-orchestra-musicians-with-double-bass-39272798/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_competitive_games",
+     "en": "competitive games",
+     "tr": "yarışmalı oyunlar",
+     "tur": "ifade",
+     "ses": "muf_competitive_games.m4a",
+     "resim": "cizim_muf_competitive_games",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_shadow_play",
+     "en": "shadow play",
+     "tr": "gölge oyunu",
+     "tur": "ifade",
+     "ses": "muf_shadow_play.m4a",
+     "resim": "cizim_muf_shadow_play",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_stage",
+     "en": "stage"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_annual",
+     "en": "annual"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_perform",
+     "en": "perform"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_creative_writing",
+     "en": "creative writing",
+     "tr": "yaratıcı yazma",
+     "tur": "ifade",
+     "ses": "muf_creative_writing.m4a",
+     "resim": "cizim_muf_creative_writing",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_disability",
+     "en": "disability",
+     "tr": "engellilik",
+     "tur": "n",
+     "ses": "muf_disability.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_football_tournament",
+     "en": "football tournament",
+     "tr": "futbol turnuvası",
+     "tur": "ifade",
+     "ses": "muf_football_tournament.m4a",
+     "resim": "muf_football_tournament_7307434",
+     "resim_turu": "foto",
+     "fotografci": "Alexander Nadrilyanski",
+     "pexels_sayfa": "https://www.pexels.com/photo/photo-of-kids-in-football-uniform-standing-in-a-line-7307434/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_role",
+     "en": "role"
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_festival",
+     "en": "festival"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_competitor",
+     "en": "competitor"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_headmaster",
+     "en": "headmaster",
+     "tr": "okul müdürü (erkek)",
+     "tur": "n",
+     "ses": "muf_headmaster.m4a",
+     "resim": "cizim_muf_headmaster",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "school_poster",
+     "en": "poster"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_concert",
+     "en": "concert"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_school_garden",
+     "en": "school garden",
+     "tr": "okul bahçesi",
+     "tur": "ifade",
+     "ses": "muf_school_garden.m4a",
+     "resim": "muf_school_garden_16850733",
+     "resim_turu": "foto",
+     "fotografci": "Nasirun Khan",
+     "pexels_sayfa": "https://www.pexels.com/photo/children-holding-watering-cans-and-watering-the-plants-in-the-garden-16850733/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_basketball_court",
+     "en": "basketball court",
+     "tr": "basketbol sahası",
+     "tur": "ifade",
+     "ses": "muf_basketball_court.m4a",
+     "resim": "cizim_muf_basketball_court",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adverbs_abroad",
+     "en": "abroad"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_routine",
+     "en": "routine"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_performance",
+     "en": "performance"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_sympathy",
+     "en": "sympathy"
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_parade",
+     "en": "parade"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_fireworks",
+     "en": "fireworks",
+     "tr": "havai fişek",
+     "tur": "n",
+     "ses": "muf_fireworks.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_draft_plan",
+     "en": "draft plan",
+     "tr": "taslak plan",
+     "tur": "ifade",
+     "ses": "muf_draft_plan.m4a",
+     "resim": "muf_draft_plan_17062267",
+     "resim_turu": "foto",
+     "fotografci": "Czapp Árpád",
+     "pexels_sayfa": "https://www.pexels.com/photo/hand-drawing-on-paper-17062267/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_decorate",
+     "en": "decorate"
+    },
+    {
+     "tip": "uygulama",
+     "id": "school_poem",
+     "en": "poem"
+    },
+    {
+     "tip": "uygulama",
+     "id": "world_tradition",
+     "en": "tradition"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_peaceful",
+     "en": "peaceful"
+    },
+    {
+     "tip": "uygulama",
+     "id": "family_relative",
+     "en": "relative"
+    },
+    {
+     "tip": "uygulama",
+     "id": "clothes_costume",
+     "en": "costume"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_decoration",
+     "en": "decoration"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_drama_hall",
+     "en": "drama hall",
+     "tr": "tiyatro salonu",
+     "tur": "ifade",
+     "ses": "muf_drama_hall.m4a",
+     "resim": "muf_drama_hall_32529343",
+     "resim_turu": "foto",
+     "fotografci": "Fernando Narvaez",
+     "pexels_sayfa": "https://www.pexels.com/photo/empty-auditorium-with-blue-seats-and-yellow-walls-32529343/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_technology_teacher",
+     "en": "technology teacher",
+     "tr": "teknoloji öğretmeni",
+     "tur": "ifade",
+     "ses": "muf_technology_teacher.m4a",
+     "resim": "muf_technology_teacher_5621952",
+     "resim_turu": "foto",
+     "fotografci": "Gustavo Fring",
+     "pexels_sayfa": "https://www.pexels.com/photo/lesson-in-it-classroom-5621952/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_design_teacher",
+     "en": "design teacher",
+     "tr": "tasarım öğretmeni",
+     "tur": "ifade",
+     "ses": "muf_design_teacher.m4a",
+     "resim": "cizim_muf_design_teacher",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_punctuality",
+     "en": "punctuality",
+     "tr": "dakiklik",
+     "tur": "n",
+     "ses": "muf_punctuality.m4a",
+     "resim": "muf_punctuality_2781814",
+     "resim_turu": "foto",
+     "fotografci": "Atlantic Ambience",
+     "pexels_sayfa": "https://www.pexels.com/photo/boy-looking-on-a-tidied-desk-2781814/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_mobile_phone",
+     "en": "mobile phone",
+     "tr": "cep telefonu",
+     "tur": "ifade",
+     "ses": "muf_mobile_phone.m4a",
+     "resim": "cizim_muf_mobile_phone",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_note_taking",
+     "en": "note-taking",
+     "tr": "not alma",
+     "tur": "ifade",
+     "ses": "muf_note_taking.m4a",
+     "resim": "muf_note_taking_34623880",
+     "resim_turu": "foto",
+     "fotografci": "Caleb Oquendo",
+     "pexels_sayfa": "https://www.pexels.com/photo/students-engaged-in-classroom-lecture-setting-34623880/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_playing field",
+     "en": "playing field"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_corridor",
+     "en": "corridor",
+     "tr": "koridor",
+     "tur": "n",
+     "ses": "muf_corridor.m4a",
+     "resim": "muf_corridor_8617619",
+     "resim_turu": "foto",
+     "fotografci": "Yan Krukau",
+     "pexels_sayfa": "https://www.pexels.com/photo/students-standing-near-lockers-8617619/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_assembly_hall",
+     "en": "assembly hall",
+     "tr": "toplantı salonu",
+     "tur": "ifade",
+     "ses": "muf_assembly_hall.m4a",
+     "resim": "muf_assembly_hall_7942525",
+     "resim_turu": "foto",
+     "fotografci": "Pavel Danilyuk",
+     "pexels_sayfa": "https://www.pexels.com/photo/photo-of-people-gathered-inside-gymnasium-7942525/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_award_ceremony",
+     "en": "award ceremony",
+     "tr": "ödül töreni",
+     "tur": "ifade",
+     "ses": "muf_award_ceremony.m4a",
+     "resim": "cizim_muf_award_ceremony",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_respect",
+     "en": "respect"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_participant",
+     "en": "participant",
+     "tr": "katılımcı",
+     "tur": "n",
+     "ses": "muf_participant.m4a",
+     "resim": "cizim_muf_participant",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_cultural_festival",
+     "en": "cultural festival",
+     "tr": "kültür festivali",
+     "tur": "ifade",
+     "ses": "muf_cultural_festival.m4a",
+     "resim": "muf_cultural_festival_7490587",
+     "resim_turu": "foto",
+     "fotografci": "Thotran ibr",
+     "pexels_sayfa": "https://www.pexels.com/photo/group-of-women-in-blue-and-red-traditional-dress-7490587/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_award",
+     "en": "award",
+     "tr": "ödül",
+     "tur": "n",
+     "ses": "muf_award.m4a",
+     "resim": "muf_award_35545984",
+     "resim_turu": "foto",
+     "fotografci": "Anil Sharma",
+     "pexels_sayfa": "https://www.pexels.com/photo/joyful-girl-holding-her-trophy-indoors-35545984/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_activity",
+     "en": "activity"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_appearance",
+     "en": "appearance",
+     "tr": "görünüş",
+     "tur": "n",
+     "ses": "muf_appearance.m4a",
+     "resim": "cizim_muf_appearance",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_apply",
+     "en": "apply"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_arrange",
+     "en": "arrange"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_celebrate",
+     "en": "celebrate"
+    },
+    {
+     "tip": "uygulama",
+     "id": "family_ceremony",
+     "en": "ceremony"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_manage",
+     "en": "manage"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_organization",
+     "en": "organization",
+     "tr": "kuruluş, organizasyon",
+     "tur": "n",
+     "ses": "muf_organization.m4a",
+     "resim": "cizim_muf_organization",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_respectful",
+     "en": "respectful"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_rules",
+     "en": "rules"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_engagement",
+     "en": "engagement",
+     "tr": "katılım, ilgi",
+     "tur": "n",
+     "ses": "muf_engagement.m4a",
+     "resim": "cizim_muf_engagement",
+     "resim_turu": "cizim"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "en": "Classroom Life & Learning",
+   "tr": "Sınıf Hayatı ve Öğrenme",
+   "kelimeler": [
+    {
+     "tip": "yeni",
+     "anahtar": "muf_handheld",
+     "en": "handheld",
+     "tr": "elde taşınabilir",
+     "tur": "adj",
+     "ses": "muf_handheld.m4a",
+     "resim": "cizim_muf_handheld",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_hesitate",
+     "en": "hesitate"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_illustration",
+     "en": "illustration"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_immersive",
+     "en": "immersive",
+     "tr": "sürükleyici",
+     "tur": "adj",
+     "ses": "muf_immersive.m4a",
+     "resim": "muf_immersive_5212685",
+     "resim_turu": "foto",
+     "fotografci": "Max Fischer",
+     "pexels_sayfa": "https://www.pexels.com/photo/a-boy-using-virtual-reality-headset-5212685/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_inform",
+     "en": "inform"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_innovation",
+     "en": "innovation"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_innovative",
+     "en": "innovative"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_install",
+     "en": "install"
+    },
+    {
+     "tip": "uygulama",
+     "id": "school_instruction",
+     "en": "instruction"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_interaction",
+     "en": "interaction"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_limited",
+     "en": "limited",
+     "tr": "sınırlı",
+     "tur": "adj",
+     "ses": "muf_limited.m4a",
+     "resim": "cizim_muf_limited",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_memorable",
+     "en": "memorable"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_mission",
+     "en": "mission"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_monitor",
+     "en": "monitor"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_mouse_pad",
+     "en": "mouse pad",
+     "tr": "fare altlığı",
+     "tur": "ifade",
+     "ses": "muf_mouse_pad.m4a",
+     "resim": "cizim_muf_mouse_pad",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_navigate",
+     "en": "navigate"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_necessity",
+     "en": "necessity"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_objective",
+     "en": "objective",
+     "tr": "tarafsız, gerçeklere dayalı",
+     "tur": "adj",
+     "ses": "objective.m4a",
+     "resim": "cizim_muf_objective",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_optimist",
+     "en": "optimist",
+     "tr": "iyimser kişi",
+     "tur": "n",
+     "ses": "muf_optimist.m4a",
+     "resim": "muf_optimist_8363043",
+     "resim_turu": "foto",
+     "fotografci": "RDNE Stock project",
+     "pexels_sayfa": "https://www.pexels.com/photo/a-girl-doing-a-thumbs-up-8363043/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_outline",
+     "en": "outline",
+     "tr": "ana hatlarını çıkarmak",
+     "tur": "v",
+     "ses": "muf_outline.m4a",
+     "resim": "cizim_muf_outline",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_partnership",
+     "en": "partnership",
+     "tr": "ortaklık",
+     "tur": "n",
+     "ses": "muf_partnership.m4a",
+     "resim": "cizim_muf_partnership",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_password",
+     "en": "password"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_personalize",
+     "en": "personalize",
+     "tr": "kişiye özel yapmak",
+     "tur": "v",
+     "ses": "muf_personalize.m4a",
+     "resim": "cizim_muf_personalize",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_popularity",
+     "en": "popularity"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_practicality",
+     "en": "practicality",
+     "tr": "kullanışlılık",
+     "tur": "n",
+     "ses": "muf_practicality.m4a",
+     "resim": "cizim_muf_practicality",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_preference",
+     "en": "preference"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_preparation",
+     "en": "preparation"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_principle",
+     "en": "principle"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_accessibility",
+     "en": "accessibility",
+     "tr": "erişilebilirlik",
+     "tur": "n",
+     "ses": "muf_accessibility.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_accomplish",
+     "en": "accomplish"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_adapt",
+     "en": "adapt"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_boost",
+     "en": "boost",
+     "tr": "artırmak, güçlendirmek",
+     "tur": "v",
+     "ses": "muf_boost.m4a",
+     "resim": "cizim_muf_boost",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_brainstorm",
+     "en": "brainstorm",
+     "tr": "beyin fırtınası yapmak",
+     "tur": "v",
+     "ses": "muf_brainstorm.m4a",
+     "resim": "muf_brainstorm_4623462",
+     "resim_turu": "foto",
+     "fotografci": "Ketut Subiyanto",
+     "pexels_sayfa": "https://www.pexels.com/photo/a-man-discussing-while-pointing-on-the-sticky-notes-4623462/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_brainstorming",
+     "en": "brainstorming",
+     "tr": "beyin fırtınası",
+     "tur": "n",
+     "ses": "muf_brainstorming.m4a",
+     "resim": "cizim_muf_brainstorming",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_bug",
+     "en": "bug",
+     "tr": "yazılım hatası (bilgisayar hatası)",
+     "tur": "n",
+     "ses": "bug.m4a",
+     "resim": "cizim_muf_bug",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_clarify",
+     "en": "clarify"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_commonly",
+     "en": "commonly",
+     "tr": "genellikle",
+     "tur": "adv",
+     "ses": "muf_commonly.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_complicated",
+     "en": "complicated"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_concept",
+     "en": "concept"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_cope",
+     "en": "cope"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_courage",
+     "en": "courage"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_creativity",
+     "en": "creativity"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_cutting_edge",
+     "en": "cutting-edge",
+     "tr": "en son teknoloji, en ileri",
+     "tur": "ifade",
+     "ses": "muf_cutting_edge.m4a",
+     "resim": "muf_cutting_edge_7742832",
+     "resim_turu": "foto",
+     "fotografci": "Alena Darmel",
+     "pexels_sayfa": "https://www.pexels.com/photo/boy-and-girl-standing-in-front-of-computer-screen-7742832/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_database",
+     "en": "database"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_edit",
+     "en": "edit"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_efficient",
+     "en": "efficient"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adverbs_efficiently",
+     "en": "efficiently"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_electronics",
+     "en": "electronics"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_essentially",
+     "en": "essentially",
+     "tr": "aslında, temelde",
+     "tur": "adv",
+     "ses": "muf_essentially.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_establish",
+     "en": "establish"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_evaluate",
+     "en": "evaluate"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_evaluation",
+     "en": "evaluation",
+     "tr": "değerlendirme",
+     "tur": "n",
+     "ses": "muf_evaluation.m4a",
+     "resim": "cizim_muf_evaluation",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_exploration",
+     "en": "exploration"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_feedback",
+     "en": "feedback",
+     "tr": "geri bildirim",
+     "tur": "n",
+     "ses": "muf_feedback.m4a",
+     "resim": "cizim_muf_feedback",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_flexible",
+     "en": "flexible"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_folder",
+     "en": "folder",
+     "tr": "klasör (bilgisayar)",
+     "tur": "n",
+     "ses": "folder.m4a",
+     "resim": "cizim_muf_folder",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_fulfill",
+     "en": "fulfill"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_technological",
+     "en": "technological"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_touchscreen",
+     "en": "touchscreen"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_user-friendly",
+     "en": "user-friendly"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_virtual",
+     "en": "virtual"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_visual",
+     "en": "visual",
+     "tr": "görsel",
+     "tur": "adj",
+     "ses": "muf_visual.m4a",
+     "resim": "cizim_muf_visual",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_volume",
+     "en": "volume",
+     "tr": "ses seviyesi",
+     "tur": "n",
+     "ses": "volume.m4a",
+     "resim": "cizim_muf_volume",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_webcam",
+     "en": "webcam"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_willing",
+     "en": "willing"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_pursue",
+     "en": "pursue"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_reflective",
+     "en": "reflective",
+     "tr": "düşünceli, yansıtıcı",
+     "tur": "adj",
+     "ses": "muf_reflective.m4a",
+     "resim": "cizim_muf_reflective",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_reward",
+     "en": "reward"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_rhythm",
+     "en": "rhythm"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_satisfied",
+     "en": "satisfied"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_secure",
+     "en": "secure"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_seek",
+     "en": "seek"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_select",
+     "en": "select"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_super",
+     "en": "super"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_pair_work",
+     "en": "pair work",
+     "tr": "eşli çalışma",
+     "tur": "ifade",
+     "ses": "muf_pair_work.m4a",
+     "resim": "muf_pair_work_5905558",
+     "resim_turu": "foto",
+     "fotografci": "Katerina Holmes",
+     "pexels_sayfa": "https://www.pexels.com/photo/focused-classmates-doing-exercise-in-school-5905558/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_group_work",
+     "en": "group work",
+     "tr": "grup çalışması",
+     "tur": "ifade",
+     "ses": "muf_group_work.m4a",
+     "resim": "muf_group_work_5621962",
+     "resim_turu": "foto",
+     "fotografci": "Gustavo Fring",
+     "pexels_sayfa": "https://www.pexels.com/photo/kids-studying-on-the-table-5621962/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_challenging",
+     "en": "challenging"
+    },
+    {
+     "tip": "uygulama",
+     "id": "school_whiteboard",
+     "en": "whiteboard"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_flashcard",
+     "en": "flashcard",
+     "tr": "bilgi kartı",
+     "tur": "n",
+     "ses": "muf_flashcard.m4a",
+     "resim": "cizim_muf_flashcard",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "school_poster",
+     "en": "poster"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_role_play",
+     "en": "role-play",
+     "tr": "rol yapma, canlandırma",
+     "tur": "ifade",
+     "ses": "muf_role_play.m4a",
+     "resim": "cizim_muf_role_play",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "school_worksheet",
+     "en": "worksheet"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_smart_board",
+     "en": "smart board",
+     "tr": "akıllı tahta",
+     "tur": "ifade",
+     "ses": "muf_smart_board.m4a",
+     "resim": "muf_smart_board_8141591",
+     "resim_turu": "foto",
+     "fotografci": "Arthur Krijgsman",
+     "pexels_sayfa": "https://www.pexels.com/photo/students-inside-a-classroom-8141591/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_virtual reality",
+     "en": "virtual reality"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_online_quiz",
+     "en": "online quiz",
+     "tr": "çevrim içi test",
+     "tur": "ifade",
+     "ses": "muf_online_quiz.m4a",
+     "resim": "muf_online_quiz_5905886",
+     "resim_turu": "foto",
+     "fotografci": "Katerina Holmes",
+     "pexels_sayfa": "https://www.pexels.com/photo/focused-ethnic-girl-studying-on-laptop-5905886/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_drama",
+     "en": "drama"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_headmaster",
+     "en": "headmaster",
+     "tr": "okul müdürü (erkek)",
+     "tur": "n",
+     "ses": "muf_headmaster.m4a",
+     "resim": "cizim_muf_headmaster",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_photography",
+     "en": "photography"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_optimistic",
+     "en": "optimistic"
+    },
+    {
+     "tip": "uygulama",
+     "id": "school_presentation",
+     "en": "presentation"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_approach",
+     "en": "approach"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_determination",
+     "en": "determination"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_voice_command",
+     "en": "voice command",
+     "tr": "sesli komut",
+     "tur": "ifade",
+     "ses": "muf_voice_command.m4a",
+     "resim": "muf_voice_command_7188681",
+     "resim_turu": "foto",
+     "fotografci": "Eren Li",
+     "pexels_sayfa": "https://www.pexels.com/photo/photo-of-man-talking-on-phone-7188681/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_ideal_classroom",
+     "en": "ideal classroom",
+     "tr": "ideal sınıf",
+     "tur": "ifade",
+     "ses": "muf_ideal_classroom.m4a",
+     "resim": "muf_ideal_classroom_12168815",
+     "resim_turu": "foto",
+     "fotografci": "Ali Ahmad DANESH",
+     "pexels_sayfa": "https://www.pexels.com/photo/empty-seats-in-a-classroom-12168815/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_technology",
+     "en": "technology"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_accomplishment",
+     "en": "accomplishment",
+     "tr": "başarı",
+     "tur": "n",
+     "ses": "muf_accomplishment.m4a",
+     "resim": "muf_accomplishment_7869792",
+     "resim_turu": "foto",
+     "fotografci": "Vanessa Loring",
+     "pexels_sayfa": "https://www.pexels.com/photo/a-boy-holding-his-art-project-7869792/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_laptop",
+     "en": "laptop"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_keyboard",
+     "en": "keyboard"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_printer",
+     "en": "printer"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_mouse",
+     "en": "mouse",
+     "tr": "fare (bilgisayar faresi)",
+     "tur": "n",
+     "ses": "mouse.m4a",
+     "resim": "muf_mouse_9346",
+     "resim_turu": "foto",
+     "fotografci": "ClickerHappy",
+     "pexels_sayfa": "https://www.pexels.com/photo/desk-office-working-computer-9346/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_helpful",
+     "en": "helpful"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_handheld_device",
+     "en": "handheld device",
+     "tr": "el cihazı",
+     "tur": "ifade",
+     "ses": "muf_handheld_device.m4a",
+     "resim": "cizim_muf_handheld_device",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_concentration",
+     "en": "concentration",
+     "tr": "odaklanma",
+     "tur": "n",
+     "ses": "muf_concentration.m4a",
+     "resim": "muf_concentration_7396399",
+     "resim_turu": "foto",
+     "fotografci": "cottonbro studio",
+     "pexels_sayfa": "https://www.pexels.com/photo/a-student-with-beige-vest-sitting-behind-her-desk-7396399/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_opportunity",
+     "en": "opportunity"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_take_notes",
+     "en": "take notes",
+     "tr": "not almak",
+     "tur": "ifade",
+     "ses": "muf_take_notes.m4a",
+     "resim": "muf_take_notes_8197503",
+     "resim_turu": "foto",
+     "fotografci": "Yan Krukau",
+     "pexels_sayfa": "https://www.pexels.com/photo/students-sitting-at-the-desks-in-a-lecture-hall-with-laptops-8197503/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_participation",
+     "en": "participation",
+     "tr": "katılım",
+     "tur": "n",
+     "ses": "muf_participation.m4a",
+     "resim": "muf_participation_8423044",
+     "resim_turu": "foto",
+     "fotografci": "Pavel Danilyuk",
+     "pexels_sayfa": "https://www.pexels.com/photo/children-sitting-at-the-table-8423044/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_discussion",
+     "en": "discussion"
+    },
+    {
+     "tip": "uygulama",
+     "id": "school_classroom",
+     "en": "classroom"
+    },
+    {
+     "tip": "uygulama",
+     "id": "school_project",
+     "en": "project"
+    }
+   ]
+  },
+  {
+   "no": 3,
+   "en": "Personal Life & Well-Being",
+   "tr": "Kişisel Yaşam ve İyi Oluş",
+   "kelimeler": [
+    {
+     "tip": "uygulama",
+     "id": "concepts_majority",
+     "en": "majority"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_masterpiece",
+     "en": "masterpiece"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_minority",
+     "en": "minority",
+     "tr": "azınlık",
+     "tur": "n",
+     "ses": "muf_minority.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_monitor",
+     "en": "monitor"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_necessity",
+     "en": "necessity"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_overcome",
+     "en": "overcome"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_overuse",
+     "en": "overuse",
+     "tr": "aşırı kullanmak",
+     "tur": "v",
+     "ses": "muf_overuse.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_panic",
+     "en": "panic",
+     "tr": "panik",
+     "tur": "n",
+     "ses": "muf_panic.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_password",
+     "en": "password"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_performing_arts",
+     "en": "performing arts",
+     "tr": "sahne sanatları",
+     "tur": "ifade",
+     "ses": "muf_performing_arts.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_podcasting",
+     "en": "podcasting",
+     "tr": "podcast yapma",
+     "tur": "n",
+     "ses": "muf_podcasting.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_preference",
+     "en": "preference"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_preserve",
+     "en": "preserve"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_preview",
+     "en": "preview",
+     "tr": "ön izleme",
+     "tur": "n",
+     "ses": "muf_preview.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_privacy",
+     "en": "privacy"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_production",
+     "en": "production",
+     "tr": "yapım, üretim",
+     "tur": "n",
+     "ses": "muf_production.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_regulate",
+     "en": "regulate",
+     "tr": "düzenlemek",
+     "tur": "v",
+     "ses": "muf_regulate.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_rehearsal",
+     "en": "rehearsal"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_relief",
+     "en": "relief"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_remote_learning",
+     "en": "remote learning",
+     "tr": "uzaktan eğitim",
+     "tur": "ifade",
+     "ses": "muf_remote_learning.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_resist",
+     "en": "resist",
+     "tr": "karşı koymak, direnmek",
+     "tur": "v",
+     "ses": "muf_resist.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_restrict",
+     "en": "restrict",
+     "tr": "kısıtlamak",
+     "tur": "v",
+     "ses": "muf_restrict.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_scenario",
+     "en": "scenario",
+     "tr": "senaryo",
+     "tur": "n",
+     "ses": "muf_scenario.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_sci_fi",
+     "en": "sci-fi",
+     "tr": "bilim kurgu",
+     "tur": "ifade",
+     "ses": "muf_sci_fi.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_screening",
+     "en": "screening",
+     "tr": "gösterim",
+     "tur": "n",
+     "ses": "muf_screening.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_securely",
+     "en": "securely",
+     "tr": "güvenli bir şekilde",
+     "tur": "adv",
+     "ses": "muf_securely.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_service_provider",
+     "en": "service provider",
+     "tr": "hizmet sağlayıcı",
+     "tur": "ifade",
+     "ses": "muf_service_provider.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_severely",
+     "en": "severely",
+     "tr": "çok ciddi şekilde",
+     "tur": "adv",
+     "ses": "muf_severely.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_significant",
+     "en": "significant"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_sound_effect",
+     "en": "sound effect",
+     "tr": "ses efekti",
+     "tur": "ifade",
+     "ses": "muf_sound_effect.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_standard_of_living",
+     "en": "standard of living",
+     "tr": "yaşam standardı",
+     "tur": "ifade",
+     "ses": "muf_standard_of_living.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_stunt",
+     "en": "stunt",
+     "tr": "tehlikeli gösteri hareketi",
+     "tur": "n",
+     "ses": "muf_stunt.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_subtitle",
+     "en": "subtitle",
+     "tr": "altyazı",
+     "tur": "n",
+     "ses": "muf_subtitle.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_surfing",
+     "en": "surfing",
+     "tr": "internette gezinme",
+     "tur": "n",
+     "ses": "surfing.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_tension",
+     "en": "tension",
+     "tr": "gerginlik",
+     "tur": "n",
+     "ses": "muf_tension.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_tiredness",
+     "en": "tiredness",
+     "tr": "yorgunluk",
+     "tur": "n",
+     "ses": "muf_tiredness.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_trace",
+     "en": "trace",
+     "tr": "izini sürmek, kökenini bulmak",
+     "tur": "v",
+     "ses": "to_trace.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_unconscious",
+     "en": "unconscious",
+     "tr": "bilinçsiz, baygın",
+     "tur": "adj",
+     "ses": "muf_unconscious.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_welfare",
+     "en": "welfare"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_addicted",
+     "en": "addicted",
+     "tr": "bağımlı",
+     "tur": "adj",
+     "ses": "muf_addicted.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_addiction",
+     "en": "addiction",
+     "tr": "bağımlılık",
+     "tur": "n",
+     "ses": "muf_addiction.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_adore",
+     "en": "adore",
+     "tr": "çok sevmek",
+     "tur": "v",
+     "ses": "muf_adore.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_aggressive",
+     "en": "aggressive",
+     "tr": "saldırgan, kavgacı",
+     "tur": "adj",
+     "ses": "muf_aggressive.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_aid",
+     "en": "aid",
+     "tr": "yardım",
+     "tur": "n",
+     "ses": "muf_aid.m4a",
+     "resim": "cizim_muf_aid",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_alternatively",
+     "en": "alternatively",
+     "tr": "ya da, alternatif olarak",
+     "tur": "adv",
+     "ses": "muf_alternatively.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_amazement",
+     "en": "amazement",
+     "tr": "şaşkınlık",
+     "tur": "n",
+     "ses": "muf_amazement.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_amusement",
+     "en": "amusement",
+     "tr": "eğlence",
+     "tur": "n",
+     "ses": "muf_amusement.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_anger",
+     "en": "anger"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_animated",
+     "en": "animated",
+     "tr": "hareketli, animasyonlu",
+     "tur": "adj",
+     "ses": "muf_animated.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_animation",
+     "en": "animation"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_anxiety",
+     "en": "anxiety"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_anxious",
+     "en": "anxious"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_appeal",
+     "en": "appeal",
+     "tr": "ilgisini çekmek",
+     "tur": "v",
+     "ses": "muf_appeal.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_assistance",
+     "en": "assistance"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_awareness",
+     "en": "awareness"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_bias",
+     "en": "bias",
+     "tr": "ön yargı",
+     "tur": "n",
+     "ses": "muf_bias.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_biased",
+     "en": "biased",
+     "tr": "taraflı",
+     "tur": "adj",
+     "ses": "muf_biased.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_cast",
+     "en": "cast",
+     "tr": "oyuncu kadrosu",
+     "tur": "n",
+     "ses": "cast.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_classic",
+     "en": "classic"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_consult",
+     "en": "consult"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_convenience",
+     "en": "convenience",
+     "tr": "kolaylık",
+     "tur": "n",
+     "ses": "muf_convenience.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_criterion",
+     "en": "criterion",
+     "tr": "ölçüt",
+     "tur": "n",
+     "ses": "muf_criterion.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_demonstrate",
+     "en": "demonstrate"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_dependent",
+     "en": "dependent",
+     "tr": "bağımlı, bağlı",
+     "tur": "adj",
+     "ses": "muf_dependent.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_disconnection",
+     "en": "disconnection",
+     "tr": "bağlantı kopması",
+     "tur": "n",
+     "ses": "muf_disconnection.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_disorientation",
+     "en": "disorientation",
+     "tr": "yönünü şaşırma",
+     "tur": "n",
+     "ses": "muf_disorientation.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_dramatic",
+     "en": "dramatic"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_edit",
+     "en": "edit"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_emotional",
+     "en": "emotional"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_follower",
+     "en": "follower",
+     "tr": "takipçi",
+     "tur": "n",
+     "ses": "muf_follower.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_friend",
+     "en": "friend",
+     "tr": "sosyal medyada arkadaş olarak eklemek",
+     "tur": "v",
+     "ses": "muf_friend.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_genre",
+     "en": "genre",
+     "tr": "tür",
+     "tur": "n",
+     "ses": "muf_genre.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_harm",
+     "en": "harm",
+     "tr": "zarar vermek",
+     "tur": "v",
+     "ses": "muf_harm.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_heal",
+     "en": "heal"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_helpline",
+     "en": "helpline",
+     "tr": "yardım hattı",
+     "tur": "n",
+     "ses": "muf_helpline.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_inbox",
+     "en": "inbox",
+     "tr": "gelen kutusu",
+     "tur": "n",
+     "ses": "muf_inbox.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adverbs_increasingly",
+     "en": "increasingly"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_isolate",
+     "en": "isolate",
+     "tr": "yalnız bırakmak, ayırmak",
+     "tur": "v",
+     "ses": "muf_isolate.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_isolated",
+     "en": "isolated",
+     "tr": "yalnız kalmış, ıssız",
+     "tur": "adj",
+     "ses": "muf_isolated.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_screenwriter",
+     "en": "screenwriter",
+     "tr": "senarist",
+     "tur": "n",
+     "ses": "muf_screenwriter.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_storyline",
+     "en": "storyline",
+     "tr": "hikâye akışı",
+     "tur": "n",
+     "ses": "muf_storyline.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_thriller",
+     "en": "thriller",
+     "tr": "gerilim filmi",
+     "tur": "n",
+     "ses": "muf_thriller.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_mindful",
+     "en": "mindful",
+     "tr": "dikkatli, farkında olan",
+     "tur": "adj",
+     "ses": "muf_mindful.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_entertainment",
+     "en": "entertainment"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_movie_theater",
+     "en": "movie theater",
+     "tr": "sinema salonu",
+     "tur": "ifade",
+     "ses": "muf_movie_theater.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_play",
+     "en": "play",
+     "tr": "tiyatro oyunu",
+     "tur": "n",
+     "ses": "muf_play.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_art gallery",
+     "en": "art gallery"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_tennis_tournament",
+     "en": "tennis tournament",
+     "tr": "tenis turnuvası",
+     "tur": "ifade",
+     "ses": "muf_tennis_tournament.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_mobile_phone",
+     "en": "mobile phone",
+     "tr": "cep telefonu",
+     "tur": "ifade",
+     "ses": "muf_mobile_phone.m4a",
+     "resim": "cizim_muf_mobile_phone",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_face_to_face_communication",
+     "en": "face-to-face communication",
+     "tr": "yüz yüze iletişim",
+     "tur": "ifade",
+     "ses": "muf_face_to_face_communication.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_phone_call",
+     "en": "phone call",
+     "tr": "telefon görüşmesi",
+     "tur": "ifade",
+     "ses": "muf_phone_call.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_instant_message",
+     "en": "instant message",
+     "tr": "anlık mesaj",
+     "tur": "ifade",
+     "ses": "muf_instant_message.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_email",
+     "en": "email"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_video call",
+     "en": "video call"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_internet_connection",
+     "en": "internet connection",
+     "tr": "internet bağlantısı",
+     "tur": "ifade",
+     "ses": "muf_internet_connection.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_health_problem",
+     "en": "health problem",
+     "tr": "sağlık sorunu",
+     "tur": "ifade",
+     "ses": "muf_health_problem.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_film",
+     "en": "film"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_visual_arts",
+     "en": "visual arts",
+     "tr": "görsel sanatlar",
+     "tur": "ifade",
+     "ses": "muf_visual_arts.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_survey",
+     "en": "survey",
+     "tr": "anket",
+     "tur": "n",
+     "ses": "muf_survey.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_blog",
+     "en": "blog",
+     "tr": "blog (internet günlüğü)",
+     "tur": "n",
+     "ses": "muf_blog.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_social_life",
+     "en": "social life",
+     "tr": "sosyal hayat",
+     "tur": "ifade",
+     "ses": "muf_social_life.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_quality_of_life",
+     "en": "quality of life",
+     "tr": "yaşam kalitesi",
+     "tur": "ifade",
+     "ses": "muf_quality_of_life.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_film_set",
+     "en": "film set",
+     "tr": "film seti",
+     "tur": "ifade",
+     "ses": "muf_film_set.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_theater",
+     "en": "theater"
+    },
+    {
+     "tip": "uygulama",
+     "id": "family_volunteer",
+     "en": "volunteer"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "en": "Family Life & Home",
+   "tr": "Aile Hayatı ve Ev",
+   "kelimeler": [
+    {
+     "tip": "yeni",
+     "anahtar": "muf_bond",
+     "en": "bond",
+     "tr": "bağ (aile bağı)",
+     "tur": "n",
+     "ses": "muf_bond.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_broad",
+     "en": "broad"
+    },
+    {
+     "tip": "uygulama",
+     "id": "transport_cabin",
+     "en": "cabin"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_central_heating",
+     "en": "central heating",
+     "tr": "kalorifer",
+     "tur": "ifade",
+     "ses": "muf_central_heating.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_characteristic",
+     "en": "characteristic"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_charming",
+     "en": "charming"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_classic",
+     "en": "classic"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_coach_house",
+     "en": "coach house",
+     "tr": "arabalıktan dönüştürülmüş ev",
+     "tur": "ifade",
+     "ses": "muf_coach_house.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_collapse",
+     "en": "collapse",
+     "tr": "çökmek",
+     "tur": "v",
+     "ses": "muf_collapse.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_conflict",
+     "en": "conflict",
+     "tr": "çatışma",
+     "tur": "n",
+     "ses": "muf_conflict.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_contemporary",
+     "en": "contemporary"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_controversy",
+     "en": "controversy",
+     "tr": "tartışma",
+     "tur": "n",
+     "ses": "muf_controversy.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_defeat",
+     "en": "defeat"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_defend",
+     "en": "defend",
+     "tr": "savunmak",
+     "tur": "v",
+     "ses": "muf_defend.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_deny",
+     "en": "deny",
+     "tr": "reddetmek",
+     "tur": "v",
+     "ses": "muf_deny.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_desperate",
+     "en": "desperate",
+     "tr": "çaresiz",
+     "tur": "adj",
+     "ses": "muf_desperate.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_detached",
+     "en": "detached",
+     "tr": "müstakil",
+     "tur": "adj",
+     "ses": "muf_detached.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_disagreement",
+     "en": "disagreement",
+     "tr": "anlaşmazlık",
+     "tur": "n",
+     "ses": "muf_disagreement.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_division",
+     "en": "division",
+     "tr": "bölünme",
+     "tur": "n",
+     "ses": "division.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_abandon",
+     "en": "abandon",
+     "tr": "terk etmek",
+     "tur": "v",
+     "ses": "muf_abandon.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_accuse",
+     "en": "accuse",
+     "tr": "suçlamak",
+     "tur": "v",
+     "ses": "muf_accuse.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_acknowledge",
+     "en": "acknowledge"
+    },
+    {
+     "tip": "uygulama",
+     "id": "family_acquaintance",
+     "en": "acquaintance"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_adopt",
+     "en": "adopt",
+     "tr": "evlat edinmek, benimsemek",
+     "tur": "v",
+     "ses": "muf_adopt.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_air_conditioned",
+     "en": "air-conditioned",
+     "tr": "klimalı",
+     "tur": "adj",
+     "ses": "muf_air_conditioned.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_air_conditioning",
+     "en": "air conditioning",
+     "tr": "klima",
+     "tur": "ifade",
+     "ses": "muf_air_conditioning.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "family_ancestor",
+     "en": "ancestor"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_anniversary",
+     "en": "anniversary",
+     "tr": "yıl dönümü",
+     "tur": "n",
+     "ses": "muf_anniversary.m4a",
+     "resim": "cizim_muf_anniversary",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_approval",
+     "en": "approval",
+     "tr": "onay",
+     "tur": "n",
+     "ses": "muf_approval.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_approve",
+     "en": "approve"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_assess",
+     "en": "assess"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_attempt",
+     "en": "attempt",
+     "tr": "denemek",
+     "tur": "v",
+     "ses": "muf_attempt.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_attempted",
+     "en": "attempted",
+     "tr": "denenmiş",
+     "tur": "adj",
+     "ses": "muf_attempted.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_attic",
+     "en": "attic"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adverbs_barely",
+     "en": "barely"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_blame",
+     "en": "blame",
+     "tr": "suçlamak",
+     "tur": "v",
+     "ses": "muf_blame.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_plain",
+     "en": "plain"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_possess",
+     "en": "possess"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_regret",
+     "en": "regret"
+    },
+    {
+     "tip": "uygulama",
+     "id": "family_roommate",
+     "en": "roommate"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_root",
+     "en": "root",
+     "tr": "köken, aile kökü",
+     "tur": "n",
+     "ses": "root.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_satisfy",
+     "en": "satisfy"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_select",
+     "en": "select"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_semi_detached",
+     "en": "semi-detached",
+     "tr": "ikiz (bitişik)",
+     "tur": "adj",
+     "ses": "muf_semi_detached.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_sensitive",
+     "en": "sensitive"
+    },
+    {
+     "tip": "uygulama",
+     "id": "family_sibling",
+     "en": "sibling"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_sincere",
+     "en": "sincere"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_socialize",
+     "en": "socialize",
+     "tr": "sosyalleşmek",
+     "tur": "v",
+     "ses": "muf_socialize.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_sophisticated",
+     "en": "sophisticated",
+     "tr": "gelişmiş, zarif",
+     "tur": "adj",
+     "ses": "muf_sophisticated.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_spiritual",
+     "en": "spiritual",
+     "tr": "ruhani, manevi",
+     "tur": "adj",
+     "ses": "muf_spiritual.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_split",
+     "en": "split"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_storeroom",
+     "en": "storeroom",
+     "tr": "depo odası",
+     "tur": "n",
+     "ses": "muf_storeroom.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_struggle",
+     "en": "struggle",
+     "tr": "mücadele",
+     "tur": "n",
+     "ses": "muf_struggle.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_subjective",
+     "en": "subjective",
+     "tr": "öznel",
+     "tur": "adj",
+     "ses": "muf_subjective.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_subjectively",
+     "en": "subjectively",
+     "tr": "öznel olarak",
+     "tur": "adv",
+     "ses": "muf_subjectively.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_tiny_house",
+     "en": "tiny house",
+     "tr": "minik ev",
+     "tur": "ifade",
+     "ses": "muf_tiny_house.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_trace",
+     "en": "trace",
+     "tr": "izini sürmek, kökenini bulmak",
+     "tur": "v",
+     "ses": "to_trace.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_unite",
+     "en": "unite"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_villa",
+     "en": "villa"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_workplace",
+     "en": "workplace",
+     "tr": "iş yeri",
+     "tur": "n",
+     "ses": "muf_workplace.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_embrace",
+     "en": "embrace"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_failure",
+     "en": "failure",
+     "tr": "başarısızlık",
+     "tur": "n",
+     "ses": "muf_failure.m4a",
+     "resim": "cizim_muf_failure",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_forgive",
+     "en": "forgive"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_hopeless",
+     "en": "hopeless",
+     "tr": "umutsuz",
+     "tur": "adj",
+     "ses": "muf_hopeless.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_hopelessly",
+     "en": "hopelessly",
+     "tr": "umutsuzca",
+     "tur": "adv",
+     "ses": "muf_hopelessly.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_housing",
+     "en": "housing",
+     "tr": "konut",
+     "tur": "n",
+     "ses": "muf_housing.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_hug",
+     "en": "hug"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_hut",
+     "en": "hut",
+     "tr": "kulübe",
+     "tur": "n",
+     "ses": "muf_hut.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_identical",
+     "en": "identical"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_identical_twin",
+     "en": "identical twin",
+     "tr": "tek yumurta ikizi",
+     "tur": "ifade",
+     "ses": "muf_identical_twin.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_igloo",
+     "en": "igloo"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_industrial",
+     "en": "industrial",
+     "tr": "sanayi, endüstriyel",
+     "tur": "adj",
+     "ses": "muf_industrial.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_inherit",
+     "en": "inherit"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_maintain",
+     "en": "maintain"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_make_life_difficult",
+     "en": "make life difficult",
+     "tr": "hayatı zorlaştırmak",
+     "tur": "ifade",
+     "ses": "muf_make_life_difficult.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_mate",
+     "en": "mate",
+     "tr": "arkadaş",
+     "tur": "n",
+     "ses": "muf_mate.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_misunderstanding",
+     "en": "misunderstanding",
+     "tr": "yanlış anlama",
+     "tur": "n",
+     "ses": "muf_misunderstanding.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_mobile_home",
+     "en": "mobile home",
+     "tr": "mobil ev, karavan",
+     "tur": "ifade",
+     "ses": "muf_mobile_home.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_nuclear_family",
+     "en": "nuclear family",
+     "tr": "çekirdek aile",
+     "tur": "ifade",
+     "ses": "muf_nuclear_family.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_objective",
+     "en": "objective",
+     "tr": "tarafsız, gerçeklere dayalı",
+     "tur": "adj",
+     "ses": "objective.m4a",
+     "resim": "cizim_muf_objective",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_obstacle",
+     "en": "obstacle"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_open_plan",
+     "en": "open-plan",
+     "tr": "açık planlı",
+     "tur": "adj",
+     "ses": "muf_open_plan.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_origin",
+     "en": "origin"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_passionate",
+     "en": "passionate",
+     "tr": "tutkulu",
+     "tur": "adj",
+     "ses": "muf_passionate.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_patience",
+     "en": "patience"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_pessimistic",
+     "en": "pessimistic",
+     "tr": "kötümser",
+     "tur": "adj",
+     "ses": "muf_pessimistic.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_farmhouse",
+     "en": "farmhouse",
+     "tr": "çiftlik evi",
+     "tur": "n",
+     "ses": "muf_farmhouse.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_eco_house",
+     "en": "eco house",
+     "tr": "çevre dostu ev",
+     "tur": "ifade",
+     "ses": "muf_eco_house.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_flat",
+     "en": "flat",
+     "tr": "apartman dairesi",
+     "tur": "n",
+     "ses": "flat.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_immediate_family",
+     "en": "immediate family",
+     "tr": "yakın aile (anne, baba, kardeşler)",
+     "tur": "ifade",
+     "ses": "muf_immediate_family.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "family_extended family",
+     "en": "extended family"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_foster_family",
+     "en": "foster family",
+     "tr": "koruyucu aile",
+     "tur": "ifade",
+     "ses": "muf_foster_family.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_wedding_anniversary",
+     "en": "wedding anniversary",
+     "tr": "evlilik yıl dönümü",
+     "tur": "ifade",
+     "ses": "muf_wedding_anniversary.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_detached_house",
+     "en": "detached house",
+     "tr": "müstakil ev",
+     "tur": "ifade",
+     "ses": "muf_detached_house.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_semi_detached_house",
+     "en": "semi-detached house",
+     "tr": "ikiz ev",
+     "tur": "ifade",
+     "ses": "muf_semi_detached_house.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_emotional",
+     "en": "emotional"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_honest",
+     "en": "honest"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_motivation",
+     "en": "motivation"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_joy",
+     "en": "joy"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_reward",
+     "en": "reward"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_mission",
+     "en": "mission"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_medal",
+     "en": "medal"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_goal",
+     "en": "goal",
+     "tr": "hedef, amaç",
+     "tur": "n",
+     "ses": "goal.m4a",
+     "resim": "cizim_muf_goal",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_victory",
+     "en": "victory"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_discipline",
+     "en": "discipline"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_conversation",
+     "en": "conversation"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_mentorship",
+     "en": "mentorship",
+     "tr": "rehberlik, mentorluk",
+     "tur": "n",
+     "ses": "muf_mentorship.m4a",
+     "resim": "muf_mentorship_8423098",
+     "resim_turu": "foto",
+     "fotografci": "Pavel Danilyuk",
+     "pexels_sayfa": "https://www.pexels.com/photo/teacher-standing-beside-her-student-8423098/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_overcome",
+     "en": "overcome"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_engaging",
+     "en": "engaging",
+     "tr": "ilgi çekici",
+     "tur": "adj",
+     "ses": "muf_engaging.m4a",
+     "resim": "cizim_muf_engaging",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_motivating",
+     "en": "motivating",
+     "tr": "motive eden, cesaretlendiren",
+     "tur": "adj",
+     "ses": "muf_motivating.m4a",
+     "resim": "muf_motivating_35745342",
+     "resim_turu": "foto",
+     "fotografci": "Ahmet Kurt",
+     "pexels_sayfa": "https://www.pexels.com/photo/teacher-and-student-high-fiving-in-classroom-35745342/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_enjoyable",
+     "en": "enjoyable"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_voluntary",
+     "en": "voluntary"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_diverse",
+     "en": "diverse"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_inspiring",
+     "en": "inspiring",
+     "tr": "ilham verici",
+     "tur": "adj",
+     "ses": "muf_inspiring.m4a",
+     "resim": "cizim_muf_inspiring",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_defensive",
+     "en": "defensive",
+     "tr": "savunmacı",
+     "tur": "adj",
+     "ses": "muf_defensive.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_disappointment",
+     "en": "disappointment"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_silence",
+     "en": "silence",
+     "tr": "sessizlik",
+     "tur": "n",
+     "ses": "muf_silence.m4a",
+     "resim": "muf_silence_9572692",
+     "resim_turu": "foto",
+     "fotografci": "Tima Miroshnichenko",
+     "pexels_sayfa": "https://www.pexels.com/photo/people-sitting-on-chair-in-front-of-table-9572692/"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_distract",
+     "en": "distract",
+     "tr": "dikkatini dağıtmak",
+     "tur": "v",
+     "ses": "muf_distract.m4a",
+     "resim": "cizim_muf_distract",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_belongings",
+     "en": "belongings",
+     "tr": "eşyalar",
+     "tur": "n",
+     "ses": "muf_belongings.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_redesign",
+     "en": "redesign",
+     "tr": "yeniden tasarlamak",
+     "tur": "v",
+     "ses": "muf_redesign.m4a",
+     "resim": "cizim_muf_redesign",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_decoration",
+     "en": "decoration"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_responsibility",
+     "en": "responsibility"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_approach",
+     "en": "approach"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_wedding",
+     "en": "wedding",
+     "tr": "düğün",
+     "tur": "n",
+     "ses": "muf_wedding.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_forgiveness",
+     "en": "forgiveness",
+     "tr": "affetme",
+     "tur": "n",
+     "ses": "muf_forgiveness.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_respect",
+     "en": "respect"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_solution",
+     "en": "solution"
+    },
+    {
+     "tip": "uygulama",
+     "id": "jobs_counselor",
+     "en": "counselor"
+    },
+    {
+     "tip": "uygulama",
+     "id": "family_heritage",
+     "en": "heritage"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_unity",
+     "en": "unity"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_confusion",
+     "en": "confusion",
+     "tr": "kafa karışıklığı",
+     "tur": "n",
+     "ses": "muf_confusion.m4a",
+     "resim": "muf_confusion_6256115",
+     "resim_turu": "foto",
+     "fotografci": "Kaboompics",
+     "pexels_sayfa": "https://www.pexels.com/photo/overwhelmed-young-man-against-trigonometry-calculations-6256115/"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "en": "Life in the Neighbourhood, City & Social Life",
+   "tr": "Mahalle, Şehir ve Sosyal Hayat",
+   "kelimeler": [
+    {
+     "tip": "uygulama",
+     "id": "verbs_modify",
+     "en": "modify"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_motor_racing",
+     "en": "motor racing",
+     "tr": "motor yarışı",
+     "tur": "ifade",
+     "ses": "muf_motor_racing.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adverbs_nearby",
+     "en": "nearby"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_obstacle",
+     "en": "obstacle"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_occupation",
+     "en": "occupation",
+     "tr": "meslek",
+     "tur": "n",
+     "ses": "muf_occupation.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_opera",
+     "en": "opera"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_organic",
+     "en": "organic"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_pesticide",
+     "en": "pesticide",
+     "tr": "tarım ilacı",
+     "tur": "n",
+     "ses": "muf_pesticide.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_random",
+     "en": "random",
+     "tr": "rastgele",
+     "tur": "adj",
+     "ses": "muf_random.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_regional",
+     "en": "regional",
+     "tr": "bölgesel",
+     "tur": "adj",
+     "ses": "muf_regional.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_register",
+     "en": "register"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_resort",
+     "en": "resort",
+     "tr": "tatil köyü",
+     "tur": "n",
+     "ses": "muf_resort.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_rural",
+     "en": "rural"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_satisfied",
+     "en": "satisfied"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_semi-final",
+     "en": "semi-final"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_senior",
+     "en": "senior",
+     "tr": "yaşça büyük, kıdemli",
+     "tur": "adj",
+     "ses": "muf_senior.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_spectacular",
+     "en": "spectacular"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_spectator",
+     "en": "spectator"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_spokesperson",
+     "en": "spokesperson",
+     "tr": "sözcü",
+     "tur": "n",
+     "ses": "muf_spokesperson.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_sponsorship",
+     "en": "sponsorship",
+     "tr": "sponsorluk",
+     "tur": "n",
+     "ses": "muf_sponsorship.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_sporting",
+     "en": "sporting",
+     "tr": "sporla ilgili",
+     "tur": "adj",
+     "ses": "muf_sporting.m4a",
+     "resim": "muf_sporting_8941643",
+     "resim_turu": "foto",
+     "fotografci": "Kampus Production",
+     "pexels_sayfa": "https://www.pexels.com/photo/kid-holding-the-soccer-ball-8941643/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_straw",
+     "en": "straw"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_stroke",
+     "en": "stroke",
+     "tr": "kulaç, vuruş (sporda)",
+     "tur": "n",
+     "ses": "muf_stroke.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_suburb",
+     "en": "suburb"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_sufficient",
+     "en": "sufficient"
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_sunflower",
+     "en": "sunflower"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_sustainable",
+     "en": "sustainable"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_territory",
+     "en": "territory",
+     "tr": "bölge, toprak",
+     "tur": "n",
+     "ses": "muf_territory.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_tournament",
+     "en": "tournament"
+    },
+    {
+     "tip": "uygulama",
+     "id": "transport_transportation",
+     "en": "transportation"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_urban",
+     "en": "urban"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_useless",
+     "en": "useless",
+     "tr": "işe yaramaz",
+     "tur": "adj",
+     "ses": "muf_useless.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "jobs_vet",
+     "en": "vet"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_victory",
+     "en": "victory"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_wealth",
+     "en": "wealth",
+     "tr": "zenginlik",
+     "tur": "n",
+     "ses": "muf_wealth.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_weightlifting",
+     "en": "weightlifting",
+     "tr": "halter",
+     "tur": "n",
+     "ses": "muf_weightlifting.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_wheat",
+     "en": "wheat"
+    },
+    {
+     "tip": "uygulama",
+     "id": "animals_wildlife",
+     "en": "wildlife"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_zone",
+     "en": "zone",
+     "tr": "bölge",
+     "tur": "n",
+     "ses": "muf_zone.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_administration",
+     "en": "administration",
+     "tr": "yönetim",
+     "tur": "n",
+     "ses": "muf_administration.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_aerobics",
+     "en": "aerobics",
+     "tr": "aerobik",
+     "tur": "n",
+     "ses": "muf_aerobics.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_agriculture",
+     "en": "agriculture",
+     "tr": "tarım",
+     "tur": "n",
+     "ses": "muf_agriculture.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_amusing",
+     "en": "amusing"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_approach",
+     "en": "approach"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_attachment",
+     "en": "attachment",
+     "tr": "bağlılık, ek dosya",
+     "tur": "n",
+     "ses": "muf_attachment.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_attempt",
+     "en": "attempt",
+     "tr": "denemek",
+     "tur": "v",
+     "ses": "muf_attempt.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_automatic",
+     "en": "automatic"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_biker",
+     "en": "biker",
+     "tr": "bisikletçi, motorcu",
+     "tur": "n",
+     "ses": "muf_biker.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_boost",
+     "en": "boost",
+     "tr": "artırmak, güçlendirmek",
+     "tur": "v",
+     "ses": "muf_boost.m4a",
+     "resim": "cizim_muf_boost",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_bungee_jumping",
+     "en": "bungee jumping",
+     "tr": "bungee atlayışı",
+     "tur": "ifade",
+     "ses": "muf_bungee_jumping.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_capacity",
+     "en": "capacity",
+     "tr": "kapasite",
+     "tur": "n",
+     "ses": "muf_capacity.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_championship",
+     "en": "championship"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_citizen",
+     "en": "citizen",
+     "tr": "vatandaş",
+     "tur": "n",
+     "ses": "muf_citizen.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_civil",
+     "en": "civil",
+     "tr": "sivil, kamusal",
+     "tur": "adj",
+     "ses": "muf_civil.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_civilization",
+     "en": "civilization"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_cornfield",
+     "en": "cornfield",
+     "tr": "mısır tarlası",
+     "tur": "n",
+     "ses": "muf_cornfield.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_crop",
+     "en": "crop"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_decrease",
+     "en": "decrease",
+     "tr": "azalmak",
+     "tur": "v",
+     "ses": "muf_decrease.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "transport_delivery",
+     "en": "delivery"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_distant",
+     "en": "distant"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_distinct",
+     "en": "distinct",
+     "tr": "ayrı, belirgin",
+     "tur": "adj",
+     "ses": "muf_distinct.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_diversity",
+     "en": "diversity"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_domestic",
+     "en": "domestic",
+     "tr": "evle ilgili, ülke içi",
+     "tur": "adj",
+     "ses": "domestic.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_downtown",
+     "en": "downtown"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_dynamic",
+     "en": "dynamic"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_eliminate",
+     "en": "eliminate",
+     "tr": "ortadan kaldırmak",
+     "tur": "v",
+     "ses": "muf_eliminate.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_enthusiastic",
+     "en": "enthusiastic"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_extensive",
+     "en": "extensive"
+    },
+    {
+     "tip": "uygulama",
+     "id": "animals_food chain",
+     "en": "food chain"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_freedom",
+     "en": "freedom"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_genetically_modified",
+     "en": "genetically modified",
+     "tr": "genleri değiştirilmiş",
+     "tur": "adj",
+     "ses": "muf_genetically_modified.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_greenhouse",
+     "en": "greenhouse"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_industrial",
+     "en": "industrial",
+     "tr": "sanayi, endüstriyel",
+     "tur": "adj",
+     "ses": "muf_industrial.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_junior",
+     "en": "junior"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_league",
+     "en": "league"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_marathon",
+     "en": "marathon"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_smart_city",
+     "en": "smart city",
+     "tr": "akıllı şehir",
+     "tur": "ifade",
+     "ses": "muf_smart_city.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_organic_farming",
+     "en": "organic farming",
+     "tr": "organik tarım",
+     "tur": "ifade",
+     "ses": "muf_organic_farming.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_farmland",
+     "en": "farmland",
+     "tr": "tarım arazisi",
+     "tur": "n",
+     "ses": "muf_farmland.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_city",
+     "en": "city"
+    },
+    {
+     "tip": "uygulama",
+     "id": "transport_traffic light",
+     "en": "traffic light"
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_village",
+     "en": "village"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_sports_event",
+     "en": "sports event",
+     "tr": "spor etkinliği",
+     "tur": "ifade",
+     "ses": "muf_sports_event.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_neighborhood",
+     "en": "neighborhood"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_finalist",
+     "en": "finalist",
+     "tr": "finalist",
+     "tur": "n",
+     "ses": "muf_finalist.m4a",
+     "resim": "cizim_muf_finalist",
+     "resim_turu": "cizim"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_joyful",
+     "en": "joyful"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_strong",
+     "en": "strong"
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_society",
+     "en": "society"
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_industry",
+     "en": "industry"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_genetically_modified_seed",
+     "en": "genetically modified seed",
+     "tr": "genleri değiştirilmiş tohum",
+     "tur": "ifade",
+     "ses": "muf_genetically_modified_seed.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_biking",
+     "en": "biking",
+     "tr": "bisiklete binme",
+     "tur": "n",
+     "ses": "muf_biking.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_satisfying",
+     "en": "satisfying",
+     "tr": "tatmin edici",
+     "tur": "adj",
+     "ses": "muf_satisfying.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_scoreboard",
+     "en": "scoreboard"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_enjoyable",
+     "en": "enjoyable"
+    },
+    {
+     "tip": "uygulama",
+     "id": "sports_bowling",
+     "en": "bowling"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_rating",
+     "en": "rating",
+     "tr": "puan, değerlendirme",
+     "tur": "n",
+     "ses": "muf_rating.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_useful",
+     "en": "useful"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_sensor",
+     "en": "sensor"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_connection",
+     "en": "connection"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_increase",
+     "en": "increase"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_connect",
+     "en": "connect"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_innovate",
+     "en": "innovate",
+     "tr": "yenilik yapmak",
+     "tur": "v",
+     "ses": "muf_innovate.m4a",
+     "resim": "muf_innovate_7868890",
+     "resim_turu": "foto",
+     "fotografci": "Vanessa Loring",
+     "pexels_sayfa": "https://www.pexels.com/photo/robotic-car-on-the-table-7868890/"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_agree",
+     "en": "agree"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_disagree",
+     "en": "disagree"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_public_transportation",
+     "en": "public transportation",
+     "tr": "toplu taşıma",
+     "tur": "ifade",
+     "ses": "muf_public_transportation.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_calm",
+     "en": "calm"
+    },
+    {
+     "tip": "uygulama",
+     "id": "feelings_peaceful",
+     "en": "peaceful"
+    },
+    {
+     "tip": "uygulama",
+     "id": "world_tourism",
+     "en": "tourism"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_lifestyle",
+     "en": "lifestyle",
+     "tr": "yaşam tarzı",
+     "tur": "n",
+     "ses": "muf_lifestyle.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_government",
+     "en": "government",
+     "tr": "hükûmet",
+     "tur": "n",
+     "ses": "muf_government.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "jobs_farmer",
+     "en": "farmer"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_cause",
+     "en": "cause"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_effect",
+     "en": "effect"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_contrast",
+     "en": "contrast",
+     "tr": "zıtlık, karşıtlık",
+     "tur": "n",
+     "ses": "muf_contrast.m4a",
+     "resim": null,
+     "resim_turu": null
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "en": "Life in the World & Culture",
+   "tr": "Dünyada Yaşam ve Kültür",
+   "kelimeler": [
+    {
+     "tip": "uygulama",
+     "id": "science_mineral",
+     "en": "mineral"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_mixer",
+     "en": "mixer"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_mug",
+     "en": "mug"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_noodles",
+     "en": "noodles"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adverbs_nowadays",
+     "en": "nowadays"
+    },
+    {
+     "tip": "uygulama",
+     "id": "body_nutrition",
+     "en": "nutrition"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_nutritious",
+     "en": "nutritious"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_obesity",
+     "en": "obesity",
+     "tr": "aşırı kilolu olma (obezite)",
+     "tur": "n",
+     "ses": "muf_obesity.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_organic",
+     "en": "organic"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_pastry",
+     "en": "pastry"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_peel",
+     "en": "peel"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_pizzeria",
+     "en": "pizzeria",
+     "tr": "pizzacı",
+     "tur": "n",
+     "ses": "muf_pizzeria.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_popularity",
+     "en": "popularity"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_portion",
+     "en": "portion"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_process",
+     "en": "process"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_protein",
+     "en": "protein"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_pudding",
+     "en": "pudding"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_pure",
+     "en": "pure"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_remarkable",
+     "en": "remarkable"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_reserve",
+     "en": "reserve"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_rice pudding",
+     "en": "rice pudding"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_roast",
+     "en": "roast"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_self_service",
+     "en": "self-service",
+     "tr": "self servis",
+     "tur": "ifade",
+     "ses": "muf_self_service.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_server",
+     "en": "server",
+     "tr": "garson (servis yapan kişi)",
+     "tur": "n",
+     "ses": "server.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_sour",
+     "en": "sour"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_sour_cream",
+     "en": "sour cream",
+     "tr": "ekşi krema",
+     "tur": "ifade",
+     "ses": "muf_sour_cream.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_spice",
+     "en": "spice"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_spoonful",
+     "en": "spoonful",
+     "tr": "bir kaşık dolusu",
+     "tur": "n",
+     "ses": "muf_spoonful.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_starve",
+     "en": "starve",
+     "tr": "açlıktan sıkıntı çekmek",
+     "tur": "v",
+     "ses": "muf_starve.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_steam",
+     "en": "steam"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_sufficiently",
+     "en": "sufficiently",
+     "tr": "yeterince",
+     "tur": "adv",
+     "ses": "muf_sufficiently.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_supper",
+     "en": "supper"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_sweet_pepper",
+     "en": "sweet pepper",
+     "tr": "tatlı biber",
+     "tur": "ifade",
+     "ses": "muf_sweet_pepper.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_sweet potato",
+     "en": "sweet potato"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_sweetcorn",
+     "en": "sweetcorn",
+     "tr": "tatlı mısır",
+     "tur": "n",
+     "ses": "muf_sweetcorn.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_takeaway",
+     "en": "takeaway"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_teaspoon",
+     "en": "teaspoon"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_tendency",
+     "en": "tendency"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_toaster",
+     "en": "toaster"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_tough",
+     "en": "tough",
+     "tr": "sert, çiğnenmesi zor",
+     "tur": "adj",
+     "ses": "tough.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_usage",
+     "en": "usage",
+     "tr": "kullanım",
+     "tur": "n",
+     "ses": "muf_usage.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_veg",
+     "en": "veg",
+     "tr": "sebze (kısa yazılışı)",
+     "tur": "n",
+     "ses": "muf_veg.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_vinegar",
+     "en": "vinegar"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_visible",
+     "en": "visible"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_vitamin",
+     "en": "vitamin"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_acceptable",
+     "en": "acceptable",
+     "tr": "kabul edilebilir",
+     "tur": "adj",
+     "ses": "muf_acceptable.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_bagel",
+     "en": "bagel"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_baguette",
+     "en": "baguette",
+     "tr": "baget ekmek",
+     "tur": "n",
+     "ses": "muf_baguette.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_baked_beans",
+     "en": "baked beans",
+     "tr": "soslu fasulye konservesi",
+     "tur": "ifade",
+     "ses": "muf_baked_beans.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_beefsteak",
+     "en": "beefsteak",
+     "tr": "biftek",
+     "tur": "n",
+     "ses": "muf_beefsteak.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_bitter",
+     "en": "bitter"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_broccoli",
+     "en": "broccoli"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_bunch",
+     "en": "bunch",
+     "tr": "demet, salkım",
+     "tur": "n",
+     "ses": "muf_bunch.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_carbohydrate",
+     "en": "carbohydrate",
+     "tr": "karbonhidrat",
+     "tur": "n",
+     "ses": "muf_carbohydrate.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_cell",
+     "en": "cell"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_cheesy",
+     "en": "cheesy",
+     "tr": "peynirli",
+     "tur": "adj",
+     "ses": "muf_cheesy.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_chili",
+     "en": "chili"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_chop",
+     "en": "chop"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_chopsticks",
+     "en": "chopsticks"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_considerable",
+     "en": "considerable"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_consumption",
+     "en": "consumption",
+     "tr": "tüketim",
+     "tur": "n",
+     "ses": "muf_consumption.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_counter",
+     "en": "counter"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_courgette",
+     "en": "courgette",
+     "tr": "kabak (sakız kabağı)",
+     "tur": "n",
+     "ses": "muf_courgette.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "animals_crab",
+     "en": "crab"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_cracker",
+     "en": "cracker"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_cucumber",
+     "en": "cucumber"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_cuisine",
+     "en": "cuisine"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_dairy",
+     "en": "dairy"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_dairy_free",
+     "en": "dairy-free",
+     "tr": "süt ürünü içermeyen",
+     "tur": "adj",
+     "ses": "muf_dairy_free.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_dietary",
+     "en": "dietary",
+     "tr": "beslenmeyle ilgili",
+     "tur": "adj",
+     "ses": "muf_dietary.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_differentiate",
+     "en": "differentiate",
+     "tr": "ayırt etmek",
+     "tur": "v",
+     "ses": "muf_differentiate.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_eat_in",
+     "en": "eat in",
+     "tr": "restoranda yemek (paket değil)",
+     "tur": "ifade",
+     "ses": "muf_eat_in.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_eating_disorder",
+     "en": "eating disorder",
+     "tr": "yeme bozukluğu",
+     "tur": "ifade",
+     "ses": "muf_eating_disorder.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_flavor",
+     "en": "flavor"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_fried_rice",
+     "en": "fried rice",
+     "tr": "kızarmış pirinç",
+     "tur": "ifade",
+     "ses": "muf_fried_rice.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_fryer",
+     "en": "fryer",
+     "tr": "fritöz",
+     "tur": "n",
+     "ses": "muf_fryer.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_gain",
+     "en": "gain"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_goat_cheese",
+     "en": "goat cheese",
+     "tr": "keçi peyniri",
+     "tur": "ifade",
+     "ses": "muf_goat_cheese.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "numbers_gram",
+     "en": "gram"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_grill",
+     "en": "grill",
+     "tr": "ızgara yapmak",
+     "tur": "v",
+     "ses": "muf_grill.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_grocery",
+     "en": "grocery"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_heat_up",
+     "en": "heat up",
+     "tr": "ısıtmak",
+     "tur": "v",
+     "ses": "muf_heat_up.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_herb",
+     "en": "herb"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_juicy",
+     "en": "juicy"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_kit",
+     "en": "kit",
+     "tr": "set, takım",
+     "tur": "n",
+     "ses": "muf_kit.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_lean",
+     "en": "lean",
+     "tr": "yağsız",
+     "tur": "adj",
+     "ses": "muf_lean.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "numbers_liter",
+     "en": "liter"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_low_fat",
+     "en": "low-fat",
+     "tr": "az yağlı",
+     "tur": "adj",
+     "ses": "muf_low_fat.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_boil",
+     "en": "boil"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_bake",
+     "en": "bake"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_cook",
+     "en": "cook",
+     "tr": "aşçı",
+     "tur": "n",
+     "ses": "muf_cook.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_cut",
+     "en": "cut"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_fry",
+     "en": "fry"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_knife",
+     "en": "knife",
+     "tr": "bıçak",
+     "tur": "n",
+     "ses": "muf_knife.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_plate",
+     "en": "plate"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_glass",
+     "en": "glass"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_bowl",
+     "en": "bowl"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_fork",
+     "en": "fork"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_fridge",
+     "en": "fridge"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_cooker",
+     "en": "cooker",
+     "tr": "ocak, fırın",
+     "tur": "n",
+     "ses": "muf_cooker.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_delicious",
+     "en": "delicious"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_sweet",
+     "en": "sweet"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_salty",
+     "en": "salty"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_boiled",
+     "en": "boiled",
+     "tr": "haşlanmış",
+     "tur": "adj",
+     "ses": "muf_boiled.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_fried",
+     "en": "fried",
+     "tr": "kızarmış",
+     "tur": "adj",
+     "ses": "muf_fried.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_melon",
+     "en": "melon"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_watermelon",
+     "en": "watermelon"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_strawberry",
+     "en": "strawberry"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_lemon",
+     "en": "lemon"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_orange",
+     "en": "orange"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_grapes",
+     "en": "grapes"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_pear",
+     "en": "pear"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_onion",
+     "en": "onion"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_garlic",
+     "en": "garlic"
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_mushroom",
+     "en": "mushroom"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_mix",
+     "en": "mix"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_potato",
+     "en": "potato"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_therapy",
+     "en": "therapy",
+     "tr": "tedavi, terapi",
+     "tur": "n",
+     "ses": "muf_therapy.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_procedure",
+     "en": "procedure"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_lasagne",
+     "en": "lasagne",
+     "tr": "lazanya",
+     "tur": "n",
+     "ses": "muf_lasagne.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_habit",
+     "en": "habit"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_salt",
+     "en": "salt"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_pizza",
+     "en": "pizza"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_menu",
+     "en": "menu"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_falafel",
+     "en": "falafel"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_pancake",
+     "en": "pancake"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_apple_pie",
+     "en": "apple pie",
+     "tr": "elmalı turta",
+     "tur": "ifade",
+     "ses": "muf_apple_pie.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_rice",
+     "en": "rice"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_carry_out",
+     "en": "carry out",
+     "tr": "paket servis",
+     "tur": "ifade",
+     "ses": "muf_carry_out.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_ramen",
+     "en": "ramen",
+     "tr": "ramen (Japon eriştesi)",
+     "tur": "n",
+     "ses": "muf_ramen.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_tomato",
+     "en": "tomato"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_jar",
+     "en": "jar"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_omelette",
+     "en": "omelette"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_spoon",
+     "en": "spoon"
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_recipe",
+     "en": "recipe"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_dish",
+     "en": "dish",
+     "tr": "yemek, yemek çeşidi",
+     "tur": "n",
+     "ses": "muf_dish.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "food_snack",
+     "en": "snack"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_tasty",
+     "en": "tasty"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "en": "Life in Nature & Global Problems",
+   "tr": "Doğada Yaşam ve Küresel Sorunlar",
+   "kelimeler": [
+    {
+     "tip": "yeni",
+     "anahtar": "muf_deadly",
+     "en": "deadly",
+     "tr": "ölümcül",
+     "tur": "adj",
+     "ses": "muf_deadly.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_deforestation",
+     "en": "deforestation",
+     "tr": "ormansızlaşma",
+     "tur": "n",
+     "ses": "muf_deforestation.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_desperate",
+     "en": "desperate",
+     "tr": "çaresiz",
+     "tur": "adj",
+     "ses": "muf_desperate.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_destruction",
+     "en": "destruction",
+     "tr": "yıkım",
+     "tur": "n",
+     "ses": "muf_destruction.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_destructive",
+     "en": "destructive",
+     "tr": "yıkıcı",
+     "tur": "adj",
+     "ses": "muf_destructive.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_dig",
+     "en": "dig"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_displacement",
+     "en": "displacement",
+     "tr": "yerinden edilme",
+     "tur": "n",
+     "ses": "muf_displacement.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_disturb",
+     "en": "disturb"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_drought",
+     "en": "drought",
+     "tr": "kuraklık",
+     "tur": "n",
+     "ses": "muf_drought.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_dump",
+     "en": "dump",
+     "tr": "çöp dökmek",
+     "tur": "v",
+     "ses": "muf_dump.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_eco_friendly",
+     "en": "eco-friendly",
+     "tr": "çevre dostu",
+     "tur": "adj",
+     "ses": "muf_eco_friendly.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_ecology",
+     "en": "ecology"
+    },
+    {
+     "tip": "uygulama",
+     "id": "animals_ecosystem",
+     "en": "ecosystem"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_emergency_services",
+     "en": "emergency services",
+     "tr": "acil durum ekipleri",
+     "tur": "ifade",
+     "ses": "muf_emergency_services.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_emigrate",
+     "en": "emigrate",
+     "tr": "başka ülkeye göç etmek",
+     "tur": "v",
+     "ses": "muf_emigrate.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_energy_saving",
+     "en": "energy-saving",
+     "tr": "enerji tasarruflu",
+     "tur": "ifade",
+     "ses": "muf_energy_saving.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_environmentalist",
+     "en": "environmentalist",
+     "tr": "çevreci",
+     "tur": "n",
+     "ses": "muf_environmentalist.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_erosion",
+     "en": "erosion"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_erupt",
+     "en": "erupt",
+     "tr": "püskürmek",
+     "tur": "v",
+     "ses": "muf_erupt.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_eruption",
+     "en": "eruption",
+     "tr": "püskürme",
+     "tur": "n",
+     "ses": "muf_eruption.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_famine",
+     "en": "famine",
+     "tr": "kıtlık",
+     "tur": "n",
+     "ses": "muf_famine.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_flame",
+     "en": "flame",
+     "tr": "alev",
+     "tur": "n",
+     "ses": "muf_flame.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_floodwater",
+     "en": "floodwater",
+     "tr": "taşkın suyu",
+     "tur": "n",
+     "ses": "muf_floodwater.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_fossil fuel",
+     "en": "fossil fuel"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_absolute",
+     "en": "absolute",
+     "tr": "tam, kesin",
+     "tur": "adj",
+     "ses": "muf_absolute.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_adequate",
+     "en": "adequate"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_alarmed",
+     "en": "alarmed",
+     "tr": "endişelenmiş",
+     "tur": "adj",
+     "ses": "muf_alarmed.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_alternative_fuel",
+     "en": "alternative fuel",
+     "tr": "alternatif yakıt",
+     "tur": "ifade",
+     "ses": "muf_alternative_fuel.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_apparent",
+     "en": "apparent",
+     "tr": "belli, açık",
+     "tur": "adj",
+     "ses": "muf_apparent.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_arise",
+     "en": "arise",
+     "tr": "ortaya çıkmak",
+     "tur": "v",
+     "ses": "muf_arise.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_at_risk",
+     "en": "at risk",
+     "tr": "risk altında",
+     "tur": "ifade",
+     "ses": "muf_at_risk.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_avalanche",
+     "en": "avalanche",
+     "tr": "çığ",
+     "tur": "n",
+     "ses": "muf_avalanche.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_biofuel",
+     "en": "biofuel",
+     "tr": "biyoyakıt",
+     "tur": "n",
+     "ses": "muf_biofuel.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_biome",
+     "en": "biome",
+     "tr": "biyom (yaşam alanı)",
+     "tur": "n",
+     "ses": "muf_biome.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_blizzard",
+     "en": "blizzard",
+     "tr": "kar fırtınası",
+     "tur": "n",
+     "ses": "muf_blizzard.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_carbon",
+     "en": "carbon",
+     "tr": "karbon",
+     "tur": "n",
+     "ses": "muf_carbon.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_carbon_dioxide",
+     "en": "carbon dioxide",
+     "tr": "karbondioksit",
+     "tur": "ifade",
+     "ses": "muf_carbon_dioxide.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_carbon_footprint",
+     "en": "carbon footprint",
+     "tr": "karbon ayak izi",
+     "tur": "ifade",
+     "ses": "muf_carbon_footprint.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_catastrophic",
+     "en": "catastrophic",
+     "tr": "felaket düzeyinde",
+     "tur": "adj",
+     "ses": "muf_catastrophic.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_clean_up",
+     "en": "clean up",
+     "tr": "temizlemek",
+     "tur": "ifade",
+     "ses": "muf_clean_up.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_climate_change",
+     "en": "climate change",
+     "tr": "iklim değişikliği",
+     "tur": "ifade",
+     "ses": "muf_climate_change.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_climate_crisis",
+     "en": "climate crisis",
+     "tr": "iklim krizi",
+     "tur": "ifade",
+     "ses": "muf_climate_crisis.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_climate_strike",
+     "en": "climate strike",
+     "tr": "iklim grevi",
+     "tur": "ifade",
+     "ses": "muf_climate_strike.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_collapse",
+     "en": "collapse",
+     "tr": "çökmek",
+     "tur": "v",
+     "ses": "muf_collapse.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_conservation_area",
+     "en": "conservation area",
+     "tr": "koruma alanı",
+     "tur": "ifade",
+     "ses": "muf_conservation_area.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_consumption",
+     "en": "consumption",
+     "tr": "tüketim",
+     "tur": "n",
+     "ses": "muf_consumption.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_contaminant",
+     "en": "contaminant",
+     "tr": "kirletici madde",
+     "tur": "n",
+     "ses": "muf_contaminant.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_cyclone",
+     "en": "cyclone",
+     "tr": "siklon (kasırga)",
+     "tur": "n",
+     "ses": "muf_cyclone.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_reserve",
+     "en": "reserve"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_rig",
+     "en": "rig",
+     "tr": "petrol platformu",
+     "tur": "n",
+     "ses": "muf_rig.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_risky",
+     "en": "risky",
+     "tr": "riskli",
+     "tur": "adj",
+     "ses": "muf_risky.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_severe",
+     "en": "severe",
+     "tr": "şiddetli, ağır",
+     "tur": "adj",
+     "ses": "muf_severe.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_shelter",
+     "en": "shelter",
+     "tr": "sığınak, barınak",
+     "tur": "n",
+     "ses": "muf_shelter.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_shock",
+     "en": "shock",
+     "tr": "şok, sarsıntı",
+     "tur": "n",
+     "ses": "muf_shock.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_slide",
+     "en": "slide",
+     "tr": "kaymak",
+     "tur": "v",
+     "ses": "muf_slide.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_solar",
+     "en": "solar"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_soul",
+     "en": "soul",
+     "tr": "ruh",
+     "tur": "n",
+     "ses": "muf_soul.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "animals_species",
+     "en": "species"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_starve",
+     "en": "starve",
+     "tr": "açlıktan sıkıntı çekmek",
+     "tur": "v",
+     "ses": "muf_starve.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_survivor",
+     "en": "survivor",
+     "tr": "hayatta kalan",
+     "tur": "n",
+     "ses": "muf_survivor.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_sustainable",
+     "en": "sustainable"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_tank",
+     "en": "tank",
+     "tr": "depo (su deposu)",
+     "tur": "n",
+     "ses": "muf_tank.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_threat",
+     "en": "threat",
+     "tr": "tehdit",
+     "tur": "n",
+     "ses": "muf_threat.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_thunderstorm",
+     "en": "thunderstorm"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_tragedy",
+     "en": "tragedy",
+     "tr": "büyük üzüntü, facia",
+     "tur": "n",
+     "ses": "muf_tragedy.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_tsunami",
+     "en": "tsunami",
+     "tr": "tsunami",
+     "tur": "n",
+     "ses": "muf_tsunami.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_typhoon",
+     "en": "typhoon",
+     "tr": "tayfun",
+     "tur": "n",
+     "ses": "muf_typhoon.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_uninhabitable",
+     "en": "uninhabitable",
+     "tr": "yaşanmaz",
+     "tur": "adj",
+     "ses": "muf_uninhabitable.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_universal",
+     "en": "universal"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_urge",
+     "en": "urge",
+     "tr": "ısrarla istemek, çağrıda bulunmak",
+     "tur": "v",
+     "ses": "muf_urge.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_urgent",
+     "en": "urgent",
+     "tr": "acil",
+     "tur": "adj",
+     "ses": "muf_urgent.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_volcanic",
+     "en": "volcanic"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_wound",
+     "en": "wound",
+     "tr": "yara",
+     "tur": "n",
+     "ses": "muf_wound.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_generate",
+     "en": "generate"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_green_belt",
+     "en": "green belt",
+     "tr": "yeşil kuşak",
+     "tur": "ifade",
+     "ses": "muf_green_belt.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_greenhouse_gas",
+     "en": "greenhouse gas",
+     "tr": "sera gazı",
+     "tur": "ifade",
+     "ses": "muf_greenhouse_gas.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_harm",
+     "en": "harm",
+     "tr": "zarar vermek",
+     "tur": "v",
+     "ses": "muf_harm.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_harmful",
+     "en": "harmful",
+     "tr": "zararlı",
+     "tur": "adj",
+     "ses": "muf_harmful.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_harmless",
+     "en": "harmless"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_high_risk",
+     "en": "high-risk",
+     "tr": "yüksek riskli",
+     "tur": "ifade",
+     "ses": "muf_high_risk.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_homeless",
+     "en": "homeless",
+     "tr": "evsiz",
+     "tur": "adj",
+     "ses": "muf_homeless.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_homelessness",
+     "en": "homelessness",
+     "tr": "evsizlik",
+     "tur": "n",
+     "ses": "muf_homelessness.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_human_right",
+     "en": "human right",
+     "tr": "insan hakkı",
+     "tur": "ifade",
+     "ses": "muf_human_right.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_hydroelectric",
+     "en": "hydroelectric",
+     "tr": "hidroelektrik",
+     "tur": "adj",
+     "ses": "muf_hydroelectric.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_immigration",
+     "en": "immigration",
+     "tr": "göç (başka ülkeden gelme)",
+     "tur": "n",
+     "ses": "muf_immigration.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_landfill",
+     "en": "landfill",
+     "tr": "çöp sahası",
+     "tur": "n",
+     "ses": "muf_landfill.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_landslide",
+     "en": "landslide",
+     "tr": "heyelan",
+     "tur": "n",
+     "ses": "muf_landslide.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_lava",
+     "en": "lava"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_low_risk",
+     "en": "low-risk",
+     "tr": "düşük riskli",
+     "tur": "ifade",
+     "ses": "muf_low_risk.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "body_lungs",
+     "en": "lungs"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_maintain",
+     "en": "maintain"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_melt",
+     "en": "melt"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_nonrenewable",
+     "en": "nonrenewable",
+     "tr": "yenilenemeyen",
+     "tur": "adj",
+     "ses": "muf_nonrenewable.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_oxygen",
+     "en": "oxygen"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_polluter",
+     "en": "polluter",
+     "tr": "kirleten kişi veya kurum",
+     "tur": "n",
+     "ses": "muf_polluter.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_protection",
+     "en": "protection"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_refugee",
+     "en": "refugee",
+     "tr": "mülteci",
+     "tur": "n",
+     "ses": "muf_refugee.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_rescue",
+     "en": "rescue"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_rescuer",
+     "en": "rescuer",
+     "tr": "kurtarıcı",
+     "tur": "n",
+     "ses": "muf_rescuer.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_environmentally_friendly",
+     "en": "environmentally friendly",
+     "tr": "çevre dostu",
+     "tur": "ifade",
+     "ses": "muf_environmentally_friendly.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_camping",
+     "en": "camping",
+     "tr": "kamp yapma",
+     "tur": "n",
+     "ses": "muf_camping.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_natural_disaster",
+     "en": "natural disaster",
+     "tr": "doğal afet",
+     "tur": "ifade",
+     "ses": "muf_natural_disaster.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_renewable_energy_sources",
+     "en": "renewable energy sources",
+     "tr": "yenilenebilir enerji kaynakları",
+     "tur": "ifade",
+     "ses": "muf_renewable_energy_sources.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_water_pollution",
+     "en": "water pollution",
+     "tr": "su kirliliği",
+     "tur": "ifade",
+     "ses": "muf_water_pollution.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_recycling",
+     "en": "recycling"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_air_pollution",
+     "en": "air pollution",
+     "tr": "hava kirliliği",
+     "tur": "ifade",
+     "ses": "muf_air_pollution.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_renewable_energy",
+     "en": "renewable energy",
+     "tr": "yenilenebilir enerji",
+     "tur": "ifade",
+     "ses": "muf_renewable_energy.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_solar_energy",
+     "en": "solar energy",
+     "tr": "güneş enerjisi",
+     "tur": "ifade",
+     "ses": "muf_solar_energy.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_wind_energy",
+     "en": "wind energy",
+     "tr": "rüzgâr enerjisi",
+     "tur": "ifade",
+     "ses": "muf_wind_energy.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_flood",
+     "en": "flood",
+     "tr": "sel",
+     "tur": "n",
+     "ses": "muf_flood.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_disaster",
+     "en": "disaster",
+     "tr": "afet, felaket",
+     "tur": "n",
+     "ses": "muf_disaster.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_lack_of_food",
+     "en": "lack of food",
+     "tr": "yiyecek yetersizliği",
+     "tur": "ifade",
+     "ses": "muf_lack_of_food.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_overuse",
+     "en": "overuse",
+     "tr": "aşırı kullanmak",
+     "tur": "v",
+     "ses": "muf_overuse.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_rescue_worker",
+     "en": "rescue worker",
+     "tr": "kurtarma görevlisi",
+     "tur": "ifade",
+     "ses": "muf_rescue_worker.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "jobs_doctor",
+     "en": "doctor"
+    },
+    {
+     "tip": "uygulama",
+     "id": "jobs_police officer",
+     "en": "police officer"
+    },
+    {
+     "tip": "uygulama",
+     "id": "jobs_driver",
+     "en": "driver"
+    },
+    {
+     "tip": "uygulama",
+     "id": "jobs_journalist",
+     "en": "journalist"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_cook",
+     "en": "cook",
+     "tr": "aşçı",
+     "tur": "n",
+     "ses": "muf_cook.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_volcanic_eruption",
+     "en": "volcanic eruption",
+     "tr": "yanardağ püskürmesi",
+     "tur": "ifade",
+     "ses": "muf_volcanic_eruption.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_earthquake",
+     "en": "earthquake",
+     "tr": "deprem",
+     "tur": "n",
+     "ses": "muf_earthquake.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "transport_airport",
+     "en": "airport"
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_fire station",
+     "en": "fire station"
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_cottage",
+     "en": "cottage"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_sports_center",
+     "en": "sports center",
+     "tr": "spor merkezi",
+     "tur": "ifade",
+     "ses": "muf_sports_center.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "city_hospital",
+     "en": "hospital"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_precaution",
+     "en": "precaution",
+     "tr": "önlem",
+     "tur": "n",
+     "ses": "muf_precaution.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_forest",
+     "en": "forest"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_campaign",
+     "en": "campaign",
+     "tr": "kampanya",
+     "tur": "n",
+     "ses": "muf_campaign.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_cooperation",
+     "en": "cooperation"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_pollution",
+     "en": "pollution"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_plant",
+     "en": "plant",
+     "tr": "dikmek (ağaç, bitki)",
+     "tur": "v",
+     "ses": "muf_plant.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_scared",
+     "en": "scared",
+     "tr": "korkmuş",
+     "tur": "adj",
+     "ses": "muf_scared.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_wind",
+     "en": "wind"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "en": "Life in the Universe & Future",
+   "tr": "Evrende Yaşam ve Gelecek",
+   "kelimeler": [
+    {
+     "tip": "uygulama",
+     "id": "science_planet",
+     "en": "planet"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_proof",
+     "en": "proof"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_realistic",
+     "en": "realistic"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_reasonable",
+     "en": "reasonable"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_research",
+     "en": "research"
+    },
+    {
+     "tip": "uygulama",
+     "id": "transport_rocket",
+     "en": "rocket"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_satellite",
+     "en": "satellite"
+    },
+    {
+     "tip": "uygulama",
+     "id": "jobs_scientist",
+     "en": "scientist"
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_shadow",
+     "en": "shadow"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_solar",
+     "en": "solar"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_solar system",
+     "en": "solar system"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_spacecraft",
+     "en": "spacecraft"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_spaceman",
+     "en": "spaceman",
+     "tr": "astronot (erkek)",
+     "tur": "n",
+     "ses": "muf_spaceman.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "transport_spaceship",
+     "en": "spaceship"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_spacesuit",
+     "en": "spacesuit"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_spacewalk",
+     "en": "spacewalk"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_spacewoman",
+     "en": "spacewoman",
+     "tr": "astronot (kadın)",
+     "tur": "n",
+     "ses": "muf_spacewoman.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "animals_species",
+     "en": "species"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_stimulate",
+     "en": "stimulate"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_suspect",
+     "en": "suspect",
+     "tr": "şüphelenmek",
+     "tur": "v",
+     "ses": "muf_suspect.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_sustainable",
+     "en": "sustainable"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_take_off",
+     "en": "take off",
+     "tr": "kalkış (uçak, roket)",
+     "tur": "n",
+     "ses": "muf_take_off.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_technological",
+     "en": "technological"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_telescope",
+     "en": "telescope"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_transmit",
+     "en": "transmit"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_transplant",
+     "en": "transplant",
+     "tr": "başka yere dikmek (bitki)",
+     "tur": "v",
+     "ses": "muf_transplant.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_try",
+     "en": "try"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_universe",
+     "en": "universe"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_voyage",
+     "en": "voyage",
+     "tr": "yolculuk (uzay yolculuğu)",
+     "tur": "n",
+     "ses": "voyage.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "home_wire",
+     "en": "wire"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_witness",
+     "en": "witness"
+    },
+    {
+     "tip": "uygulama",
+     "id": "art_abstract",
+     "en": "abstract"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_aerospace",
+     "en": "aerospace",
+     "tr": "havacılık ve uzay",
+     "tur": "n",
+     "ses": "muf_aerospace.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_alien",
+     "en": "alien",
+     "tr": "uzaylı",
+     "tur": "n",
+     "ses": "muf_alien.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_artificial",
+     "en": "artificial"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_asteroid",
+     "en": "asteroid"
+    },
+    {
+     "tip": "uygulama",
+     "id": "jobs_astronaut",
+     "en": "astronaut"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_astronomer",
+     "en": "astronomer"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_astronomy",
+     "en": "astronomy"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_attempt",
+     "en": "attempt",
+     "tr": "denemek",
+     "tur": "v",
+     "ses": "muf_attempt.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_bioengineering",
+     "en": "bioengineering",
+     "tr": "biyomühendislik",
+     "tur": "n",
+     "ses": "muf_bioengineering.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_capsule",
+     "en": "capsule",
+     "tr": "kapsül",
+     "tur": "n",
+     "ses": "muf_capsule.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_colonize",
+     "en": "colonize",
+     "tr": "yerleşim kurmak (başka gezegende)",
+     "tur": "v",
+     "ses": "muf_colonize.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_cosmic",
+     "en": "cosmic",
+     "tr": "evrenle ilgili",
+     "tur": "adj",
+     "ses": "muf_cosmic.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "animals_creature",
+     "en": "creature"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_duration",
+     "en": "duration",
+     "tr": "süre",
+     "tur": "n",
+     "ses": "muf_duration.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_estimate",
+     "en": "estimate"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_exceed",
+     "en": "exceed",
+     "tr": "aşmak",
+     "tur": "v",
+     "ses": "muf_exceed.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_exploration",
+     "en": "exploration"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_explore",
+     "en": "explore"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_extreme",
+     "en": "extreme",
+     "tr": "aşırı, uç",
+     "tur": "adj",
+     "ses": "muf_extreme.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_galaxy",
+     "en": "galaxy"
+    },
+    {
+     "tip": "uygulama",
+     "id": "concepts_imagination",
+     "en": "imagination"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_launch",
+     "en": "launch"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_logical",
+     "en": "logical"
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_massive",
+     "en": "massive"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_nanotechnology",
+     "en": "nanotechnology",
+     "tr": "nanoteknoloji",
+     "tur": "n",
+     "ses": "muf_nanotechnology.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_navigate",
+     "en": "navigate"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_observation",
+     "en": "observation"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_observe",
+     "en": "observe"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_observer",
+     "en": "observer",
+     "tr": "gözlemci",
+     "tur": "n",
+     "ses": "muf_observer.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_orbit",
+     "en": "orbit"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_solar panel",
+     "en": "solar panel"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_comet",
+     "en": "comet"
+    },
+    {
+     "tip": "uygulama",
+     "id": "nature_star",
+     "en": "star"
+    },
+    {
+     "tip": "uygulama",
+     "id": "toys_robot",
+     "en": "robot"
+    },
+    {
+     "tip": "yeni",
+     "anahtar": "muf_summer_school",
+     "en": "summer school",
+     "tr": "yaz okulu",
+     "tur": "ifade",
+     "ses": "muf_summer_school.m4a",
+     "resim": null,
+     "resim_turu": null
+    },
+    {
+     "tip": "uygulama",
+     "id": "adjectives_durable",
+     "en": "durable"
+    },
+    {
+     "tip": "uygulama",
+     "id": "tech_electronics",
+     "en": "electronics"
+    },
+    {
+     "tip": "uygulama",
+     "id": "verbs_imagine",
+     "en": "imagine"
+    },
+    {
+     "tip": "uygulama",
+     "id": "science_liquid",
+     "en": "liquid"
+    }
+   ]
+  }
+ ]
+}
