@@ -1,11 +1,11 @@
 // English Words for Kids · Web — çevrimdışı açılış.
 // Uygulama kabuğu önbellekte; açılan resim ve sesler (cache-first) bir kere indirilince internetsiz de açılır.
 // Hiçbir veri dışarı gönderilmez; sadece aynı adresten dosya alınır.
-const SURUM = "1.8.17";
+const SURUM = "1.9.8";
 const KABUK = "ewk-kabuk-" + SURUM;
 const MEDYA = "ewk-medya-v1";
 const DOSYALAR = [
-  "./", "index.html", "style.css", "app.js", "config.js", "manifest.webmanifest", "data/kelimeler.json",
+  "./", "index.html", "style.css", "app.js", "config.js", "manifest.webmanifest", "data/kelimeler.json", "data/mufredat6.json", "data/mufredat7.json", "data/mufredat8.json", "data/krediler.json",
   "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png", "icons/sunflower-logo.png"
 ];
 
@@ -13,11 +13,40 @@ self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(KABUK).then((c) => c.addAll(DOSYALAR)).then(() => self.skipWaiting()));
 });
 
+// Ders Kelimeleri'nin yeni resim ve sesleri de internetsiz açılsın diye arka planda önbelleğe alınır.
+// Hata olursa sessizce geçilir; dosyalar zaten ilk açılışta da önbelleğe girer.
+async function dersMedyaIndir() {
+  try {
+    const yollar = new Set();
+    for (const n of [6, 7, 8]) {
+      let veri;
+      try { veri = await (await fetch("data/mufredat" + n + ".json", { credentials: "omit" })).json(); } catch (err) { continue; }
+      veri.temalar.forEach((t) => t.kelimeler.forEach((k) => {
+        if (k.tip === "uygulama") return;
+        if (k.resim) yollar.add("img/" + k.resim + ".webp");
+        if (/^muf_/.test(k.ses)) yollar.add("ses/" + k.ses);
+      }));
+    }
+    const c = await caches.open(MEDYA);
+    const liste = Array.from(yollar).map((y) => new URL(y, self.location.href).href);
+    for (let i = 0; i < liste.length; i += 8) {
+      await Promise.all(liste.slice(i, i + 8).map(async (u) => {
+        try {
+          if (await c.match(u)) return;
+          const ag = await fetch(u, { credentials: "omit" });
+          if (ag.status === 200) await c.put(u, ag);
+        } catch (err) {}
+      }));
+    }
+  } catch (err) {}
+}
+
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys()
       .then((adlar) => Promise.all(adlar.filter((a) => a !== KABUK && a !== MEDYA).map((a) => caches.delete(a))))
       .then(() => self.clients.claim())
+      .then(() => dersMedyaIndir())
   );
 });
 
